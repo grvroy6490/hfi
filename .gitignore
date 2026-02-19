@@ -1,0 +1,2 @@
+# Windows reserved name – avoid "failed to index file 'nul'" error
+nul

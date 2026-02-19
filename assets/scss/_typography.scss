@@ -34,9 +34,23 @@
 }
 
 @font-face {
-    font-family: 'Siusse';
-    src: url('../fonts/Suisse_Intl_Regular.ttf') format('truetype');
+    font-family: 'Suisse Intl';
+    src: url('../fonts/SuisseIntl-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('../fonts/SuisseIntl-Regular.otf') format('opentype');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('../fonts/SuisseIntl-SemiBold.otf') format('opentype');
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -44,19 +58,17 @@
 // Type scale & line heights (ensure _variables is imported before this file for $color-*)
 // ---------------------------------------------------------------------------
 $font-family-mundial: 'Mundial', sans-serif;
-$font-family-siusse: 'Siusse', sans-serif;
-
-$text-xs: 0.75rem;    // 12px
-$text-sm: 0.875rem;   // 14px
-$text-base: 1rem;     // 16px
-$text-lg: 1.125rem;   // 18px
-$text-xl: 1.25rem;    // 20px
-$text-2xl: 1.5rem;    // 24px
-$text-3xl: 2rem;      // 32px
-$text-4xl: 2.5rem;    // 40px
-$text-5xl: 3rem;      // 48px
-$text-display: 4rem;  // 64px
-
+$font-family-suisse: 'Suisse Intl', sans-serif;
+$text-xs: 0.75rem; // 12px
+$text-sm: 0.875rem; // 14px
+$text-base: 1rem; // 16px
+$text-lg: 1.125rem; // 18px
+$text-xl: 1.25rem; // 20px
+$text-2xl: 1.5rem; // 24px
+$text-3xl: 2rem; // 32px
+$text-4xl: 2.5rem; // 40px
+$text-5xl: 3rem; // 48px
+$text-display: 4rem; // 64px
 $leading-tight: 1.2;
 $leading-snug: 1.375;
 $leading-normal: 1.5;
@@ -66,118 +78,179 @@ $leading-loose: 1.75;
 // ---------------------------------------------------------------------------
 // Font family classes
 // ---------------------------------------------------------------------------
-.font-mundial { font-family: $font-family-mundial; }
-.font-siusse { font-family: $font-family-siusse; }
+.font-mundial {
+    font-family: $font-family-mundial;
+}
+
+.font-suisse {
+    font-family: $font-family-suisse;
+}
 
 // ---------------------------------------------------------------------------
 // Font size classes
 // ---------------------------------------------------------------------------
-.text-xs   { font-size: $text-xs; }
-.text-sm   { font-size: $text-sm; }
-.text-base { font-size: $text-base; }
-.text-lg   { font-size: $text-lg; }
-.text-xl   { font-size: $text-xl; }
-.text-2xl  { font-size: $text-2xl; }
-.text-3xl  { font-size: $text-3xl; }
-.text-4xl  { font-size: $text-4xl; }
-.text-5xl  { font-size: $text-5xl; }
-.text-display { font-size: $text-display; }
+.text-xs {
+    font-size: $text-xs;
+}
+
+.text-sm {
+    font-size: $text-sm;
+}
+
+.text-base {
+    font-size: $text-base;
+}
+
+.text-lg {
+    font-size: $text-lg;
+}
+
+.text-xl {
+    font-size: $text-xl;
+}
+
+.text-2xl {
+    font-size: $text-2xl;
+}
+
+.text-3xl {
+    font-size: $text-3xl;
+}
+
+.text-4xl {
+    font-size: $text-4xl;
+}
+
+.text-5xl {
+    font-size: $text-5xl;
+}
+
+.text-display {
+    font-size: $text-display;
+}
 
 // ---------------------------------------------------------------------------
 // Font weight classes
 // ---------------------------------------------------------------------------
-.font-light    { font-weight: 300; }
-.font-regular  { font-weight: 400; }
-.font-demibold { font-weight: 600; }
-.font-bold     { font-weight: 700; }
-.font-black    { font-weight: 900; }
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-demibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-black {
+    font-weight: 900;
+}
 
 // ---------------------------------------------------------------------------
 // Line height classes
 // ---------------------------------------------------------------------------
-.leading-tight   { line-height: $leading-tight; }
-.leading-snug    { line-height: $leading-snug; }
-.leading-normal  { line-height: $leading-normal; }
-.leading-relaxed { line-height: $leading-relaxed; }
-.leading-loose   { line-height: $leading-loose; }
+.leading-tight {
+    line-height: $leading-tight;
+}
+
+.leading-snug {
+    line-height: $leading-snug;
+}
+
+.leading-normal {
+    line-height: $leading-normal;
+}
+
+.leading-relaxed {
+    line-height: $leading-relaxed;
+}
+
+.leading-loose {
+    line-height: $leading-loose;
+}
 
 // ---------------------------------------------------------------------------
 // Heading / display styles (family + size + weight combined)
 // ---------------------------------------------------------------------------
 .heading-1 {
-  font-family: $font-family-mundial;
-  font-size: $text-display;
-  font-weight: 700;
-  line-height: $leading-tight;
+    font-family: $font-family-mundial;
+    font-size: $text-display;
+    font-weight: 700;
+    line-height: $leading-tight;
 }
 
 .heading-2 {
-  font-family: $font-family-mundial;
-  font-size: $text-5xl;
-  font-weight: 700;
-  line-height: $leading-tight;
+    font-family: $font-family-mundial;
+    font-size: $text-5xl;
+    font-weight: 700;
+    line-height: $leading-tight;
 }
 
 .heading-3 {
-  font-family: $font-family-mundial;
-  font-size: $text-4xl;
-  font-weight: 600;
-  line-height: $leading-snug;
+    font-family: $font-family-mundial;
+    font-size: $text-4xl;
+    font-weight: 600;
+    line-height: $leading-snug;
 }
 
 .heading-4 {
-  font-family: $font-family-mundial;
-  font-size: $text-3xl;
-  font-weight: 600;
-  line-height: $leading-snug;
+    font-family: $font-family-mundial;
+    font-size: $text-3xl;
+    font-weight: 600;
+    line-height: $leading-snug;
 }
 
 .heading-5 {
-  font-family: $font-family-mundial;
-  font-size: $text-2xl;
-  font-weight: 600;
-  line-height: $leading-normal;
+    font-family: $font-family-mundial;
+    font-size: $text-2xl;
+    font-weight: 600;
+    line-height: $leading-normal;
 }
 
 .heading-6 {
-  font-family: $font-family-mundial;
-  font-size: $text-xl;
-  font-weight: 600;
-  line-height: $leading-normal;
+    font-family: $font-family-mundial;
+    font-size: $text-xl;
+    font-weight: 600;
+    line-height: $leading-normal;
 }
 
 .body-large {
-  font-family: $font-family-mundial;
-  font-size: $text-lg;
-  font-weight: 400;
-  line-height: $leading-relaxed;
+    font-family: $font-family-mundial;
+    font-size: $text-lg;
+    font-weight: 400;
+    line-height: $leading-relaxed;
 }
 
 .body {
-  font-family: $font-family-mundial;
-  font-size: $text-base;
-  font-weight: 400;
-  line-height: $leading-normal;
+    font-family: $font-family-mundial;
+    font-size: $text-base;
+    font-weight: 400;
+    line-height: $leading-normal;
 }
 
 .body-small {
-  font-family: $font-family-mundial;
-  font-size: $text-sm;
-  font-weight: 400;
-  line-height: $leading-normal;
+    font-family: $font-family-mundial;
+    font-size: $text-sm;
+    font-weight: 400;
+    line-height: $leading-normal;
 }
 
 .caption {
-  font-family: $font-family-siusse;
-  font-size: $text-xs;
-  font-weight: 400;
-  line-height: $leading-normal;
+    font-family: $font-family-suisse;
+    font-size: $text-xs;
+    font-weight: 400;
+    line-height: $leading-normal;
 }
 
 .label {
-  font-family: $font-family-mundial;
-  font-size: $text-sm;
-  font-weight: 600;
-  line-height: $leading-normal;
+    font-family: $font-family-mundial;
+    font-size: $text-sm;
+    font-weight: 600;
+    line-height: $leading-normal;
 }
-

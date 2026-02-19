@@ -1,0 +1,250 @@
+// Header theme
+$header-accent-bg: rgba(64, 64, 64, 1);
+$header-announcement-bg: #4a4a4a;
+$header-announcement-text: #e0e0e0;
+$header-announcement-link: #fff;
+$header-nav-bg: rgba(252, 250, 247, 0.92);
+$header-nav-border: rgba(0, 0, 0, 0.06);
+$header-logo-color: #2a2a2a;
+$header-link-color: rgba(79, 79, 79, 1);
+$header-link-hover: #000;
+$header-link-underline: 2px;
+$header-cta-bg: linear-gradient(270deg, rgba(143, 106, 15, 1) 0%, rgba(184, 137, 18, 1) 50%, rgba(201, 151, 26, 1) 100%);
+$header-cta-bg-hover: linear-gradient(270deg, rgba(143, 106, 15, 1) 0%, rgba(143, 106, 15, 1) 50%, rgba(143, 106, 15, 1) 100%);
+$header-cta-color: #fff;
+$header-cta-hover-opacity: 0.9;
+
+.site-header {
+    position: relative;
+}
+
+// Thin dark purple accent strip
+.header-accent {
+    height: 4px;
+    background-color: $header-accent-bg;
+}
+
+// Announcement bar
+.header-announcement {
+    background-color: $header-announcement-bg;
+    padding: 0.5rem 0;
+}
+
+.header-announcement-text {
+    font-size: 0.875rem;
+    color: $header-announcement-text;
+}
+
+.header-announcement-link {
+    color: $header-announcement-link;
+    text-decoration: underline;
+    margin-left: 0.25rem;
+    transition: opacity 0.2s ease;
+    font-weight: 600;
+
+    &:hover {
+        color: $header-announcement-link;
+        opacity: 0.9;
+    }
+}
+
+// Main nav – transparent / subtle
+.header-nav {
+    background: $header-nav-bg;
+    border-bottom: 1px solid $header-nav-border;
+    backdrop-filter: blur(8px);
+    padding: 0;
+
+    .navbar-brand {
+        margin-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+
+        @media (min-width: 992px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .navbar-collapse {
+        flex-basis: 100%;
+        flex-grow: 1;
+
+        @media (min-width: 992px) {
+            flex-basis: auto;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .header-menu-inner {
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        border-top: 1px solid $header-nav-border;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        @media (min-width: 992px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-top: none;
+            gap: 0;
+        }
+    }
+
+    .header-links-spacer {
+        display: none;
+
+        @media (min-width: 992px) {
+            display: block;
+            flex: 0 0 3.75rem;
+            width: 3.75rem;
+        }
+    }
+
+    .header-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        @media (min-width: 992px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex: 1;
+        }
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+
+        @media (min-width: 992px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            flex: 0 0 auto;
+            min-width: 3.75rem;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.header-toggler {
+    border-color: $header-nav-border;
+    padding: 0.35rem 0.5rem;
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(42, 42, 42, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+.header-logo {
+    width: 3.75rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.header-links a {
+    color: $header-link-color;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-bottom: $header-link-underline solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, font-weight 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        color: $header-link-hover;
+        border-bottom-color: $header-link-hover;
+    }
+}
+
+.header-account-link {
+    color: $header-link-color;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: $header-link-underline solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, font-weight 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        color: $header-link-hover;
+        border-bottom-color: $header-link-hover;
+    }
+}
+
+.header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: $header-cta-color !important;
+    background: $header-cta-bg;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
+    &::after {
+        content: "\203A";
+        display: inline-flex;
+        justify-content: center;
+        width: 1.25em;
+        min-width: 1.25em;
+        font-size: 1.35em;
+        line-height: 1;
+        transition: transform 0.25s ease;
+        position: relative;
+        right: 0;
+        transform: translateY(-10%);
+    }
+
+    &:hover {
+        color: $header-cta-color !important;
+        background: $header-cta-bg-hover;
+
+        &::after {
+            content: "\2192";
+            transform: translateX(2px) translateY(-10%);
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .header-cta {
+        padding: 0.6rem 1rem;
+        font-size: 0.875rem;
+        text-align: center;
+        justify-content: center;
+    }
+}
