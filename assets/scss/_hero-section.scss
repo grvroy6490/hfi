@@ -75,7 +75,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.25rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.9375rem;
     font-weight: 400;
     text-decoration: none;
@@ -84,10 +84,16 @@
     transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
     &::after {
-        content: "\203A";
-        font-size: 1.5rem;
-        font-weight: 100;
-        transform: translateY(-2px);
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        min-width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10%);
         transition: transform 0.25s ease;
     }
 }
@@ -104,7 +110,8 @@
     }
 
     &:hover::after {
-        transform: translateX(4px) translateY(-2px);
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(10%);
     }
 }
 
@@ -113,6 +120,10 @@
     background: transparent;
     border: 1px solid #2a2a2a;
 
+    &::after {
+        filter: brightness(0);
+    }
+
     &:hover {
         border-color: v.$color-neutral-dark;
         background: v.$color-neutral-dark;
@@ -120,8 +131,9 @@
     }
 
     &:hover::after {
-        transform: translateX(4px) translateY(-2px);
-        color: #fff;
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(10%);
+        filter: none;
     }
 }
 

@@ -1,3 +1,5 @@
+@use "typography" as v;
+
 .about-section {
     background: #fff;
     padding: 5rem 0 4.5rem;
@@ -32,7 +34,10 @@
 .about-stat-value {
     display: block;
     font-weight: 900;
+    font-size: v.$text-3xl;
+    font-weight: 900;
     color: #0f0f0f;
+    font-family: v.$font-family-suisse;
     line-height: 1.2;
     margin-bottom: 0.35rem;
 }

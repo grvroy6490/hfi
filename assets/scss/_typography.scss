@@ -33,32 +33,12 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: "Suisse Intl";
-    src: url("../fonts/SuisseIntl-Light.otf") format("opentype");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Suisse Intl";
-    src: url("../fonts/SuisseIntl-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Suisse Intl";
-    src: url("../fonts/SuisseIntl-SemiBold.otf") format("opentype");
-    font-weight: 600;
-    font-style: normal;
-}
-
+// Suisse Intl replaced by Inter (Google Fonts – loaded via link in index.html)
 // ---------------------------------------------------------------------------
 // Type scale & line heights (ensure _variables is imported before this file for $color-*)
 // ---------------------------------------------------------------------------
 $font-family-mundial: "Mundial", sans-serif;
-$font-family-suisse: "Suisse Intl", sans-serif;
+$font-family-suisse: "Inter", sans-serif;
 $text-xs: 0.75rem; // 12px
 $text-sm: 0.875rem; // 14px
 $text-base: 1rem; // 16px
@@ -241,21 +221,21 @@ header {
 }
 
 .body-large {
-    font-family: $font-family-mundial;
+    font-family: $font-family-suisse;
     font-size: $text-lg;
     font-weight: 400;
     line-height: $leading-relaxed;
 }
 
 .body {
-    font-family: $font-family-mundial;
+    font-family: $font-family-suisse;
     font-size: $text-base;
     font-weight: 400;
     line-height: $leading-normal;
 }
 
 .body-small {
-    font-family: $font-family-mundial;
+    font-family: $font-family-suisse;
     font-size: $text-sm;
     font-weight: 400;
     line-height: $leading-normal;
@@ -269,7 +249,7 @@ header {
 }
 
 .label {
-    font-family: $font-family-mundial;
+    font-family: $font-family-suisse;
     font-size: $text-sm;
     font-weight: 600;
     line-height: $leading-normal;
