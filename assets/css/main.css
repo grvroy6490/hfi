@@ -488,6 +488,7 @@ header {
 .header-account-link {
   color: rgb(79, 79, 79);
   text-decoration: none;
+  font-size: 0.9375rem;
   font-weight: 500;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
