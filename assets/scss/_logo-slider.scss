@@ -1,0 +1,33 @@
+.logo-slider-section {
+    padding: 1rem 0;
+    overflow: hidden;
+    margin-top: 4rem;
+
+    .logo-slider-text{
+        font-weight: 400;
+    }
+}
+
+.logo-swiper {
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+    }
+
+    .logo-slider-img {
+        max-height: 2.5rem;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: filter 0.25s ease, opacity 0.25s ease;
+    }
+
+    .swiper-slide:hover .logo-slider-img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+}

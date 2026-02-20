@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HFI</title>
     <link rel="stylesheet" href="assets/vendor/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendor/swiper.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -14,7 +15,6 @@
         HEADER
     ------------------------------>
     <header class="site-header">
-        <div class="header-accent"></div>
         <div class="header-announcement">
             <div class="container">
                 <p class="header-announcement-text mb-0 text-center body-small">
@@ -28,7 +28,9 @@
                 <a href="#" class="header-logo navbar-brand">
                     <img src="assets/images/logo.svg" alt="HFI">
                 </a>
-                <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="headerMenu">
@@ -36,12 +38,14 @@
                         <div class="header-links-spacer" aria-hidden="true"></div>
                         <ul class="header-links list-unstyled mb-0">
                             <li>
-                                <button class="header-link-trigger" data-menu="certified" aria-expanded="false" aria-haspopup="true" aria-controls="content-certified">
+                                <button class="header-link-trigger" data-menu="certified" aria-expanded="false"
+                                    aria-haspopup="true" aria-controls="content-certified">
                                     Get Certified
                                 </button>
                             </li>
                             <li>
-                                <button class="header-link-trigger" data-menu="teams" aria-expanded="false" aria-haspopup="true" aria-controls="content-teams">
+                                <button class="header-link-trigger" data-menu="teams" aria-expanded="false"
+                                    aria-haspopup="true" aria-controls="content-teams">
                                     Transform Teams
                                 </button>
                             </li>
@@ -49,12 +53,13 @@
                         </ul>
                         <div class="header-right">
                             <a href="#" class="header-account-link body">My Account</a>
-                            <a href="#" class="header-cta primary-cta icon arrow-cta btn body">Start Over</a>
+                            <a href="#" class="header-cta btn body">Start Over</a>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
+
         <div id="shared-bg" role="region" aria-live="polite">
             <div class="container">
                 <div class="menu-content" id="content-certified" role="menu">
@@ -65,13 +70,13 @@
                                 Structured certification pathways that build usability mastery, ethical persuasion
                                 capability, and enterprise-scale experience leadership.
                             </p>
-                            <a href="#" class="explore-link">Explore Certifications <span class="arrow">></span></a>
+                            <a href="#" class="explore-link">Explore Certifications</a>
                         </div>
                         <div class="menu-col-certs">
                             <span class="col-label">Certifications</span>
                             <ul>
                                 <li class="cert-items">
-                                    <a href="#" class="cert-item">
+                                    <a href="#" class="cert-item menu-link">
                                         <h3>Certified Usability Architect (CUA)</h3>
                                         <p>
                                             Design scalable, human-centered systems grounded in cognitive science,
@@ -80,7 +85,7 @@
                                     </a>
                                 </li>
                                 <li class="cert-items">
-                                    <a href="#" class="cert-item">
+                                    <a href="#" class="cert-item menu-link">
                                         <h3>Certified Digital Persuasion Architect (CDPA)</h3>
                                         <p>
                                             Architect ethical persuasion systems that guide decisions, build trust, and
@@ -89,7 +94,7 @@
                                     </a>
                                 </li>
                                 <li class="cert-items">
-                                    <a href="#" class="cert-item">
+                                    <a href="#" class="cert-item menu-link">
                                         <h3>Certified Experience Architect (CXA)</h3>
                                         <p>
                                             Lead experience as an enterprise capability by aligning strategy,
@@ -98,7 +103,7 @@
                                     </a>
                                 </li>
                                 <li class="cert-items">
-                                    <a href="#" class="cert-item">
+                                    <a href="#" class="cert-item menu-link">
                                         <h3>Certification Exams</h3>
                                     </a>
                                 </li>
@@ -109,29 +114,31 @@
                             <div class="course-group">
                                 <span class="group-label">Foundations</span>
                                 <ul>
-                                    <li>Certified Usability Architect (CUA)</li>
-                                    <li>Principles of Experience Research and Strategy</li>
+                                    <li><a href="#" class="menu-link">Certified Usability Architect (CUA)</a></li>
+                                    <li><a href="#" class="menu-link">Principles of Experience Research and Strategy</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="course-group">
                                 <span class="group-label">Systems and Interfaces</span>
                                 <ul>
-                                    <li>Principles of Interface Design and Design Systems</li>
-                                    <li>Experience Performance Evaluation</li>
+                                    <li><a href="#" class="menu-link">Principles of Interface Design and Design
+                                            Systems</a></li>
+                                    <li><a href="#" class="menu-link">Experience Performance Evaluation</a></li>
                                 </ul>
                             </div>
                             <div class="course-group">
                                 <span class="group-label">Influence and Trust</span>
                                 <ul>
-                                    <li>Persuasion, Emotion and Trust in Design</li>
-                                    <li>Digital Persuasion Architecture</li>
+                                    <li><a href="#" class="menu-link">Persuasion, Emotion and Trust in Design</a></li>
+                                    <li><a href="#" class="menu-link">Digital Persuasion Architecture</a></li>
                                 </ul>
                             </div>
                             <div class="course-group">
                                 <span class="group-label">Strategy and Enterprise Leadership</span>
                                 <ul>
-                                    <li>CX and Strategy Architect</li>
-                                    <li>Experience Practice Architect</li>
+                                    <li><a href="#" class="menu-link">CX and Strategy Architect</a></li>
+                                    <li><a href="#" class="menu-link">Experience Practice Architect</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -146,13 +153,13 @@
                                 Structured programs that align teams, leaders, and organizations around usable,
                                 ethical, and high-performing digital experiences.
                             </p>
-                            <a href="#" class="explore-link">Explore Enterprise Programs <span class="arrow">></span></a>
+                            <a href="#" class="explore-link">Explore Enterprise Programs</a>
                         </div>
 
                         <div class="menu-col-certs">
                             <span class="col-label">Programs</span>
                             <div class="cert-items">
-                                <a href="#" class="cert-item">
+                                <a href="#" class="cert-item menu-link">
                                     <h3>Essentials of Experience Design</h3>
                                     <p>
                                         Create a shared human-centered language across cross-functional teams to improve
@@ -162,7 +169,7 @@
                             </div>
 
                             <div class="cert-items">
-                                <a href="#" class="cert-item">
+                                <a href="#" class="cert-item menu-link">
                                     <h3>AI-Powered Persuasion Strategist</h3>
                                     <p>
                                         Enable responsible influence in AI-driven ecosystems through PET-aligned
@@ -177,22 +184,45 @@
 
                             <div class="course-group">
                                 <ul>
-                                    <li>Case Studies</li>
-                                    <li>Industry Focus</li>
-                                    <li>Request a Proposal</li>
-                                    <li>Download Corporate Brochure</li>
-                                    <li>Speak to an Enterprise Advisor</li>
+                                    <li><a href="#" class="menu-link">Case Studies</a></li>
+                                    <li><a href="#" class="menu-link">Industry Focus</a></li>
+                                    <li><a href="#" class="menu-link">Request a Proposal</a></li>
+                                    <li><a href="#" class="menu-link">Download Corporate Brochure</a></li>
+                                    <li><a href="#" class="menu-link">Speak to an Enterprise Advisor</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="marquee-section" aria-hidden="true">
-                    <div class="marquee-wrapper">
-                        <div class="marquee-content">
-                            <span>MOMENTUM</span><span>ARTICLE</span><span>SUNDAYS</span><span>MOE'S</span>
-                            <span>MOMENTUM</span><span>ARTICLE</span><span>SUNDAYS</span><span>MOE'S</span>
+                <div class="logo-slider-section">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <p class="body text-center logo-slider-text">Empowering experience teams at the world's most
+                                respected organizations</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="swiper logo-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/images/Amazon.svg.svg" alt="Amazon"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/american_express.svg"
+                                    alt="American Express" class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/GSK.svg.svg" alt="GSK"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/jp_morgan.svg" alt="JP Morgan"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/Microsoft.svg.svg" alt="Microsoft"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/P_G.svg.svg" alt="P&amp;G"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/stellan.svg" alt="Stellan"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/Unilever.svg.svg" alt="Unilever"
+                                    class="logo-slider-img"></div>
+                            <div class="swiper-slide"><img src="assets/images/walmart.svg" alt="Walmart"
+                                    class="logo-slider-img"></div>
                         </div>
                     </div>
                 </div>
@@ -200,13 +230,84 @@
         </div>
     </header>
 
-     <!--------------------------- 
+    <!--------------------------- 
         HERO SECTION
     ------------------------------>
     <section class="hero-section">
+        <img src="assets/images/home_banner_bg.webp" alt="Hero Section Background" class="hero-section-bg img-fluid">
+
+        <div class="container hero-container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-10 text-center">
+                    <p class="hero-subheading body-small">Architecting the Future of Experiences</p>
+                    <h1 class="hero-headline">Become an<br>Experience Architect</h1>
+                    <p class="hero-lead body">Design and lead human-centered, ethical, and scalable experience systems
+                        across products, platforms, and organizations.</p>
+                    <p class="hero-tagline body">From capability to leadership in the Experience Economy.</p>
+                    <div class="hero-ctas">
+                        <a href="#" class="hero-btn hero-btn-primary body-large">Explore Certification Pathway</a>
+                        <a href="#" class="hero-btn hero-btn-secondary body-large">Transform Your Team</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-logos">
+                <p class="hero-logos-text body">Empowering experience teams at the world's most respected organizations
+                </p>
+                <div class="swiper hero-logo-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/walmart.svg" alt="Walmart"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/P_G.svg.svg" alt="P&amp;G"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/american_express.svg" alt="American Express"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/Unilever.svg.svg" alt="Unilever"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/Amazon.svg.svg" alt="Amazon"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/Microsoft.svg.svg" alt="Microsoft"
+                                class="hero-logo-img"></div>
+                        <div class="swiper-slide"><img src="assets/images/stellan.svg" alt="Stellan"
+                                class="hero-logo-img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--------------------------- 
+        ABOUT SECTION
+    ------------------------------>
+    <section class="about-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-8 text-center">
+                    <h2 class="about-heading heading-5">Architecting the future of experience.</h2>
+                    <p class="about-lead body">HFI Institute, rooted in the legacy of Human Factors International, builds the world's experience talent capital. We develop Experience Architects through globally recognized certifications, structured mentorship, and leadership development, while partnering with organizations to scale human-centered capability. We architect leaders for the Experience Economy.</p>
+                    <div class="about-stats row g-4 justify-content-center">
+                        <div class="col-6 col-md-3 about-stat">
+                            <span class="about-stat-value heading-4">150,000+</span>
+                            <span class="about-stat-label body-small">Professionals Empowered</span>
+                        </div>
+                        <div class="col-6 col-md-3 about-stat">
+                            <span class="about-stat-value heading-4">50+</span>
+                            <span class="about-stat-label body-small">Markets Worldwide</span>
+                        </div>
+                        <div class="col-6 col-md-3 about-stat">
+                            <span class="about-stat-value heading-4">12,000+</span>
+                            <span class="about-stat-label body-small">Certified Experience Architects</span>
+                        </div>
+                        <div class="col-6 col-md-3 about-stat">
+                            <span class="about-stat-value heading-4">25 Years</span>
+                            <span class="about-stat-label body-small">Human-Centered Excellence</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -308,6 +409,7 @@
 </body>
 <script src="assets/vendor/jquery.js"></script>
 <script src="assets/vendor/bootstrap.js"></script>
+<script src="assets/vendor/swiper.js"></script>
 <script src="assets/js/main.js"></script>
 
 </html>

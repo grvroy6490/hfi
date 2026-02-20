@@ -150,3 +150,39 @@
   desktopQuery.addEventListener("change", closeMenu);
   sharedBg.style.height = "0px";
 })();
+
+// Logo slider (Swiper)
+(function () {
+  "use strict";
+  if (typeof Swiper === "undefined") return;
+  const logoSlider = document.querySelector(".logo-swiper");
+  if (logoSlider) {
+    new Swiper(".logo-swiper", {
+      spaceBetween: 40,
+      loop: true,
+      speed: 600,
+      autoplay: { delay: 2000, disableOnInteraction: false },
+      breakpoints: {
+        320: { slidesPerView: 2, spaceBetween: 24 },
+        576: { slidesPerView: 3, spaceBetween: 32 },
+        768: { slidesPerView: 4, spaceBetween: 40 },
+        992: { slidesPerView: 5, spaceBetween: 48 },
+      },
+    });
+  }
+  const heroLogoSlider = document.querySelector(".hero-logo-swiper");
+  if (heroLogoSlider) {
+    new Swiper(".hero-logo-swiper", {
+      spaceBetween: 40,
+      loop: true,
+      speed: 600,
+      autoplay: { delay: 2000, disableOnInteraction: false },
+      breakpoints: {
+        320: { slidesPerView: 2, spaceBetween: 24 },
+        576: { slidesPerView: 3, spaceBetween: 32 },
+        768: { slidesPerView: 4, spaceBetween: 40 },
+        992: { slidesPerView: 5, spaceBetween: 48 },
+      },
+    });
+  }
+})();
