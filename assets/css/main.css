@@ -601,7 +601,7 @@ header {
   left: 0;
   width: 100%;
   background: #fff;
-  border-bottom: 0.063rem solid #eee;
+  border-bottom: 1.5px solid rgb(201, 151, 26);
   z-index: 999;
   opacity: 0;
   transform: translateY(-0.625rem);
@@ -675,16 +675,18 @@ header {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(-4px, -55%);
-  font-size: 1.5rem;
+  transform: translateY(-55%);
+  font-size: 1.2rem;
   font-weight: 100;
   line-height: 1;
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: transform 0.25s ease;
+}
+.menu-content .menu-col-intro .explore-link:hover {
+  text-decoration: underline;
 }
 .menu-content .menu-col-intro .explore-link:hover::after {
-  opacity: 1;
-  transform: translate(0, -55%);
+  content: "→";
+  transform: translate(2px, -55%);
 }
 .menu-content .menu-col-certs ul {
   margin: 0;
@@ -837,13 +839,37 @@ header {
   font-weight: 400;
 }
 
-.logo-swiper .swiper-slide {
+.logo-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: -moz-max-content;
+  width: max-content;
+  animation: logoMarquee 50s linear infinite;
+}
+
+.logo-marquee-item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 3rem;
+  padding: 0 1.5rem;
 }
-.logo-swiper .logo-slider-img {
+
+@keyframes logoMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.logo-slider-section .logo-slider-img {
   max-height: 2.5rem;
   width: auto;
   max-width: 120px;
@@ -853,7 +879,8 @@ header {
   opacity: 0.7;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
-.logo-swiper .swiper-slide:hover .logo-slider-img {
+
+.logo-slider-section .logo-marquee-item:hover .logo-slider-img {
   filter: grayscale(0%);
   opacity: 1;
 }
@@ -1003,6 +1030,7 @@ header {
   z-index: 1;
   display: flex;
   align-items: center;
+  flex-direction: column;
   padding: 4rem 0 3rem;
   padding-top: 130px;
 }
@@ -1012,6 +1040,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1091,6 +1120,7 @@ header {
 }
 .hero-btn-primary:hover {
   opacity: 0.95;
+  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
 }
 .hero-btn-primary:hover::after {
   transform: translateX(4px) translateY(-2px);
@@ -1098,20 +1128,30 @@ header {
 
 .hero-btn-secondary {
   color: #0f0f0f;
-  background: #fff;
+  background: transparent;
   border: 1px solid #2a2a2a;
 }
 .hero-btn-secondary:hover {
-  border-color: #0f0f0f;
-  color: #0f0f0f;
+  border-color: rgb(64, 64, 64);
+  background: rgb(64, 64, 64);
+  color: #fff;
 }
 .hero-btn-secondary:hover::after {
   transform: translateX(4px) translateY(-2px);
+  color: #fff;
 }
 
 .hero-logos {
-  padding-top: 1rem;
+  width: 100%;
+  padding: 1.5rem 0 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 
 .hero-logos-text {
@@ -1119,16 +1159,15 @@ header {
   color: #404040;
   text-align: center;
   margin-bottom: 1.25rem;
+  padding: 0 1rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-logo-swiper {
-  overflow: hidden;
-}
-.hero-logo-swiper .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-logo-marquee .logo-marquee-item {
   height: 2.75rem;
+  padding: 0 1.25rem;
 }
 
 .hero-logo-img {
@@ -1142,7 +1181,7 @@ header {
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
-.hero-logo-swiper .swiper-slide:hover .hero-logo-img {
+.hero-logo-marquee .logo-marquee-item:hover .hero-logo-img {
   filter: grayscale(0%);
   opacity: 1;
 }

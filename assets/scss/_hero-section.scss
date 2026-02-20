@@ -9,6 +9,7 @@
     z-index: 1;
     display: flex;
     align-items: center;
+    flex-direction: column;
     padding: 4rem 0 3rem;
     padding-top: 130px;
 
@@ -18,6 +19,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: -1;
         object-fit: cover;
     }
 }
@@ -98,6 +100,7 @@
 
     &:hover {
         opacity: 0.95;
+        background: linear-gradient(270deg, v.$color-gold-dark 0%, v.$color-gold-dark 50%, v.$color-gold-dark 100%);
     }
 
     &:hover::after {
@@ -107,22 +110,42 @@
 
 .hero-btn-secondary {
     color: #0f0f0f;
-    background: #fff;
+    background: transparent;
     border: 1px solid #2a2a2a;
 
     &:hover {
-        border-color: #0f0f0f;
-        color: #0f0f0f;
+        border-color: v.$color-neutral-dark;
+        background: v.$color-neutral-dark;
+        color: #fff;
     }
 
     &:hover::after {
         transform: translateX(4px) translateY(-2px);
+        color: #fff;
     }
 }
 
 .hero-logos {
-    padding-top: 1rem;
+    width: 100%;
+    padding: 1.5rem 0 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
 }
 
 .hero-logos-text {
@@ -130,17 +153,15 @@
     color: #404040;
     text-align: center;
     margin-bottom: 1.25rem;
+    padding: 0 1rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero-logo-swiper {
-    overflow: hidden;
-
-    .swiper-slide {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.75rem;
-    }
+.hero-logo-marquee .logo-marquee-item {
+    height: 2.75rem;
+    padding: 0 1.25rem;
 }
 
 .hero-logo-img {
@@ -153,7 +174,7 @@
     transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
-.hero-logo-swiper .swiper-slide:hover .hero-logo-img {
+.hero-logo-marquee .logo-marquee-item:hover .hero-logo-img {
     filter: grayscale(0%);
     opacity: 1;
 }
