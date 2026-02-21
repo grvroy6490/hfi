@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 // Header theme
 $header-accent-bg: rgba(64, 64, 64, 1);
 $header-announcement-bg: #4a4a4a;
@@ -28,12 +30,9 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
     left: 0;
     width: 100%;
     z-index: 999999;
-
 }
 
 // Thin dark purple accent strip
-
-
 // Announcement bar
 .header-announcement {
     background-color: $header-announcement-bg;
@@ -137,7 +136,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 3rem;
+            gap: 2.5rem;
             flex: 1;
         }
     }
@@ -178,10 +177,10 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-logo {
-    width: 3.75rem;
+    width: 10.5rem;
 
     img {
-        width: 100%;
+        width: 3.75rem;
         height: 100%;
         object-fit: contain;
     }
@@ -226,20 +225,40 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-account-link {
+    display: inline-block;
+    position: relative;
+    padding-right: 1em;
     color: $header-link-color;
     text-decoration: none;
     font-size: 0.9375rem;
     font-weight: 500;
-    border-bottom: $header-link-underline solid transparent;
-    padding-bottom: 2px;
-    transition:
-        color 0.2s ease,
-        font-weight 0.2s ease,
-        border-color 0.2s ease;
+    transition: color 0.2s ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-4px, -50%);
+        opacity: 0;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        display: inline-block;
+        width: 0.375rem;
+        height: 0.6875rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(0);
+    }
 
     &:hover {
         color: $header-link-hover;
-        border-bottom-color: $header-link-hover;
+
+        &::after {
+            opacity: 1;
+            transform: translate(0, -50%);
+        }
     }
 }
 
@@ -408,40 +427,45 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .explore-link {
-            display: inline-block;
-            position: relative;
-            padding-right: 1.25em;
-            font-weight: 600;
-            color: #0f0f0f;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9375rem;
+            font-weight: 400;
             text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.25s ease;
+            border-radius: 9999px;
+            white-space: nowrap;
+            transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            color: #0f0f0f;
+            background: transparent;
+            border: 1px solid #2a2a2a;
 
             &::after {
                 content: "";
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-30%);
-                transition: transform 0.25s ease;
                 display: inline-block;
-                width: 0.375rem;
-                height: 0.6875rem;
+                width: 0.8125rem;
+                min-width: 0.8125rem;
+                height: 0.75rem;
                 background-image: url("../images/chevron.svg");
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
+                transform: translateY(10%);
+                transition: transform 0.25s ease;
                 filter: brightness(0);
             }
 
             &:hover {
-                text-decoration: underline;
+                border-color: v.$color-neutral-dark;
+                background: v.$color-neutral-dark;
+                color: #fff;
             }
-
+        
             &:hover::after {
                 background-image: url("../images/arrow.svg");
-                width: 0.8125rem;
-                transform: translate(2px, -33%);
+                transform: translateX(4px) translateY(10%);
+                filter: none;
             }
         }
     }
