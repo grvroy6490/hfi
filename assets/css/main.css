@@ -752,7 +752,7 @@ header {
 }
 .menu-content .menu-col-certs .cert-item:hover h3::after {
   opacity: 1;
-  transform: translate(0, -30%);
+  transform: translate(0, -50%);
 }
 .menu-content .menu-col-certs .cert-item:hover h3 {
   color: #0f0f0f;
@@ -808,7 +808,7 @@ header {
 }
 .menu-content .menu-col-courses .menu-link:hover::after {
   opacity: 1;
-  transform: translate(0, -30%);
+  transform: translate(0, -50%);
 }
 
 .marquee-section {
@@ -854,6 +854,366 @@ header {
   }
   .menu-content .menu-col-intro {
     grid-column: 1/-1;
+  }
+}
+.mobile-mega-content {
+  display: none;
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 991.98px) {
+  .site-header.mobile-menu-open .header-nav {
+    background: #fff;
+    backdrop-filter: none;
+  }
+  .site-header.mobile-menu-open .header-nav .container {
+    background: #fff;
+  }
+  .header-nav .container {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+  .header-nav .navbar-collapse {
+    position: fixed;
+    top: var(--mobile-menu-top, 6.5rem);
+    left: 0;
+    right: 0;
+    z-index: 1000000;
+    background: #ededed;
+    transform-origin: top center;
+  }
+  .header-nav .navbar-collapse:not(.show) {
+    display: none !important;
+  }
+  .header-nav .navbar-collapse.collapsing {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    transition: none !important;
+  }
+  .header-nav .header-menu-inner {
+    border-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 0.75rem;
+    min-height: calc(100dvh - var(--mobile-menu-top, 6.5rem) - 0.75rem);
+    max-height: calc(100dvh - var(--mobile-menu-top, 6.5rem) - 0.75rem);
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    background: #ededed;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+  .header-nav .header-links {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    background: #dcdcdc;
+    border-radius: 999px;
+    padding: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 0.625rem;
+  }
+  .header-nav .header-links::-webkit-scrollbar {
+    display: none;
+  }
+  .header-nav .header-links li {
+    flex: 1 0 auto;
+  }
+  .header-nav .header-links a,
+  .header-nav .header-links .header-link-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 2.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border-bottom: 0;
+    white-space: nowrap;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    color: #2f2f2f;
+  }
+  .header-nav .header-links a:hover {
+    border-bottom-color: transparent;
+    color: #111;
+  }
+  .header-nav .header-links .header-link-trigger:hover,
+  .header-nav .header-links .header-link-trigger[aria-expanded=true],
+  .header-nav .header-links .header-link-trigger.is-active {
+    background: #f8f8f8;
+    border-bottom-color: transparent;
+    color: #111;
+  }
+  .header-nav .header-right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0;
+    padding: 1.5rem 0.75rem;
+    border-top: 1px solid #dfdfdf;
+    background: #ededed;
+  }
+  .site-header.mobile-menu-open .header-nav .header-menu-inner {
+    animation: mobileMenuPanelLift 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .site-header.mobile-menu-open .header-nav .header-links {
+    animation: mobileMenuItemReveal 0.28s ease-out both;
+    animation-delay: 0.04s;
+  }
+  .site-header.mobile-menu-open .header-nav .header-right {
+    animation: mobileMenuItemReveal 0.34s ease-out both;
+    animation-delay: 0.12s;
+  }
+  .site-header.mobile-menu-open .mobile-mega-content {
+    animation: mobileMenuItemReveal 0.32s ease-out both;
+    animation-delay: 0.08s;
+  }
+  .header-logo img {
+    width: 3.25rem;
+  }
+  .header-toggler {
+    border: 0;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-toggler:focus {
+    box-shadow: none;
+  }
+  .header-toggler .navbar-toggler-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath stroke='rgba(20,20,20,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 6h18M3 12h18M3 18h18'/%3e%3c/svg%3e");
+  }
+  .header-toggler[aria-expanded=true] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath stroke='rgba(20,20,20,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 6l12 12M18 6l-12 12'/%3e%3c/svg%3e");
+  }
+  .mobile-mega-content {
+    display: block;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0 0.75rem;
+  }
+  .mobile-mega-content .mobile-menu-panel {
+    display: none;
+    opacity: 1;
+    height: 100%;
+    animation: none;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  .mobile-mega-content .mobile-menu-panel.visible {
+    display: block;
+    animation: mobilePanelFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .mobile-mega-content .mobile-menu-panel .mega-menu-container {
+    display: block;
+    margin: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #bcbcbc transparent;
+  }
+  .mobile-mega-content .mobile-menu-panel .mega-menu-container::-webkit-scrollbar {
+    width: 0.375rem;
+  }
+  .mobile-mega-content .mobile-menu-panel .mega-menu-container::-webkit-scrollbar-thumb {
+    background: #bcbcbc;
+    border-radius: 999px;
+  }
+  .mobile-mega-content .menu-content.visible {
+    animation: none !important;
+  }
+  .mobile-mega-content .menu-col-certs .cert-items {
+    margin-bottom: 1rem;
+  }
+  .mobile-mega-content .menu-col-certs .cert-item h3 {
+    padding-right: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #111;
+  }
+  .mobile-mega-content .menu-col-certs .cert-item h3::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  .mobile-mega-content .menu-col-certs .cert-item p {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    color: #6d6d6d;
+    max-width: 100%;
+  }
+  .mobile-mega-content .menu-col-courses > .col-label {
+    margin-bottom: 0.625rem;
+    color: #4a4a4a;
+    font-size: 1rem;
+  }
+  .mobile-mega-content .menu-col-courses .course-group {
+    margin-bottom: 0.875rem;
+  }
+  .mobile-mega-content .menu-col-courses .group-label {
+    margin-bottom: 0.3125rem;
+    color: #7b7b7b;
+    font-size: 0.875rem;
+  }
+  .mobile-mega-content .menu-col-courses .menu-link {
+    padding-right: 1rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #111;
+  }
+  .mobile-mega-content .menu-col-courses .menu-link::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  .header-account-link {
+    padding-right: 0;
+    border-bottom: 0;
+  }
+  .header-account-link::after {
+    display: none;
+  }
+  .header-cta {
+    min-width: 9.5rem;
+    padding: 0.625rem 1rem;
+    margin-left: auto;
+  }
+  @keyframes mobileMenuPanelLift {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.992);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes mobileMenuItemReveal {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes mobilePanelFadeIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 6px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .header-nav .navbar-collapse {
+    background: #fff;
+  }
+  .header-nav .navbar-collapse .header-menu-inner {
+    margin-top: 0.625rem;
+    background: inherit;
+  }
+  .header-nav .navbar-collapse .header-menu-inner .header-links a,
+  .header-nav .navbar-collapse .header-menu-inner .header-links .header-link-trigger {
+    font-size: 0.75rem;
+  }
+  .header-nav .navbar-collapse .header-menu-inner .header-links a.is-active,
+  .header-nav .navbar-collapse .header-menu-inner .header-links .header-link-trigger.is-active {
+    background: #fff;
+  }
+  .header-nav .header-links {
+    padding: 0.125rem;
+  }
+  .menu-content .menu-col-intro {
+    margin-bottom: 1.5rem;
+  }
+  .menu-content .menu-col-intro h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: #404040;
+  }
+  .menu-content .menu-col-intro p {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-content .menu-col-intro .explore-link {
+    border: none;
+    background: none;
+    padding: 0;
+    font-weight: 600;
+  }
+  .menu-content .menu-col-intro .explore-link:hover {
+    background-color: unset;
+    background: unset;
+    color: unset;
+  }
+  .menu-content .menu-col-intro .explore-link:hover::after {
+    filter: invert(1);
+  }
+  .menu-content .menu-col-certs {
+    margin-bottom: 1.5rem;
+  }
+  .menu-content .menu-col-certs .col-label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-content .menu-col-certs .cert-items {
+    margin-bottom: 0.75rem;
+  }
+  .menu-content .menu-col-certs .cert-items:last-child {
+    margin-bottom: 0;
+  }
+  .menu-content .menu-col-certs .cert-items h3 {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  .menu-content .menu-col-certs .cert-items p {
+    font-size: 0.75rem;
+  }
+  .menu-content .menu-col-courses {
+    margin-bottom: 1.5rem;
+  }
+  .menu-content .menu-col-courses .col-label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-content .menu-col-courses .course-group {
+    margin-bottom: 0.75rem;
+  }
+  .menu-content .menu-col-courses .course-group:last-child {
+    margin-bottom: 0;
+  }
+  .menu-content .menu-col-courses .course-group .group-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-content .menu-col-courses .course-group .menu-link {
+    font-size: 0.875rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header.mobile-menu-open .header-nav .header-menu-inner,
+  .site-header.mobile-menu-open .header-nav .header-links,
+  .site-header.mobile-menu-open .mobile-mega-content,
+  .site-header.mobile-menu-open .header-nav .header-right,
+  .mobile-mega-content .mobile-menu-panel.visible {
+    animation: none !important;
   }
 }
 .logo-slider-section {
