@@ -293,3 +293,47 @@
 })();
 
 // Logo sliders now use CSS marquee (constant linear motion) – no Swiper init needed
+
+// Certifications slider
+(function () {
+    "use strict";
+
+    const sliderEl = document.querySelector(".certifications-swiper");
+    if (!sliderEl || typeof Swiper === "undefined") {
+        return;
+    }
+
+    new Swiper(sliderEl, {
+        slidesPerView: 1.08,
+        spaceBetween: 16,
+        speed: 650,
+        grabCursor: true,
+        watchOverflow: true,
+        pagination: {
+            el: ".certifications-pagination",
+            type: "progressbar"
+        },
+        navigation: {
+            nextEl: ".certifications-next",
+            prevEl: ".certifications-prev"
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 1.2,
+                spaceBetween: 18
+            },
+            768: {
+                slidesPerView: 1.6,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 2.2,
+                spaceBetween: 20
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        }
+    });
+})();

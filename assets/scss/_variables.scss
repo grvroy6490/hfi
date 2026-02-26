@@ -1,8 +1,13 @@
 // Theme colors
-$color-neutral-dark: rgba(64, 64, 64, 1);
-$color-gold-dark: rgba(143, 106, 15, 1);
-$color-gold: rgba(184, 137, 18, 1);
-$color-gold-light: rgba(201, 151, 26, 1);
+$color-neutral-dark: #404040;
+$color-gold-dark: #8f6a0f;
+$color-gold: #b88912;
+$color-gold-light: #c9971a;
+$color-black: #0D0D0D;
+$color-off-black: #2B2B2B;
+$color-primary-grey: #404040;
+$color-primary-black: #0F0F0F;
+$color-primary-white: #ffffff;
 
 // Optional semantic aliases
 $color-text-primary: $color-neutral-dark;
