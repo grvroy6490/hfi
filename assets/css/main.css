@@ -1892,6 +1892,12 @@ body.mobile-menu-open {
   position: relative;
   overflow: hidden;
 }
+.stay-connected-card .dotted-arrow-img {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  height: 100%;
+}
 .stay-connected-card::before {
   content: "";
   position: absolute;
