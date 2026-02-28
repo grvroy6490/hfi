@@ -46,8 +46,8 @@
   height: 100%;
   border-radius: 1.25rem;
   background: #f8f8f8;
-  border: 0.0625rem solid #dddddd;
-  box-shadow: 0rem 0.25rem 1.5rem 0rem #00000014;
+  // border: 0.0625rem solid #dddddd;
+  box-shadow: 0rem 0.25rem 1.5rem 0rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@
 
 .cert-card-pathway {
   background: #fff3d6;
-  border-color: #fff3d6;
+  // border-color: #fff3d6;
 }
 
 .cert-card-top {
@@ -210,7 +210,7 @@
 }
 
 .certifications-controls {
-  margin-top: 1.6rem;
+  margin-top: 2.25rem;
   display: flex;
   align-items: center;
   gap: 1rem;

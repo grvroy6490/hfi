@@ -1681,8 +1681,7 @@ body.mobile-menu-open {
   height: 100%;
   border-radius: 1.25rem;
   background: #f8f8f8;
-  border: 0.0625rem solid #dddddd;
-  box-shadow: 0rem 0.25rem 1.5rem 0rem rgba(0, 0, 0, 0.0784313725);
+  box-shadow: 0rem 0.25rem 1.5rem 0rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1690,7 +1689,6 @@ body.mobile-menu-open {
 
 .cert-card-pathway {
   background: #fff3d6;
-  border-color: #fff3d6;
 }
 
 .cert-card-top {
@@ -1838,7 +1836,7 @@ body.mobile-menu-open {
 }
 
 .certifications-controls {
-  margin-top: 1.6rem;
+  margin-top: 2.25rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -2111,7 +2109,7 @@ body.mobile-menu-open {
 }
 
 .capability-courses-controls {
-  margin-top: 1.6rem;
+  margin-top: 2.125rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -2362,6 +2360,209 @@ body.mobile-menu-open {
   }
 }
 
+.experience-practice-section {
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.experience-practice-header {
+  margin-bottom: 4rem;
+}
+
+.experience-practice-kicker {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #b88912;
+}
+
+.experience-practice-title {
+  margin-bottom: 0;
+  font-family: "Mundial", sans-serif;
+  font-size: 2.625rem;
+  line-height: 1.05;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.experience-practice-swiper {
+  overflow: visible;
+  padding: 7.5rem 0.5rem 3rem;
+  margin: -2.5rem -0.5rem -1rem;
+}
+
+.experience-practice-swiper .swiper-slide {
+  height: auto;
+  padding: 0.0625rem;
+}
+
+.experience-practice-card {
+  position: relative;
+  height: 100%;
+  min-height: 13.75rem;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0.75rem 0.75rem 1.5rem 0rem rgba(0, 0, 0, 0.0784313725);
+  padding: 5.5rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.experience-practice-avatar {
+  position: absolute;
+  top: -19%;
+  width: 6.875rem;
+  height: 6.875rem;
+  border-radius: 50%;
+  border: 0.5rem solid #e6e6e6;
+  background: linear-gradient(180deg, #dadada 0%, #b9b9b9 100%);
+  color: #404040;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+}
+.experience-practice-avatar img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.experience-practice-quote {
+  max-width: 18rem;
+  margin: 0 0 4.5rem;
+  color: #0F0F0F;
+  line-height: 1.45;
+  position: relative;
+}
+.experience-practice-quote .end_quote {
+  transform: translate(0rem, 0.625rem);
+}
+.experience-practice-quote .start_quote {
+  transform: translate(0rem, -1.125rem) rotate(180deg);
+}
+
+.experience-practice-author {
+  margin: auto 0 0;
+  color: #0F0F0F;
+  font-weight: 600;
+}
+
+.experience-practice-controls {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.experience-practice-progress {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-practice-pagination {
+  position: static !important;
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.experience-practice-pagination .swiper-pagination-bullet {
+  flex: 1 1 0;
+  min-width: 1.75rem;
+  height: 0.125rem;
+  margin: 0 !important;
+  border-radius: 999px;
+  background: #cccccc;
+  opacity: 1;
+  transition: flex-grow 0.3s ease, background-color 0.25s ease;
+}
+
+.experience-practice-pagination .swiper-pagination-bullet-active {
+  flex-grow: 3;
+  background: #b88912;
+}
+
+.experience-practice-pagination.swiper-pagination-lock {
+  display: none !important;
+}
+
+.experience-practice-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.experience-practice-nav-btn {
+  width: 2.625rem;
+  height: 2.625rem;
+  border: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.experience-practice-nav-btn svg {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  flex-shrink: 0;
+}
+.experience-practice-nav-btn.swiper-button-disabled {
+  background: #d6d6d6;
+  color: #8c8c8c;
+  cursor: default;
+}
+
+.experience-practice-prev svg {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 992px) {
+  .experience-practice-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+}
+@media (max-width: 991.98px) {
+  .experience-practice-section {
+    padding: 3.5rem 0 3rem;
+  }
+  .experience-practice-title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
+@media (max-width: 575.98px) {
+  .experience-practice-section .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .experience-practice-title {
+    font-size: 1.65rem;
+  }
+  .experience-practice-card {
+    padding: 5.8rem 1.2rem 1.4rem;
+  }
+  .experience-practice-controls {
+    margin-top: 1.2rem;
+  }
+  .experience-practice-nav-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
 .explore-insights-section {
   background: #fff;
   width: 100%;

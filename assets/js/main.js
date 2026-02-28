@@ -383,3 +383,47 @@
         }
     });
 })();
+
+// Experience in practice slider
+(function () {
+    "use strict";
+
+    const sliderEl = document.querySelector(".experience-practice-swiper");
+    if (!sliderEl || typeof Swiper === "undefined") {
+        return;
+    }
+
+    new Swiper(sliderEl, {
+        slidesPerView: 1.08,
+        spaceBetween: 16,
+        speed: 650,
+        watchOverflow: true,
+        pagination: {
+            el: ".experience-practice-pagination",
+            type: "bullets",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".experience-practice-next",
+            prevEl: ".experience-practice-prev"
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 1.2,
+                spaceBetween: 18
+            },
+            768: {
+                slidesPerView: 1.6,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 2.2,
+                spaceBetween: 20
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        }
+    });
+})();
