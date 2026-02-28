@@ -2055,10 +2055,11 @@ body.mobile-menu-open {
   display: flex;
   flex-direction: column;
   line-height: 1.25;
+  min-height: 5.563rem;
 }
 
 .capability-course-card-meta {
-  margin: auto 0 1rem;
+  margin-bottom: auto;
   color: #2B2B2B;
   font-weight: 600;
   line-height: 1.25;
@@ -2375,7 +2376,7 @@ body.mobile-menu-open {
   margin-bottom: 1.5rem;
 }
 .explore-insights-section .explore-insights-content .explore-insights-lead {
-  color: rgb(184, 137, 18);
+  color: #b88912;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2430,7 +2431,7 @@ body.mobile-menu-open {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(184, 137, 18);
+  color: #b88912;
   margin-bottom: 0.3rem;
 }
 
@@ -2509,7 +2510,7 @@ body.mobile-menu-open {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(184, 137, 18);
+  color: #b88912;
   margin-bottom: 0.3rem;
 }
 
@@ -2569,7 +2570,7 @@ body.mobile-menu-open {
 }
 .stay-connected-input:focus {
   outline: none;
-  border-color: rgb(184, 137, 18);
+  border-color: #b88912;
 }
 
 .stay-connected-btn {
@@ -2644,6 +2645,6 @@ body.mobile-menu-open {
   margin-top: 0.25rem;
   width: 1rem;
   height: 1rem;
-  accent-color: rgb(184, 137, 18);
+  accent-color: #b88912;
   flex-shrink: 0;
 }/*# sourceMappingURL=main.css.map */

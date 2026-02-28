@@ -95,10 +95,12 @@
   display: flex;
   flex-direction: column;
   line-height: 1.25;
+  min-height: 5.563rem;
 }
 
 .capability-course-card-meta {
-  margin: auto 0 1rem;
+  // margin: auto 0 1rem;
+  margin-bottom: auto;
   color: v.$color-off-black;
   font-weight: 600;
   line-height: 1.25;
