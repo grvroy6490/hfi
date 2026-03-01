@@ -459,7 +459,7 @@ header {
 .header-links a {
   color: rgb(79, 79, 79);
   text-decoration: none;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 500;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
@@ -473,7 +473,7 @@ header {
 .header-link-trigger {
   color: rgb(79, 79, 79);
   text-decoration: none;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 500;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
@@ -491,7 +491,6 @@ header {
   padding-right: 1em;
   color: rgb(79, 79, 79);
   text-decoration: none;
-  font-size: 0.9375rem;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -526,7 +525,7 @@ header {
   justify-content: center;
   gap: 0.4rem;
   padding: 0.5rem 1.25rem;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #fff !important;
   background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(184, 137, 18) 50%, rgb(201, 151, 26) 100%);
@@ -1448,7 +1447,7 @@ body.mobile-menu-open {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #0f0f0f;
+  color: #b88912;
   margin-bottom: 0.15rem;
 }
 
