@@ -318,15 +318,15 @@
         },
         breakpoints: {
             576: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 18
             },
             768: {
-                slidesPerView: 1.6,
+                slidesPerView: 2,
                 spaceBetween: 20
             },
             992: {
-                slidesPerView: 2.2,
+                slidesPerView: 2,
                 spaceBetween: 20
             },
             1200: {
@@ -365,15 +365,15 @@
         },
         breakpoints: {
             576: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 18
             },
             768: {
-                slidesPerView: 1.6,
+                slidesPerView: 2,
                 spaceBetween: 20
             },
             992: {
-                slidesPerView: 2.2,
+                slidesPerView: 2,
                 spaceBetween: 20
             },
             1200: {
@@ -409,15 +409,15 @@
         },
         breakpoints: {
             576: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 18
             },
             768: {
-                slidesPerView: 1.6,
+                slidesPerView: 2,
                 spaceBetween: 20
             },
             992: {
-                slidesPerView: 2.2,
+                slidesPerView: 2,
                 spaceBetween: 20
             },
             1200: {
@@ -426,4 +426,27 @@
             }
         }
     });
+})();
+
+// Experience pathway: country code flag (country-flag-icons via jsDelivr CDN)
+(function () {
+    "use strict";
+
+    const FLAG_CDN = "https://cdn.jsdelivr.net/npm/country-flag-icons/3x2";
+    const select = document.getElementById("pathway-country-code");
+    if (!select) return;
+
+    const wrap = select.closest(".experience-pathway-country-code-wrap");
+    const flagImg = wrap ? wrap.querySelector(".experience-pathway-flag") : null;
+    if (!flagImg) return;
+
+    function setFlag() {
+        const opt = select.options[select.selectedIndex];
+        const iso = opt ? opt.getAttribute("data-iso") : null;
+        flagImg.src = iso ? FLAG_CDN + "/" + iso + ".svg" : "";
+        flagImg.alt = iso ? "Flag of " + iso : "";
+    }
+
+    setFlag();
+    select.addEventListener("change", setFlag);
 })();
