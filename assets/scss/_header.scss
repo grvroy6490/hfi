@@ -24,7 +24,7 @@ $header-h: 4.5rem;
 $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
 .site-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
