@@ -356,34 +356,33 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
     top: 100%;
     left: 0;
     width: 100%;
+    height: calc(90dvh - var(--mega-menu-top, 0px));
+    max-height: calc(90dvh - var(--mega-menu-top, 0px));
     background: #fff;
     border-bottom: 1.5px solid rgba(201, 151, 26, 1);
     z-index: 999;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-0.625rem);
     pointer-events: none;
-    overflow: hidden;
-    height: 0;
-    transition:
-        height 0.5s $ease,
-        transform 0.5s $ease,
-        opacity 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: transform 0.4s $ease, opacity 0.3s ease;
 
     &.is-active {
         opacity: 1;
+        visibility: visible;
         transform: translateY(0);
         pointer-events: auto;
-    }
-
-    &.is-closing {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: none;
     }
 
     .container {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
 }
 

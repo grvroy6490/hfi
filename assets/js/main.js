@@ -7,7 +7,6 @@
     const headerMenu = document.getElementById("headerMenu");
     const mobileMegaHost = document.getElementById("mobileMegaContent");
     const sharedBg = document.getElementById("shared-bg");
-    const sharedBgInner = sharedBg ? sharedBg.querySelector(".container") : null;
     const triggers = Array.from(
         document.querySelectorAll(".header-link-trigger[data-menu]")
     );
@@ -96,6 +95,16 @@
         siteHeader.style.setProperty("--mobile-menu-top", menuTop + "px");
     }
 
+    function updateDesktopMenuMetrics() {
+        if (!siteHeader || !headerNav || !desktopQuery.matches) {
+            return;
+        }
+
+        const navRect = headerNav.getBoundingClientRect();
+        const menuTop = Math.max(0, Math.round(navRect.bottom));
+        siteHeader.style.setProperty("--mega-menu-top", menuTop + "px");
+    }
+
     function setMobileMenuOpen(isOpen) {
         if (!siteHeader) {
             return;
@@ -127,18 +136,6 @@
         setMobileMenuOpen(false);
     }
 
-    function syncHeight() {
-        const nextHeight = sharedBgInner
-            ? sharedBgInner.scrollHeight
-            : sharedBg.scrollHeight;
-
-        if (!sharedBg.classList.contains("is-active")) {
-            sharedBg.style.height = "0px";
-            return;
-        }
-        sharedBg.style.height = nextHeight + "px";
-    }
-
     function openMenu(menuId) {
         const panel = getPanel(menuId);
         if (!panel) {
@@ -148,14 +145,10 @@
         panels.forEach((item) => item.classList.remove("visible"));
         panel.classList.add("visible");
         sharedBg.classList.add("is-active");
+        updateDesktopMenuMetrics();
 
         setExpanded(menuId);
         activeMenuId = menuId;
-
-        sharedBg.style.height = sharedBg.offsetHeight + "px";
-        requestAnimationFrame(() => {
-            requestAnimationFrame(syncHeight);
-        });
     }
 
     function closeMenu() {
@@ -163,28 +156,12 @@
             return;
         }
 
-        const currentHeight = sharedBgInner
-            ? sharedBgInner.scrollHeight
-            : sharedBg.scrollHeight;
-        sharedBg.style.height = currentHeight + "px";
-        requestAnimationFrame(() => {
-            sharedBg.style.height = "0px";
-            sharedBg.classList.remove("is-active");
-        });
+        sharedBg.classList.remove("is-active");
+        panels.forEach((panel) => panel.classList.remove("visible"));
 
         setExpanded("");
         activeMenuId = "";
     }
-
-    sharedBg.addEventListener("transitionend", (event) => {
-        if (event.propertyName !== "height") {
-            return;
-        }
-        if (sharedBg.classList.contains("is-active")) {
-            return;
-        }
-        panels.forEach((panel) => panel.classList.remove("visible"));
-    });
 
     triggers.forEach((trigger) => {
         const menuId = trigger.dataset.menu;
@@ -247,8 +224,8 @@
     });
 
     window.addEventListener("resize", () => {
-        if (desktopQuery.matches && activeMenuId) {
-            syncHeight();
+        if (desktopQuery.matches && sharedBg.classList.contains("is-active")) {
+            updateDesktopMenuMetrics();
         }
         if (!desktopQuery.matches && headerMenu && headerMenu.classList.contains("show")) {
             updateMobileMenuMetrics();
@@ -283,13 +260,15 @@
         closeMenu();
         if (event.matches) {
             setMobileMenuOpen(false);
+            updateDesktopMenuMetrics();
             return;
         }
         ensureMobilePanels();
     });
 
     ensureMobilePanels();
-    sharedBg.style.height = "0px";
+    updateDesktopMenuMetrics();
+    window.addEventListener("load", updateDesktopMenuMetrics);
 })();
 
 // Core capability courses slider
