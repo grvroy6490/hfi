@@ -604,8 +604,8 @@ header {
   top: 100%;
   left: 0;
   width: 100%;
-  height: calc(90dvh - var(--mega-menu-top, 0px));
-  max-height: calc(90dvh - var(--mega-menu-top, 0px));
+  height: calc(100dvh - var(--mega-menu-top, 0px));
+  max-height: calc(100dvh - var(--mega-menu-top, 0px));
   background: #fff;
   border-bottom: 1.5px solid rgb(201, 151, 26);
   z-index: 999;
