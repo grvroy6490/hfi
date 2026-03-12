@@ -157,11 +157,20 @@
         }
 
         sharedBg.classList.remove("is-active");
-        panels.forEach((panel) => panel.classList.remove("visible"));
 
         setExpanded("");
         activeMenuId = "";
     }
+
+    sharedBg.addEventListener("transitionend", (event) => {
+        if (event.propertyName !== "transform" && event.propertyName !== "opacity") {
+            return;
+        }
+        if (sharedBg.classList.contains("is-active")) {
+            return;
+        }
+        panels.forEach((panel) => panel.classList.remove("visible"));
+    });
 
     triggers.forEach((trigger) => {
         const menuId = trigger.dataset.menu;

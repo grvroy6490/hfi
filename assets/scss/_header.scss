@@ -362,16 +362,14 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
     border-bottom: 1.5px solid rgba(201, 151, 26, 1);
     z-index: 999;
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(-0.625rem);
+    transform: translateY(-1rem);
     pointer-events: none;
     overflow-x: hidden;
     overflow-y: auto;
-    transition: transform 0.4s $ease, opacity 0.3s ease;
+    transition: transform 0.36s $ease, opacity 0.28s ease;
 
     &.is-active {
         opacity: 1;
-        visibility: visible;
         transform: translateY(0);
         pointer-events: auto;
     }
