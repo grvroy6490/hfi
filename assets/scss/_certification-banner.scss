@@ -1,0 +1,120 @@
+@use "variables" as v;
+
+.certification-banner-section {
+    background-color: #f2f2f2;
+    padding: 4.5rem 0 4rem;
+    width: 100%;
+}
+
+.certification-banner {
+    margin: 0;
+}
+
+.certification-banner-content {
+    max-width: 34rem;
+}
+
+.certification-banner-breadcrumb {
+    margin-bottom: 0.25rem;
+    color: v.$color-gray-light;
+
+    span {
+        margin: 0 0.25rem;
+    }
+}
+
+.certification-banner-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: v.$color-gold;
+    margin-bottom: 0.35rem;
+}
+
+.certification-banner-title {
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    color: v.$color-black;
+}
+
+.certification-banner-lead {
+    color: v.$color-gray-dark;
+    margin-bottom: 1.5rem;
+}
+
+.certification-banner-meta {
+    margin-bottom: 1.75rem;
+}
+
+.certification-meta-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.certification-meta-label {
+    margin: 0 0 0.25rem;
+    color: v.$color-gray-light;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.certification-meta-value {
+    margin: 0;
+    color: v.$color-primary-black;
+}
+
+.certification-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.certification-banner-secondary {
+    border-radius: 9999px;
+}
+
+.certification-banner-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: v.$color-gray-dark;
+}
+
+.certification-banner-highlights li::before {
+    content: "•";
+    margin-right: 0.4rem;
+}
+
+.certification-banner-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+.certification-banner-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+    .certification-banner-section {
+        padding: 3.5rem 0 3rem;
+    }
+
+    .certification-banner-content {
+        max-width: 100%;
+    }
+
+    .certification-banner-image {
+        margin-top: 1rem;
+    }
+}

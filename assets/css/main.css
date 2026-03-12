@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* CSS Reset */
 /* Based on modern best practices */
 html, body, div, span, applet, object, iframe,
@@ -84,6 +85,11 @@ button, input, select, textarea {
 
 * {
   box-sizing: border-box;
+}
+
+.row {
+  margin: 0 !important;
+  width: 100%;
 }
 
 :root {
@@ -344,7 +350,7 @@ header {
   padding-top: 0;
   padding-bottom: 0;
 }
-.header-nav .container {
+.header-nav .col-lg-12 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -353,7 +359,7 @@ header {
   padding-bottom: 0.75rem;
 }
 @media (min-width: 992px) {
-  .header-nav .container {
+  .header-nav .col-lg-12 {
     flex-wrap: nowrap;
   }
 }
@@ -3276,4 +3282,165 @@ body.mobile-menu-open {
   width: 0.8125rem;
   height: 0.75rem;
   transform: translate(2px, 10%);
+}
+
+.certification-banner-section {
+  background-color: #f2f2f2;
+  padding: 4.5rem 0 4rem;
+  width: 100%;
+}
+
+.certification-banner {
+  margin: 0;
+}
+
+.certification-banner-content {
+  max-width: 34rem;
+}
+
+.certification-banner-breadcrumb {
+  margin-bottom: 0.25rem;
+  color: rgb(79, 79, 79);
+}
+.certification-banner-breadcrumb span {
+  margin: 0 0.25rem;
+}
+
+.certification-banner-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: #b88912;
+  margin-bottom: 0.35rem;
+}
+
+.certification-banner-title {
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+.certification-banner-lead {
+  color: rgb(43, 43, 43);
+  margin-bottom: 1.5rem;
+}
+
+.certification-banner-meta {
+  margin-bottom: 1.75rem;
+}
+
+.certification-meta-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.certification-meta-label {
+  margin: 0 0 0.25rem;
+  color: rgb(79, 79, 79);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.certification-meta-value {
+  margin: 0;
+  color: #0F0F0F;
+}
+
+.certification-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.certification-banner-secondary {
+  border-radius: 9999px;
+}
+
+.certification-banner-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: rgb(43, 43, 43);
+}
+
+.certification-banner-highlights li::before {
+  content: "•";
+  margin-right: 0.4rem;
+}
+
+.certification-banner-image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+.certification-banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+  .certification-banner-section {
+    padding: 3.5rem 0 3rem;
+  }
+  .certification-banner-content {
+    max-width: 100%;
+  }
+  .certification-banner-image {
+    margin-top: 1rem;
+  }
+}
+.certification-counter-section {
+  background: #ffffff;
+  padding: 3.5rem 0 3.75rem;
+}
+
+.certification-counter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.counter-card {
+  height: 100%;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid #CCCCCC;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.counter-value {
+  margin: 0;
+  color: #b88912;
+  font-weight: 900;
+  font-family: "Inter", sans-serif !important;
+  margin-bottom: 0.5rem;
+}
+
+.counter-label {
+  margin: 0;
+  color: rgb(43, 43, 43);
+}
+
+@media (max-width: 575.98px) {
+  .certification-counter-section {
+    padding: 3rem 0 3.25rem;
+  }
+  .counter-card {
+    padding: 1.25rem 1rem;
+  }
 }/*# sourceMappingURL=main.css.map */
