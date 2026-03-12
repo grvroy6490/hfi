@@ -24,7 +24,7 @@
     <!--------------------------- 
         HEADER
     ------------------------------>
-    <header class="site-header">
+    <header class="site-header bg-white">
         <div class="header-announcement">
             <div class="container">
                 <p class="header-announcement-text mb-0 text-center body-small">
@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-12">
-                        <a href="#" class="header-logo navbar-brand">
+                        <a href="index.html" class="header-logo navbar-brand">
                             <img src="assets/images/logo.svg" alt="HFI">
                         </a>
                         <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse"
@@ -97,7 +97,7 @@
                                     <span class="col-label">Certifications</span>
                                     <ul>
                                         <li class="cert-items">
-                                            <a href="#" class="cert-item menu-link">
+                                            <a href="cua-certification.html" class="cert-item menu-link">
                                                 <h3>Certified Usability Architect (CUA)</h3>
                                                 <p>
                                                     Design scalable, human-centered systems grounded in cognitive science,
@@ -279,11 +279,16 @@
             <div class="certification-banner row align-items-center g-4 g-lg-5">
                 <div class="col-12 col-lg-7">
                     <div class="certification-banner-content">
-                        <p class="certification-banner-breadcrumb body-small">
-                            Certification <span aria-hidden="true">›</span> CUA
-                        </p>
+                        <!-- BREADCRUMB -->
+                        <nav class="certification-banner-breadcrumb body-small" aria-label="Breadcrumb">
+                            <a href="#" class="certification-banner-breadcrumb-active">Certification</a>
+                            <span class="certification-banner-breadcrumb-sep" aria-hidden="true">›</span>
+                            <span class="certification-banner-breadcrumb-inactive" aria-current="page">CUA</span>
+                        </nav>
+
+
                         <p class="certification-banner-kicker body-small">HFI Certification Track</p>
-                        <h1 class="certification-banner-title heading-2">
+                        <h1 class="certification-banner-title hero-headline">
                             Master the Science<br aria-hidden="true"> of Usability
                         </h1>
                         <p class="certification-banner-lead body">
@@ -291,17 +296,15 @@
                         </p>
 
                         <div class="certification-banner-meta row g-3">
-                            <div class="col-12 col-sm-6">
-                                <div class="certification-meta-card">
-                                    <p class="certification-meta-label body-small">Next Cohort</p>
-                                    <p class="certification-meta-value body-large">March 17, 2026</p>
-                                </div>
+                            <div class="certification-meta-card">
+                                <p class="certification-meta-label body-large">Next Cohort:</p>
+                                <p class="certification-meta-value body-large">March 17, 2026</p>
                             </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="certification-meta-card">
-                                    <p class="certification-meta-label body-small">Cost</p>
-                                    <p class="certification-meta-value body-large">₹1,54,000 <span class="body-small">+ Taxes</span></p>
-                                </div>
+
+                            <div class="certification-meta-card">
+                                <p class="certification-meta-label body-large">Cost:</p>
+                                <p class="certification-meta-value body-large">₹1,54,000 <span class="body-small">+
+                                        Taxes</span></p>
                             </div>
                         </div>
 
@@ -310,55 +313,207 @@
                                 Register for Next CUA Batch
                             </a>
                             <a href="#" class="hero-btn hero-btn-secondary body-small certification-banner-secondary">
-                                Download Course Brochure
+                                <svg class="certification-banner-download-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                <span>Download Course Brochure</span>
                             </a>
                         </div>
 
                         <ul class="certification-banner-highlights body-small">
-                            <li>10+1 Day Instructor-Led Program</li>
-                            <li>Live Online / Exam Eligible</li>
-                            <li>Experience Architect Pathway</li>
+                            <li>
+                                <img src="assets/images/mingcute_check-fill.svg" alt="" aria-hidden="true" class="certification-banner-highlights-icon">
+                                <span>10+1 Day Instructor-Led Program</span>
+                            </li>
+                            <li>
+                                <img src="assets/images/mingcute_check-fill.svg" alt="" aria-hidden="true" class="certification-banner-highlights-icon">
+                                <span>Live Online | Exam Eligible</span>
+                            </li>
+                            <li>
+                                <img src="assets/images/mingcute_check-fill.svg" alt="" aria-hidden="true" class="certification-banner-highlights-icon">
+                                <span>Experience Architect Pathway</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-5">
                     <div class="certification-banner-image">
-                        <img src="assets/images/certification-banner.webp" alt="Professional team reviewing experience metrics on a large screen">
+                        <img src="assets/images/certificate-banner-img.webp"
+                            alt="Professional team reviewing experience metrics on a large screen">
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-logos">
+            <div class="logo-marquee hero-logo-marquee">
+                <div class="logo-marquee-track">
+                    <div class="logo-marquee-item"><img src="assets/images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
+                    </div>
+                    <div class="logo-marquee-item"><img src="assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/walmart.svg" alt="Walmart"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/P_G.svg.svg" alt="P&amp;G"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/american_express.svg" alt="American Express"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/Unilever.svg.svg" alt="Unilever"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/Amazon.svg.svg" alt="Amazon"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/Microsoft.svg.svg" alt="Microsoft"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/stellan.svg" alt="Stellan"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
+                    </div>
+                    <div class="logo-marquee-item"><img src="assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/walmart.svg" alt="Walmart"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/P_G.svg.svg" alt="P&amp;G"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/american_express.svg" alt="American Express"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/Unilever.svg.svg" alt="Unilever"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/Amazon.svg.svg" alt="Amazon"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/Microsoft.svg.svg" alt="Microsoft"
+                            class="hero-logo-img"></div>
+                    <div class="logo-marquee-item"><img src="assets/images/stellan.svg" alt="Stellan"
+                            class="hero-logo-img"></div>
                 </div>
             </div>
         </div>
     </section>
 
 
-   <!--------------------------- 
+    <!--------------------------- 
        COUNTER SECTION
-   ------------------------------>
-   <section class="certification-counter-section"> 
-       <div class="container">
-           <div class="certification-counter row g-4 g-md-4 ">
-               <div class="col-12 col-md-4">
-                   <article class="counter-card">
-                       <p class="counter-value heading-4">40+</p>
-                       <p class="counter-label body-small">Years of UX Leadership</p>
-                   </article>
-               </div>
-               <div class="col-12 col-md-4">
-                   <article class="counter-card counter-card-featured">
-                       <p class="counter-value heading-4">10,000+</p>
-                       <p class="counter-label body-small">Certified Professionals</p>
-                   </article>
-               </div>
-               <div class="col-12 col-md-4">
-                   <article class="counter-card">
-                       <p class="counter-value heading-4">500+</p>
-                       <p class="counter-label body-small">Enterprise Clients Worldwide</p>
-                   </article>
-               </div>
-           </div>
-       </div>
-   </section>
+    ------------------------------>
+    <section class="certification-counter-section">
+        <div class="container">
+            <div class="certification-counter row g-4 g-md-4 ">
+                <div class="col-12 col-md-4">
+                    <article class="counter-card">
+                        <p class="counter-value heading-4">40+</p>
+                        <p class="counter-label body-small">Years of UX Leadership</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="counter-card counter-card-featured">
+                        <p class="counter-value heading-4">10,000+</p>
+                        <p class="counter-label body-small">Certified Professionals</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="counter-card">
+                        <p class="counter-value heading-4">500+</p>
+                        <p class="counter-label body-small">Enterprise Clients Worldwide</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--------------------------- 
+       ABOUT COURSE SECTION
+    ------------------------------>
+    <section class="certification-about-course-section">
+        <div class="container">
+            <div class="row  g-lg-5">
+                <div class="col-12 col-lg-8">
+                    <div class="about-course-content">
+                        <h2 class="about-course-title heading-3">What is CUA?</h2>
+                        <p class="about-course-lead body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                        <h3 class="about-course-subtitle heading-3">Who Is CUA Designed For?</h3>
+                        <p class="about-course-intro body">Designed for experienced professionals seeking to advance their practice with rigorous, science-based methods.</p>
+                        <div class="about-course-cards row g-3">
+                            <div class="col-12 col-md-4">
+                                <div class="about-course-card">
+                                    <h4 class="about-course-card-title heading-6">UX & Product Professionals</h4>
+                                    <p class="about-course-card-desc body-small">Looking to formalize expertise with scientific usability methods.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="about-course-card">
+                                    <h4 class="about-course-card-title heading-6">Digital & CX Leaders</h4>
+                                    <p class="about-course-card-desc body-small">Building structured UX capability inside their organizations.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="about-course-card">
+                                    <h4 class="about-course-card-title heading-6">Consultants & Analysts</h4>
+                                    <p class="about-course-card-desc body-small">Seeking a globally recognized certification to strengthen credibility.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="upcoming-tracks">
+                        <h2 class="upcoming-tracks-title heading-3">Upcoming CUA Tracks</h2>
+                        <div class="upcoming-tracks-timezone">
+                            <span class="upcoming-tracks-timezone-label body-small">Timezone:</span>
+                            <button type="button" class="upcoming-tracks-timezone-select body-small" aria-expanded="false" aria-haspopup="listbox" aria-label="Select timezone">
+                                Los Angeles, California
+                                <svg class="upcoming-tracks-timezone-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </button>
+                        </div>
+                        <ul class="upcoming-tracks-list list-unstyled">
+                            <li class="upcoming-track-item">
+                                <div class="upcoming-track-header">
+                                    <span class="upcoming-track-month body font-bold">March 2026</span>
+                                    <span class="upcoming-track-time body-small">10:00 am - 12:00 pm</span>
+                                </div>
+                                <p class="upcoming-track-dates body-small">March 17 – March 28</p>
+                                <p class="upcoming-track-format body-small">Live Online • 10+1 Days</p>
+                                <div class="upcoming-track-footer">
+                                    <span class="upcoming-track-price body font-demibold">₹1,54,000 + Taxes</span>
+                                    <a href="#" class="upcoming-track-enroll btn body-small">Enroll</a>
+                                </div>
+                            </li>
+                            <li class="upcoming-track-item">
+                                <div class="upcoming-track-header">
+                                    <span class="upcoming-track-month body font-bold">June 2026</span>
+                                    <span class="upcoming-track-time body-small">10:00 am - 12:00 pm</span>
+                                </div>
+                                <p class="upcoming-track-dates body-small">June 8 – June 19</p>
+                                <p class="upcoming-track-format body-small">Live Online • 10+1 Days</p>
+                                <div class="upcoming-track-footer">
+                                    <span class="upcoming-track-price body font-demibold">₹1,54,000 + Taxes</span>
+                                    <a href="#" class="upcoming-track-enroll btn body-small">Enroll</a>
+                                </div>
+                            </li>
+                            <li class="upcoming-track-item">
+                                <div class="upcoming-track-header">
+                                    <span class="upcoming-track-month body font-bold">July 2026</span>
+                                    <span class="upcoming-track-time body-small">10:00 am - 12:00 pm</span>
+                                </div>
+                                <p class="upcoming-track-dates body-small">July 18 – July 29</p>
+                                <p class="upcoming-track-format body-small">Live Online • 10+1 Days</p>
+                                <div class="upcoming-track-footer">
+                                    <span class="upcoming-track-price body font-demibold">₹1,54,000 + Taxes</span>
+                                    <a href="#" class="upcoming-track-enroll btn body-small">Enroll</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="upcoming-tracks-enterprise body-small">Need enterprise team training?</p>
+                        <a href="#" class="upcoming-tracks-custom-link body-small">Get custom pricing</a>
+                        <a href="#" class="upcoming-tracks-more btn body-small">More Courses on Calendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!--------------------------- 
         FOOTER
@@ -397,7 +552,7 @@
                         <p class="footer-subheading body-small">Professional Certification Pathways</p>
                         <ul class="footer-links list-unstyled">
                             <li><a href="#" class="body-small">Experience Architect Pathway</a></li>
-                            <li><a href="#" class="body-small">Certified Usability Architect (CUA)</a></li>
+                            <li><a href="cua-certification.html" class="body-small">Certified Usability Architect (CUA)</a></li>
                             <li><a href="#" class="body-small">Certified Digital Persuasion Architect (CDPA)</a></li>
                             <li><a href="#" class="body-small">Certified Experience Architect (CXA)</a></li>
                             <li><a href="#" class="body-small">Certification Exams</a></li>

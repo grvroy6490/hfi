@@ -1,0 +1,253 @@
+@use 'variables' as v;
+
+.certification-about-course-section {
+    padding: 4rem 0;
+    padding-top: 0;
+    background: #fff;
+}
+
+.about-course-content {
+    .about-course-title,
+    .about-course-subtitle {
+        color: v.$color-primary-grey;
+        margin-bottom: 0.75rem;
+        font-size: calc(2rem + 2px);
+        font-weight: 600;
+    }
+
+    .about-course-lead,
+    .about-course-intro {
+        color: v.$color-gray-dark;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-course-subtitle {
+        margin-top: 2.5rem;
+    }
+
+    .about-course-intro {
+        margin-bottom: 1.25rem;
+    }
+}
+
+.about-course-cards {
+    margin-top: 0;
+}
+
+.about-course-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    height: 100%;
+}
+
+.about-course-card-title {
+    color: v.$color-gold;
+    margin-bottom: 0.5rem;
+}
+
+.about-course-card-desc {
+    color: v.$color-gray-dark;
+    margin: 0;
+}
+
+// —— Upcoming CUA Tracks (right column) ——
+.upcoming-tracks {
+    padding-left: 0;
+}
+
+@media (min-width: 992px) {
+    .upcoming-tracks {
+        padding-left: 2rem;
+    }
+}
+
+.upcoming-tracks-title {
+    color: v.$color-gray-dark;
+    margin-bottom: 1rem;
+}
+
+.upcoming-tracks-timezone {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.upcoming-tracks-timezone-label {
+    color: v.$color-gray-dark;
+}
+
+.upcoming-tracks-timezone-select {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0;
+    border: none;
+    background: none;
+    color: v.$color-gray-dark;
+    font-family: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: v.$color-gold;
+    }
+}
+
+.upcoming-tracks-timezone-chevron {
+    flex-shrink: 0;
+}
+
+.upcoming-tracks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.upcoming-track-item {
+    background: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.upcoming-track-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.upcoming-track-month {
+    color: v.$color-gray-dark;
+}
+
+.upcoming-track-time {
+    color: v.$color-gray-light;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.upcoming-track-dates,
+.upcoming-track-format {
+    color: v.$color-gray-light;
+    margin: 0 0 0.25rem;
+}
+
+.upcoming-track-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.upcoming-track-price {
+    color: v.$color-gray-dark;
+    margin: 0;
+}
+
+.upcoming-track-enroll {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: v.$color-neutral-dark;
+    color: #fff !important;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        min-width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10%);
+        transition: transform 0.25s ease;
+        filter: brightness(0) invert(1);
+    }
+
+    &:hover {
+        background: v.$color-gray-dark;
+        color: #fff !important;
+    }
+
+    &:hover::after {
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(10%);
+        filter: brightness(0) invert(1);
+    }
+}
+
+.upcoming-tracks-enterprise {
+    color: v.$color-gray-dark;
+    margin: 0 0 0.25rem;
+}
+
+.upcoming-tracks-custom-link {
+    display: inline-block;
+    color: v.$color-gray-dark;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+
+    &:hover {
+        color: v.$color-gold;
+    }
+}
+
+.upcoming-tracks-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    background: #fff;
+    color: v.$color-gray-dark !important;
+    border: 1px solid v.$color-gray-lighter;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        min-width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10%);
+        transition: transform 0.25s ease;
+        filter: brightness(0);
+    }
+
+    &:hover {
+        border-color: v.$color-gold;
+        color: v.$color-gold !important;
+    }
+
+    &:hover::after {
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(10%);
+        filter: none;
+    }
+}

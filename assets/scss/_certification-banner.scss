@@ -2,24 +2,57 @@
 
 .certification-banner-section {
     background-color: #f2f2f2;
-    padding: 4.5rem 0 4rem;
+    padding: 5rem 0;
     width: 100%;
+
+    .hero-logos{
+        margin-top: 4rem;
+        opacity: 0.3;
+    }
+
+    .col-lg-7{
+        padding-left: 14px;
+    }
 }
 
 .certification-banner {
     margin: 0;
 }
 
-.certification-banner-content {
-    max-width: 34rem;
-}
+
 
 .certification-banner-breadcrumb {
-    margin-bottom: 0.25rem;
-    color: v.$color-gray-light;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
 
-    span {
-        margin: 0 0.25rem;
+.certification-banner-breadcrumb-inactive {
+    color: v.$color-gray-light;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: v.$color-gold;
+    }
+}
+
+.certification-banner-breadcrumb-sep {
+    margin: 0 0.25rem;
+    color: v.$color-gray-lighter;
+}
+
+.certification-banner-breadcrumb-active {
+    color: v.$color-gray-dark;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        color: v.$color-gray-dark;
+        opacity: 0.4;
     }
 }
 
@@ -35,34 +68,37 @@
     margin-bottom: 0.75rem;
     text-transform: uppercase;
     color: v.$color-black;
+    font-weight: 900;
 }
 
 .certification-banner-lead {
     color: v.$color-gray-dark;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .certification-banner-meta {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .certification-meta-card {
     background: #ffffff;
     border-radius: 0.75rem;
-    padding: 0.9rem 1.1rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    padding: 0.5rem 1.1rem;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+    width: max-content;
 }
 
 .certification-meta-label {
-    margin: 0 0 0.25rem;
-    color: v.$color-gray-light;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    color: v.$color-gold;
     font-weight: 600;
 }
 
 .certification-meta-value {
     margin: 0;
+    font-weight: 600;
     color: v.$color-primary-black;
 }
 
@@ -70,11 +106,34 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .certification-banner-secondary {
     border-radius: 9999px;
+    background: transparent !important;
+    border: 1px solid rgba(64, 64, 64, 1) !important;
+    color: rgba(64, 64, 64, 1) !important;
+    gap: 0.5rem;
+
+    &::after {
+        display: none;
+    }
+
+    &:hover {
+        background: v.$color-neutral-dark !important;
+        border-color: v.$color-neutral-dark !important;
+        color: #fff !important;
+
+        .certification-banner-download-icon {
+            stroke: #fff;
+        }
+    }
+}
+
+.certification-banner-download-icon {
+    flex-shrink: 0;
+    stroke: currentColor;
 }
 
 .certification-banner-highlights {
@@ -85,17 +144,32 @@
     margin: 0;
     list-style: none;
     color: v.$color-gray-dark;
+    align-items: flex-start;
 }
 
-.certification-banner-highlights li::before {
-    content: "•";
-    margin-right: 0.4rem;
+.certification-banner-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    max-width: 12rem;
+    color: rgba(97, 97, 97, 1);
+}
+
+.certification-banner-highlights-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.certification-banner-highlights li span {
+    line-height: 1.4;
 }
 
 .certification-banner-image {
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+    margin-top: 3.5rem;
 }
 
 .certification-banner-image img {
