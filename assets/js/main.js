@@ -438,3 +438,210 @@
     setFlag();
     select.addEventListener("change", setFlag);
 })();
+
+// Upcoming CUA Tracks: timezone dropdown
+(function () {
+    "use strict";
+
+    const trigger = document.getElementById("upcoming-tracks-timezone-trigger");
+    const listbox = document.getElementById("upcoming-tracks-timezone-listbox");
+    const nativeSelect = document.getElementById("upcoming-tracks-timezone-select");
+    const triggerText = trigger ? trigger.querySelector(".upcoming-tracks-timezone-trigger-text") : null;
+
+    if (!trigger || !listbox || !nativeSelect || !triggerText) return;
+
+    function open() {
+        trigger.setAttribute("aria-expanded", "true");
+        listbox.removeAttribute("hidden");
+        var selected = listbox.querySelector("[aria-selected=\"true\"]");
+        if (selected && selected.focus) selected.focus();
+    }
+
+    function close() {
+        trigger.setAttribute("aria-expanded", "false");
+        listbox.setAttribute("hidden", "");
+        trigger.focus();
+    }
+
+    function setValue(value, label) {
+        const opt = nativeSelect.querySelector("option[value=\"" + value + "\"]");
+        if (opt) {
+            opt.selected = true;
+            nativeSelect.value = value;
+        }
+        triggerText.textContent = label || (opt ? opt.textContent : value);
+        listbox.querySelectorAll("[role=\"option\"]").forEach(function (el) {
+            var isSelected = el.getAttribute("data-value") === value;
+            el.setAttribute("aria-selected", isSelected ? "true" : "false");
+            el.setAttribute("tabindex", isSelected ? "0" : "-1");
+        });
+        nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (trigger.getAttribute("aria-expanded") === "true") {
+            close();
+        } else {
+            open();
+        }
+    });
+
+    trigger.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+            e.preventDefault();
+            if (trigger.getAttribute("aria-expanded") !== "true") open();
+        }
+    });
+
+    listbox.addEventListener("click", function (e) {
+        const option = e.target.closest("[role=\"option\"]");
+        if (!option) return;
+        var value = option.getAttribute("data-value");
+        var label = option.textContent.trim();
+        setValue(value, label);
+        close();
+    });
+
+    listbox.addEventListener("keydown", function (e) {
+        var options = Array.from(listbox.querySelectorAll("[role=\"option\"]"));
+        var current = listbox.querySelector("[aria-selected=\"true\"]");
+        var idx = current ? options.indexOf(current) : -1;
+
+        if (e.key === "Escape") {
+            close();
+            e.preventDefault();
+            return;
+        }
+        if (e.key === "ArrowDown" && idx < options.length - 1) {
+            idx += 1;
+            e.preventDefault();
+            options[idx].focus();
+            return;
+        }
+        if (e.key === "ArrowUp" && idx > 0) {
+            idx -= 1;
+            e.preventDefault();
+            options[idx].focus();
+            return;
+        }
+        if ((e.key === "Enter" || e.key === " ") && current) {
+            setValue(current.getAttribute("data-value"), current.textContent.trim());
+            close();
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener("click", function (e) {
+        if (trigger.getAttribute("aria-expanded") === "true" && !trigger.contains(e.target) && !listbox.contains(e.target)) {
+            close();
+        }
+    });
+})();
+
+// What You'll Learn in CUA: accordion — only one open at a time
+(function () {
+    "use strict";
+    function initLearnAccordion() {
+        var accordion = document.querySelector(".what-you-ll-learn-accordion");
+        if (!accordion) return;
+        var items = accordion.querySelectorAll(".what-you-ll-learn-accordion-item");
+        items.forEach(function (details) {
+            details.addEventListener("toggle", function () {
+                if (details.hasAttribute("open")) {
+                    items.forEach(function (other) {
+                        if (other !== details) {
+                            other.removeAttribute("open");
+                        }
+                    });
+                }
+            });
+        });
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initLearnAccordion);
+    } else {
+        initLearnAccordion();
+    }
+})();
+
+// Industry Pioneers: hover expand (70% / 15% / 15%) — only >= 768px
+(function () {
+    "use strict";
+    var PIONEERS_MEDIA = "(min-width: 768px)";
+
+    function initIndustryPioneers() {
+        var grid = document.getElementById("industry-pioneers-grid");
+        if (!grid) return;
+        var cards = grid.querySelectorAll(".industry-pioneers-card");
+        var hoverHandlersAttached = false;
+
+        function removeAllExpanded() {
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove("is-expanded");
+            }
+        }
+        function clearExpanded() {
+            grid.classList.remove("has-hover");
+            removeAllExpanded();
+            if (cards[0]) {
+                cards[0].classList.add("is-expanded");
+            }
+        }
+        function setExpanded(card) {
+            removeAllExpanded();
+            grid.classList.add("has-hover");
+            card.classList.add("is-expanded");
+        }
+
+        function onMouseOver(e) {
+            if (!window.matchMedia(PIONEERS_MEDIA).matches) return;
+            var card = e.target.closest(".industry-pioneers-card");
+            if (card && grid.contains(card)) {
+                setExpanded(card);
+            }
+        }
+        function onMouseLeave() {
+            if (!window.matchMedia(PIONEERS_MEDIA).matches) return;
+            clearExpanded();
+        }
+
+        function attachHoverHandlers() {
+            if (hoverHandlersAttached) return;
+            grid.addEventListener("mouseover", onMouseOver);
+            grid.addEventListener("mouseleave", onMouseLeave);
+            hoverHandlersAttached = true;
+        }
+        function detachHoverHandlers() {
+            if (!hoverHandlersAttached) return;
+            grid.removeEventListener("mouseover", onMouseOver);
+            grid.removeEventListener("mouseleave", onMouseLeave);
+            hoverHandlersAttached = false;
+        }
+
+        function updateHoverState() {
+            if (window.matchMedia(PIONEERS_MEDIA).matches) {
+                attachHoverHandlers();
+            } else {
+                detachHoverHandlers();
+                clearExpanded();
+            }
+        }
+
+        clearExpanded();
+        updateHoverState();
+        var mql = window.matchMedia(PIONEERS_MEDIA);
+        if (mql.addEventListener) {
+            mql.addEventListener("change", updateHoverState);
+        } else if (mql.addListener) {
+            mql.addListener(updateHoverState);
+        }
+        window.addEventListener("resize", updateHoverState);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initIndustryPioneers);
+    } else {
+        initIndustryPioneers();
+    }
+})();
