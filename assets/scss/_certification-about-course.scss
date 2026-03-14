@@ -34,7 +34,7 @@
 .about-course-cards {
     margin-top: 0;
 
-    .col-md-4{
+    .col-md-4 {
         @media (max-width: 768px) {
             padding: 1rem 1rem;
             padding-left: 0;
@@ -48,8 +48,6 @@
     border-radius: 0.5rem;
     padding: 1.25rem;
     height: 100%;
-
-    
 }
 
 .about-course-card-title {
@@ -710,7 +708,6 @@ $journey-line-top: calc(0.1rem + #{$journey-dot-size});
     transition: filter 0.35s ease;
 }
 
-
 .industry-pioneers-card:not(:first-child) .industry-pioneers-card-img {
     filter: grayscale(1);
 }
@@ -779,3 +776,96 @@ $journey-line-top: calc(0.1rem + #{$journey-dot-size});
     }
 }
 
+// —— Impact Beyond Certification (testimonial cards) ——
+.impact-beyond-certification {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    background: #fff;
+}
+
+.impact-beyond-certification-title {
+    color: v.$color-primary-grey;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.impact-beyond-certification-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.impact-beyond-certification-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 0.75rem;
+    padding: 2rem 1.75rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.impact-beyond-certification-author{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-left: 1.3rem;
+}
+
+.impact-beyond-certification-quote-open {
+    position: absolute;
+    top: 1rem;
+    left: 1.25rem;
+    width: 1.5rem;
+    height: auto;
+    pointer-events: none;
+}
+
+.impact-beyond-certification-quote-close {
+    position: absolute;
+    bottom: 7rem;
+    right: 2.25rem;
+    width: 1.5rem;
+    height: auto;
+    transform: scaleX(1) rotate(180deg);
+    pointer-events: none;
+}
+
+.impact-beyond-certification-blockquote {
+    margin: 0 0 1rem;
+    padding: 0rem 1.25rem 0.25rem 1.25rem;
+    color: v.$color-gray-dark;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+}
+
+.impact-beyond-certification-sep {
+    margin: 0 0 0.5rem;
+    color: #000;
+}
+
+.impact-beyond-certification-name {
+    margin: 0 0 0.25rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.impact-beyond-certification-role {
+    margin: 0;
+    font-weight: 400;
+    color: v.$color-primary-grey;
+}
+
+@media (max-width: 767.98px) {
+    .impact-beyond-certification-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-beyond-certification-quote-close {
+        bottom: 5.5rem;
+    }
+}

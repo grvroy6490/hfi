@@ -1,0 +1,90 @@
+@use 'variables' as v;
+
+.certification-faq-section {
+    padding: 5rem 0;
+    background-color: #fff;
+
+    .certification-faq-title {
+        text-align: center;
+        color: v.$color-primary-grey;
+        margin-bottom: 1.5rem;
+    } 
+}
+
+.certification-faq-accordion {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.certification-faq-accordion-item {
+    display: grid;
+    grid-template-rows: auto 0fr;
+    transition: grid-template-rows 0.35s ease-out;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    &[open] {
+        grid-template-rows: auto 1fr;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.certification-faq-accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: none;
+    font-weight: 700;
+    color: v.$color-gray-dark;
+    text-align: left;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s ease;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &:hover {
+        color: v.$color-gold;
+    }
+}
+
+.certification-faq-accordion-icon {
+    display: block;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    min-width: 1rem;
+    margin-left: 0.5rem;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease;
+}
+
+.certification-faq-accordion-item[open] .certification-faq-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.certification-faq-accordion-item[open] .certification-faq-accordion-trigger{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.certification-faq-accordion-content {
+    min-height: 0;
+    overflow: hidden;
+    padding: 1rem 1.5rem;
+}
+
+
+
+.certification-faq-accordion-answer {
+    margin: 0;
+    color: #717171;
+    line-height: 1.6;
+}
