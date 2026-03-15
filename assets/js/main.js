@@ -490,104 +490,296 @@
     select.addEventListener("change", setFlag);
 })();
 
-// Upcoming CUA Tracks: timezone dropdown
+// Global selects: Choices.js
 (function () {
     "use strict";
 
-    const trigger = document.getElementById("upcoming-tracks-timezone-trigger");
-    const listbox = document.getElementById("upcoming-tracks-timezone-listbox");
-    const nativeSelect = document.getElementById("upcoming-tracks-timezone-select");
-    const triggerText = trigger ? trigger.querySelector(".upcoming-tracks-timezone-trigger-text") : null;
+    if (typeof Choices === "undefined") return;
 
-    if (!trigger || !listbox || !nativeSelect || !triggerText) return;
+    Array.from(document.querySelectorAll("select")).forEach(function (select) {
+        if (select.dataset.choicesInitialized === "true") return;
 
-    function open() {
-        trigger.setAttribute("aria-expanded", "true");
-        listbox.removeAttribute("hidden");
-        var selected = listbox.querySelector("[aria-selected=\"true\"]");
-        if (selected && selected.focus) selected.focus();
-    }
-
-    function close() {
-        trigger.setAttribute("aria-expanded", "false");
-        listbox.setAttribute("hidden", "");
-        trigger.focus();
-    }
-
-    function setValue(value, label) {
-        const opt = nativeSelect.querySelector("option[value=\"" + value + "\"]");
-        if (opt) {
-            opt.selected = true;
-            nativeSelect.value = value;
-        }
-        triggerText.textContent = label || (opt ? opt.textContent : value);
-        listbox.querySelectorAll("[role=\"option\"]").forEach(function (el) {
-            var isSelected = el.getAttribute("data-value") === value;
-            el.setAttribute("aria-selected", isSelected ? "true" : "false");
-            el.setAttribute("tabindex", isSelected ? "0" : "-1");
+        new Choices(select, {
+            allowHTML: false,
+            searchEnabled: false,
+            shouldSort: false,
+            itemSelectText: "",
+            position: "bottom"
         });
-        nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+
+        select.dataset.choicesInitialized = "true";
+    });
+})();
+
+// Course calendar: interactive schedule
+(function () {
+    "use strict";
+
+    var section = document.querySelector(".course-calendar-section");
+    if (!section) return;
+
+    var monthGrid = section.querySelector(".course-calendar-month-grid");
+    var yearLabel = section.querySelector(".course-calendar-year");
+    var content = section.querySelector(".course-calendar-content");
+    var timezoneSelect = document.getElementById("course-calendar-timezone-select");
+    var filterSelects = section.querySelectorAll(".course-calendar-filter-select");
+    var certificationSelect = filterSelects[0] || null;
+    var courseSelect = filterSelects[1] || null;
+
+    if (!monthGrid || !yearLabel || !content || !timezoneSelect) return;
+
+    var MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var sessions = [
+        { type: "certification", code: "cua", course: "all", label: "Certified Usability Architect (CUA)", price: 48000, start: "2026-03-08T16:00:00Z", end: "2026-03-08T19:30:00Z", registrationDeadline: "2026-02-25", href: "cua-certification.html" },
+        { type: "certification", code: "cdpa", course: "all", label: "Certified Digital Persuasion Architect (CDPA)", price: 52000, start: "2026-03-08T20:00:00Z", end: "2026-03-08T23:00:00Z", registrationDeadline: "2026-03-01", href: "#" },
+        { type: "course", code: "all", course: "science-of-experience-design", label: "Science of Experience Design", price: 48000, start: "2026-03-24T15:30:00Z", end: "2026-03-24T18:30:00Z", registrationDeadline: "2026-03-10", href: "courses-science.html" },
+        { type: "course", code: "all", course: "experience-research-strategy", label: "Experience Research & Strategy", price: 36000, start: "2026-03-29T14:00:00Z", end: "2026-03-29T17:00:00Z", registrationDeadline: "2026-03-15", href: "#" },
+        { type: "course", code: "all", course: "interface-design-systems", label: "Interface Design & Design Systems", price: 39000, start: "2026-04-12T16:00:00Z", end: "2026-04-12T19:00:00Z", registrationDeadline: "2026-03-30", href: "#" },
+        { type: "certification", code: "cxa", course: "all", label: "Certified Experience Architect (CXA)", price: 58000, start: "2026-05-06T13:30:00Z", end: "2026-05-06T17:30:00Z", registrationDeadline: "2026-04-22", href: "#" },
+        { type: "certification", code: "cua", course: "all", label: "Certified Usability Architect (CUA)", price: 48000, start: "2026-09-14T15:00:00Z", end: "2026-09-14T18:30:00Z", registrationDeadline: "2026-08-31", href: "cua-certification.html" },
+        { type: "course", code: "all", course: "science-of-experience-design", label: "Science of Experience Design", price: 48000, start: "2026-11-18T17:00:00Z", end: "2026-11-18T20:00:00Z", registrationDeadline: "2026-11-02", href: "courses-science.html" },
+        { type: "certification", code: "cdpa", course: "all", label: "Certified Digital Persuasion Architect (CDPA)", price: 52000, start: "2027-01-21T16:30:00Z", end: "2027-01-21T19:30:00Z", registrationDeadline: "2027-01-07", href: "#" },
+        { type: "course", code: "all", course: "interface-design-systems", label: "Interface Design & Design Systems", price: 39000, start: "2027-02-11T14:30:00Z", end: "2027-02-11T17:30:00Z", registrationDeadline: "2027-01-28", href: "#" }
+    ];
+
+    var state = {
+        year: 2026,
+        month: 2,
+        timezone: timezoneSelect.value || "America/Los_Angeles"
+    };
+
+    function getDateInfo(dateValue) {
+        var date = new Date(dateValue);
+        var formatter = new Intl.DateTimeFormat("en-CA", {
+            timeZone: state.timezone,
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+        });
+        var parts = formatter.formatToParts(date).reduce(function (acc, part) {
+            if (part.type !== "literal") acc[part.type] = part.value;
+            return acc;
+        }, {});
+
+        return {
+            year: Number(parts.year),
+            month: Number(parts.month) - 1,
+            day: Number(parts.day)
+        };
     }
 
-    trigger.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (trigger.getAttribute("aria-expanded") === "true") {
-            close();
-        } else {
-            open();
+    function formatParts(dateValue, timeZone) {
+        var date = new Date(dateValue);
+        var formatter = new Intl.DateTimeFormat("en-GB", {
+            timeZone: timeZone,
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        });
+
+        return formatter.formatToParts(date).reduce(function (acc, part) {
+            if (part.type !== "literal") acc[part.type] = part.value;
+            return acc;
+        }, {});
+    }
+
+    function formatGroupDate(dateValue, timeZone) {
+        var parts = formatParts(dateValue, timeZone);
+        return parts.day + " " + parts.month + " " + parts.year;
+    }
+
+    function formatDeadlineDate(dateValue) {
+        var safeDate = new Date(dateValue + "T12:00:00Z");
+        return new Intl.DateTimeFormat("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }).format(safeDate); 
+    }
+
+    function formatTimeRange(startValue, endValue, timeZone) {
+        function render(value) {
+            var parts = formatParts(value, timeZone);
+            return parts.hour + "." + parts.minute + " " + parts.dayPeriod.toLowerCase();
+        }
+        return render(startValue) + " - " + render(endValue);
+    }
+
+    function formatPrice(value) {
+        return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            maximumFractionDigits: 0
+        }).format(value);
+    }
+
+    function getFilteredItems() {
+        var selectedCertification = certificationSelect ? certificationSelect.value : "all";
+        var selectedCourse = courseSelect ? courseSelect.value : "all";
+
+        return sessions.filter(function (item) {
+            var localStart = getDateInfo(item.start);
+            var matchesMonth = localStart.year === state.year && localStart.month === state.month;
+            var matchesCertification = selectedCertification === "all" || item.code === selectedCertification;
+            var matchesCourse = selectedCourse === "all" || item.course === selectedCourse;
+            return matchesMonth && matchesCertification && matchesCourse;
+        }).sort(function (a, b) {
+            return new Date(a.start) - new Date(b.start);
+        });
+    }
+
+    function getYears() {
+        var years = sessions.map(function (item) {
+            return getDateInfo(item.start).year;
+        });
+        return Array.from(new Set(years)).sort();
+    }
+
+    function getAvailableMonths(year) {
+        var months = sessions.map(function (item) {
+            return item.start;
+        }).filter(function (itemStart) {
+            return getDateInfo(itemStart).year === year;
+        }).map(function (itemStart) {
+            return getDateInfo(itemStart).month;
+        });
+
+        return Array.from(new Set(months)).sort(function (a, b) { return a - b; });
+    }
+
+    function ensureValidSelection() {
+        var years = getYears();
+        if (years.indexOf(state.year) === -1) {
+            state.year = years[0];
+        }
+
+        var availableMonths = getAvailableMonths(state.year);
+        if (availableMonths.indexOf(state.month) === -1) {
+            state.month = availableMonths[0];
+        }
+    }
+
+    function renderMonths() {
+        var availableMonths = getAvailableMonths(state.year);
+        monthGrid.innerHTML = MONTH_NAMES.map(function (label, index) {
+            var isAvailable = availableMonths.indexOf(index) !== -1;
+            var isActive = state.month === index;
+            return [
+                "<button type=\"button\" class=\"course-calendar-month body-small",
+                isActive ? " is-active" : "",
+                "\" data-month=\"", index, "\" role=\"tab\" aria-selected=\"", isActive ? "true" : "false",
+                "\"", isAvailable ? "" : " disabled", ">",
+                label,
+                "</button>"
+            ].join("");
+        }).join("");
+    }
+
+    function renderResults() {
+        var items = getFilteredItems();
+        var grouped = items.reduce(function (acc, item) {
+            var key = formatGroupDate(item.start, state.timezone);
+            if (!acc[key]) acc[key] = [];
+            acc[key].push(item);
+            return acc;
+        }, {});
+
+        var html = "";
+        Object.keys(grouped).forEach(function (dateKey) {
+            html += "<div class=\"course-calendar-date-group\">";
+            html += "<h2 class=\"course-calendar-date heading-6\">" + dateKey + "</h2>";
+            html += "<div class=\"course-calendar-list\">";
+
+            grouped[dateKey].forEach(function (item) {
+                html += "<article class=\"course-calendar-item\">";
+                html += "<div class=\"course-calendar-item-main\">";
+                html += "<div class=\"course-calendar-item-course\">";
+                html += "<p class=\"course-calendar-item-type caption\">" + item.type.toUpperCase() + "</p>";
+                html += "<h3 class=\"course-calendar-item-title body\">" + item.label + "</h3>";
+                html += "</div>";
+                html += "<div class=\"course-calendar-item-schedule\">";
+                html += "<p class=\"course-calendar-item-meta body-small\"><span class=\"course-calendar-item-icon\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M7 3V6M17 3V6M4 9H20M5 5H19C19.5523 5 20 5.44772 20 6V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V6C4 5.44772 4.44772 5 5 5Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>" + formatDeadlineDate(item.registrationDeadline) + "</p>";
+                html += "<p class=\"course-calendar-item-meta body-small\"><span class=\"course-calendar-item-icon\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"none\"><circle cx=\"12\" cy=\"12\" r=\"8\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M12 8V12L14.5 14.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>" + formatTimeRange(item.start, item.end, state.timezone) + "</p>";
+                html += "</div>";
+                html += "</div>";
+                html += "<div class=\"course-calendar-item-side\">";
+                html += "<p class=\"course-calendar-item-price heading-6\">" + formatPrice(item.price) + "</p>";
+                html += "<a href=\"" + item.href + "\" class=\"course-calendar-item-cta hero-btn hero-btn-secondary body-small\">Register</a>";
+                html += "</div>";
+                html += "</article>";
+            });
+
+            html += "</div></div>";
+        });
+
+        var summary = items.length === 1 ? "1 session in " + MONTH_NAMES[state.month] + " " + state.year : items.length + " sessions in " + MONTH_NAMES[state.month] + " " + state.year;
+        content.innerHTML = [
+            "<div class=\"course-calendar-results-header\">",
+            "<p class=\"course-calendar-results-label caption\">Schedule</p>",
+            "<p class=\"course-calendar-results-summary body-small\" aria-live=\"polite\">", summary, "</p>",
+            "</div>",
+            html || "<div class=\"course-calendar-empty-state\"><h2 class=\"course-calendar-empty-title heading-6\">No programs found</h2><p class=\"course-calendar-empty-copy body-small\">Try another month or clear one of the filters to see more sessions.</p></div>"
+        ].join("");
+    }
+
+    function render() {
+        ensureValidSelection();
+        yearLabel.textContent = state.year;
+        renderMonths();
+        renderResults();
+    }
+
+    function moveYear(direction) {
+        var years = getYears();
+        var index = years.indexOf(state.year);
+        var nextIndex = index + direction;
+        if (nextIndex < 0 || nextIndex >= years.length) return;
+        state.year = years[nextIndex];
+        state.month = getAvailableMonths(state.year)[0];
+        render();
+    }
+
+    var monthCard = section.querySelector(".course-calendar-month-card");
+    if (monthCard && !section.querySelector(".course-calendar-month-card-header")) {
+        var originalYearLabel = yearLabel;
+        monthCard.insertAdjacentHTML(
+            "afterbegin",
+            "<div class=\"course-calendar-month-card-header\"><button type=\"button\" class=\"course-calendar-nav-btn\" data-year-nav=\"prev\" aria-label=\"Show previous year\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M15 6 9 12l6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg></button><div class=\"course-calendar-year body-small\"></div><button type=\"button\" class=\"course-calendar-nav-btn\" data-year-nav=\"next\" aria-label=\"Show next year\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"m9 6 6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg></button></div>"
+        );
+        yearLabel = monthCard.querySelector(".course-calendar-year");
+        if (originalYearLabel && originalYearLabel.parentNode) {
+            originalYearLabel.parentNode.removeChild(originalYearLabel);
+        }
+    }
+
+    section.addEventListener("click", function (event) {
+        var monthButton = event.target.closest(".course-calendar-month");
+        var yearButton = event.target.closest("[data-year-nav]");
+
+        if (monthButton && monthButton.hasAttribute("data-month") && !monthButton.disabled) {
+            state.month = Number(monthButton.getAttribute("data-month"));
+            render();
+        }
+
+        if (yearButton) {
+            moveYear(yearButton.getAttribute("data-year-nav") === "prev" ? -1 : 1);
         }
     });
 
-    trigger.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
-            e.preventDefault();
-            if (trigger.getAttribute("aria-expanded") !== "true") open();
-        }
+    [certificationSelect, courseSelect].forEach(function (select) {
+        if (!select) return;
+        select.addEventListener("change", render);
     });
 
-    listbox.addEventListener("click", function (e) {
-        const option = e.target.closest("[role=\"option\"]");
-        if (!option) return;
-        var value = option.getAttribute("data-value");
-        var label = option.textContent.trim();
-        setValue(value, label);
-        close();
+    timezoneSelect.addEventListener("change", function () {
+        state.timezone = timezoneSelect.value;
+        render();
     });
 
-    listbox.addEventListener("keydown", function (e) {
-        var options = Array.from(listbox.querySelectorAll("[role=\"option\"]"));
-        var current = listbox.querySelector("[aria-selected=\"true\"]");
-        var idx = current ? options.indexOf(current) : -1;
-
-        if (e.key === "Escape") {
-            close();
-            e.preventDefault();
-            return;
-        }
-        if (e.key === "ArrowDown" && idx < options.length - 1) {
-            idx += 1;
-            e.preventDefault();
-            options[idx].focus();
-            return;
-        }
-        if (e.key === "ArrowUp" && idx > 0) {
-            idx -= 1;
-            e.preventDefault();
-            options[idx].focus();
-            return;
-        }
-        if ((e.key === "Enter" || e.key === " ") && current) {
-            setValue(current.getAttribute("data-value"), current.textContent.trim());
-            close();
-            e.preventDefault();
-        }
-    });
-
-    document.addEventListener("click", function (e) {
-        if (trigger.getAttribute("aria-expanded") === "true" && !trigger.contains(e.target) && !listbox.contains(e.target)) {
-            close();
-        }
-    });
+    render();
 })();
 
 // What You'll Learn in CUA: accordion — only one open at a time

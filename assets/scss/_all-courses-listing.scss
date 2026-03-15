@@ -18,6 +18,10 @@
   align-items: center;
   gap: 1.25rem;
   flex: 1;
+
+  .choices__inner{
+    background-color: v.$color-primary-white;
+  }
 }
 
 .all-courses-filter-select {
