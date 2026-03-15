@@ -9,7 +9,7 @@
     <meta name="keywords"
         content="HFI Institute, Human Factors International, Experience Architects, Certifications, Mentorship, Leadership Development, Enterprise Capability, Experience Economy">
     <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
-    <title>HFI | Master the Science of Usability</title>
+    <title>HFI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/vendor/bootstrap.css">
     <link rel="stylesheet" href="assets/vendor/swiper.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -808,7 +807,7 @@
                             <span class="upcoming-tracks-timezone-label body">Timezone:</span>
                             <div class="upcoming-tracks-timezone-dropdown">
                                 <select id="upcoming-tracks-timezone-select"
-                                    class="upcoming-tracks-timezone-select body" aria-label="Timezone">
+                                    class="upcoming-tracks-timezone-select-native" aria-hidden="true" tabindex="-1">
                                     <option value="America/Los_Angeles" selected>Los Angeles, California</option>
                                     <option value="America/New_York">New York, Eastern</option>
                                     <option value="America/Chicago">Chicago, Central</option>
@@ -821,6 +820,47 @@
                                     <option value="Asia/Tokyo">Tokyo, Japan</option>
                                     <option value="Australia/Sydney">Sydney, Australia</option>
                                 </select>
+                                <button type="button" class="upcoming-tracks-timezone-trigger body"
+                                    aria-expanded="false" aria-haspopup="listbox"
+                                    aria-controls="upcoming-tracks-timezone-listbox"
+                                    id="upcoming-tracks-timezone-trigger" aria-label="Select timezone">
+                                    <span class="upcoming-tracks-timezone-trigger-text">Los Angeles, California</span>
+                                    <svg class="upcoming-tracks-timezone-chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M6 9l6 6 6-6" />
+                                    </svg>
+                                </button>
+                                <ul class="upcoming-tracks-timezone-listbox" id="upcoming-tracks-timezone-listbox"
+                                    role="listbox" aria-label="Timezone" tabindex="-1" hidden>
+                                    <li id="tz-America/Los_Angeles" role="option"
+                                        class="upcoming-tracks-timezone-option body" data-value="America/Los_Angeles"
+                                        aria-selected="true" tabindex="0">Los Angeles, California</li>
+                                    <li id="tz-America/New_York" role="option"
+                                        class="upcoming-tracks-timezone-option body" data-value="America/New_York"
+                                        tabindex="-1">New York, Eastern</li>
+                                    <li id="tz-America/Chicago" role="option"
+                                        class="upcoming-tracks-timezone-option body" data-value="America/Chicago"
+                                        tabindex="-1">Chicago, Central</li>
+                                    <li id="tz-America/Denver" role="option"
+                                        class="upcoming-tracks-timezone-option body" data-value="America/Denver"
+                                        tabindex="-1">Denver, Mountain</li>
+                                    <li id="tz-Europe/London" role="option" class="upcoming-tracks-timezone-option body"
+                                        data-value="Europe/London" tabindex="-1">London, UK</li>
+                                    <li id="tz-Europe/Paris" role="option" class="upcoming-tracks-timezone-option body"
+                                        data-value="Europe/Paris" tabindex="-1">Paris, CET</li>
+                                    <li id="tz-Asia/Dubai" role="option" class="upcoming-tracks-timezone-option body"
+                                        data-value="Asia/Dubai" tabindex="-1">Dubai, UAE</li>
+                                    <li id="tz-Asia/Kolkata" role="option" class="upcoming-tracks-timezone-option body"
+                                        data-value="Asia/Kolkata" tabindex="-1">India (IST)</li>
+                                    <li id="tz-Asia/Singapore" role="option"
+                                        class="upcoming-tracks-timezone-option body" data-value="Asia/Singapore"
+                                        tabindex="-1">Singapore</li>
+                                    <li id="tz-Asia/Tokyo" role="option" class="upcoming-tracks-timezone-option body"
+                                        data-value="Asia/Tokyo" tabindex="-1">Tokyo, Japan</li>
+                                    <li id="tz-Australia/Sydney" role="option"
+                                        class="upcoming-tracks-timezone-option body" data-value="Australia/Sydney"
+                                        tabindex="-1">Sydney, Australia</li>
+                                </ul>
                             </div>
                         </div>
                         <ul class="upcoming-tracks-list list-unstyled">
@@ -863,7 +903,7 @@
                         </ul>
                         <p class="upcoming-tracks-enterprise body">Need enterprise team training?</p>
                         <a href="#" class="upcoming-tracks-custom-link body-small">Get custom pricing</a>
-                        <a href="#" class="upcoming-tracks-more btn body">More Courses on Calendar</a>
+                        <a href="course-calendar.html" class="upcoming-tracks-more btn body">More Courses on Calendar</a>
                     </div>
                 </div>
             </div>
@@ -874,7 +914,7 @@
     <!--------------------------- 
        EXECUTIVE GUIDE SECTION
     ------------------------------>
-    <section class="certification-executive-guide-section">
+    <section class="certification-executive-guide-section" id="executive-guide">
         
         <div class="certification-executive-guide-image-wrap">
             <img src="assets/images/dotted_arrow.svg" alt="Executive Guide"
@@ -1116,7 +1156,6 @@
 <script src="assets/vendor/jquery.js"></script>
 <script src="assets/vendor/bootstrap.js"></script>
 <script src="assets/vendor/swiper.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <script src="assets/js/main.js"></script>
 
 </html>

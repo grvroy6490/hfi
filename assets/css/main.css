@@ -3296,6 +3296,11 @@ body.mobile-menu-open {
   font-weight: 400;
   line-height: 1.5;
   color: #2b2b2b;
+  position: relative;
+}
+
+.choices.is-open {
+  overflow: visible;
 }
 
 .choices__inner {
@@ -3310,6 +3315,11 @@ body.mobile-menu-open {
   box-shadow: none;
 }
 
+.choices.is-open .choices__inner {
+  border-radius: 999px;
+  overflow: visible;
+}
+
 .choices[data-type*=select-one]::after {
   right: 0.9rem;
   width: 0.5rem;
@@ -3319,11 +3329,14 @@ body.mobile-menu-open {
   border-style: solid;
   border-color: #555;
   transform: rotate(135deg);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .choices[data-type*=select-one].is-open::after {
   margin-top: -0.1rem;
   transform: rotate(-45deg);
+  border-color: #555 !important;
 }
 
 .choices__list--single {
@@ -3344,6 +3357,8 @@ body.mobile-menu-open {
   border: 1px solid #d8d8d8;
   border-radius: 0.75rem;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 5;
 }
 
 .choices__list--dropdown .choices__item--selectable,
@@ -3359,7 +3374,7 @@ body.mobile-menu-open {
 
 .course-calendar-toolbar-filters .choices,
 .course-calendar-timezone-dropdown .choices {
-  min-width: 12.5rem;
+  min-width: 16rem;
 }
 
 .course-calendar-toolbar-filters .choices__inner {
@@ -3371,17 +3386,17 @@ body.mobile-menu-open {
 }
 
 .course-calendar-timezone-dropdown .choices__inner {
-  padding: 0 1rem 0 0;
+  padding: 0 2rem 0 0;
   border: 0;
   border-radius: 0;
   background: transparent;
 }
 
 .course-calendar-timezone-dropdown .choices[data-type*=select-one]::after {
-  right: 0;
-  width: 0.375rem;
-  height: 0.375rem;
-  margin-top: -0.2rem;
+  right: 0.7rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: -0.5rem;
 }
 
 .course-calendar-timezone-dropdown .choices__list--single .choices__item {
@@ -3609,13 +3624,15 @@ body.mobile-menu-open {
 }
 
 .course-calendar-timezone {
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .course-calendar-timezone-label {
-  color: #757575;
+  color: #404040;
 }
 
 .course-calendar-timezone-dropdown {
@@ -3637,47 +3654,68 @@ body.mobile-menu-open {
 .course-calendar-timezone-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  color: #2b2b2b;
+  gap: 0.35rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-weight: 600;
+  color: #404040;
+  text-decoration: underline;
   cursor: pointer;
+  transition: color 0.2s ease;
+}
+.course-calendar-timezone-trigger:hover {
+  color: #b88912;
 }
 .course-calendar-timezone-trigger[aria-expanded=true] .course-calendar-timezone-chevron {
   transform: rotate(180deg);
 }
 
 .course-calendar-timezone-chevron {
-  width: 0.875rem;
-  height: 0.875rem;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
   transition: transform 0.2s ease;
 }
 
 .course-calendar-timezone-listbox {
   position: absolute;
-  top: calc(100% + 0.25rem);
-  right: 0;
+  top: 100%;
+  left: 0;
+  margin: 0.25rem 0 0;
+  padding: 0.5rem 0;
   min-width: 12rem;
-  max-height: 14rem;
+  max-height: 16rem;
   overflow-y: auto;
-  padding: 0.4rem 0;
+  list-style: none;
   background: #fff;
-  border: 1px solid #d8d8d8;
-  border-radius: 0.75rem;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  z-index: 20;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+.course-calendar-timezone-listbox[hidden] {
+  display: none !important;
 }
 
 .course-calendar-timezone-option {
-  padding: 0.45rem 0.85rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  color: rgb(43, 43, 43);
+  transition: background 0.15s ease, color 0.15s ease;
 }
 .course-calendar-timezone-option:hover, .course-calendar-timezone-option[aria-selected=true] {
   background: rgba(184, 137, 18, 0.08);
   color: #b88912;
 }
 
+.course-calendar-date-group {
+  margin-bottom: 1rem;
+}
+
 .course-calendar-layout {
   display: grid;
-  grid-template-columns: 12rem minmax(0, 1fr);
+  grid-template-columns: 16rem minmax(0, 1fr);
   gap: 1.5rem;
   align-items: start;
 }
@@ -3696,30 +3734,41 @@ body.mobile-menu-open {
   justify-content: space-between;
   gap: 0.5rem;
   margin-bottom: 0.9rem;
-}
-
-.course-calendar-nav-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: #2b2b2b;
-}
-.course-calendar-nav-btn svg {
-  width: 0.75rem;
-  height: 0.75rem;
+  padding-left: 0.7rem;
 }
 
 .course-calendar-year {
   margin-bottom: 0;
   color: #2b2b2b;
   font-weight: 700;
-  flex: 1;
-  text-align: center;
+  text-align: left;
+}
+
+.course-calendar-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.course-calendar-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #2b2b2b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.course-calendar-nav-btn:hover {
+  color: #b88912;
+}
+.course-calendar-nav-btn svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .course-calendar-month-grid {
@@ -3746,7 +3795,7 @@ body.mobile-menu-open {
   cursor: not-allowed;
 }
 .course-calendar-month.is-active {
-  width: 1.65rem;
+  width: 2rem;
   min-width: 1.65rem;
   min-height: 1.65rem;
   margin: 0 auto;
@@ -3780,7 +3829,7 @@ body.mobile-menu-open {
 
 .course-calendar-date {
   margin-bottom: 0.7rem;
-  color: #404040;
+  color: #333333;
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
@@ -3798,7 +3847,7 @@ body.mobile-menu-open {
   gap: 1.25rem;
   padding: 1rem 1rem;
   border-radius: 0.75rem;
-  background: #f6f6f6;
+  background: #f5f5f5;
 }
 
 .course-calendar-item-main {
@@ -3811,15 +3860,16 @@ body.mobile-menu-open {
 
 .course-calendar-item-type {
   margin-bottom: 0.25rem;
-  color: #404040;
+  color: #2b2b2b;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
 
 .course-calendar-item-title {
-  color: #2b2b2b;
+  color: #404040;
   font-weight: 600;
   line-height: 1.35;
+  font-family: "Inter", sans-serif !important;
 }
 
 .course-calendar-item-schedule {
@@ -3832,16 +3882,16 @@ body.mobile-menu-open {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: #404040;
+  color: #2b2b2b;
 }
 
 .course-calendar-item-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 0.875rem;
-  height: 0.875rem;
-  color: #404040;
+  width: 1em;
+  height: 1rem;
+  color: #2b2b2b;
 }
 .course-calendar-item-icon svg {
   width: 100%;
@@ -3865,13 +3915,14 @@ body.mobile-menu-open {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #2a2a2a;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #404040;
   border-radius: 999px;
-  color: #0f0f0f;
+  color: #404040;
   background: transparent;
   text-decoration: none;
   white-space: nowrap;
+  transition: all 0.2s ease;
 }
 .course-calendar-item-cta::after {
   content: "";
@@ -3887,9 +3938,9 @@ body.mobile-menu-open {
   transform: translateY(10%);
 }
 .course-calendar-item-cta:hover {
-  border-color: #2a2a2a;
-  background: #2a2a2a;
-  color: #fff;
+  border-color: #404040;
+  background: #404040;
+  color: #ffffff;
 }
 .course-calendar-item-cta:hover::after {
   background-image: url("../images/arrow.svg");
@@ -3920,14 +3971,11 @@ body.mobile-menu-open {
     flex-direction: column;
     align-items: stretch;
   }
-  .course-calendar-timezone {
-    justify-content: flex-end;
-  }
   .course-calendar-layout {
     grid-template-columns: 1fr;
   }
   .course-calendar-sidebar {
-    max-width: 12rem;
+    max-width: 70%;
   }
 }
 @media (max-width: 767.98px) {
@@ -3937,9 +3985,6 @@ body.mobile-menu-open {
   .course-calendar-toolbar-filters {
     flex-direction: column;
     align-items: stretch;
-  }
-  .course-calendar-timezone {
-    justify-content: flex-start;
   }
   .course-calendar-results-header {
     flex-direction: column;
@@ -3954,6 +3999,11 @@ body.mobile-menu-open {
   }
   .course-calendar-item-side {
     justify-content: space-between;
+  }
+}
+@media (max-width: 575.98px) {
+  .course-calendar-sidebar {
+    max-width: 100%;
   }
 }
 .all-courses-pathway-section {
@@ -4214,7 +4264,6 @@ body.mobile-menu-open {
   border: 1px solid #cccccc;
   border-radius: 1.5rem;
   background: #ffffff;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   min-height: 26.875rem;
@@ -4416,116 +4465,6 @@ body.mobile-menu-open {
   }
   .all-courses-course-title {
     font-size: 1.75rem;
-  }
-}
-.all-courses-final-cta-section {
-  padding: 5rem 0 5rem;
-  background: #ffffff;
-  background-image: url(../images/all-courses-copy-banner-pattern.svg);
-  background-repeat: no-repeat;
-  background-position: 70dvw bottom;
-}
-
-.all-courses-final-cta {
-  max-width: 56rem;
-  margin: 0 auto;
-}
-
-.all-courses-final-cta-title {
-  margin-bottom: 1rem;
-  font-family: "Inter", sans-serif;
-  font-size: clamp(1.25rem, 3.2vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1.2;
-  color: #0F0F0F;
-}
-
-.all-courses-final-cta-lead {
-  margin-bottom: 3rem;
-  color: #404040;
-}
-
-.all-courses-final-cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.all-courses-final-cta-primary,
-.all-courses-final-cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-height: 3rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  line-height: 100%;
-}
-
-.all-courses-final-cta-primary {
-  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(184, 137, 18) 50%, rgb(201, 151, 26) 100%);
-  color: #fff !important;
-}
-.all-courses-final-cta-primary::after {
-  content: "";
-  display: inline-block;
-  width: 0.8125rem;
-  min-width: 0.8125rem;
-  height: 0.75rem;
-  background-image: url("../images/chevron.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: translateY(10%);
-  transition: transform 0.25s ease;
-  filter: brightness(0) invert(1);
-}
-.all-courses-final-cta-primary:hover::after {
-  background-image: url("../images/arrow.svg");
-  transform: translateX(4px) translateY(10%);
-}
-.all-courses-final-cta-primary:hover {
-  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
-}
-
-.all-courses-final-cta-secondary {
-  color: #404040 !important;
-  border: 0.063rem solid #404040;
-}
-.all-courses-final-cta-secondary .all-courses-final-cta-phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-}
-.all-courses-final-cta-secondary .all-courses-final-cta-phone svg {
-  width: 100%;
-  height: 100%;
-}
-.all-courses-final-cta-secondary:hover {
-  background-color: #404040;
-  color: #ffffff !important;
-}
-.all-courses-final-cta-secondary:hover svg path {
-  fill: #ffffff;
-}
-
-@media (max-width: 767.98px) {
-  .all-courses-final-cta-section {
-    padding: 3.5rem 0 4rem;
-  }
-  .all-courses-final-cta-actions {
-    flex-direction: column;
-  }
-  .all-courses-final-cta-primary,
-  .all-courses-final-cta-secondary {
-    width: 100%;
   }
 }
 .certification-banner-section {

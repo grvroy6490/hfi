@@ -8,6 +8,11 @@
     font-weight: 400;
     line-height: 1.5;
     color: #2b2b2b;
+    position: relative;
+}
+
+.choices.is-open {
+    overflow: visible;
 }
 
 .choices__inner {
@@ -22,6 +27,11 @@
     box-shadow: none;
 }
 
+.choices.is-open .choices__inner {
+    border-radius: 999px;
+    overflow: visible;
+}
+
 .choices[data-type*="select-one"]::after {
     right: 0.9rem;
     width: 0.5rem;
@@ -31,11 +41,14 @@
     border-style: solid;
     border-color: #555;
     transform: rotate(135deg);
+    z-index: 10;
+    pointer-events: none;
 }
 
 .choices[data-type*="select-one"].is-open::after {
     margin-top: -0.1rem;
     transform: rotate(-45deg);
+    border-color: #555 !important;
 }
 
 .choices__list--single {
@@ -56,6 +69,8 @@
     border: 1px solid #d8d8d8;
     border-radius: 0.75rem;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 5;
 }
 
 .choices__list--dropdown .choices__item--selectable,
@@ -71,7 +86,7 @@
 
 .course-calendar-toolbar-filters .choices,
 .course-calendar-timezone-dropdown .choices {
-    min-width: 12.5rem;
+    min-width: 16rem;
 }
 
 .course-calendar-toolbar-filters .choices__inner {
@@ -83,17 +98,17 @@
 }
 
 .course-calendar-timezone-dropdown .choices__inner {
-    padding: 0 1rem 0 0;
+    padding: 0 2rem 0 0;
     border: 0;
     border-radius: 0;
     background: transparent;
 }
 
 .course-calendar-timezone-dropdown .choices[data-type*="select-one"]::after {
-    right: 0;
-    width: 0.375rem;
-    height: 0.375rem;
-    margin-top: -0.2rem;
+    right: 0.7rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: -0.5rem;
 }
 
 .course-calendar-timezone-dropdown .choices__list--single .choices__item {

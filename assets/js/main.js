@@ -1,4 +1,20 @@
 // HFI main script
+
+// Smooth scroll for in-page anchor links
+(function () {
+    "use strict";
+    document.addEventListener("click", function (e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link || link.getAttribute("href") === "#") return;
+        var id = link.getAttribute("href").slice(1);
+        var target = id ? document.getElementById(id) : null;
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    });
+})();
+
 (function () {
     "use strict";
 
@@ -496,7 +512,9 @@
 
     if (typeof Choices === "undefined") return;
 
-    Array.from(document.querySelectorAll("select")).forEach(function (select) {
+    // Exclude timezone custom dropdown's native select (hidden, synced by custom trigger/listbox)
+    var selects = document.querySelectorAll("select:not(.upcoming-tracks-timezone-select-native)");
+    Array.from(selects).forEach(function (select) {
         if (select.dataset.choicesInitialized === "true") return;
 
         new Choices(select, {
@@ -526,7 +544,10 @@
     var certificationSelect = filterSelects[0] || null;
     var courseSelect = filterSelects[1] || null;
 
-    if (!monthGrid || !yearLabel || !content || !timezoneSelect) return;
+    // Timezone functionality disabled: always use fixed timezone
+    var FIXED_TIMEZONE = "America/Los_Angeles";
+
+    if (!monthGrid || !yearLabel || !content) return;
 
     var MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var sessions = [
@@ -545,7 +566,7 @@
     var state = {
         year: 2026,
         month: 2,
-        timezone: timezoneSelect.value || "America/Los_Angeles"
+        timezone: FIXED_TIMEZONE
     };
 
     function getDateInfo(dateValue) {
@@ -729,7 +750,7 @@
         ensureValidSelection();
         yearLabel.textContent = state.year;
         renderMonths();
-        renderResults();
+        // renderResults();
     }
 
     function moveYear(direction) {
@@ -747,7 +768,7 @@
         var originalYearLabel = yearLabel;
         monthCard.insertAdjacentHTML(
             "afterbegin",
-            "<div class=\"course-calendar-month-card-header\"><button type=\"button\" class=\"course-calendar-nav-btn\" data-year-nav=\"prev\" aria-label=\"Show previous year\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M15 6 9 12l6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg></button><div class=\"course-calendar-year body-small\"></div><button type=\"button\" class=\"course-calendar-nav-btn\" data-year-nav=\"next\" aria-label=\"Show next year\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"m9 6 6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg></button></div>"
+            "<div class=\"course-calendar-month-card-header\"><div class=\"course-calendar-year body-small\"></div><div class=\"course-calendar-nav-btns\"><button type=\"button\" class=\"course-calendar-nav-btn\" data-year-nav=\"prev\" aria-label=\"Show previous year\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M15 6 9 12l6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg></button><button type=\"button\" class=\"course-calendar-nav-btn\" data-year-nav=\"next\" aria-label=\"Show next year\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"m9 6 6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg></button></div></div>"
         );
         yearLabel = monthCard.querySelector(".course-calendar-year");
         if (originalYearLabel && originalYearLabel.parentNode) {
@@ -772,11 +793,6 @@
     [certificationSelect, courseSelect].forEach(function (select) {
         if (!select) return;
         select.addEventListener("change", render);
-    });
-
-    timezoneSelect.addEventListener("change", function () {
-        state.timezone = timezoneSelect.value;
-        render();
     });
 
     render();
@@ -887,4 +903,104 @@
     } else {
         initIndustryPioneers();
     }
+})();
+
+// Upcoming CUA Tracks: timezone dropdown
+(function () {
+    "use strict";
+
+    const trigger = document.getElementById("upcoming-tracks-timezone-trigger");
+    const listbox = document.getElementById("upcoming-tracks-timezone-listbox");
+    const nativeSelect = document.getElementById("upcoming-tracks-timezone-select");
+    const triggerText = trigger ? trigger.querySelector(".upcoming-tracks-timezone-trigger-text") : null;
+
+    if (!trigger || !listbox || !nativeSelect || !triggerText) return;
+
+    function open() {
+        trigger.setAttribute("aria-expanded", "true");
+        listbox.removeAttribute("hidden");
+        var selected = listbox.querySelector("[aria-selected=\"true\"]");
+        if (selected && selected.focus) selected.focus();
+    }
+
+    function close() {
+        trigger.setAttribute("aria-expanded", "false");
+        listbox.setAttribute("hidden", "");
+        trigger.focus();
+    }
+
+    function setValue(value, label) {
+        const opt = nativeSelect.querySelector("option[value=\"" + value + "\"]");
+        if (opt) {
+            opt.selected = true;
+            nativeSelect.value = value;
+        }
+        triggerText.textContent = label || (opt ? opt.textContent : value);
+        listbox.querySelectorAll("[role=\"option\"]").forEach(function (el) {
+            var isSelected = el.getAttribute("data-value") === value;
+            el.setAttribute("aria-selected", isSelected ? "true" : "false");
+            el.setAttribute("tabindex", isSelected ? "0" : "-1");
+        });
+        nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (trigger.getAttribute("aria-expanded") === "true") {
+            close();
+        } else {
+            open();
+        }
+    });
+
+    trigger.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+            e.preventDefault();
+            if (trigger.getAttribute("aria-expanded") !== "true") open();
+        }
+    });
+
+    listbox.addEventListener("click", function (e) {
+        const option = e.target.closest("[role=\"option\"]");
+        if (!option) return;
+        var value = option.getAttribute("data-value");
+        var label = option.textContent.trim();
+        setValue(value, label);
+        close();
+    });
+
+    listbox.addEventListener("keydown", function (e) {
+        var options = Array.from(listbox.querySelectorAll("[role=\"option\"]"));
+        var current = listbox.querySelector("[aria-selected=\"true\"]");
+        var idx = current ? options.indexOf(current) : -1;
+
+        if (e.key === "Escape") {
+            close();
+            e.preventDefault();
+            return;
+        }
+        if (e.key === "ArrowDown" && idx < options.length - 1) {
+            idx += 1;
+            e.preventDefault();
+            options[idx].focus();
+            return;
+        }
+        if (e.key === "ArrowUp" && idx > 0) {
+            idx -= 1;
+            e.preventDefault();
+            options[idx].focus();
+            return;
+        }
+        if ((e.key === "Enter" || e.key === " ") && current) {
+            setValue(current.getAttribute("data-value"), current.textContent.trim());
+            close();
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener("click", function (e) {
+        if (trigger.getAttribute("aria-expanded") === "true" && !trigger.contains(e.target) && !listbox.contains(e.target)) {
+            close();
+        }
+    });
 })();
