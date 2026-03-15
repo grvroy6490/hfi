@@ -56,9 +56,9 @@
 }
 
 .choices__list--single .choices__item {
-    color: inherit;
+    color: v.$color-primary-black;
     font-family: "Inter", sans-serif;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
 }

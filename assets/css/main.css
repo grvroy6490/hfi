@@ -3344,9 +3344,9 @@ body.mobile-menu-open {
 }
 
 .choices__list--single .choices__item {
-  color: inherit;
+  color: #0F0F0F;
   font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -3436,7 +3436,7 @@ body.mobile-menu-open {
 .all-courses-banner-title {
   margin-bottom: 1rem;
   font-family: "Mundial", sans-serif;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2.5rem, 4vw, 3.375rem);
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -4094,7 +4094,7 @@ body.mobile-menu-open {
   padding-left: 1rem;
   color: #404040;
   list-style-type: disc;
-  text-indent: -0.4rem;
+  text-indent: -0.2rem;
 }
 .all-courses-pathway-list li {
   font-weight: 600;
@@ -4324,7 +4324,7 @@ body.mobile-menu-open {
 .all-courses-course-meta {
   margin-bottom: 0.5rem;
   color: #2f2f2f;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .all-courses-course-tags {
@@ -5866,8 +5866,7 @@ body.mobile-menu-open {
   filter: brightness(0) invert(1);
 }
 .certification-certified-usability-analyst-btn-primary:hover {
-  opacity: 0.95;
-  box-shadow: 0 2px 12px rgba(184, 137, 18, 0.3);
+  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
 }
 .certification-certified-usability-analyst-btn-primary:hover::after {
   background-image: url("../images/arrow.svg");

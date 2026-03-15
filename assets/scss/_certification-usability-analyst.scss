@@ -107,8 +107,7 @@
     }
 
     &:hover {
-        opacity: 0.95;
-        box-shadow: 0 2px 12px rgba(184, 137, 18, 0.3);
+        background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
     }
 
     &:hover::after {
