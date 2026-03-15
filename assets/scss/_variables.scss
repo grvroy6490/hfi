@@ -8,11 +8,14 @@ $color-off-black: #2B2B2B;
 $color-primary-grey: #404040;
 $color-primary-black: #0F0F0F;
 $color-primary-white: #ffffff;
+$color-card-bg: #F5F5F5;
+$color-neutral-NC4: #4F4F4F;
+
 
 $color-black: rgba(0, 0, 0, 1);
 $color-gray-dark: rgba(43, 43, 43, 1);
-$color-gray-light:rgba(79, 79, 79, 1);
-$color-gray-lighter:rgba(117, 117, 117, 1);
+$color-gray-light:rgb(79, 79, 79);
+$color-gray-lighter:rgb(117, 117, 117);
 
 
 // Optional semantic aliases

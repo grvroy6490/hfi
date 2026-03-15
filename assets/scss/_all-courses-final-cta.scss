@@ -1,0 +1,134 @@
+@use "variables" as v;
+
+.all-courses-final-cta-section {
+  padding: 5rem 0 5rem;
+  background: v.$color-primary-white;
+  background-image: url(../images/all-courses-copy-banner-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: 70dvw bottom;
+}
+
+.all-courses-final-cta {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.all-courses-final-cta-title {
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.25rem, 3.2vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: v.$color-primary-black;
+}
+
+.all-courses-final-cta-lead {
+  margin-bottom: 3rem;
+  color: v.$color-neutral-dark;
+}
+
+.all-courses-final-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.all-courses-final-cta-primary,
+.all-courses-final-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+  line-height: 100%;
+}
+
+.all-courses-final-cta-primary {
+  background: linear-gradient(
+    270deg,
+    rgb(143, 106, 15) 0%,
+    rgb(184, 137, 18) 50%,
+    rgb(201, 151, 26) 100%
+  );
+  color: #fff !important;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.8125rem;
+    min-width: 0.8125rem;
+    height: 0.75rem;
+    background-image: url("../images/chevron.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(10%);
+    transition: transform 0.25s ease;
+    filter: brightness(0) invert(1);
+  }
+
+  &:hover::after {
+    background-image: url("../images/arrow.svg");
+    transform: translateX(4px) translateY(10%);
+  }
+
+  &:hover {
+    background: linear-gradient(
+      270deg,
+      rgb(143, 106, 15) 0%,
+      rgb(143, 106, 15) 50%,
+      rgb(143, 106, 15) 100%
+    );
+  }
+}
+
+.all-courses-final-cta-secondary {
+  color: v.$color-neutral-dark !important;
+  border: 0.063rem solid v.$color-neutral-dark;
+
+  .all-courses-final-cta-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    background-color: v.$color-neutral-dark;
+    color: v.$color-primary-white !important;
+
+    svg path {
+      fill: v.$color-primary-white;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .all-courses-final-cta-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .all-courses-final-cta-actions {
+    flex-direction: column;
+  }
+
+  .all-courses-final-cta-primary,
+  .all-courses-final-cta-secondary {
+    width: 100%;
+  }
+}

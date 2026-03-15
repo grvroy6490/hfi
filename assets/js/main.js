@@ -280,6 +280,57 @@
     window.addEventListener("load", updateDesktopMenuMetrics);
 })();
 
+// All courses listing: dropdown filtering
+(function () {
+    "use strict";
+
+    var results = document.getElementById("all-courses-results");
+    if (!results) return;
+
+    var cards = Array.from(results.querySelectorAll("[data-filter-card]"));
+    var programSelect = document.getElementById("all-courses-filter-program");
+    var levelSelect = document.getElementById("all-courses-filter-level");
+    var topicSelect = document.getElementById("all-courses-filter-topic");
+    var emptyState = document.getElementById("all-courses-empty-state");
+
+    function normalize(value) {
+        return (value || "").toString().trim().toLowerCase();
+    }
+
+    function matchesFilter(cardValue, selectedValue) {
+        return selectedValue === "all" || normalize(cardValue) === selectedValue;
+    }
+
+    function applyFilters() {
+        var selectedProgram = normalize(programSelect ? programSelect.value : "all");
+        var selectedLevel = normalize(levelSelect ? levelSelect.value : "all");
+        var selectedTopic = normalize(topicSelect ? topicSelect.value : "all");
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+            var matchesProgram = matchesFilter(card.getAttribute("data-program"), selectedProgram);
+            var matchesLevel = matchesFilter(card.getAttribute("data-level"), selectedLevel);
+            var matchesTopic = matchesFilter(card.getAttribute("data-topic"), selectedTopic);
+            var isVisible = matchesProgram && matchesLevel && matchesTopic;
+
+            card.hidden = !isVisible;
+            if (isVisible) visibleCount += 1;
+        });
+
+        if (emptyState) {
+            emptyState.hidden = visibleCount !== 0;
+        }
+    }
+
+    [programSelect, levelSelect, topicSelect].forEach(function (control) {
+        if (!control) return;
+        control.addEventListener("input", applyFilters);
+        control.addEventListener("change", applyFilters);
+    });
+
+    applyFilters();
+})();
+
 // Core capability courses slider
 (function () {
     "use strict";
