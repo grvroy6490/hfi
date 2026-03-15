@@ -4956,7 +4956,7 @@ body.mobile-menu-open {
   background: #fff;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 0.75rem;
-  padding: 2rem 1.75rem;
+  padding: 3rem;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -4968,11 +4968,12 @@ body.mobile-menu-open {
   align-items: flex-start;
   gap: 0.5rem;
   padding-left: 1.3rem;
+  margin-top: 3rem;
 }
 
 .impact-beyond-certification-quote-open {
   position: absolute;
-  top: 1rem;
+  top: 2rem;
   left: 1.25rem;
   width: 1.5rem;
   height: auto;
@@ -4981,7 +4982,7 @@ body.mobile-menu-open {
 
 .impact-beyond-certification-quote-close {
   position: absolute;
-  bottom: 7rem;
+  bottom: 50%;
   right: 2.25rem;
   width: 1.5rem;
   height: auto;
@@ -4991,8 +4992,7 @@ body.mobile-menu-open {
 
 .impact-beyond-certification-blockquote {
   margin: 0 0 1rem;
-  padding: 0rem 1.25rem 0.25rem 1.25rem;
-  color: rgb(43, 43, 43);
+  color: rgb(0, 0, 0);
   position: relative;
   z-index: 1;
   line-height: 1.6;
@@ -5024,7 +5024,7 @@ body.mobile-menu-open {
   }
 }
 .certification-executive-guide-section {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
   background-color: rgb(33, 33, 33);
   background-size: 24px 24px;
   position: relative;
@@ -5035,9 +5035,8 @@ body.mobile-menu-open {
 }
 
 .certification-executive-guide-label {
-  margin: 0 0 0.75rem;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.75rem;
+  margin: 0 0 0.5rem;
+  color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -5065,16 +5064,16 @@ body.mobile-menu-open {
 
 .certification-executive-guide-title {
   margin: 0 0 1.25rem;
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .certification-executive-guide-lead {
   margin: 0 0 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   line-height: 1.6;
-  max-width: 32rem;
+  max-width: 45rem;
 }
 
 .certification-executive-guide-list {
@@ -5104,19 +5103,19 @@ body.mobile-menu-open {
 
 .certification-executive-guide-form-card {
   background-color: rgb(41, 41, 41);
-  border-radius: 1.75rem;
-  padding: 2rem;
+  border-radius: 1.5rem;
+  padding: 3rem;
 }
 
 .certification-executive-guide-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .certification-executive-guide-input {
   width: 100%;
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 1.5rem;
   background-color: #2E2E2E;
   border: 1px solid #616161;
   border-radius: 5rem;
@@ -5167,6 +5166,7 @@ body.mobile-menu-open {
 }
 .certification-executive-guide-btn:hover {
   opacity: 0.95;
+  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
 }
 .certification-executive-guide-btn:hover::after {
   background-image: url("../images/arrow.svg");
@@ -5188,7 +5188,7 @@ body.mobile-menu-open {
 }
 .certification-faq-section .certification-faq-title {
   text-align: center;
-  color: #404040;
+  color: rgb(0, 0, 0);
   margin-bottom: 1.5rem;
 }
 
@@ -5220,7 +5220,7 @@ body.mobile-menu-open {
   border: none;
   background: none;
   font-weight: 700;
-  color: rgb(43, 43, 43);
+  color: rgb(0, 0, 0);
   text-align: left;
   cursor: pointer;
   list-style: none;

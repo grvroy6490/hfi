@@ -801,7 +801,7 @@ $journey-line-top: calc(0.1rem + #{$journey-dot-size});
     background: #fff;
     border: 1px solid rgba(204, 204, 204, 1);
     border-radius: 0.75rem;
-    padding: 2rem 1.75rem;
+    padding: 3rem;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -813,11 +813,12 @@ $journey-line-top: calc(0.1rem + #{$journey-dot-size});
     align-items: flex-start;
     gap: 0.5rem;
     padding-left: 1.3rem;
+    margin-top: 3rem;
 }
 
 .impact-beyond-certification-quote-open {
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     left: 1.25rem;
     width: 1.5rem;
     height: auto;
@@ -826,7 +827,7 @@ $journey-line-top: calc(0.1rem + #{$journey-dot-size});
 
 .impact-beyond-certification-quote-close {
     position: absolute;
-    bottom: 7rem;
+    bottom: 50%;
     right: 2.25rem;
     width: 1.5rem;
     height: auto;
@@ -836,8 +837,8 @@ $journey-line-top: calc(0.1rem + #{$journey-dot-size});
 
 .impact-beyond-certification-blockquote {
     margin: 0 0 1rem;
-    padding: 0rem 1.25rem 0.25rem 1.25rem;
-    color: v.$color-gray-dark;
+    // padding: 0rem 1.25rem 0.25rem 1.25rem;
+    color: v.$color-black;
     position: relative;
     z-index: 1;
     line-height: 1.6;

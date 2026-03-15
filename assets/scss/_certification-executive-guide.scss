@@ -2,7 +2,7 @@
 
 // —— Science of Usability – Executive Guide (dark section + form) ——
 .certification-executive-guide-section {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     background-color: rgba(33, 33, 33, 1);
     background-size: 24px 24px;
     position: relative;
@@ -14,9 +14,8 @@
 }
 
 .certification-executive-guide-label {
-    margin: 0 0 0.75rem;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.75rem;
+    margin: 0 0 0.5rem;
+    color: v.$color-primary-white;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -43,16 +42,16 @@
 
 .certification-executive-guide-title {
     margin: 0 0 1.25rem;
-    color: #fff;
+    color: v.$color-primary-white;;
     font-weight: 600;
     line-height: 1.2;
 }
 
 .certification-executive-guide-lead {
     margin: 0 0 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: v.$color-primary-white;
     line-height: 1.6;
-    max-width: 32rem;
+    max-width: 45rem;
 }
 
 .certification-executive-guide-list {
@@ -84,19 +83,19 @@
 // Form card (right column)
 .certification-executive-guide-form-card {
     background-color: rgba(41, 41, 41, 1);
-    border-radius: 1.75rem;
-    padding: 2rem;
+    border-radius: 1.5rem;
+    padding: 3rem;
 }
 
 .certification-executive-guide-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .certification-executive-guide-input {
     width: 100%;
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 1.5rem;
     background-color: #2E2E2E;
     border: 1px solid #616161;
     border-radius: 5rem;
@@ -147,6 +146,7 @@
 
     &:hover {
         opacity: 0.95;
+        background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
     }
 
     &:hover::after {
