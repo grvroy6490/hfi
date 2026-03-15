@@ -4931,4 +4931,473 @@ body.mobile-menu-open {
   .industry-pioneers-card-img {
     min-height: 200px;
   }
+}
+.impact-beyond-certification {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  background: #fff;
+}
+
+.impact-beyond-certification-title {
+  color: #404040;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.impact-beyond-certification-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.impact-beyond-certification-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 0.75rem;
+  padding: 2rem 1.75rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.impact-beyond-certification-author {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-left: 1.3rem;
+}
+
+.impact-beyond-certification-quote-open {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  width: 1.5rem;
+  height: auto;
+  pointer-events: none;
+}
+
+.impact-beyond-certification-quote-close {
+  position: absolute;
+  bottom: 7rem;
+  right: 2.25rem;
+  width: 1.5rem;
+  height: auto;
+  transform: scaleX(1) rotate(180deg);
+  pointer-events: none;
+}
+
+.impact-beyond-certification-blockquote {
+  margin: 0 0 1rem;
+  padding: 0rem 1.25rem 0.25rem 1.25rem;
+  color: rgb(43, 43, 43);
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+.impact-beyond-certification-sep {
+  margin: 0 0 0.5rem;
+  color: #000;
+}
+
+.impact-beyond-certification-name {
+  margin: 0 0 0.25rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.impact-beyond-certification-role {
+  margin: 0;
+  font-weight: 400;
+  color: #404040;
+}
+
+@media (max-width: 767.98px) {
+  .impact-beyond-certification-grid {
+    grid-template-columns: 1fr;
+  }
+  .impact-beyond-certification-quote-close {
+    bottom: 5.5rem;
+  }
+}
+.certification-executive-guide-section {
+  padding: 4rem 0;
+  background-color: rgb(33, 33, 33);
+  background-size: 24px 24px;
+  position: relative;
+}
+.certification-executive-guide-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.certification-executive-guide-label {
+  margin: 0 0 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.certification-executive-guide-image-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.1;
+}
+@media screen and (max-width: 991.98px) {
+  .certification-executive-guide-image-wrap {
+    bottom: 0;
+    top: unset;
+    height: auto;
+  }
+}
+
+.certification-executive-guide-image {
+  height: 100%;
+}
+
+.certification-executive-guide-title {
+  margin: 0 0 1.25rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.certification-executive-guide-lead {
+  margin: 0 0 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 32rem;
+}
+
+.certification-executive-guide-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.certification-executive-guide-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+.certification-executive-guide-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.certification-executive-guide-check {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.certification-executive-guide-form-card {
+  background-color: rgb(41, 41, 41);
+  border-radius: 1.75rem;
+  padding: 2rem;
+}
+
+.certification-executive-guide-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.certification-executive-guide-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #2E2E2E;
+  border: 1px solid #616161;
+  border-radius: 5rem;
+  color: #fff;
+  line-height: 1.5;
+  transition: border-color 0.2s ease;
+}
+.certification-executive-guide-input::-moz-placeholder {
+  color: #9E9E9E;
+}
+.certification-executive-guide-input::placeholder {
+  color: #9E9E9E;
+}
+.certification-executive-guide-input:focus {
+  border-color: #b88912;
+  outline: 0;
+}
+
+.certification-executive-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(90deg, #c9971a 0%, #b88912 50%, #8f6a0f 100%);
+  border: none;
+  border-radius: 5rem;
+  color: #fff !important;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.certification-executive-guide-btn::after {
+  content: "";
+  display: inline-block;
+  width: 0.8125rem;
+  min-width: 0.8125rem;
+  height: 0.75rem;
+  background-image: url("../images/chevron.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(10%);
+  transition: transform 0.25s ease;
+  filter: brightness(0) invert(1);
+}
+.certification-executive-guide-btn:hover {
+  opacity: 0.95;
+}
+.certification-executive-guide-btn:hover::after {
+  background-image: url("../images/arrow.svg");
+  transform: translateX(4px) translateY(10%);
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 991.98px) {
+  .certification-executive-guide-section {
+    padding: 3rem 0;
+  }
+  .certification-executive-guide-form-card {
+    margin-top: 2rem;
+  }
+}
+.certification-faq-section {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+.certification-faq-section .certification-faq-title {
+  text-align: center;
+  color: #404040;
+  margin-bottom: 1.5rem;
+}
+
+.certification-faq-accordion {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.certification-faq-accordion-item {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 0.35s ease-out;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.certification-faq-accordion-item[open] {
+  grid-template-rows: auto 1fr;
+}
+.certification-faq-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.certification-faq-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  font-weight: 700;
+  color: rgb(43, 43, 43);
+  text-align: left;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s ease;
+}
+.certification-faq-accordion-trigger::-webkit-details-marker {
+  display: none;
+}
+.certification-faq-accordion-trigger:hover {
+  color: #b88912;
+}
+
+.certification-faq-accordion-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1rem;
+  margin-left: 0.5rem;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+}
+
+.certification-faq-accordion-item[open] .certification-faq-accordion-icon {
+  transform: rotate(180deg);
+}
+
+.certification-faq-accordion-item[open] .certification-faq-accordion-trigger {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.certification-faq-accordion-content {
+  min-height: 0;
+  overflow: hidden;
+  padding: 1rem 1.5rem;
+}
+
+.certification-faq-accordion-answer {
+  margin: 0;
+  color: #717171;
+  line-height: 1.6;
+}
+
+.certification-certified-usability-analyst-section {
+  padding: 4rem 0;
+  background-color: #F2F2F2;
+  position: relative;
+  overflow: hidden;
+}
+.certification-certified-usability-analyst-section::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  height: 80%;
+  max-width: 480px;
+  max-height: 320px;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1.5px, transparent 0);
+  background-size: 12px 12px;
+  background-position: 100% 100%;
+  mask-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent 60%);
+  -webkit-mask-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent 60%);
+  pointer-events: none;
+}
+
+.certification-certified-usability-analyst-image-wrap {
+  position: absolute;
+  bottom: -60%;
+  right: 10rem;
+  height: 100%;
+  z-index: 0;
+  transform: rotate(-90deg);
+}
+
+.certification-certified-usability-analyst-image {
+  height: 150%;
+}
+
+.certification-certified-usability-analyst-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 991.98px) {
+  .certification-certified-usability-analyst-inner {
+    max-width: 100%;
+  }
+}
+
+.certification-certified-usability-analyst-title {
+  margin: 0 0 0.75rem;
+  color: #0F0F0F;
+  font-weight: 600;
+}
+
+.certification-certified-usability-analyst-lead {
+  margin: 0 0 1.5rem;
+  color: rgb(79, 79, 79);
+  line-height: 1.5;
+}
+
+.certification-certified-usability-analyst-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+}
+
+.certification-certified-usability-analyst-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.certification-certified-usability-analyst-btn-primary {
+  background: linear-gradient(90deg, #c9971a 0%, #b88912 50%, #8f6a0f 100%);
+  border: none;
+  color: #fff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+.certification-certified-usability-analyst-btn-primary::after {
+  content: "";
+  display: inline-block;
+  width: 0.8125rem;
+  min-width: 0.8125rem;
+  height: 0.75rem;
+  background-image: url("../images/chevron.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(10%);
+  transition: transform 0.25s ease;
+  filter: brightness(0) invert(1);
+}
+.certification-certified-usability-analyst-btn-primary:hover {
+  opacity: 0.95;
+  box-shadow: 0 2px 12px rgba(184, 137, 18, 0.3);
+}
+.certification-certified-usability-analyst-btn-primary:hover::after {
+  background-image: url("../images/arrow.svg");
+  transform: translateX(4px) translateY(10%);
+  filter: brightness(0) invert(1);
+}
+
+.certification-certified-usability-analyst-btn-secondary {
+  background: transparent;
+  border: 1px solid #404040;
+  color: #404040 !important;
+}
+.certification-certified-usability-analyst-btn-secondary:hover {
+  border-color: #404040;
+  background-color: #404040 !important;
+  color: #fff !important;
+}
+
+.certification-certified-usability-analyst-btn-icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .certification-certified-usability-analyst-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .certification-certified-usability-analyst-btn {
+    justify-content: center;
+  }
 }/*# sourceMappingURL=main.css.map */
