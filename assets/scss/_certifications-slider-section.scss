@@ -59,6 +59,10 @@
 .certifications-swiper .swiper-slide {
     height: auto;
     padding: 0.0625rem;
+
+    .swiper-slide:nth-child(1) {
+        
+    }
 }
 
 .cert-card {
@@ -73,14 +77,50 @@
 }
 
 .cert-card-pathway {
-    background: #fff3d6;
+    background: #404040;
     // border-color: #fff3d6;
+
+    .cert-card-subtitle,
+    .cert-card-title,
+    .cert-card-desc,
+    .cert-card-meta{
+        color: v.$color-primary-white;
+    }
+    
+    .btn-tertiary{
+        color: v.$color-primary-black;
+        background: v.$color-primary-white;
+
+        &::after{
+            filter: brightness(0) invert(0) !important;
+        }
+
+        &:hover{
+            background: v.$color-primary-white;
+            color: v.$color-primary-black;
+        }        
+    }
+
+    .cert-card-link{
+        color: v.$color-primary-white !important;
+
+        &::after{
+            filter: brightness(0) invert(1) !important;
+        }
+
+        &:hover{
+            color: v.$color-primary-black;
+            &::after{
+                filter: brightness(0) invert(1) !important;
+            }
+        }
+    }
 }
 
 .cert-card-top {
     min-height: 10.375rem;
     height: 10.375rem;
-    background: v.$color-primary-grey;
+    background: #4F4F4F;
     color: #fff;
     padding: 2rem;
     display: flex;
