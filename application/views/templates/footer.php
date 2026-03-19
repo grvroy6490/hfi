@@ -73,7 +73,7 @@
             <div class="container">
                 <div class="row align-items-center py-3 py-md-4 footer-bottom-content">
                     <div class="col-12 col-md-6 footer-copyright text-center text-md-start body-small">
-                        © 2026 HFI Training and Solutions Inc., Architecting Leaders for the Experience Economy.
+                        © <?php echo date('Y'); ?> HFI Training and Solutions Inc., Architecting Leaders for the Experience Economy.
                     </div>
                     <div class="col-12 col-md-6 footer-legal text-center text-md-end mt-2 mt-md-0 body-small">
                         <a href="<?php echo base_url(); ?>privacy-policy" class="body-small">Privacy Policy</a>
