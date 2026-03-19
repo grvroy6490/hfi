@@ -2,7 +2,7 @@
         HERO SECTION
     ------------------------------>
     <section class="hero-section">
-        <img src="<?php echo base_url(); ?>assets/images/home_banner_bg.webp" alt="Hero Section Background" class="hero-section-bg img-fluid">
+        <img src="<?php echo base_url(); ?>assets//images/home_banner_bg.webp" alt="Hero Section Background" class="hero-section-bg img-fluid">
 
         <div class="container hero-container">
             <div class="row justify-content-center">
@@ -24,41 +24,41 @@
             <p class="hero-logos-text body">Empowering experience teams at the world's most respected organizations</p>
             <div class="logo-marquee hero-logo-marquee">
                 <div class="logo-marquee-track">
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
                     </div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/jp_morgan.svg" alt="JPMorgan Chase"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/walmart.svg" alt="Walmart"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/walmart.svg" alt="Walmart"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/P_G.svg.svg" alt="P&amp;G"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/P_G.svg.svg" alt="P&amp;G"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/american_express.svg" alt="American Express"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/american_express.svg" alt="American Express"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Unilever.svg.svg" alt="Unilever"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Unilever.svg.svg" alt="Unilever"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Amazon.svg.svg" alt="Amazon"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Amazon.svg.svg" alt="Amazon"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Microsoft.svg.svg" alt="Microsoft"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Microsoft.svg.svg" alt="Microsoft"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/stellan.svg" alt="Stellan"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/stellan.svg" alt="Stellan"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
                     </div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/jp_morgan.svg" alt="JPMorgan Chase"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/walmart.svg" alt="Walmart"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/walmart.svg" alt="Walmart"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/P_G.svg.svg" alt="P&amp;G"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/P_G.svg.svg" alt="P&amp;G"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/american_express.svg" alt="American Express"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/american_express.svg" alt="American Express"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Unilever.svg.svg" alt="Unilever"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Unilever.svg.svg" alt="Unilever"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Amazon.svg.svg" alt="Amazon"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Amazon.svg.svg" alt="Amazon"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Microsoft.svg.svg" alt="Microsoft"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Microsoft.svg.svg" alt="Microsoft"
                             class="hero-logo-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/stellan.svg" alt="Stellan"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/stellan.svg" alt="Stellan"
                             class="hero-logo-img"></div>
                 </div>
             </div>
@@ -496,7 +496,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 col-xl-12 text-left">
                     <div class="teams_banner_img">
-                        <img src="<?php echo base_url(); ?>assets/images/teams_banner.webp" alt="Transform Teams Banner" class="img-fluid">
+                        <img src="<?php echo base_url(); ?>assets//images/teams_banner.webp" alt="Transform Teams Banner" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -540,41 +540,41 @@
         <div class="logo-slider-section transform-teams-logos">
             <div class="logo-marquee">
                 <div class="logo-marquee-track">
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/GSK.svg.svg" alt="GSK"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/GSK.svg.svg" alt="GSK"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/jp_morgan.svg" alt="JPMorgan Chase"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/walmart.svg" alt="Walmart"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/walmart.svg" alt="Walmart"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/P_G.svg.svg" alt="P&amp;G"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/P_G.svg.svg" alt="P&amp;G"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/american_express.svg" alt="American Express"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/american_express.svg" alt="American Express"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Unilever.svg.svg" alt="Unilever"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Unilever.svg.svg" alt="Unilever"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Amazon.svg.svg" alt="Amazon"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Amazon.svg.svg" alt="Amazon"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Microsoft.svg.svg" alt="Microsoft"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Microsoft.svg.svg" alt="Microsoft"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/stellan.svg" alt="Stellan"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/stellan.svg" alt="Stellan"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/GSK.svg.svg" alt="GSK"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/GSK.svg.svg" alt="GSK"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/jp_morgan.svg" alt="JPMorgan Chase"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/jp_morgan.svg" alt="JPMorgan Chase"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/walmart.svg" alt="Walmart"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/walmart.svg" alt="Walmart"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/P_G.svg.svg" alt="P&amp;G"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/P_G.svg.svg" alt="P&amp;G"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/american_express.svg" alt="American Express"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/american_express.svg" alt="American Express"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Unilever.svg.svg" alt="Unilever"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Unilever.svg.svg" alt="Unilever"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Amazon.svg.svg" alt="Amazon"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Amazon.svg.svg" alt="Amazon"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/Microsoft.svg.svg" alt="Microsoft"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/Microsoft.svg.svg" alt="Microsoft"
                             class="logo-slider-img"></div>
-                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets/images/stellan.svg" alt="Stellan"
+                    <div class="logo-marquee-item"><img src="<?php echo base_url(); ?>assets//images/stellan.svg" alt="Stellan"
                             class="logo-slider-img"></div>
                 </div>
             </div>
@@ -598,7 +598,7 @@
                     <div class="swiper-slide">
                         <article class="experience-practice-card">
                             <div class="experience-practice-avatar" aria-hidden="true">
-                                <img src="<?php echo base_url(); ?>assets/images/testimonial-avator.jpg" alt="testimonial avator" />
+                                <img src="./assets/images/testimonial-avator.jpg" alt="testimonial avator" />
                             </div>
                             <p class="experience-practice-quote body">
                                 <svg class="start_quote" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
@@ -622,7 +622,7 @@
                     <div class="swiper-slide">
                         <article class="experience-practice-card">
                             <div class="experience-practice-avatar" aria-hidden="true">
-                                <img src="<?php echo base_url(); ?>assets/images/testimonial-avator.jpg" alt="testimonial avator" />
+                                <img src="./assets/images/testimonial-avator.jpg" alt="testimonial avator" />
                             </div>
                             <p class="experience-practice-quote body">
                                 <svg class="start_quote" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
@@ -646,7 +646,7 @@
                     <div class="swiper-slide">
                         <article class="experience-practice-card">
                             <div class="experience-practice-avatar" aria-hidden="true">
-                                <img src="<?php echo base_url(); ?>assets/images/testimonial-avator.jpg" alt="testimonial avator" />
+                                <img src="./assets/images/testimonial-avator.jpg" alt="testimonial avator" />
                             </div>
                             <p class="experience-practice-quote body">
                                 <svg class="start_quote" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
@@ -670,7 +670,7 @@
                     <div class="swiper-slide">
                         <article class="experience-practice-card">
                             <div class="experience-practice-avatar" aria-hidden="true">
-                                <img src="<?php echo base_url(); ?>assets/images/testimonial-avator.jpg" alt="testimonial avator" />
+                                <img src="./assets/images/testimonial-avator.jpg" alt="testimonial avator" />
                             </div>
                             <p class="experience-practice-quote body">
                                 <svg class="start_quote" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
@@ -694,7 +694,7 @@
                     <div class="swiper-slide">
                         <article class="experience-practice-card">
                             <div class="experience-practice-avatar" aria-hidden="true">
-                                <img src="<?php echo base_url(); ?>assets/images/testimonial-avator.jpg" alt="testimonial avator" />
+                                <img src="./assets/images/testimonial-avator.jpg" alt="testimonial avator" />
                             </div>
                             <p class="experience-practice-quote body">
                                 <svg class="start_quote" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
@@ -718,7 +718,7 @@
                     <div class="swiper-slide">
                         <article class="experience-practice-card">
                             <div class="experience-practice-avatar" aria-hidden="true">
-                                <img src="<?php echo base_url(); ?>assets/images/testimonial-avator.jpg" alt="testimonial avator" />
+                                <img src="./assets/images/testimonial-avator.jpg" alt="testimonial avator" />
                             </div>
                             <p class="experience-practice-quote body">
                                 <svg class="start_quote" xmlns="http://www.w3.org/2000/svg" width="28" height="25"
@@ -789,7 +789,7 @@
                 <div class="col-12 col-lg-6 g-4">
                     <article class="insight-card">
                         <div class="insight-card-image">
-                            <img src="<?php echo base_url(); ?>assets/images/insight_img_01.jpg" alt="">
+                            <img src="<?php echo base_url(); ?>assets//images/insight_img_01.jpg" alt="">
                         </div>
                         <div class="insight-card-body">
                             <p class="insight-card-category caption ">Featured Article</p>
@@ -804,7 +804,7 @@
                     <br />
                     <article class="insight-card">
                         <div class="insight-card-image">
-                            <img src="<?php echo base_url(); ?>assets/images/insight_img_02.jpg" alt="">
+                            <img src="<?php echo base_url(); ?>assets//images/insight_img_02.jpg" alt="">
                         </div>
                         <div class="insight-card-body">
                             <p class="insight-card-category caption ">Upcoming Event​</p>
@@ -819,7 +819,7 @@
 
                 <div class="col-12 col-lg-6">
                     <div class="stay-connected-card">
-                        <img src="<?php echo base_url(); ?>assets/images/dotted_arrow.svg" alt="Dotted Arrow" class="dotted-arrow-img">
+                        <img src="<?php echo base_url(); ?>assets//images/dotted_arrow.svg" alt="Dotted Arrow" class="dotted-arrow-img">
 
                         <p class="stay-connected-lead caption">Stay Connected</p>
                         <h3 class="stay-connected-heading heading-4">Continue the Circle of Experience.</h3>
@@ -858,7 +858,7 @@
                 <div class="row">
                     <div class="col-12 experience-pathway-col-image">
                         <div class="experience-pathway-image">
-                            <img src="<?php echo base_url(); ?>assets/images/form_image.webp" alt="Person with smartphone and laptop">
+                            <img src="<?php echo base_url(); ?>assets//images/form_image.webp" alt="Person with smartphone and laptop">
                         </div>
                     </div>
                     <div class="col-12 experience-pathway-col-form">
