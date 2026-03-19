@@ -1,0 +1,145 @@
+@use 'variables' as v;
+
+// —— Become a Certified Usability Analyst™ banner ——
+.certification-certified-usability-analyst-section {
+    padding: 4rem 0;
+    background-color: #F2F2F2;
+    position: relative;
+    overflow: hidden;
+ 
+    // Dotted pattern in bottom-right, fading towards center/top-left
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        height: 80%;
+        max-width: 480px;
+        max-height: 320px;
+        background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1.5px, transparent 0);
+        background-size: 12px 12px;
+        background-position: 100% 100%;
+        mask-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent 60%);
+        -webkit-mask-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent 60%);
+        pointer-events: none;
+    }
+}
+
+.certification-certified-usability-analyst-image-wrap {
+    position: absolute;
+    bottom: -60%;
+    right: 10rem;
+    height: 100%;
+    z-index: 0;
+    transform: rotate(-90deg);
+}
+
+.certification-certified-usability-analyst-image {
+    height: 150%;
+}
+
+.certification-certified-usability-analyst-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 991.98px) {
+        max-width: 100%;
+    }
+}
+
+.certification-certified-usability-analyst-title {
+    margin: 0 0 0.75rem;
+    color: v.$color-primary-black;
+    font-weight: 600;
+}
+
+.certification-certified-usability-analyst-lead {
+    margin: 0 0 1.5rem;
+    color: v.$color-gray-light;
+    line-height: 1.5;
+}
+
+.certification-certified-usability-analyst-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+}
+
+.certification-certified-usability-analyst-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.certification-certified-usability-analyst-btn-primary {
+    background: linear-gradient(90deg, v.$color-gold-light 0%, v.$color-gold 50%, v.$color-gold-dark 100%);
+    border: none;
+    color: #fff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        min-width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10%);
+        transition: transform 0.25s ease;
+        filter: brightness(0) invert(1);
+    }
+
+    &:hover {
+        background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
+    }
+
+    &:hover::after {
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(10%);
+        filter: brightness(0) invert(1);
+    }
+}
+
+.certification-certified-usability-analyst-btn-secondary {
+    background: transparent;
+    border: 1px solid v.$color-primary-grey;
+    color: v.$color-primary-grey !important;
+
+    &:hover {
+        border-color: #404040;
+        background-color: #404040 !important;
+        color: #fff !important;
+    }
+}
+
+.certification-certified-usability-analyst-btn-icon {
+    flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+    .certification-certified-usability-analyst-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .certification-certified-usability-analyst-btn {
+        justify-content: center;
+    }
+}

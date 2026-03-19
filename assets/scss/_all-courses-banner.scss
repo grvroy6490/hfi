@@ -1,0 +1,124 @@
+@use "variables" as v;
+
+.all-courses-banner-section {
+    position: relative;
+    overflow: hidden;
+    padding: 12.5rem 0 3.5rem;
+    // background:
+    //     radial-gradient(circle at 12% 18%, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 14rem, transparent 14.1rem),
+    //     radial-gradient(circle at 34% -6%, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 18rem, transparent 18.1rem),
+    //     radial-gradient(circle at 72% 14%, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 16rem, transparent 16.1rem),
+    //     radial-gradient(circle at 96% 2%, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 14rem, transparent 14.1rem),
+    //     linear-gradient(180deg, #f7f6f4 0%, #f5f4f2 100%);
+    background: url(../images/all-courses-banner-bg.png), #f2f2f2;
+}
+
+.all-courses-banner {
+    position: relative;
+}
+
+.all-courses-banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.all-courses-banner-title {
+    margin-bottom: 1rem;
+    font-family: "Mundial", sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.375rem);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: v.$color-black;
+}
+
+.all-courses-banner-lead {
+    margin: 0 auto 1rem;
+    color: v.$color-gray-dark;
+}
+
+.all-courses-search {
+    position: relative;
+    max-width: 39.5rem;
+    margin: 0 auto;
+}
+
+.all-courses-search-input {
+    width: 100%;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    border: 1px solid rgba(64, 64, 64, 0.55);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    color: v.$color-gray-dark;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+    &::placeholder {
+        color: v.$color-gray-dark;
+        opacity: 1;
+    }
+
+    &:focus {
+        border-color: rgba(184, 137, 18, 0.8);
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 0 0 3px rgba(184, 137, 18, 0.12);
+    }
+}
+
+.all-courses-search-button {
+    position: absolute;
+    top: 50%;
+    right: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: rgba(117, 117, 117, 1);
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        color: v.$color-gold;
+    }
+
+    &:focus-visible {
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px rgba(184, 137, 18, 0.12);
+    }
+}
+
+.all-courses-search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+    .all-courses-banner-section {
+        padding: 9rem 0 4rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .all-courses-banner-section {
+        padding: 8.25rem 0 3.5rem;
+    }
+
+    .all-courses-banner-lead {
+        max-width: 100%;
+    }
+
+    .all-courses-search-input {
+        min-height: 3.75rem;
+        padding-left: 1.25rem;
+        padding-right: 4rem;
+    }
+
+    .all-courses-search-button {
+        right: 0.625rem;
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}

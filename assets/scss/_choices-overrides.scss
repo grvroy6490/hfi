@@ -1,0 +1,133 @@
+@use "variables" as v;
+
+.choices {
+    width: 100%;
+    max-width: 19.5rem;
+    margin-bottom: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2b2b2b;
+    position: relative;
+}
+
+.choices.is-open {
+    overflow: visible;
+}
+
+.choices__inner {
+    min-height: auto;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border: 1px solid #d8d8d8;
+    border-radius: 999px;
+    background: #f8f8f8;
+    color: #2b2b2b;
+    font-size: inherit;
+    line-height: inherit;
+    box-shadow: none;
+}
+
+.choices.is-open .choices__inner {
+    border-radius: 999px;
+    overflow: visible;
+}
+
+.choices[data-type*="select-one"]::after {
+    right: 0.9rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: -0.35rem;
+    border-width: 1.5px 1.5px 0 0;
+    border-style: solid;
+    border-color: #555;
+    transform: rotate(135deg);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.choices[data-type*="select-one"].is-open::after {
+    margin-top: -0.1rem;
+    transform: rotate(-45deg);
+    border-color: #555 !important;
+}
+
+.choices__list--single {
+    padding: 0;
+}
+
+.choices__list--single .choices__item {
+    color: v.$color-primary-black;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+    margin-top: 0.25rem;
+    border: 1px solid #d8d8d8;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 5;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+    padding: 0.45rem 0.85rem;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background: rgba(184, 137, 18, 0.08);
+    color: v.$color-gold;
+}
+
+.course-calendar-toolbar-filters .choices,
+.course-calendar-timezone-dropdown .choices {
+    min-width: 16rem;
+}
+
+.course-calendar-toolbar-filters .choices:nth-child(2) {
+    min-width: 21.25rem;
+}
+
+.course-calendar-toolbar-filters .choices__inner {
+    background-color: #f8f8f8;
+}
+
+.course-calendar-timezone-dropdown .choices {
+    min-width: auto;
+}
+
+.course-calendar-timezone-dropdown .choices__inner {
+    padding: 0 2rem 0 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.course-calendar-timezone-dropdown .choices[data-type*="select-one"]::after {
+    right: 0.7rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: -0.5rem;
+}
+
+.course-calendar-timezone-dropdown .choices__list--single .choices__item {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+}
+
+.course-calendar-timezone-dropdown .choices__list--dropdown,
+.course-calendar-timezone-dropdown .choices__list[aria-expanded] {
+    min-width: 15rem;
+    right: 0;
+}
+
+.upcoming-tracks-timezone-dropdown .choices {
+    min-width: 14rem;
+}

@@ -1,0 +1,74 @@
+.stats-section {
+  background: #e9e9e9;
+  padding: 3rem 0 3.5rem;
+  font-family: "Suisse Intl", sans-serif;
+}
+
+.stats-content {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stats-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.stats-description {
+  max-width: 48rem;
+  margin: 0 auto 2rem;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: #2e2e2e;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  margin-bottom: 0.35rem;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #141414;
+  font-family: "Mundial", sans-serif;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: #3f3f3f;
+}
+
+@media (max-width: 991.98px) {
+  .stats-section {
+    padding: 2.5rem 0 2.75rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+  }
+
+  .stats-title {
+    font-size: 1.5rem;
+  }
+}

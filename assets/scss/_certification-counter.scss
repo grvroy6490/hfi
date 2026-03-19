@@ -1,0 +1,50 @@
+@use "variables" as v;
+
+.certification-counter-section {
+    background: #ffffff;
+    padding: 3.5rem 0 3.75rem;
+}
+
+.certification-counter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.counter-card {
+    height: 100%;
+    border-radius: 1rem;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+
+.counter-value {
+    margin: 0;
+    color: v.$color-gold;
+    font-weight: 900;
+    font-family: "Inter", sans-serif !important;
+    margin-bottom: 0.5rem;
+}
+
+.counter-label {
+    margin: 0;
+    color: v.$color-gray-dark;
+}
+
+@media (max-width: 575.98px) {
+    .certification-counter-section {
+        padding: 3rem 0 3.25rem;
+    }
+
+    .counter-card {
+        padding: 1.25rem 1rem;
+    }
+}
+
