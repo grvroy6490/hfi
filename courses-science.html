@@ -354,6 +354,7 @@
         </div>
 
         <div class="hero-logos">
+            <p class="hero-logos-text body">Empowering experience teams at the world's most respected organizations</p>
             <div class="logo-marquee hero-logo-marquee">
                 <div class="logo-marquee-track">
                     <div class="logo-marquee-item"><img src="assets/images/GSK.svg.svg" alt="GSK" class="hero-logo-img">
@@ -928,10 +929,8 @@
     ------------------------------>
     <section class="certification-certified-usability-analyst-section">
 
-        <div class="certification-certified-usability-analyst-image-wrap">
-            <img src="assets/images/dotted_arrow.svg" alt="Usability Analyst"
-                class="certification-certified-usability-analyst-image" aria-hidden="true" width="100%" height="100%">
-        </div>
+        <img src="assets/images/dotted_arrow.svg" alt="Usability Analyst" class="certification-certified-usability-analyst-image" aria-hidden="true" width="100%" height="100%">
+        
 
         <div class="container">
             <div class="row">
@@ -941,14 +940,86 @@
                         <p class="certification-certified-usability-analyst-lead body">Advance your expertise with a globally respected UX certification.</p>
                         <div class="certification-certified-usability-analyst-actions">
                             <a href="#" class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-primary body font-demibold">Register for Next CUA Batch</a>
-                            <a href="#" class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-secondary body font-demibold">
+                            <button type="button" id="certification-usability-analyst-advisor-trigger" class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-secondary body font-demibold">
                                 <svg class="certification-certified-usability-analyst-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                                 Talk to a Program Advisor
-                            </a>
+                            </button>
+                        </div>
+
+                        <div id="certification-usability-analyst-advisor-form-wrap" class="certification-analyst-advisor-form-wrap">
+                            <div class="certification-analyst-advisor-form-card">
+                                <form class="certification-analyst-advisor-form"
+                                    action="#"
+                                    method="post"
+                                    aria-label="Request a program advisor">
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="advisor-full-name" class="visually-hidden">Full Name</label>
+                                            <input type="text" id="advisor-full-name" name="full_name"
+                                                class="certification-analyst-advisor-input body-small"
+                                                placeholder="Full Name*" required>
+                                        </div>
+
+                                        <div class="col-12 col-md-6">
+                                            <label for="advisor-work-email" class="visually-hidden">Work Email</label>
+                                            <input type="email" id="advisor-work-email" name="work_email"
+                                                class="certification-analyst-advisor-input body-small"
+                                                placeholder="Work Email*" required>
+                                        </div>                                        
+
+                                        <div class="col-12 col-md-6">
+                                            <label for="advisor-phone-number" class="visually-hidden">Phone number</label>
+                                            <div class="experience-pathway-phone">
+                                                <div class="experience-pathway-country-code-wrap">
+                                                    <img class="experience-pathway-flag" src="https://cdn.jsdelivr.net/npm/country-flag-icons/3x2/IN.svg" alt="" aria-hidden="true" width="24" height="16">
+                                                    <select name="phone_prefix" id="pathway-country-code"
+                                                        class="experience-pathway-select experience-pathway-country-code body-small"
+                                                        aria-label="Phone prefix">
+                                                        <option value="+91" data-iso="IN" selected>+91</option>
+                                                        <option value="+1" data-iso="US">+1</option>
+                                                        <option value="+44" data-iso="GB">+44</option>
+                                                        <option value="+61" data-iso="AU">+61</option>
+                                                        <option value="+81" data-iso="JP">+81</option>
+                                                        <option value="+1" data-iso="CA">+1 CA</option>
+                                                        <option value="+971" data-iso="AE">+971</option>
+                                                        <option value="+65" data-iso="SG">+65</option>
+                                                        <option value="+49" data-iso="DE">+49</option>
+                                                        <option value="+33" data-iso="FR">+33</option>
+                                                        <option value="+86" data-iso="CN">+86</option>
+                                                    </select>
+                                                </div>
+                                                <input type="tel" id="advisor-phone-number" name="phone_number"
+                                                    class="experience-pathway-input body-small"
+                                                    placeholder="Phone number*" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-6">
+                                            <label for="advisor-current-role" class="visually-hidden">Current Role</label>
+                                            <input type="text" id="advisor-current-role" name="current_role"
+                                                class="certification-analyst-advisor-input body-small"
+                                                placeholder="Current Role">
+                                        </div>
+
+                                        <div class="col-12 col-md-6">
+                                            <label for="advisor-organization" class="visually-hidden">Organization</label>
+                                            <input type="text" id="advisor-organization" name="organization"
+                                                class="certification-analyst-advisor-input body-small"
+                                                placeholder="Organization (if applicable)">
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <button type="submit" class="certification-analyst-advisor-btn body font-demibold">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </section>
 

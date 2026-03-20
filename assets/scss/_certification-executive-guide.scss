@@ -96,15 +96,15 @@
 .certification-executive-guide-input {
     width: 100%;
     padding: 0.75rem 1.5rem;
-    background-color: #2E2E2E;
+    background-color: #E0E0E0;
     border: 1px solid #616161;
     border-radius: 5rem;
-    color: #fff;
+    color: #212121;
     line-height: 1.5;
     transition: border-color 0.2s ease;
 
     &::placeholder {
-        color: #9E9E9E;
+        color: rgb(33, 33, 33, 0.7);
     }
 
     &:focus {
