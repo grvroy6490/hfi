@@ -60,7 +60,8 @@
 .hero-tagline {
     font-size: 1rem;
     color: #404040;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .hero-ctas {
@@ -140,7 +141,7 @@
 .hero-logos {
     width: 100%;
     padding: 1.5rem 0 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    // border-top: 1px solid rgba(0, 0, 0, 0.08);
     overflow: hidden;
     -webkit-mask-image: linear-gradient(
         to right,
@@ -158,6 +159,7 @@
     );
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
+    padding-top: 0;
 }
 
 .hero-logos-text {

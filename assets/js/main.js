@@ -9,7 +9,12 @@
         var id = link.getAttribute("href").slice(1);
         var target = id ? document.getElementById(id) : null;
         if (target) {
+        // Allow our custom toggle handler for the advisor form to control scrolling.
+        if (id === "certification-usability-analyst-advisor-form-wrap") {
             e.preventDefault();
+            return;
+        }
+        e.preventDefault();
             target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     });
@@ -514,6 +519,10 @@
 
     // Exclude timezone custom dropdown's native select (hidden, synced by custom trigger/listbox)
     var selects = document.querySelectorAll("select:not(.upcoming-tracks-timezone-select-native):not(.experience-pathway-select):not(.experience-pathway-country-code)");
+    // Exclude selects that have their own custom UI/behavior.
+    var selects = document.querySelectorAll(
+        "select:not(.upcoming-tracks-timezone-select-native):not(#pathway-country-code)"
+    );
     Array.from(selects).forEach(function (select) {
         if (select.dataset.choicesInitialized === "true") return;
 
@@ -1106,4 +1115,61 @@
     }
 
     setStep(0);
+})();
+// CUA journey timeline: auto-run steps (checkboxes) sequentially once.
+(function () {
+    "use strict";
+
+    var timeline = document.querySelector(".your-cua-journey-timeline");
+    if (!timeline) return;
+
+    var checkboxes = Array.from(timeline.querySelectorAll(".your-cua-journey-checkbox"));
+    if (!checkboxes.length) return;
+
+    var hasRun = false;
+    var stepDelayMs = 600;
+
+    function activateSequential() {
+        if (hasRun) return;
+        hasRun = true;
+
+        checkboxes.forEach(function (checkbox, idx) {
+            window.setTimeout(function () {
+                if (!checkbox) return;
+                if (!checkbox.checked) {
+                    checkbox.checked = true;
+                    // Fire change so any listeners/styles relying on it update.
+                    checkbox.dispatchEvent(
+                        new Event("change", { bubbles: true })
+                    );
+                }
+            }, idx * stepDelayMs);
+        });
+    }
+
+    // Start ONLY on first mouseover of the timeline.
+    function start() {
+        activateSequential();
+    }
+
+    timeline.addEventListener("mouseover", start, { once: true });
+})();
+
+// Certified Usability Analyst: advisor form toggle (hidden -> show on click)
+(function () {
+    "use strict";
+
+    document.addEventListener("click", function (e) {
+        var trigger = e.target.closest("#certification-usability-analyst-advisor-trigger");
+        if (!trigger) return;
+
+        var formWrap = document.getElementById("certification-usability-analyst-advisor-form-wrap");
+        if (!formWrap) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        formWrap.classList.toggle("show");
+
+    });
 })();
