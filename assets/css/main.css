@@ -5962,6 +5962,122 @@ body.mobile-menu-open {
     justify-content: center;
   }
 }
+.certification-analyst-advisor-form-wrap {
+  margin-top: 1.75rem;
+  display: none;
+}
+.certification-analyst-advisor-form-wrap .experience-pathway-country-code-wrap {
+  flex: 0 0 34% !important;
+}
+.certification-analyst-advisor-form-wrap .experience-pathway-phone {
+  border-color: #CCCCCC;
+  background: #F5F5F5;
+  padding: 0.05rem 1rem 0.05rem 0.5rem;
+}
+
+.certification-analyst-advisor-form-wrap.show {
+  display: block !important;
+}
+
+.certification-analyst-advisor-form-card {
+  max-width: 42rem;
+  margin: 0 auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0.5rem 0 0;
+  box-shadow: none;
+}
+
+.certification-analyst-advisor-form .row {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 0.75rem;
+}
+
+.certification-analyst-advisor-input {
+  width: 100%;
+  border: 1px solid #CCCCCC;
+  background: #F5F5F5;
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  color: #0F0F0F;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.certification-analyst-advisor-input::-moz-placeholder {
+  color: #0F0F0F;
+}
+.certification-analyst-advisor-input::placeholder {
+  color: #0F0F0F;
+}
+.certification-analyst-advisor-input:focus {
+  outline: 0;
+  border-color: #b88912;
+  background: #f7f0e8;
+}
+
+.certification-analyst-advisor-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.certification-analyst-advisor-prefix {
+  width: 6rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f3f3f3;
+  border-radius: 999px;
+  padding: 0.8rem 0.9rem;
+  color: rgb(43, 43, 43);
+  line-height: 1.5;
+}
+
+.certification-analyst-advisor-phone-input {
+  flex: 1;
+}
+
+.certification-analyst-advisor-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 20.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #777;
+  color: #fff !important;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+.certification-analyst-advisor-btn::after {
+  content: "";
+  display: inline-block;
+  width: 0.8125rem;
+  height: 0.75rem;
+  background-image: url("../images/chevron.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(6%);
+  margin-left: 0.25rem;
+  filter: brightness(0) invert(1);
+  transition: transform 0.25s ease;
+}
+.certification-analyst-advisor-btn:hover {
+  background: #6a6a6a;
+  opacity: 0.98;
+}
+.certification-analyst-advisor-btn:hover::after {
+  background-image: url("../images/arrow.svg");
+  transform: translateX(4px) translateY(6%);
+}
+
+@media (max-width: 767.98px) {
+  .certification-analyst-advisor-prefix {
+    width: 5.25rem;
+  }
+}
 .checkout-page-section {
   padding: 9rem 0 5rem;
   background: #F2F2F2;
@@ -6004,7 +6120,7 @@ body.mobile-menu-open {
   content: "";
   position: absolute;
   top: 49%;
-  left: 75.8%;
+  left: 77.5%;
   width: 5.5rem;
   border-top: 0.125rem dashed rgba(64, 64, 64, 0.35);
   transform: translateY(-1rem);
@@ -6086,6 +6202,10 @@ body.mobile-menu-open {
 
 .checkout-main {
   min-width: 0;
+  height: 100%;
+}
+.checkout-main .checkout-step-panels {
+  height: 100%;
 }
 
 .checkout-back-link {
@@ -6111,6 +6231,7 @@ body.mobile-menu-open {
 
 .checkout-panel {
   animation: checkout-fade 0.24s ease;
+  height: 100%;
 }
 
 .checkout-panel-header {
@@ -6125,8 +6246,7 @@ body.mobile-menu-open {
 }
 
 .checkout-title {
-  color: #0F0F0F;
-  margin-bottom: 0.5rem;
+  color: #404040;
   font-family: "Inter", sans-serif;
 }
 
@@ -6234,6 +6354,97 @@ body.mobile-menu-open {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.checkout-account-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.checkout-form {
+  gap: 0;
+}
+
+.checkout-account-card .experience-pathway-row {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.checkout-account-card .experience-pathway-row:last-child {
+  margin-bottom: 0;
+}
+.checkout-account-card .experience-pathway-row .choices {
+  max-width: 100%;
+}
+.checkout-account-card .experience-pathway-row .choices .choices__inner {
+  background: #ffffff;
+  color: #0F0F0F;
+}
+.checkout-account-card .experience-pathway-row .choices .choices__inner .choices__list--single .choices__item {
+  opacity: 1;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+  .checkout-account-card .experience-pathway-field,
+  .checkout-account-card .experience-pathway-phone-wrap {
+    flex: 1 1 calc(50% - 0.25rem);
+  }
+}
+
+.checkout-account-card .experience-pathway-field-full {
+  flex: 1 1 100%;
+}
+
+.checkout-account-card .experience-pathway-input,
+.checkout-account-card .experience-pathway-select {
+  min-height: 2rem;
+  padding: 0.625rem 1rem;
+  background: #ffffff;
+  color: #0F0F0F;
+  font-family: "Inter", sans-serif;
+}
+.checkout-account-card .experience-pathway-input::-moz-placeholder, .checkout-account-card .experience-pathway-select::-moz-placeholder {
+  color: #0F0F0F;
+  opacity: 1;
+}
+.checkout-account-card .experience-pathway-input::placeholder,
+.checkout-account-card .experience-pathway-select::placeholder {
+  color: #0F0F0F;
+  opacity: 1;
+}
+
+.checkout-account-card .experience-pathway-select {
+  background-color: #ffffff;
+}
+
+.checkout-account-card .experience-pathway-phone {
+  border: 1px solid #d8d8d8;
+  background: #ffffff;
+}
+.checkout-account-card .experience-pathway-phone .experience-pathway-country-code-wrap {
+  border-right-color: #d8d8d8;
+  background: #ffffff;
+}
+.checkout-account-card .experience-pathway-phone .experience-pathway-country-code {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: #ffffff;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.checkout-account-card .experience-pathway-phone .experience-pathway-input {
+  border-left-color: #d8d8d8;
+}
+
+.checkout-account-note {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background: #F5F5F5;
+  color: #616161;
 }
 
 .checkout-form-grid {
@@ -6377,15 +6588,6 @@ select.checkout-field-control {
   transform: translate(2px, 10%);
 }
 
-.checkout-action-primary {
-  background: #b88912;
-  color: #fff;
-}
-.checkout-action-primary:hover {
-  background: #8f6a0f;
-  color: #fff;
-}
-
 .checkout-action-secondary {
   background: transparent;
   border-color: rgba(64, 64, 64, 0.16);
@@ -6499,121 +6701,5 @@ select.checkout-field-control {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-.certification-analyst-advisor-form-wrap {
-  margin-top: 1.75rem;
-  display: none;
-}
-.certification-analyst-advisor-form-wrap .experience-pathway-country-code-wrap {
-  flex: 0 0 34% !important;
-}
-.certification-analyst-advisor-form-wrap .experience-pathway-phone {
-  border-color: #CCCCCC;
-  background: #F5F5F5;
-  padding: 0.05rem 1rem 0.05rem 0.5rem;
-}
-
-.certification-analyst-advisor-form-wrap.show {
-  display: block !important;
-}
-
-.certification-analyst-advisor-form-card {
-  max-width: 42rem;
-  margin: 0 auto;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  padding: 0.5rem 0 0;
-  box-shadow: none;
-}
-
-.certification-analyst-advisor-form .row {
-  --bs-gutter-x: 1rem;
-  --bs-gutter-y: 0.75rem;
-}
-
-.certification-analyst-advisor-input {
-  width: 100%;
-  border: 1px solid #CCCCCC;
-  background: #F5F5F5;
-  border-radius: 999px;
-  padding: 0.8rem 1rem;
-  color: #0F0F0F;
-  line-height: 1.5;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-.certification-analyst-advisor-input::-moz-placeholder {
-  color: #0F0F0F;
-}
-.certification-analyst-advisor-input::placeholder {
-  color: #0F0F0F;
-}
-.certification-analyst-advisor-input:focus {
-  outline: 0;
-  border-color: #b88912;
-  background: #f7f0e8;
-}
-
-.certification-analyst-advisor-phone {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.certification-analyst-advisor-prefix {
-  width: 6rem;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #f3f3f3;
-  border-radius: 999px;
-  padding: 0.8rem 0.9rem;
-  color: rgb(43, 43, 43);
-  line-height: 1.5;
-}
-
-.certification-analyst-advisor-phone-input {
-  flex: 1;
-}
-
-.certification-analyst-advisor-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-width: 20.5rem;
-  padding: 0.85rem 2rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  background: #777;
-  color: #fff !important;
-  transition: background 0.2s ease, opacity 0.2s ease;
-}
-.certification-analyst-advisor-btn::after {
-  content: "";
-  display: inline-block;
-  width: 0.8125rem;
-  height: 0.75rem;
-  background-image: url("../images/chevron.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: translateY(6%);
-  margin-left: 0.25rem;
-  filter: brightness(0) invert(1);
-  transition: transform 0.25s ease;
-}
-.certification-analyst-advisor-btn:hover {
-  background: #6a6a6a;
-  opacity: 0.98;
-}
-.certification-analyst-advisor-btn:hover::after {
-  background-image: url("../images/arrow.svg");
-  transform: translateX(4px) translateY(6%);
-}
-
-@media (max-width: 767.98px) {
-  .certification-analyst-advisor-prefix {
-    width: 5.25rem;
   }
 }/*# sourceMappingURL=main.css.map */

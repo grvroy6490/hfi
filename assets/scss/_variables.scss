@@ -1,5 +1,4 @@
 // Theme colors
-$color-neutral-dark: #404040;
 $color-gold-dark: #8f6a0f;
 $color-gold: #b88912;
 $color-gold-light: #c9971a;
@@ -22,6 +21,6 @@ $color-gray-lighter:rgb(117, 117, 117);
 
 
 // Optional semantic aliases
-$color-text-primary: $color-neutral-dark;
+$color-text-primary: $color-primary-grey;
 $color-accent: $color-gold;
 $color-accent-hover: $color-gold-light;
