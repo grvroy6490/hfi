@@ -513,7 +513,7 @@
     if (typeof Choices === "undefined") return;
 
     // Exclude timezone custom dropdown's native select (hidden, synced by custom trigger/listbox)
-    var selects = document.querySelectorAll("select:not(.upcoming-tracks-timezone-select-native)");
+    var selects = document.querySelectorAll("select:not(.upcoming-tracks-timezone-select-native):not(.experience-pathway-select):not(.experience-pathway-country-code)");
     Array.from(selects).forEach(function (select) {
         if (select.dataset.choicesInitialized === "true") return;
 
@@ -1003,4 +1003,107 @@
             close();
         }
     });
+})();
+
+// Checkout: multistep form shell
+(function () {
+    "use strict";
+
+    var flow = document.querySelector("[data-checkout-flow]");
+    if (!flow) return;
+
+    var panels = Array.from(flow.querySelectorAll("[data-step-panel]"));
+    var stepItems = Array.from(flow.querySelectorAll("[data-step-nav]"));
+    var stepButtons = Array.from(flow.querySelectorAll("[data-step-trigger]"));
+    var nextButtons = Array.from(flow.querySelectorAll("[data-step-next]"));
+    var backButtons = Array.from(flow.querySelectorAll("[data-step-back]"));
+    var summaryCta = flow.querySelector(".checkout-summary-cta");
+    var backLink = flow.querySelector("[data-checkout-back]");
+    var currentStep = 0;
+    var summaryStepConfig = [
+        { target: 1, label: "Continue to Secure your Seat" },
+        { target: 2, label: "Proceed to Checkout" },
+        { target: 3, label: "Complete Enrollment" },
+        { target: null, label: "Enrollment Confirmed" }
+    ];
+
+    function clampStep(step) {
+        return Math.max(0, Math.min(step, panels.length - 1));
+    }
+
+    function setStep(step) {
+        currentStep = clampStep(step);
+
+        panels.forEach(function (panel, index) {
+            var isActive = index === currentStep;
+            panel.classList.toggle("is-active", isActive);
+            panel.hidden = !isActive;
+        });
+
+        stepItems.forEach(function (item, index) {
+            var button = item.querySelector(".checkout-step-button");
+            var isActive = index === currentStep;
+            var isComplete = index < currentStep;
+
+            item.classList.toggle("is-active", isActive);
+            item.classList.toggle("is-complete", isComplete);
+
+            if (button) {
+                if (isActive) {
+                    button.setAttribute("aria-current", "step");
+                } else {
+                    button.removeAttribute("aria-current");
+                }
+            }
+        });
+
+        if (summaryCta) {
+            var config = summaryStepConfig[currentStep] || summaryStepConfig[0];
+            summaryCta.textContent = config.label;
+
+            if (typeof config.target === "number") {
+                summaryCta.hidden = false;
+                summaryCta.setAttribute("data-step-trigger", String(config.target));
+            } else {
+                summaryCta.hidden = true;
+                summaryCta.removeAttribute("data-step-trigger");
+            }
+        }
+
+        if (backLink) {
+            backLink.setAttribute("href", currentStep === 0 ? "all-courses.html" : "#");
+        }
+    }
+
+    stepButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            var target = Number(button.getAttribute("data-step-trigger"));
+            if (!Number.isNaN(target)) {
+                setStep(target);
+            }
+        });
+    });
+
+    nextButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            setStep(currentStep + 1);
+        });
+    });
+
+    backButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            setStep(currentStep - 1);
+        });
+    });
+
+    if (backLink) {
+        backLink.addEventListener("click", function (event) {
+            if (currentStep > 0) {
+                event.preventDefault();
+                setStep(currentStep - 1);
+            }
+        });
+    }
+
+    setStep(0);
 })();
