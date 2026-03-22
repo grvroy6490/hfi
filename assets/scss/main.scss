@@ -1,9 +1,11 @@
 @use 'base';
 @use 'variables';
 @use 'typography';
+@use 'country-region-bar';
 @use 'header';
 @use 'logo-slider';
 @use 'footer';
+@use 'country-region-modal';
 @use 'hero-section';
 @use 'about-section';
 @use 'certifications-slider-section';
@@ -23,3 +25,4 @@
 @use 'certification-executive-guide'; 
 @use 'certification-faq';
 @use 'certification-usability-analyst';
+@use 'sticky-course-header';

@@ -519,7 +519,7 @@
 
     // Exclude selects that have their own custom UI/behavior.
     var selects = document.querySelectorAll(
-        "select:not(.upcoming-tracks-timezone-select-native):not(#pathway-country-code)"
+        "select:not(.upcoming-tracks-timezone-select-native):not(.country-region-bar-select-native):not(#pathway-country-code)"
     );
     Array.from(selects).forEach(function (select) {
         if (select.dataset.choicesInitialized === "true") return;
@@ -534,6 +534,31 @@
 
         select.dataset.choicesInitialized = "true";
     });
+})();
+
+// Country / region top bar: dismiss + re-open when linking from footer
+(function () {
+    "use strict";
+
+    var bar = document.querySelector("[data-country-region-bar]");
+    if (!bar) return;
+
+    var closeBtn = document.getElementById("country-region-bar-close");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            bar.setAttribute("hidden", "");
+        });
+    }
+
+    document.addEventListener(
+        "click",
+        function (e) {
+            var link = e.target.closest('a[href="#country-region-bar"]');
+            if (!link) return;
+            bar.removeAttribute("hidden");
+        },
+        true
+    );
 })();
 
 // Course calendar: interactive schedule
