@@ -6200,6 +6200,17 @@ body.mobile-menu-open {
   }
 }
 
+.checkout-flow.is-step-3 .checkout-steps,
+.checkout-flow.is-step-3 .back_navigation {
+  display: none;
+}
+.checkout-flow.is-step-3 .checkout-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+.checkout-flow.is-step-3 .checkout-summary {
+  display: none;
+}
+
 .checkout-main {
   min-width: 0;
   height: 100%;
@@ -6301,22 +6312,6 @@ body.mobile-menu-open {
   .checkout-meta-item:not(:last-child) {
     border-bottom: 1px solid #e0e0e0;
   }
-}
-
-.checkout-meta-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: rgba(64, 64, 64, 0.06);
-  color: rgba(64, 64, 64, 0.72);
-  flex-shrink: 0;
-}
-.checkout-meta-icon svg {
-  width: 1rem;
-  height: 1rem;
 }
 
 .checkout-meta-label {
@@ -6942,6 +6937,255 @@ select.checkout-field-control {
 
 .checkout-confirmation-copy {
   color: rgb(79, 79, 79);
+}
+
+.checkout-submission-card {
+  max-width: 39.5rem;
+  margin: 0 auto;
+  padding: 1.25rem 3rem 3rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.875rem 2rem rgba(15, 15, 15, 0.08);
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.checkout-submission-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.25rem;
+  height: 6.25rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: rgba(184, 137, 18, 0.12);
+  color: #b88912;
+}
+.checkout-submission-badge svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.checkout-submission-header {
+  max-width: 35rem;
+  margin: 0 auto 1.75rem;
+}
+.checkout-submission-header .checkout-title {
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+}
+.checkout-submission-header .checkout-intro {
+  max-width: none;
+  color: #4F4F4F;
+}
+
+.checkout-submission-progress {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-submission-progress-line {
+  position: absolute;
+  top: 10%;
+  left: 13%;
+  right: 13%;
+  height: 0.125rem;
+  background: linear-gradient(90deg, #212121 0%, #212121 61%, #d6d6d6 61%, #d6d6d6 100%);
+}
+
+.checkout-submission-progress-step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+}
+
+.checkout-submission-progress-dot {
+  position: relative;
+  z-index: 1;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  background: #b5b5b5;
+  border: 0.125rem solid #ffffff;
+}
+
+.checkout-submission-progress-step.is-complete .checkout-submission-progress-dot {
+  background: #0F0F0F;
+}
+
+.checkout-submission-progress-step.is-active .checkout-submission-progress-dot {
+  background: #b88912;
+}
+
+.checkout-submission-progress-label {
+  color: #404040;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.checkout-submission-summary {
+  padding: 0.75rem;
+  background: #fafafa;
+  border-radius: 1rem;
+  text-align: left;
+}
+
+.checkout-submission-summary-grid {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.checkout-submission-summary-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #E0E0E0;
+  min-width: 40%;
+}
+.checkout-submission-summary-item:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+@media (max-width: 992.98px) {
+  .checkout-submission-summary-item:not(:last-child) {
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+  }
+}
+
+.checkout-submission-review-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.75rem;
+  background: #F2F2F2;
+}
+
+.checkout-submission-review-item {
+  display: flex;
+  gap: 0.625rem;
+  align-items: flex-start;
+}
+.checkout-submission-review-item + .checkout-submission-review-item {
+  margin-top: 1rem;
+}
+
+.checkout-submission-review-icon {
+  color: #757575;
+  flex-shrink: 0;
+}
+.checkout-submission-review-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.checkout-submission-review-title {
+  color: #4F4F4F;
+  font-weight: 600;
+}
+
+.checkout-submission-review-copy {
+  color: #757575;
+}
+
+.checkout-submission-link {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  color: #0F0F0F;
+  font-weight: 600;
+}
+.checkout-submission-link:hover {
+  color: #b88912;
+}
+
+.checkout-submission-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 575.98px) {
+  .checkout-submission-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkout-submission-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.checkout-submission-action-secondary {
+  border: 1px solid #4f4f4f;
+  color: #4f4f4f;
+}
+.checkout-submission-action-secondary::after {
+  content: "";
+  display: inline-block;
+  width: 0.8125rem;
+  min-width: 0.8125rem;
+  height: 0.75rem;
+  background-image: url("../images/chevron.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(10%);
+  transition: transform 0.25s ease;
+  filter: brightness(0);
+}
+.checkout-submission-action-secondary:hover {
+  border-color: #404040;
+  background: #404040;
+  color: #ffffff;
+}
+.checkout-submission-action-secondary:hover::after {
+  background-image: url("../images/arrow.svg");
+  transform: translateX(4px) translateY(10%);
+  filter: none;
+}
+
+.checkout-submission-action-primary {
+  background: #404040;
+  color: #ffffff !important;
+}
+.checkout-submission-action-primary::after {
+  content: "";
+  display: inline-block;
+  width: 0.8125rem;
+  min-width: 0.8125rem;
+  height: 0.75rem;
+  background-image: url("../images/chevron.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(10%);
+  transition: transform 0.25s ease;
+  filter: brightness(0) invert(1);
+}
+.checkout-submission-action-primary:hover {
+  background: #2b2b2b;
+}
+.checkout-submission-action-primary:hover::after {
+  background-image: url("../images/arrow.svg");
+  transform: translateX(4px) translateY(10%);
 }
 
 .checkout-panel-actions {

@@ -1119,6 +1119,11 @@
         });
     }
 
+    function scrollCheckoutToTop() {
+        const topTarget = flow.closest(".checkout-page-section") || flow;
+        topTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     function updateStepNavigation() {
         stepNavItems.forEach((item, index) => {
             const isActive = index === currentStep;
@@ -1151,6 +1156,8 @@
 
         if (normalSummaryCard) normalSummaryCard.hidden = isVerificationVisible;
         if (verificationCard) verificationCard.hidden = !isVerificationVisible;
+
+        scrollCheckoutToTop();
     }
 
     function updateSummaryCTA() {
@@ -1185,6 +1192,7 @@
 
     function goToStep(step) {
         currentStep = limitStep(step);
+        flow.classList.toggle("is-step-3", currentStep === 3);
 
         showOnly(panels, currentStep);
         updateStepNavigation();
@@ -1198,6 +1206,8 @@
         if (backLink) {
             backLink.href = currentStep === 0 ? "all-courses.html" : "#";
         }
+
+        scrollCheckoutToTop();
     }
 
     stepTriggers.forEach(btn => {
