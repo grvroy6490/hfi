@@ -1033,7 +1033,7 @@
                                       </option>
                                       <option value="+86" data-iso="CN">
                                         +86
-                                      </option> 
+                                      </option>
                                     </select>
                                   </div>
                                   <input
@@ -1089,7 +1089,1143 @@
                         data-step-panel="2"
                         hidden
                       >
-                        <h2>Step three</h2>
+                        <div
+                          class="checkout-payment-stage is-active"
+                          data-payment-stage="selection"
+                        >
+                          <div class="checkout-panel-header">
+                            <h2 class="checkout-title heading-3">
+                              Complete Your Enrolment
+                            </h2>
+                            <p class="checkout-intro body">
+                              Review your program details and choose a payment
+                              option.
+                            </p>
+                          </div>
+
+                          <div
+                            class="checkout-program-card checkout-payment-overview"
+                          >
+                            <div class="checkout-program-meta">
+                              <article class="checkout-meta-item">
+                                <span
+                                  class="checkout-meta-icon"
+                                  aria-hidden="true"
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none">
+                                    <path
+                                      d="M8.5 10.5V7.5C8.5 5.567 10.067 4 12 4C13.933 4 15.5 5.567 15.5 7.5V10.5M7 10.5H17C17.5523 10.5 18 10.9477 18 11.5V18.5C18 19.0523 17.5523 19.5 17 19.5H7C6.44772 19.5 6 19.0523 6 18.5V11.5C6 10.9477 6.44772 10.5 7 10.5Z"
+                                      stroke="currentColor"
+                                      stroke-width="1.8"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </span>
+                                <div>
+                                  <p class="checkout-meta-label body-small">
+                                    Program
+                                  </p>
+                                  <p class="checkout-meta-value body-small">
+                                    HFI Certification Program
+                                  </p>
+                                </div>
+                              </article>
+                              <article
+                                class="checkout-meta-item checkout-meta-item-with-link"
+                              >
+                                <span
+                                  class="checkout-meta-icon"
+                                  aria-hidden="true"
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none">
+                                    <path
+                                      d="M7 3.5V6.5M17 3.5V6.5M4.5 9H19.5M5.5 5.5H18.5C19.0523 5.5 19.5 5.94772 19.5 6.5V18.5C19.5 19.0523 19.0523 19.5 18.5 19.5H5.5C4.94772 19.5 4.5 19.0523 4.5 18.5V6.5C4.5 5.94772 4.94772 5.5 5.5 5.5Z"
+                                      stroke="currentColor"
+                                      stroke-width="1.8"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </span>
+                                <div>
+                                  <p class="checkout-meta-label body-small">
+                                    Cohort
+                                  </p>
+                                  <p class="checkout-meta-value body-small">
+                                    March 15, 2026
+                                  </p>
+                                </div>
+                                <a
+                                  href="#"
+                                  class="checkout-inline-link body-small"
+                                  >Change Date</a
+                                >
+                              </article>
+                              <article class="checkout-meta-item">
+                                <span
+                                  class="checkout-meta-icon"
+                                  aria-hidden="true"
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none">
+                                    <rect
+                                      x="4.5"
+                                      y="5.5"
+                                      width="15"
+                                      height="11"
+                                      rx="1.8"
+                                      stroke="currentColor"
+                                      stroke-width="1.8"
+                                    />
+                                    <path
+                                      d="M8 18.5H16"
+                                      stroke="currentColor"
+                                      stroke-width="1.8"
+                                      stroke-linecap="round"
+                                    />
+                                  </svg>
+                                </span>
+                                <div>
+                                  <p class="checkout-meta-label body-small">
+                                    Format
+                                  </p>
+                                  <p class="checkout-meta-value body-small">
+                                    Live Online + Self-Paced
+                                  </p>
+                                </div>
+                              </article>
+                              <article class="checkout-meta-item">
+                                <span
+                                  class="checkout-meta-icon"
+                                  aria-hidden="true"
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none">
+                                    <circle
+                                      cx="12"
+                                      cy="12"
+                                      r="8"
+                                      stroke="currentColor"
+                                      stroke-width="1.8"
+                                    />
+                                    <path
+                                      d="M12 8V12L14.5 14.5"
+                                      stroke="currentColor"
+                                      stroke-width="1.8"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </span>
+                                <div>
+                                  <p class="checkout-meta-label body-small">
+                                    Duration
+                                  </p>
+                                  <p class="checkout-meta-value body-small">
+                                    12 Weeks
+                                  </p>
+                                </div>
+                              </article>
+                            </div>
+                          </div>
+
+                          <div class="checkout-payment-section">
+                            <h3 class="checkout-section-title heading-6">
+                              Select Payment Option
+                            </h3>
+                            <div class="checkout-payment-options">
+                              <label class="checkout-payment-option">
+                                <input
+                                  class="checkout-payment-option-input"
+                                  type="radio"
+                                  name="checkout-payment-plan"
+                                  value="one-time"
+                                  checked
+                                />
+                                <span class="checkout-payment-option-card">
+                                  <span
+                                    class="checkout-payment-option-indicator"
+                                    aria-hidden="true"
+                                  ></span>
+                                  <span
+                                    class="checkout-payment-card-body d-flex flex-column gap-2"
+                                  >
+                                    <span class="checkout-payment-option-top">
+                                      <span
+                                        class="checkout-payment-option-title body"
+                                        >One - Time Payment</span
+                                      >
+                                    </span>
+                                    <span class="flex-fill"></span>
+                                    <span
+                                      class="checkout-payment-option-note caption"
+                                      >Pay Full Amount today</span
+                                    >
+                                    <span
+                                      class="checkout-payment-option-total heading-6"
+                                      >Total $1,999</span
+                                    >
+                                  </span>
+                                </span>
+                              </label>
+
+                              <label class="checkout-payment-option">
+                                <input
+                                  class="checkout-payment-option-input"
+                                  type="radio"
+                                  name="checkout-payment-plan"
+                                  value="emi-3"
+                                />
+                                <span class="checkout-payment-option-card">
+                                  <span
+                                    class="checkout-payment-option-indicator"
+                                    aria-hidden="true"
+                                  ></span>
+                                  <span
+                                    class="checkout-payment-card-body d-flex flex-column gap-2"
+                                  >
+                                    <span class="checkout-payment-option-top">
+                                      <span
+                                        class="checkout-payment-option-title body"
+                                        >3-Months Payment Plan</span
+                                      >
+                                    </span>
+                                    <span
+                                      class="checkout-payment-option-price heading-6"
+                                    >
+                                      $666
+                                      <span class="body-small">/month</span>
+                                    </span>
+                                    <span
+                                      class="checkout-payment-option-note caption"
+                                      >0% Interest</span
+                                    >
+                                    <span
+                                      class="checkout-payment-option-total body"
+                                      >Total $1,999</span
+                                    >
+                                  </span>
+                                </span>
+                              </label>
+
+                              <label class="checkout-payment-option">
+                                <input
+                                  class="checkout-payment-option-input"
+                                  type="radio"
+                                  name="checkout-payment-plan"
+                                  value="emi-6"
+                                />
+                                <span class="checkout-payment-option-card">
+                                  <span
+                                    class="checkout-payment-option-indicator"
+                                    aria-hidden="true"
+                                  ></span>
+                                  <span
+                                    class="checkout-payment-card-body d-flex flex-column gap-2"
+                                  >
+                                    <span class="checkout-payment-option-top">
+                                      <span
+                                        class="checkout-payment-option-title body"
+                                        >6-Months Payment Plan</span
+                                      >
+                                    </span>
+                                    <span
+                                      class="checkout-payment-option-price heading-6"
+                                    >
+                                      $333
+                                      <span class="body-small">/month</span>
+                                    </span>
+                                    <span
+                                      class="checkout-payment-option-note caption"
+                                      >0% Interest</span
+                                    >
+                                    <span
+                                      class="checkout-payment-option-total body"
+                                      >Total $1,999</span
+                                    >
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="checkout-coupon">
+                            <p class="checkout-field-caption body">
+                              Have a Coupon Code?
+                            </p>
+                            <div class="checkout-coupon-row">
+                              <input
+                                class="experience-pathway-input body"
+                                type="text"
+                                placeholder="Enter Coupon Code"
+                                aria-label="Coupon Code"
+                              />
+                              <button
+                                type="button"
+                                class="checkout-coupon-apply body"
+                              >
+                                Apply
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="checkout-payment-method">
+                            <p class="checkout-section-title heading-6 mb-3">
+                              Payment Method
+                            </p>
+                            <p class="checkout-field-caption body">
+                              Payment Method *
+                            </p>
+                            <select
+                              class="experience-pathway-select body-small"
+                              aria-label="Select Payment Method"
+                            >
+                              <option selected>Select Payment Method</option>
+                              <option>Credit Card</option>
+                              <option>Debit Card</option>
+                              <option>Net Banking</option>
+                              <option>UPI</option>
+                            </select>
+                          </div>
+
+                          <div class="checkout-faq-block">
+                            <h3 class="checkout-title heading-3 mb-4">
+                              Frequently Asked Questions
+                            </h3>
+                            <div
+                              class="certification-faq-accordion"
+                              role="region"
+                              aria-label="Frequently asked questions"
+                            >
+                              <details
+                                class="certification-faq-accordion-item"
+                                open
+                              >
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  What are the prerequisites for CUA?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    There are no strict prerequisites. CUA is
+                                    designed for working professionals with some
+                                    exposure to UX, product design, or digital
+                                    strategy.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  Is CUA fully online?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Yes. The cohort combines live online
+                                    instruction with self-paced study materials.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  How is CUA different from other UX
+                                  certifications?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    It is grounded in human factors engineering
+                                    and decision science, not only interface
+                                    trends.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  How long is certification valid?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Certification validity and renewal guidance
+                                    are shared during onboarding.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  What is the refund policy?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Refund requests are handled based on the
+                                    enrollment policy shared at checkout.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  Do you offer corporate discounts?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Team and enterprise enrollments can qualify
+                                    for custom pricing.
+                                  </p>
+                                </div>
+                              </details>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="checkout-payment-stage checkout-verification-stage"
+                          data-payment-stage="verification"
+                          hidden
+                        >
+                          <div class="checkout-panel-header">
+                            <h2 class="checkout-title heading-3">
+                              Complete Your EMI Verification
+                            </h2>
+                            <p class="checkout-intro body">
+                              To proceed with the installment plan, please
+                              upload the required documents and provide your
+                              details for verification.
+                            </p>
+                          </div>
+
+                          <div class="checkout-verification-group">
+                            <h3 class="checkout-section-title heading-6">
+                              Upload Required Documents
+                            </h3>
+                            <p class="checkout-field-caption body">
+                              Please upload clear, official documents for
+                              verification.
+                            </p>
+
+                            <div class="checkout-upload-list">
+                              <label
+                                class="checkout-upload-field"
+                                data-upload-zone
+                              >
+                                <span class="checkout-upload-label body"
+                                  >PAN Card*</span
+                                >
+                                <input
+                                  class="checkout-upload-input"
+                                  type="file"
+                                  accept=".jpg,.jpeg,.png,.pdf"
+                                  data-upload-input
+                                  aria-label="Upload PAN Card"
+                                />
+                                <span class="checkout-upload-box" tabindex="0">
+                                  <span
+                                    class="checkout-upload-subtitle body-small"
+                                  >
+                                    <strong
+                                      class="checkout-upload-title body-small"
+                                      >Select / Browse file</strong
+                                    >
+                                    or drag and drop to upload</span
+                                  >
+                                  <span class="checkout-upload-meta body-small"
+                                    >JPEG, PNG and PDF formats, up to 5
+                                    MB.</span
+                                  >
+                                  <span
+                                    class="checkout-upload-filename body-small"
+                                    data-upload-filename
+                                    >No file selected</span
+                                  >
+                                </span>
+                              </label>
+                              <label
+                                class="checkout-upload-field"
+                                data-upload-zone
+                              >
+                                <span class="checkout-upload-label body"
+                                  >Aadhaar Card* (Upload front and back single
+                                  combined PDF)</span
+                                >
+                                <input
+                                  class="checkout-upload-input"
+                                  type="file"
+                                  accept=".jpg,.jpeg,.png,.pdf"
+                                  data-upload-input
+                                  aria-label="Upload Aadhaar Card"
+                                />
+                                <span class="checkout-upload-box" tabindex="0">
+                                  <span
+                                    class="checkout-upload-subtitle body-small"
+                                    ><strong
+                                      class="checkout-upload-title body-small"
+                                      >Select / Browse file</strong
+                                    >
+                                    or drag and drop to upload</span
+                                  >
+                                  <span class="checkout-upload-meta body-small"
+                                    >JPEG, PNG and PDF formats, up to 5
+                                    MB.</span
+                                  >
+                                  <span
+                                    class="checkout-upload-filename body-small"
+                                    data-upload-filename
+                                    >No file selected</span
+                                  >
+                                </span>
+                              </label>
+                              <label
+                                class="checkout-upload-field"
+                                data-upload-zone
+                              >
+                                <span class="checkout-upload-label body"
+                                  >Salary Slips - Last 3 Months*</span
+                                >
+                                <input
+                                  class="checkout-upload-input"
+                                  type="file"
+                                  accept=".jpg,.jpeg,.png,.pdf"
+                                  data-upload-input
+                                  aria-label="Upload Salary Slips"
+                                  multiple
+                                />
+                                <span class="checkout-upload-box" tabindex="0">
+                                  <span
+                                    class="checkout-upload-subtitle body-small"
+                                    ><strong
+                                      class="checkout-upload-title body-small"
+                                      >Select / Browse file</strong
+                                    >
+                                    or drag and drop to upload</span
+                                  >
+                                  <span class="checkout-upload-meta body-small"
+                                    >JPEG, PNG and PDF formats, up to 5
+                                    MB.</span
+                                  >
+                                  <span
+                                    class="checkout-upload-filename body-small"
+                                    data-upload-filename
+                                    >No file selected</span
+                                  >
+                                </span>
+                              </label>
+                              <label
+                                class="checkout-upload-field"
+                                data-upload-zone
+                              >
+                                <span class="checkout-upload-label body"
+                                  >Bank Statement - Last 6 Months*</span
+                                >
+                                <input
+                                  class="checkout-upload-input"
+                                  type="file"
+                                  accept=".jpg,.jpeg,.png,.pdf"
+                                  data-upload-input
+                                  aria-label="Upload Bank Statement"
+                                  multiple
+                                />
+                                <span class="checkout-upload-box" tabindex="0">
+                                  <span
+                                    class="checkout-upload-subtitle body-small"
+                                  >
+                                    <strong
+                                      class="checkout-upload-title body-small"
+                                      >Select / Browse file</strong
+                                    >
+                                    or drag and drop to upload</span
+                                  >
+                                  <span class="checkout-upload-meta body-small"
+                                    >JPEG, PNG and PDF formats, up to 5
+                                    MB.</span
+                                  >
+                                  <span
+                                    class="checkout-upload-filename body-small"
+                                    data-upload-filename
+                                    >No file selected</span
+                                  >
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="checkout-verification-group">
+                            <h3 class="checkout-section-title heading-6">
+                              Document Passwords (If applicable)
+                            </h3>
+                            <p class="checkout-field-caption body">
+                              Enter only if your documents are
+                              password-protected.
+                            </p>
+                            <div class="experience-pathway-row">
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Bank Statement Password</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="text"
+                                  placeholder="-"
+                                  aria-label="Bank Statement Password"
+                                />
+                              </div>
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Payslip Password</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="text"
+                                  placeholder="-"
+                                  aria-label="Payslip Password"
+                                />
+                              </div>
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Aadhaar Password</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="text"
+                                  placeholder="-"
+                                  aria-label="Aadhaar Password"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="checkout-verification-group">
+                            <h3 class="checkout-section-title heading-6 mb-3">
+                              Your Details
+                            </h3>
+                            <div class="experience-pathway-row">
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Company Name *</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="text"
+                                  placeholder="-"
+                                  aria-label="Company Name"
+                                />
+                              </div>
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Designation *</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="text"
+                                  placeholder="-"
+                                  aria-label="Designation"
+                                />
+                              </div>
+                            </div>
+                            <div class="experience-pathway-row">
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Qualification *</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="text"
+                                  placeholder="-"
+                                  aria-label="Qualification"
+                                />
+                              </div>
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Personal Email ID *</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="email"
+                                  placeholder="-"
+                                  aria-label="Personal Email ID"
+                                />
+                              </div>
+                            </div>
+                            <div class="experience-pathway-row">
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Official Email ID *</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small"
+                                  type="email"
+                                  placeholder="-"
+                                  aria-label="Official Email ID"
+                                />
+                              </div>
+                              <div class="experience-pathway-field">
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Date of Joining (Current Company) *</span
+                                >
+                                <input
+                                  class="experience-pathway-input body-small checkout-verification-date-input"
+                                  type="text"
+                                  placeholder="dd/mm/yyyy"
+                                  aria-label="Date of Joining"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="checkout-verification-group">
+                            <h3 class="checkout-section-title heading-6 mb-3">
+                              Address Details
+                            </h3>
+                            <div class="experience-pathway-row">
+                              <div
+                                class="experience-pathway-field experience-pathway-field-full"
+                              >
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Present Address (with landmark) *</span
+                                >
+                                <textarea
+                                  class="experience-pathway-input checkout-verification-textarea body-small"
+                                  placeholder="Enter present address with nearest landmark"
+                                  aria-label="Present Address"
+                                  rows="3"
+                                ></textarea>
+                              </div>
+                            </div>
+                            <div class="experience-pathway-row">
+                              <div
+                                class="experience-pathway-field experience-pathway-field-full"
+                              >
+                                <span
+                                  class="checkout-verification-field-label body-small"
+                                  >Permanent Address (with landmark) *</span
+                                >
+                                <textarea
+                                  class="experience-pathway-input checkout-verification-textarea body-small"
+                                  placeholder="Enter permanent address with nearest landmark"
+                                  aria-label="Permanent Address"
+                                  rows="3"
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="checkout-verification-group">
+                            <h3 class="checkout-section-title heading-6 mb-3">
+                              Reference Details (Minimum 1 required)
+                            </h3>
+                            <div
+                              class="checkout-reference-list"
+                              data-reference-list
+                            >
+                              <div
+                                class="checkout-reference-item"
+                                data-reference-item
+                              >
+                                <p class="checkout-reference-title body">
+                                  Reference 1
+                                </p>
+                                <div class="experience-pathway-row">
+                                  <div class="experience-pathway-field">
+                                    <span
+                                      class="checkout-verification-field-label body-small"
+                                      >Name *</span
+                                    >
+                                    <input
+                                      class="experience-pathway-input body-small"
+                                      type="text"
+                                      placeholder="-"
+                                      aria-label="Reference 1 Name"
+                                    />
+                                  </div>
+                                  <div class="experience-pathway-field">
+                                    <span
+                                      class="checkout-verification-field-label body-small"
+                                      >Contact Number *</span
+                                    >
+                                    <input
+                                      class="experience-pathway-input body-small"
+                                      type="tel"
+                                      placeholder="-"
+                                      aria-label="Reference 1 Contact Number"
+                                    />
+                                  </div>
+                                  <div class="experience-pathway-field">
+                                    <span
+                                      class="checkout-verification-field-label body-small"
+                                      >Relationship *</span
+                                    >
+                                    <select
+                                      class="experience-pathway-select body-small"
+                                      aria-label="Reference 1 Relationship"
+                                    >
+                                      <option selected>-</option>
+                                      <option>Manager</option>
+                                      <option>Colleague</option>
+                                      <option>Family</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button
+                              type="button"
+                              class="reference-action body"
+                              data-add-reference
+                            >
+                              + Add another reference
+                            </button>
+                            <template data-reference-template>
+                              <div
+                                class="checkout-reference-item"
+                                data-reference-item
+                              >
+                                <p class="checkout-reference-title body"></p>
+                                <div class="experience-pathway-row">
+                                  <div class="experience-pathway-field">
+                                    <span
+                                      class="checkout-verification-field-label body-small"
+                                      >Name *</span
+                                    >
+                                    <input
+                                      class="experience-pathway-input body-small"
+                                      type="text"
+                                      placeholder="-"
+                                    />
+                                  </div>
+                                  <div class="experience-pathway-field">
+                                    <span
+                                      class="checkout-verification-field-label body-small"
+                                      >Contact Number *</span
+                                    >
+                                    <input
+                                      class="experience-pathway-input body-small"
+                                      type="tel"
+                                      placeholder="-"
+                                    />
+                                  </div>
+                                  <div class="experience-pathway-field">
+                                    <span
+                                      class="checkout-verification-field-label body-small"
+                                      >Relationship *</span
+                                    >
+                                    <select
+                                      class="experience-pathway-select body-small"
+                                    >
+                                      <option selected>-</option>
+                                      <option>Manager</option>
+                                      <option>Colleague</option>
+                                      <option>Family</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </template>
+                          </div>
+                          <div class="checkout-faq-block">
+                            <h3 class="checkout-title heading-3 mb-4">
+                              Frequently Asked Questions
+                            </h3>
+                            <div
+                              class="certification-faq-accordion"
+                              role="region"
+                              aria-label="Frequently asked questions"
+                            >
+                              <details
+                                class="certification-faq-accordion-item"
+                                open
+                              >
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  What are the prerequisites for CUA?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    There are no strict prerequisites. CUA is
+                                    designed for working professionals with some
+                                    exposure to UX, product design, or digital
+                                    strategy.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  Is CUA fully online?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Yes. The cohort combines live online
+                                    instruction with self-paced study materials.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  How is CUA different from other UX
+                                  certifications?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    It is grounded in human factors engineering
+                                    and decision science, not only interface
+                                    trends.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  How long is certification valid?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Certification validity and renewal guidance
+                                    are shared during onboarding.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  What is the refund policy?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Refund requests are handled based on the
+                                    enrollment policy shared at checkout.
+                                  </p>
+                                </div>
+                              </details>
+                              <details class="certification-faq-accordion-item">
+                                <summary
+                                  class="certification-faq-accordion-trigger body-large"
+                                >
+                                  Do you offer corporate discounts?
+                                  <svg
+                                    class="certification-faq-accordion-icon"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
+                                </summary>
+                                <div
+                                  class="certification-faq-accordion-content"
+                                >
+                                  <p
+                                    class="certification-faq-accordion-answer body"
+                                  >
+                                    Team and enterprise enrollments can qualify
+                                    for custom pricing.
+                                  </p>
+                                </div>
+                              </details>
+                            </div>
+                          </div>
+                        </div>
                       </section>
                       <!--------------------------- 
                          Step four
@@ -1099,7 +2235,47 @@
                         data-step-panel="3"
                         hidden
                       >
-                        <h2>Step four</h2>
+                        <div class="checkout-panel-header">
+                          <h2 class="checkout-title heading-3">
+                            Enrollment Confirmed
+                          </h2>
+                          <p class="checkout-intro body-small">
+                            Your checkout flow is complete. Confirmation and
+                            next-step details will be shared by email.
+                          </p>
+                        </div>
+                        <div class="checkout-confirmation-card">
+                          <span
+                            class="checkout-confirmation-badge"
+                            aria-hidden="true"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M7.5 12.5L10.5 15.5L16.5 9.5"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <circle
+                                cx="12"
+                                cy="12"
+                                r="8"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                              />
+                            </svg>
+                          </span>
+                          <div>
+                            <h3 class="checkout-card-title body">
+                              Your seat is reserved
+                            </h3>
+                            <p class="checkout-confirmation-copy body-small">
+                              We have captured your enrollment request and your
+                              onboarding instructions will follow shortly.
+                            </p>
+                          </div>
+                        </div>
                       </section>
                     </div>
                   </div>
@@ -1153,6 +2329,40 @@
 
                         <p class="checkout-summary-security body-small">
                           100% Secure. 256-bit SSL encryption.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="checkout-summary-card checkout-verification-card"
+                      data-checkout-summary-mode="verification"
+                      hidden
+                    >
+                      <div
+                        class="checkout-summary-body checkout-verification-card-body"
+                      >
+                        <h3 class="checkout-verification-card-title body">
+                          Important Instructions
+                        </h3>
+                        <ol class="checkout-verification-list body-small">
+                          <li>
+                            Upload only official bank-generated PDF statements
+                          </li>
+                          <li>Scanned images or photos will not be accepted</li>
+                          <li>
+                            Do not alter or edit the PDF using external tools
+                          </li>
+                        </ol>
+                        <button
+                          type="button"
+                          class="checkout-action checkout-action-primary checkout-summary-cta body-small"
+                          data-emi-submit
+                        >
+                          Submit for Verification
+                        </button>
+                        <p class="checkout-summary-security body-small">
+                          Your documents are securely encrypted and used only
+                          for verification purposes.
                         </p>
                       </div>
                     </div>

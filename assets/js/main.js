@@ -810,26 +810,81 @@
 // What You'll Learn in CUA: accordion — only one open at a time
 (function () {
     "use strict";
-    function initLearnAccordion() {
-        var accordion = document.querySelector(".what-you-ll-learn-accordion");
-        if (!accordion) return;
-        var items = accordion.querySelectorAll(".what-you-ll-learn-accordion-item");
-        items.forEach(function (details) {
-            details.addEventListener("toggle", function () {
-                if (details.hasAttribute("open")) {
+    function initSingleOpenAccordion(accordionSelector, itemSelector) {
+        var accordions = document.querySelectorAll(accordionSelector);
+        if (!accordions.length) return;
+
+        accordions.forEach(function (accordion) {
+            var items = accordion.querySelectorAll(itemSelector);
+            items.forEach(function (details) {
+                var summary = details.querySelector("summary");
+                if (!summary) return;
+
+                summary.addEventListener("click", function (event) {
+                    var isOpening = !details.hasAttribute("open");
+
+                    event.preventDefault();
+
+                    if (!isOpening) {
+                        details.removeAttribute("open");
+                        return;
+                    }
+
                     items.forEach(function (other) {
                         if (other !== details) {
                             other.removeAttribute("open");
                         }
                     });
-                }
+
+                    requestAnimationFrame(function () {
+                        if (!details.hasAttribute("open")) {
+                            details.setAttribute("open", "");
+                        }
+                    });
+                });
+
+                details.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape" && details.hasAttribute("open")) {
+                        details.removeAttribute("open");
+                    }
+                });
             });
         });
     }
+
+    function enforceSingleOpenState(accordionSelector, itemSelector) {
+        var accordions = document.querySelectorAll(accordionSelector);
+        if (!accordions.length) return;
+
+        accordions.forEach(function (accordion) {
+            var firstOpenFound = false;
+            accordion.querySelectorAll(itemSelector).forEach(function (details) {
+                if (!details.hasAttribute("open")) {
+                    return;
+                }
+
+                if (!firstOpenFound) {
+                    firstOpenFound = true;
+                    return;
+                }
+
+                details.removeAttribute("open");
+            });
+        });
+    }
+
+    function initAccordions() {
+        enforceSingleOpenState(".what-you-ll-learn-accordion", ".what-you-ll-learn-accordion-item");
+        enforceSingleOpenState(".certification-faq-accordion", ".certification-faq-accordion-item");
+
+        initSingleOpenAccordion(".what-you-ll-learn-accordion", ".what-you-ll-learn-accordion-item");
+        initSingleOpenAccordion(".certification-faq-accordion", ".certification-faq-accordion-item");
+    }
+
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initLearnAccordion);
+        document.addEventListener("DOMContentLoaded", initAccordions);
     } else {
-        initLearnAccordion();
+        initAccordions();
     }
 })();
 
@@ -1018,45 +1073,61 @@
 (function () {
     "use strict";
 
-    var flow = document.querySelector("[data-checkout-flow]");
+    const flow = document.querySelector("[data-checkout-flow]");
     if (!flow) return;
 
-    var panels = Array.from(flow.querySelectorAll("[data-step-panel]"));
-    var stepItems = Array.from(flow.querySelectorAll("[data-step-nav]"));
-    var stepButtons = Array.from(flow.querySelectorAll("[data-step-trigger]"));
-    var nextButtons = Array.from(flow.querySelectorAll("[data-step-next]"));
-    var backButtons = Array.from(flow.querySelectorAll("[data-step-back]"));
-    var summaryCta = flow.querySelector(".checkout-summary-cta");
-    var backLink = flow.querySelector("[data-checkout-back]");
-    var currentStep = 0;
-    var summaryStepConfig = [
-        { target: 1, label: "Continue to Secure your Seat" },
-        { target: 2, label: "Proceed to Checkout" },
-        { target: 3, label: "Complete Enrollment" },
-        { target: null, label: "Enrollment Confirmed" }
+    const panels = Array.from(flow.querySelectorAll("[data-step-panel]"));
+    const stepNavItems = Array.from(flow.querySelectorAll("[data-step-nav]"));
+    const stepTriggers = Array.from(flow.querySelectorAll("[data-step-trigger]"));
+    const nextButtons = Array.from(flow.querySelectorAll("[data-step-next]"));
+    const backButtons = Array.from(flow.querySelectorAll("[data-step-back]"));
+
+    const paymentInputs = Array.from(flow.querySelectorAll("[name='checkout-payment-plan']"));
+    const paymentStages = Array.from(flow.querySelectorAll("[data-payment-stage]"));
+
+    const summaryCTA = flow.querySelector(".checkout-summary-cta");
+    const backLink = flow.querySelector("[data-checkout-back]");
+    const verificationSubmitBtn = flow.querySelector("[data-emi-submit]");
+    const uploadZones = Array.from(flow.querySelectorAll("[data-upload-zone]"));
+    const addReferenceButton = flow.querySelector("[data-add-reference]");
+    const referenceList = flow.querySelector("[data-reference-list]");
+    const referenceTemplate = flow.querySelector("[data-reference-template]");
+
+    const verificationCard = flow.querySelector("[data-checkout-summary-mode='verification']");
+    const normalSummaryCard = flow.querySelector(".checkout-summary-card:not([data-checkout-summary-mode])");
+
+    let currentStep = 0;
+    let paymentStage = "selection";
+    let paymentPlan = "one-time";
+
+    const stepConfig = [
+        { nextStep: 1, label: "Continue to Secure your Seat" },
+        { nextStep: 2, label: "Proceed to Checkout" },
+        { nextStep: 3, label: "Complete Payment" },
+        { nextStep: null, label: "Enrollment Confirmed" }
     ];
 
-    function clampStep(step) {
+    function limitStep(step) {
         return Math.max(0, Math.min(step, panels.length - 1));
     }
 
-    function setStep(step) {
-        currentStep = clampStep(step);
-
-        panels.forEach(function (panel, index) {
-            var isActive = index === currentStep;
-            panel.classList.toggle("is-active", isActive);
-            panel.hidden = !isActive;
+    function showOnly(elements, activeIndex) {
+        elements.forEach((el, i) => {
+            const isActive = i === activeIndex;
+            el.classList.toggle("is-active", isActive);
+            el.hidden = !isActive;
         });
+    }
 
-        stepItems.forEach(function (item, index) {
-            var button = item.querySelector(".checkout-step-button");
-            var isActive = index === currentStep;
-            var isComplete = index < currentStep;
+    function updateStepNavigation() {
+        stepNavItems.forEach((item, index) => {
+            const isActive = index === currentStep;
+            const isComplete = index < currentStep;
 
             item.classList.toggle("is-active", isActive);
             item.classList.toggle("is-complete", isComplete);
 
+            const button = item.querySelector(".checkout-step-button");
             if (button) {
                 if (isActive) {
                     button.setAttribute("aria-current", "step");
@@ -1065,56 +1136,298 @@
                 }
             }
         });
+    }
 
-        if (summaryCta) {
-            var config = summaryStepConfig[currentStep] || summaryStepConfig[0];
-            summaryCta.textContent = config.label;
+    function updatePaymentStage(stage) {
+        paymentStage = stage === "verification" ? "verification" : "selection";
 
-            if (typeof config.target === "number") {
-                summaryCta.hidden = false;
-                summaryCta.setAttribute("data-step-trigger", String(config.target));
-            } else {
-                summaryCta.hidden = true;
-                summaryCta.removeAttribute("data-step-trigger");
+        paymentStages.forEach(stageEl => {
+            const isActive = stageEl.dataset.paymentStage === paymentStage;
+            stageEl.classList.toggle("is-active", isActive);
+            stageEl.hidden = !isActive;
+        });
+
+        const isVerificationVisible = currentStep === 2 && paymentStage === "verification";
+
+        if (normalSummaryCard) normalSummaryCard.hidden = isVerificationVisible;
+        if (verificationCard) verificationCard.hidden = !isVerificationVisible;
+    }
+
+    function updateSummaryCTA() {
+        if (!summaryCTA) return;
+
+        let config = stepConfig[currentStep];
+        let nextStep = config.nextStep;
+        let label = config.label;
+
+        if (currentStep === 2) {
+            if (paymentStage === "verification") {
+                summaryCTA.hidden = true;
+                summaryCTA.removeAttribute("data-step-trigger");
+                return;
+            }
+
+            if (paymentPlan === "emi-3" || paymentPlan === "emi-6") {
+                nextStep = null;
+                label = "Proceed to Verification";
             }
         }
+
+        summaryCTA.hidden = false;
+        summaryCTA.textContent = label;
+
+        if (typeof nextStep === "number") {
+            summaryCTA.setAttribute("data-step-trigger", nextStep);
+        } else {
+            summaryCTA.removeAttribute("data-step-trigger");
+        }
+    }
+
+    function goToStep(step) {
+        currentStep = limitStep(step);
+
+        showOnly(panels, currentStep);
+        updateStepNavigation();
+
+        if (currentStep !== 2) {
+            updatePaymentStage("selection");
+        }
+
+        updateSummaryCTA();
 
         if (backLink) {
-            backLink.setAttribute("href", currentStep === 0 ? "all-courses.html" : "#");
+            backLink.href = currentStep === 0 ? "all-courses.html" : "#";
         }
     }
 
-    stepButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            var target = Number(button.getAttribute("data-step-trigger"));
+    stepTriggers.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = Number(btn.dataset.stepTrigger);
+
             if (!Number.isNaN(target)) {
-                setStep(target);
+                goToStep(target);
+                return;
+            }
+
+            if (
+                currentStep === 2 &&
+                paymentStage === "selection" &&
+                (paymentPlan === "emi-3" || paymentPlan === "emi-6")
+            ) {
+                updatePaymentStage("verification");
+                updateSummaryCTA();
             }
         });
     });
 
-    nextButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            setStep(currentStep + 1);
+    // Next buttons
+    nextButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            goToStep(currentStep + 1);
         });
     });
 
-    backButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            setStep(currentStep - 1);
+    // Back buttons
+    backButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            goToStep(currentStep - 1);
         });
     });
 
+    // Back link (top navigation)
     if (backLink) {
-        backLink.addEventListener("click", function (event) {
+        backLink.addEventListener("click", (e) => {
+
+            if (currentStep === 2 && paymentStage === "verification") {
+                e.preventDefault();
+                updatePaymentStage("selection");
+                updateSummaryCTA();
+                return;
+            }
+
             if (currentStep > 0) {
-                event.preventDefault();
-                setStep(currentStep - 1);
+                e.preventDefault();
+                goToStep(currentStep - 1);
             }
         });
     }
 
-    setStep(0);
+    // Payment selection change
+    paymentInputs.forEach(input => {
+        input.addEventListener("change", () => {
+            paymentPlan = input.value;
+            updateSummaryCTA();
+        });
+    });
+
+    // Verification submit
+    if (verificationSubmitBtn) {
+        verificationSubmitBtn.addEventListener("click", () => {
+            goToStep(3);
+        });
+    }
+
+    function updateUploadState(zone, files) {
+        if (!zone) return;
+
+        const filename = zone.querySelector("[data-upload-filename]");
+        const hasFiles = files && files.length > 0;
+
+        zone.classList.toggle("is-filled", hasFiles);
+        zone.classList.remove("is-invalid");
+
+        if (!filename) return;
+
+        if (!hasFiles) {
+            filename.textContent = "No file selected";
+            return;
+        }
+
+        if (files.length === 1) {
+            filename.textContent = files[0].name;
+            return;
+        }
+
+        filename.textContent = files.length + " files selected";
+    }
+
+    function showUploadError(zone, message) {
+        if (!zone) return;
+
+        const filename = zone.querySelector("[data-upload-filename]");
+        zone.classList.remove("is-filled");
+        zone.classList.add("is-invalid");
+
+        if (filename) {
+            filename.textContent = message;
+        }
+    }
+
+    function getAcceptedFiles(fileList) {
+        if (!fileList || !fileList.length) return [];
+
+        return Array.from(fileList).filter(file => {
+            const name = file.name ? file.name.toLowerCase() : "";
+            const mime = (file.type || "").toLowerCase();
+
+            return (
+                mime === "image/jpeg" ||
+                mime === "image/png" ||
+                mime === "application/pdf" ||
+                name.endsWith(".jpeg") ||
+                name.endsWith(".jpg") ||
+                name.endsWith(".png") ||
+                name.endsWith(".pdf")
+            );
+        });
+    }
+
+    uploadZones.forEach(zone => {
+        const input = zone.querySelector("[data-upload-input]");
+        const box = zone.querySelector(".checkout-upload-box");
+        if (!input || !box) return;
+
+        ["dragenter", "dragover"].forEach(eventName => {
+            zone.addEventListener(eventName, event => {
+                event.preventDefault();
+                zone.classList.add("is-dragover");
+            });
+        });
+
+        ["dragleave", "dragend", "drop"].forEach(eventName => {
+            zone.addEventListener(eventName, event => {
+                event.preventDefault();
+                zone.classList.remove("is-dragover");
+            });
+        });
+
+        zone.addEventListener("drop", event => {
+            const droppedFiles = event.dataTransfer && event.dataTransfer.files;
+            if (!droppedFiles || !droppedFiles.length) return;
+
+            const acceptedFiles = getAcceptedFiles(droppedFiles);
+            if (!acceptedFiles.length || acceptedFiles.length !== droppedFiles.length) {
+                input.value = "";
+                showUploadError(zone, "Only JPEG, PNG, or PDF files are allowed");
+                return;
+            }
+
+            const dataTransfer = new DataTransfer();
+            acceptedFiles.forEach(file => dataTransfer.items.add(file));
+            input.files = dataTransfer.files;
+            updateUploadState(zone, dataTransfer.files);
+        });
+
+        input.addEventListener("change", () => {
+            const acceptedFiles = getAcceptedFiles(input.files);
+
+            if (!acceptedFiles.length && input.files && input.files.length) {
+                input.value = "";
+                showUploadError(zone, "Only JPEG, PNG, or PDF files are allowed");
+                return;
+            }
+
+            if (input.files && acceptedFiles.length !== input.files.length) {
+                input.value = "";
+                showUploadError(zone, "Only JPEG, PNG, or PDF files are allowed");
+                return;
+            }
+
+            updateUploadState(zone, acceptedFiles);
+        });
+
+        box.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                input.click();
+            }
+        });
+    });
+
+    function syncReferenceLabels() {
+        if (!referenceList) return;
+
+        const items = Array.from(referenceList.querySelectorAll("[data-reference-item]"));
+        items.forEach((item, index) => {
+            const number = index + 1;
+            const title = item.querySelector(".checkout-reference-title");
+            const nameInput = item.querySelector("input[type='text']");
+            const phoneInput = item.querySelector("input[type='tel']");
+            const relationshipSelect = item.querySelector("select");
+
+            if (title) {
+                title.textContent = "Reference " + number;
+            }
+
+            if (nameInput) {
+                nameInput.setAttribute("aria-label", "Reference " + number + " Name");
+            }
+
+            if (phoneInput) {
+                phoneInput.setAttribute("aria-label", "Reference " + number + " Contact Number");
+            }
+
+            if (relationshipSelect) {
+                relationshipSelect.setAttribute("aria-label", "Reference " + number + " Relationship");
+            }
+        });
+    }
+
+    if (addReferenceButton && referenceList && referenceTemplate) {
+        addReferenceButton.addEventListener("click", () => {
+            const fragment = referenceTemplate.content.cloneNode(true);
+            referenceList.appendChild(fragment);
+            syncReferenceLabels();
+        });
+    }
+
+    syncReferenceLabels();
+
+    const selectedPlan = paymentInputs.find(input => input.checked);
+    if (selectedPlan) paymentPlan = selectedPlan.value;
+
+    goToStep(0);
+
 })();
 // CUA journey timeline: auto-run steps (checkboxes) sequentially once.
 (function () {
