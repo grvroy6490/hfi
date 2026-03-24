@@ -7177,7 +7177,7 @@ select.checkout-field-control {
   filter: brightness(0) invert(1);
 }
 .checkout-submission-action-primary:hover {
-  background: #2b2b2b;
+  opacity: 0.85;
 }
 .checkout-submission-action-primary:hover::after {
   background-image: url("../images/arrow.svg");
