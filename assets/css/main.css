@@ -6082,6 +6082,11 @@ body.mobile-menu-open {
   padding: 9rem 0 5rem;
   background: #F2F2F2;
 }
+@media (max-width: 991.98px) {
+  .checkout-page-section {
+    padding: 10rem 0 3rem;
+  }
+}
 
 .checkout-flow {
   width: 100%;
@@ -7249,7 +7254,6 @@ select.checkout-field-control {
 @media (max-width: 991.98px) {
   .checkout-summary {
     position: static;
-    order: -1;
   }
 }
 
