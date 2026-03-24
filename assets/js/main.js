@@ -1192,6 +1192,7 @@
 
     function goToStep(step) {
         currentStep = limitStep(step);
+        flow.classList.toggle("is-step-2", currentStep === 2);
         flow.classList.toggle("is-step-3", currentStep === 3);
 
         showOnly(panels, currentStep);
