@@ -96,17 +96,17 @@
 
 .experience-practice-quote {
     max-width: 18rem;
-    margin: 0 0 4.5rem;
+    margin: 0 0 1.5rem;
     color: v.$color-primary-black;
     line-height: 1.45;
     position: relative;
 
     .end_quote {
-        transform: translate(0rem, 0.625rem);
+        transform: translate(0.5rem, 0.425rem);
     }
 
     .start_quote {
-        transform: translate(0rem, -1.125rem) rotate(180deg);
+        transform: translate(-0.5rem, -1rem) rotate(180deg);
     }
 
     // &::before,

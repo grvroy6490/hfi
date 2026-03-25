@@ -125,7 +125,7 @@
     }
 
     .transform-teams-logos {
-        margin-top: 3rem;
+        margin-top: 1rem;
         overflow: hidden;
         -webkit-mask-image: linear-gradient(to right,
                 transparent 0,
@@ -142,6 +142,34 @@
 
         @media (max-width: 992px) {
             margin-top: 2rem;
+        }
+    }
+}
+
+.partners-section{
+    padding: 5rem 0;
+    overflow: hidden;
+
+    .partners-section-content {
+        text-align: center;
+
+        .partners-section-lead {
+            color: v.$color-gold;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0rem;
+        }
+
+        .partners-section-heading {
+            color: v.$color-black;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+
+            @media (max-width: 992px) {
+                line-height: 1.2;
+            }
         }
     }
 }

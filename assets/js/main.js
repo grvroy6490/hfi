@@ -453,6 +453,304 @@
         return;
     }
 
+    // Populate testimonial slides (keeps the existing SVGs and avatar image).
+    const swiperWrapper = sliderEl.querySelector(".swiper-wrapper");
+    const templateSlide = swiperWrapper ? swiperWrapper.querySelector(".swiper-slide") : null;
+
+    function setSlideText(slideEl, testimonial) {
+        const quoteEl = slideEl.querySelector(".experience-practice-quote");
+        const authorEl = slideEl.querySelector(".experience-practice-author");
+        const designationEl = slideEl.querySelector(".experience-practice-designation");
+        const companyEl = slideEl.querySelector(".experience-practice-company");
+
+        if (quoteEl) {
+            const startSvg = quoteEl.querySelector("svg.start_quote");
+            const endSvg = quoteEl.querySelector("svg.end_quote");
+            if (startSvg && endSvg) {
+                // Replace only the text between the existing SVGs.
+                quoteEl.innerHTML = "";
+                quoteEl.appendChild(startSvg);
+                quoteEl.appendChild(document.createTextNode(testimonial.quote || ""));
+                quoteEl.appendChild(endSvg);
+            }
+        }
+
+        if (authorEl) {
+            const dashSpan = authorEl.querySelector('span[aria-hidden="true"]');
+            // Remove existing text nodes so we can re-add the name cleanly.
+            Array.from(authorEl.childNodes).forEach(function (node) {
+                if (node.nodeType === Node.TEXT_NODE) authorEl.removeChild(node);
+            });
+
+            if (dashSpan) {
+                if (testimonial.name) {
+                    authorEl.appendChild(document.createTextNode(" " + testimonial.name));
+                }
+            } else {
+                authorEl.textContent = testimonial.name || "";
+            }
+        }
+
+        if (designationEl) {
+            designationEl.textContent = testimonial.designation || "";
+        }
+        if (companyEl) {
+            companyEl.textContent = testimonial.company || "";
+        }
+    }
+
+    if (swiperWrapper && templateSlide) {
+        const testimonials = [
+            {
+                name: "Shalaka Sathaye",
+                designation: "Senior Specialist - UX",
+                company: "SunGard",
+                quote: "HFI transformed my approach to design, making it more structured and focused on usability. I only wish I had started earlier."
+            },
+            {
+                name: "Amol Jambhekar",
+                designation: "UX Engineer",
+                company: "Index Engines",
+                quote: "The support and learning experience strengthened my skills significantly, and I look forward to continuing the journey."
+            },
+            {
+                name: "Sujeesh Sukumaran",
+                designation: "Founder",
+                company: "Pepper Wellness, PVT LTD",
+                quote: "My approach is now systematic and user-driven. I rely less on instinct and more on research and validation."
+            },
+            {
+                name: "Sandesh Subedi",
+                designation: "Co-founder",
+                company: "ProCreator - Global Design Agency & ProApp",
+                quote: "HFI helped me turn curiosity into real capability. I now design with deeper user understanding and communicate ideas with confidence."
+            },
+            {
+                name: "Bony John",
+                designation: "Asst. UI/UX Design Manager",
+                company: "HT Digital Systems",
+                quote: "A valuable experience with strong expertise, inspiring peers, and meaningful learning that brought me closer to my goals."
+            },
+            {
+                name: "Joydeep MItra",
+                designation: "Associate Director UX",
+                company: "Kyndryl Vital Studios",
+                quote: "HFI stands out as a credible leader in experience design. The learning strengthened both my foundation and the quality of my work."
+            },
+            {
+                name: "Pragya Jawar",
+                designation: "UX Professional",
+                company: "",
+                quote: "The experience exceeded my expectations. I gained clarity, confidence, and the ability to justify decisions with solid reasoning."
+            },
+            {
+                name: "Leena Khatri",
+                designation: "Senior User Experience Designer",
+                company: "SAPS Labs",
+                quote: "I now have a structured foundation that helps me refine processes, mentor others, and contribute more effectively to experience strategy."
+            },
+            {
+                name: "Anishka Gurjar",
+                designation: "Principal User Experience Designer",
+                company: "UBS",
+                quote: "The learning helped me think beyond individual interactions and identify high-impact opportunities within complex systems."
+            },
+            {
+                name: "Sathish Sankaraiah",
+                designation: "Advisor - Experience Design Strategy",
+                company: "Innova Solutions",
+                quote: "An insightful experience that encouraged strong collaboration and brought new perspectives to how teams work together."
+            },
+            {
+                name: "Chow Sok Mui Murie",
+                designation: "Senior Creative Consultant",
+                company: "NCS",
+                quote: "The training was great, very effective. Now, having been tested and certified by HFI, I have more confidence in addressing usability challenges"
+            },
+            {
+                name: "Carl Jhon Steven M. Ignacio",
+                designation: "UI/UX Designer",
+                company: "Shopping Center Management Corporation",
+                quote: "The course reshaped how I see UX. From understanding user behavior to applying empathy and structured thinking, it taught me how to truly think like a UX designer. The User-Centered Analysis module was a standout"
+            },
+            // {
+            //     name: "Rachel Shong",
+            //     designation: "Senior Manager",
+            //     company: "GovTech Singapore",
+            //     quote: "The CUA and CXA certifications empowered me to bridge the gap between complex AI technologies and real human needs. I am now better positioned to deliver meaningful value to my team and clients - advocating for users, navigating complexity with confidence, and pushing the boundaries of user-centric design in a rapidly evolving landscape. These programs did not just sharpen my skills - they transformed the way I navigate the world of emerging technology"
+            // },
+            // {
+            //     name: "Kausar Jahan",
+            //     designation: "Senior UX Specialist",
+            //     company: "Road Transport Authority",
+            //     quote: "HFI transformed the way I see design - it's not just about web interfaces, but the entire experience. HFI completely changed my perspective towards UX Design and made me realize that UX is both an art and a science. I was eager and pursued HFI's CUA, CXA, and CDPA certifications. These programs not only strengthened my expertise but also gave me the confidence to advocate for UX. The way I communicate and approach design today is a direct result of my HFI training - it gave me the voice, knowledge, and skills to make a real impact"
+            // },
+            // {
+            //     name: "Richa Gupta",
+            //     designation: "Lead UX Design & Researcher",
+            //     company: "SC Ventures - myZoi",
+            //     quote: "Having taken other courses with HFI before, I was already familiar with their approach, which made me excited to dive deeper. This course definitely lived up to that. It gave me great insights into service design and really broadened my perspective. I especially loved the group work - it brought in so many different ideas and made every session more dynamic."
+            // },
+            {
+                name: "Nombulelo Mahoda",
+                designation: "Service Designer",
+                company: "NedBank",
+                quote: "Even though I was familiar with many concepts, HFI gave me a fresh perspective and practical tools. I particularly valued the ecosystem mapping and learning through group discussions"
+            },
+            {
+                name: "Kamohelo Kuaho",
+                designation: "Senior Design Research Lead",
+                company: "Nedbank",
+                quote: "The strategic, science-backed approach of HFI helped me bring more structure and influence to Design Research in my organization. It's rare to find training that's this insightful and applicable."
+            },
+            {
+                name: "Stefan Grobler",
+                designation: "Principal Service Design",
+                company: "NedBank",
+                quote: "I signed up for this course as I wanted to learn more on standardising service design processes. The course introduced me to new tools and capabilities that weren't part of our existing processes. Awaiting a more advanced version for experienced professionals."
+            },
+            // {
+            //     name: "Bheki Ntanzi",
+            //     designation: "UX Specialist",
+            //     company: "First National Bank",
+            //     quote: "HFI was the turning point in my UX journey. I started in graphic design and front-end development, but I always wanted to understand the why behind user interactions. When I discovered UX, I knew I needed a solid, science-backed foundation - something beyond just intuition. The CUA certification was career-defining for me. It transformed my approach, turning subjective design choices into data-driven decisions. At FNB, the methodologies I learned - usability testing, the VIMM model, and persuasion techniques - helped me uncover customer pain points and design more impactful solutions. But the real power of HFI wasn't just in my growth; it was in empowering my team. I championed HFI certifications within my organization because UX needs a shared language, a structured process, and credibility. Today, UX in South Africa's banking industry is maturing, and I'm proud to be part of that transformation. UX isn't just about pixels - it's about people, and HFI gave me the tools to bridge that gap."
+            // },
+            // {
+            //     name: "Supreetha Pavan",
+            //     designation: "Lead UX Designer",
+            //     company: "Siemens",
+            //     quote: "I started as a developer, but realized my complex designs were hard for users. That's when I discovered the importance of experience-driven design, with users centric to the process. For the future of UX, especially with VR/AR, it's all about how seamlessly a user can interact. When looking for a UX course, HFI's contents really amazed me, and I concluded it was the best option. The teachers are top-notch, experienced, and knowledgeable, offering both theoretical concepts for daily tasks and practical help for user experiments. The course covers a wide spectrum of concepts in depth. Through this learning, I feel like I can influence the future."
+            // },
+            {
+                name: "Art Zippel",
+                designation: "Information Architect",
+                company: "Word and Brown Companies",
+                quote: "Becoming a CUA is undoubtedly the single most important decision I made to help my career. My instructors referred to actual projects with the clients. Within 6 months, my certification had paid for itself."
+            },
+            {
+                name: "Amy Bogatch",
+                designation: "Information Architect",
+                company: "AXA Equitable",
+                quote: "All of us in the team are CUAs. We hope to be CXA certified soon. It does make a difference; you can feel it in what we do. We're professionals - we've got that scientific method to UX. A respect for, and understanding of a scientific approach to UX is what HFI instilled in us."
+            },
+            {
+                name: "VJ Francisco",
+                designation: "Head of Experience Design",
+                company: "Global Telecom",
+                quote: "The CUA provided me with up-to-date UX design knowledge and established credibility that helped me articulate the true value of design to my organization"
+            },
+            {
+                name: "Christine J. Tahvonen",
+                designation: "Web & App Design",
+                company: "TransUnion",
+                quote: "I have a better understanding of how to design navigation and interaction points, resulting in increased confidence - now I will be a more effective leader in my organization. I really liked that the information presented in the course was backed by actual research and real-world examples."
+            },
+            {
+                name: "Vince Conti",
+                designation: "Manager, Interactive Development",
+                company: "American Express",
+                quote: "Learned a lot of information in a short period of time. Excellent blend of lecture, discussion and exercises."
+            },
+            {
+                name: "Leah Gillespie",
+                designation: "Senior Web Producer",
+                company: "Baltimore Gas & Electric",
+                quote: "Very helpful - the course solidified experience I've had in UT and taught me a lot more to give me a broader context and additional techniques"
+            },
+            {
+                name: "Jim O'Brien",
+                designation: "Senior Interaction Designer",
+                company: "AutoTrader.com",
+                quote: "The certification served as a reinforcement for what I'm doing, so I am more confident in presenting a concept or design."
+            },
+            // {
+            //     name: "Linda Moir",
+            //     designation: "Manager, Web Communications",
+            //     company: "Alberta Blue Cross",
+            //     quote: "HFI is way ahead of the game and has done so much to provide standards for the usability field through their courses and programs. I really appreciate the work they're doing and feel that I'm able to do a better job for my company as a result of HFI's courses and certification program."
+            // },
+            // {
+            //     name: "Lisanne Wirth",
+            //     designation: "UX/CX Content Strategist, Founder and Owner",
+            //     company: "Contentment Communications",
+            //     quote: "The HFI program is phenomenal. I was a big supporter at Verizon Wireless and advocated CUA training for my 15-person online support content team. A foundation in usability is invaluable for content strategists because interfaces and content go hand in hand: content affects interactions as much as design. The CXA certification took things to the next level for me and changed my life, specifically the concept that decisions are made based on emotion and then are justified with reasoning. So it is really emotion, not logic that holds the purse strings and drives user experience. HFI has made me more effective as a content strategist and inspired me to start my own consultancy to help companies leverage the benefits of a UX-focused content strategy."
+            // },
+            // {
+            //     name: "Zakariah Lewis Longo",
+            //     designation: "Manager and UX Lead",
+            //     company: "AAA Auto Club Enterprises",
+            //     quote: "I took the CUA training, and it was awesome! I've taken a lot of classes over the past 20 years, and this class is firmly at the top. I felt like we were watching TED talk trainings, but afterwards we could interact directly with the speakers and learn deep inside info from them. It was way worth it! The test is hard, as it should be, but if you take good notes and capitalize on the time available with the trainers, you will be successful."
+            // },
+            // {
+            //     name: "Cissy Liu",
+            //     designation: "Program Manager",
+            //     company: "Salesforce",
+            //     quote: "The training HFI provided in the CUA program was a great chance for me, a novice UX practitioner, to get into the field. The sessions are all super informative and practical, and the instructors are always ready to help and share their valuable insights. The training coordination team is also the friendliest & most responsive group of folks I've worked with. I recommend this course to everyone who likes to learn about UX."
+            // },
+            // {
+            //     name: "Crilly Butler Jr",
+            //     designation: "Senior Information Systems Analyst and Intranet Webmaster",
+            //     company: "Department of Fish and Game",
+                // quote: "Before I earned my CUA, I was already top ranked here. There was no higher level for me to be promoted to, and no way for me to earn any more money. The main impact, for me, has to do with the performance of my job. Two specific things come to mind. First, I have an improved ability to structure and articulate the concepts I learned in my training to my team. Knowing something - intuitively or through experience - doesn't necessarily enable one to communicate that knowledge effectively. Now, I can say in 10 words what I used to say in 100. Second, the certification has improved my credibility with the organization and on my own team. Having the CUA after my name shows that I am dedicated to my practice and have put effort into becoming skilled. In addition, the training itself has plugged me into a community of usability experts. I speak with experts on the forums, and receive emails from HFI with relevant news. There are even people from my HFI courses who I am now friends with, whom I would not have met otherwise. I receive updates, editorials, and other publications which keep me up-to-date on the latest developments in the field. Overall, the training made the knowledge clear, simple, and immediately practical."
+            // },
+            // {
+            //     name: "Caitlin Ing",
+            //     designation: "",
+            //     company: "",
+            //     quote: "I loved how the UX Foundations course focused on the psychology and science behind user behaviour, rather than just outlining best practices or current UX trends. By covering these fundamentals, I feel like I'm now in a better place to make decisions around our company's UX processes - such as when and why we should be testing certain elements - as well as how best to interpret UX trends and articles/new findings."
+            // },
+            {
+                name: "Brenda Halvorson",
+                designation: "Fractional UX Design & Research Consultant",
+                company: "Steep Perspectives",
+                quote: "This course helped me to put language to the techniques I've been internalizing for years."
+            },
+            {
+                name: "Eugenia Ovenko",
+                designation: "Designer",
+                company: "UBS",
+                quote: "The course was, overall, a really good experience. The instructors take their time to explain everything clearly and carefully"
+            },
+            {
+                name: "Maheen Riaz Qureshi",
+                designation: "Senior UX Designer | Product Designer Independent UX Consultant",
+                company: "Freelance",
+                quote: "Very informative and the instructor was very knowledgeable and helpful! This program deepened my understanding of user experience principles and usability laws, sharpening both my theoretical knowledge and practical insights"
+            },
+            // {
+            //     name: "Jennifer Cunningham",
+            //     designation: "Experience Lead",
+            //     company: "State Farm Insurance",
+            //     quote: "The Science and Art of Effective Web and App Design course has been one of the most challenging classes I've taken to date. The topics covered, such as navigation types, interaction design, content, and accessibility, together with contextual examples, have truly reinforced my understanding of the material. Ilona is a top-notch educator who keeps students engaged through interactive discussions and thought-provoking assignments. She challenges them to think critically and apply principles learned to real-world scenarios. I highly recommend this course to anyone looking to gain a deeper understanding of web and app design. Ilona's passion for the subject and her ability to connect with students make this a truly valuable learning experience."
+            // },
+            {
+                name: "Maheen Riaz Qureshi",
+                designation: "Senior UX Designer | Product Designer Independent UX Consultant",
+                company: "Freelance",
+                quote: "This course was incredibly informative and provided valuable insights into analytics and data measurement in UX. It deepened my understanding of how to leverage data to enhance user experiences and design effectively."
+            },
+            {
+                name: "Sydney Chen",
+                designation: "",
+                company: "",
+                quote: "This course provided a lot of insight into what goes into usability testing, and I feel like I have more to discuss with our research partners now that I've learned this material. My favorite activities were when we acted as facilitators and participants with classmates."
+            }
+        ];
+
+        // Update the existing template slide to the first testimonial, then clone for the rest.
+        setSlideText(templateSlide, testimonials[0]);
+
+        // Clear any existing slides to avoid duplication, then re-append the template as slide #1.
+        swiperWrapper.innerHTML = "";
+        swiperWrapper.appendChild(templateSlide);
+
+        for (let i = 1; i < testimonials.length; i++) {
+            const newSlide = templateSlide.cloneNode(true);
+            setSlideText(newSlide, testimonials[i]);
+            swiperWrapper.appendChild(newSlide);
+        }
+    }
+
     new Swiper(sliderEl, {
         slidesPerView: 1.08,
         spaceBetween: 16,
