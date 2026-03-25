@@ -462,6 +462,7 @@
         const authorEl = slideEl.querySelector(".experience-practice-author");
         const designationEl = slideEl.querySelector(".experience-practice-designation");
         const companyEl = slideEl.querySelector(".experience-practice-company");
+        const avatarEl = slideEl.querySelector(".experience-practice-avatar img");
 
         if (quoteEl) {
             const startSvg = quoteEl.querySelector("svg.start_quote");
@@ -476,19 +477,18 @@
         }
 
         if (authorEl) {
-            const dashSpan = authorEl.querySelector('span[aria-hidden="true"]');
-            // Remove existing text nodes so we can re-add the name cleanly.
-            Array.from(authorEl.childNodes).forEach(function (node) {
-                if (node.nodeType === Node.TEXT_NODE) authorEl.removeChild(node);
-            });
-
-            if (dashSpan) {
-                if (testimonial.name) {
-                    authorEl.appendChild(document.createTextNode(" " + testimonial.name));
-                }
-            } else {
-                authorEl.textContent = testimonial.name || "";
+            authorEl.innerHTML = "";
+            if (testimonial.name) {
+                const dashSpan = document.createElement("span");
+                dashSpan.setAttribute("aria-hidden", "true");
+                dashSpan.textContent = "—";
+                authorEl.appendChild(dashSpan);
+                authorEl.appendChild(document.createTextNode(" " + testimonial.name));
             }
+        }
+
+        if (avatarEl) {
+            avatarEl.src = "./assets/images/" + testimonial.image || "";
         }
 
         if (designationEl) {
@@ -505,250 +505,347 @@
                 name: "Shalaka Sathaye",
                 designation: "Senior Specialist - UX",
                 company: "SunGard",
+                image: "testimonial-avator.jpg",
+                regionPage: "index.html",
                 quote: "HFI transformed my approach to design, making it more structured and focused on usability. I only wish I had started earlier."
             },
             {
                 name: "Amol Jambhekar",
                 designation: "UX Engineer",
                 company: "Index Engines",
+                image: "amoljambhekar.jpg",
+                regionPage: "index.html",
                 quote: "The support and learning experience strengthened my skills significantly, and I look forward to continuing the journey."
             },
             {
                 name: "Sujeesh Sukumaran",
                 designation: "Founder",
                 company: "Pepper Wellness, PVT LTD",
+                image: "Sujeesh-Sukumaran.jpg",
+                regionPage: "index.html",
                 quote: "My approach is now systematic and user-driven. I rely less on instinct and more on research and validation."
             },
             {
                 name: "Sandesh Subedi",
                 designation: "Co-founder",
                 company: "ProCreator - Global Design Agency & ProApp",
+                image: "Sandesh-Subedi.jpg",
+                regionPage: "index.html",
                 quote: "HFI helped me turn curiosity into real capability. I now design with deeper user understanding and communicate ideas with confidence."
             },
             {
                 name: "Bony John",
                 designation: "Asst. UI/UX Design Manager",
                 company: "HT Digital Systems",
+                image: "BonyJohn.jpg",
+                regionPage: "index.html",
                 quote: "A valuable experience with strong expertise, inspiring peers, and meaningful learning that brought me closer to my goals."
             },
             {
                 name: "Joydeep MItra",
                 designation: "Associate Director UX",
                 company: "Kyndryl Vital Studios",
+                image: "JoydeepMitra.jpg",
+                regionPage: "index.html",
                 quote: "HFI stands out as a credible leader in experience design. The learning strengthened both my foundation and the quality of my work."
             },
             {
                 name: "Pragya Jawar",
                 designation: "UX Professional",
                 company: "",
+                image: "PragyaJhawar.jpg",
+                regionPage: "index.html",
                 quote: "The experience exceeded my expectations. I gained clarity, confidence, and the ability to justify decisions with solid reasoning."
             },
             {
                 name: "Leena Khatri",
                 designation: "Senior User Experience Designer",
                 company: "SAPS Labs",
+                image: "LeenaKhatri.jpg",
+                regionPage: "index.html",
                 quote: "I now have a structured foundation that helps me refine processes, mentor others, and contribute more effectively to experience strategy."
             },
             {
                 name: "Anishka Gurjar",
                 designation: "Principal User Experience Designer",
                 company: "UBS",
+                image: "Anishka-Gurjar.jpg",
+                regionPage: "index.html",
                 quote: "The learning helped me think beyond individual interactions and identify high-impact opportunities within complex systems."
             },
             {
                 name: "Sathish Sankaraiah",
                 designation: "Advisor - Experience Design Strategy",
                 company: "Innova Solutions",
+                image: "Sathish-Sankaraiah.jpg",
+                regionPage: "index.html",
                 quote: "An insightful experience that encouraged strong collaboration and brought new perspectives to how teams work together."
             },
             {
                 name: "Chow Sok Mui Murie",
                 designation: "Senior Creative Consultant",
                 company: "NCS",
-                quote: "The training was great, very effective. Now, having been tested and certified by HFI, I have more confidence in addressing usability challenges"
+                image: "Chow-Sok-Mui-Murie.jpg",
+                regionPage: "sg.html",
+                quote: "HFI training gave me the confidence to approach usability challenges with clarity and structure."
             },
             {
                 name: "Carl Jhon Steven M. Ignacio",
                 designation: "UI/UX Designer",
                 company: "Shopping Center Management Corporation",
-                quote: "The course reshaped how I see UX. From understanding user behavior to applying empathy and structured thinking, it taught me how to truly think like a UX designer. The User-Centered Analysis module was a standout"
+                image: "Carl-Jhon.jpg",
+                regionPage: "au.html",
+                quote: "My thinking has evolved to design with empathy, structure, and a deeper understanding of user behavior."
             },
-            // {
-            //     name: "Rachel Shong",
-            //     designation: "Senior Manager",
-            //     company: "GovTech Singapore",
-            //     quote: "The CUA and CXA certifications empowered me to bridge the gap between complex AI technologies and real human needs. I am now better positioned to deliver meaningful value to my team and clients - advocating for users, navigating complexity with confidence, and pushing the boundaries of user-centric design in a rapidly evolving landscape. These programs did not just sharpen my skills - they transformed the way I navigate the world of emerging technology"
-            // },
-            // {
-            //     name: "Kausar Jahan",
-            //     designation: "Senior UX Specialist",
-            //     company: "Road Transport Authority",
-            //     quote: "HFI transformed the way I see design - it's not just about web interfaces, but the entire experience. HFI completely changed my perspective towards UX Design and made me realize that UX is both an art and a science. I was eager and pursued HFI's CUA, CXA, and CDPA certifications. These programs not only strengthened my expertise but also gave me the confidence to advocate for UX. The way I communicate and approach design today is a direct result of my HFI training - it gave me the voice, knowledge, and skills to make a real impact"
-            // },
-            // {
-            //     name: "Richa Gupta",
-            //     designation: "Lead UX Design & Researcher",
-            //     company: "SC Ventures - myZoi",
-            //     quote: "Having taken other courses with HFI before, I was already familiar with their approach, which made me excited to dive deeper. This course definitely lived up to that. It gave me great insights into service design and really broadened my perspective. I especially loved the group work - it brought in so many different ideas and made every session more dynamic."
-            // },
+            {
+                name: "Rachel Shong",
+                designation: "Senior Manager",
+                company: "GovTech Singapore",
+                image: "Rachel-Shong.jpg",
+                regionPage: "sg.html",
+                quote: "The learning helped me bridge complex technology with real user needs, creating more meaningful outcomes."
+            },
+            {
+                name: "Kausar Jahan",
+                designation: "Senior UX Specialist",
+                company: "Road Transport Authority",
+                image: "Kausar-Jahan.jpg",
+                regionPage: "uae.html",
+                quote: "HFI transformed how I see design. It is about the entire experience, not just individual interfaces."
+            },
+            {
+                name: "Richa Gupta",
+                designation: "Lead UX Design & Researcher",
+                company: "SC Ventures - myZoi",
+                image: "Richa-Gupta.jpg",
+                regionPage: "uae.html",
+                quote: "A highly engaging experience that broadened my perspective and brought valuable insights into service design."
+            },
             {
                 name: "Nombulelo Mahoda",
                 designation: "Service Designer",
                 company: "NedBank",
-                quote: "Even though I was familiar with many concepts, HFI gave me a fresh perspective and practical tools. I particularly valued the ecosystem mapping and learning through group discussions"
+                image: "Nombulelo-Mahoda.jpg",
+                regionPage: "sa.html",
+                quote: "The learning introduced fresh perspectives and practical tools, especially in understanding systems and ecosystems."
             },
             {
                 name: "Kamohelo Kuaho",
                 designation: "Senior Design Research Lead",
                 company: "Nedbank",
-                quote: "The strategic, science-backed approach of HFI helped me bring more structure and influence to Design Research in my organization. It's rare to find training that's this insightful and applicable."
+                image: "Kamohelo-Kuaho.jpg",
+                regionPage: "sa.html",
+                quote: "A strong, science-backed approach that brought structure and influence to how I approach design research."
             },
             {
                 name: "Stefan Grobler",
                 designation: "Principal Service Design",
                 company: "NedBank",
-                quote: "I signed up for this course as I wanted to learn more on standardising service design processes. The course introduced me to new tools and capabilities that weren't part of our existing processes. Awaiting a more advanced version for experienced professionals."
+                image: "Stefan-Grobler.jpg",
+                regionPage: "sa.html",
+                quote: "The program helped me standardize processes and adopt new tools that improved how I work."
             },
-            // {
-            //     name: "Bheki Ntanzi",
-            //     designation: "UX Specialist",
-            //     company: "First National Bank",
-            //     quote: "HFI was the turning point in my UX journey. I started in graphic design and front-end development, but I always wanted to understand the why behind user interactions. When I discovered UX, I knew I needed a solid, science-backed foundation - something beyond just intuition. The CUA certification was career-defining for me. It transformed my approach, turning subjective design choices into data-driven decisions. At FNB, the methodologies I learned - usability testing, the VIMM model, and persuasion techniques - helped me uncover customer pain points and design more impactful solutions. But the real power of HFI wasn't just in my growth; it was in empowering my team. I championed HFI certifications within my organization because UX needs a shared language, a structured process, and credibility. Today, UX in South Africa's banking industry is maturing, and I'm proud to be part of that transformation. UX isn't just about pixels - it's about people, and HFI gave me the tools to bridge that gap."
-            // },
-            // {
-            //     name: "Supreetha Pavan",
-            //     designation: "Lead UX Designer",
-            //     company: "Siemens",
-            //     quote: "I started as a developer, but realized my complex designs were hard for users. That's when I discovered the importance of experience-driven design, with users centric to the process. For the future of UX, especially with VR/AR, it's all about how seamlessly a user can interact. When looking for a UX course, HFI's contents really amazed me, and I concluded it was the best option. The teachers are top-notch, experienced, and knowledgeable, offering both theoretical concepts for daily tasks and practical help for user experiments. The course covers a wide spectrum of concepts in depth. Through this learning, I feel like I can influence the future."
-            // },
+            {
+                name: "Bheki Ntanzi",
+                designation: "UX Specialist",
+                company: "First National Bank",
+                image: "Bheki-Ntanzi.jpg",
+                regionPage: "sa.html",
+                quote: "I now approach design with data and insight, uncovering user needs and creating more impactful solutions."
+            },
+            {
+                name: "Supreetha Pavan",
+                designation: "Lead UX Designer",
+                company: "Siemens",
+                image: "SupreethaPavan.jpg",
+                regionPage: "uk.html",
+                quote: "The experience helped me shift to a truly user-centered approach, with the confidence to design for the future."
+            },
             {
                 name: "Art Zippel",
                 designation: "Information Architect",
                 company: "Word and Brown Companies",
-                quote: "Becoming a CUA is undoubtedly the single most important decision I made to help my career. My instructors referred to actual projects with the clients. Within 6 months, my certification had paid for itself."
+                image: "Art-Zippel.jpg",
+                regionPage: "us.html",
+                quote: "A career-defining decision that delivered real impact within a short span of time."
             },
             {
                 name: "Amy Bogatch",
                 designation: "Information Architect",
                 company: "AXA Equitable",
-                quote: "All of us in the team are CUAs. We hope to be CXA certified soon. It does make a difference; you can feel it in what we do. We're professionals - we've got that scientific method to UX. A respect for, and understanding of a scientific approach to UX is what HFI instilled in us."
+                image: "Amy-Bogatch.jpg",
+                regionPage: "us.html",
+                quote: "Our team now follows a more structured and scientific approach, clearly reflected in the quality of our work."
             },
             {
                 name: "VJ Francisco",
                 designation: "Head of Experience Design",
                 company: "Global Telecom",
-                quote: "The CUA provided me with up-to-date UX design knowledge and established credibility that helped me articulate the true value of design to my organization"
+                image: "VJ-Francisco.jpg",
+                regionPage: "us.html",
+                quote: "The learning strengthened my credibility and helped me communicate the value of design more effectively."
             },
             {
                 name: "Christine J. Tahvonen",
                 designation: "Web & App Design",
                 company: "TransUnion",
-                quote: "I have a better understanding of how to design navigation and interaction points, resulting in increased confidence - now I will be a more effective leader in my organization. I really liked that the information presented in the course was backed by actual research and real-world examples."
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "I now design with greater confidence, using a research-driven approach to guide decisions."
             },
             {
                 name: "Vince Conti",
                 designation: "Manager, Interactive Development",
                 company: "American Express",
-                quote: "Learned a lot of information in a short period of time. Excellent blend of lecture, discussion and exercises."
+                image: "Vince-Conti.jpg",
+                regionPage: "us.html",
+                quote: "A well-balanced learning experience with the right mix of theory, discussion, and practical application."
             },
             {
                 name: "Leah Gillespie",
                 designation: "Senior Web Producer",
                 company: "Baltimore Gas & Electric",
-                quote: "Very helpful - the course solidified experience I've had in UT and taught me a lot more to give me a broader context and additional techniques"
+                image: "Leah-Gillespie.jpg",
+                regionPage: "us.html",
+                quote: "The program expanded my understanding of usability and introduced new techniques I now actively apply."
             },
             {
                 name: "Jim O'Brien",
                 designation: "Senior Interaction Designer",
                 company: "AutoTrader.com",
-                quote: "The certification served as a reinforcement for what I'm doing, so I am more confident in presenting a concept or design."
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "It reinforced my skills and gave me the confidence to present ideas with clarity and conviction."
             },
-            // {
-            //     name: "Linda Moir",
-            //     designation: "Manager, Web Communications",
-            //     company: "Alberta Blue Cross",
-            //     quote: "HFI is way ahead of the game and has done so much to provide standards for the usability field through their courses and programs. I really appreciate the work they're doing and feel that I'm able to do a better job for my company as a result of HFI's courses and certification program."
-            // },
-            // {
-            //     name: "Lisanne Wirth",
-            //     designation: "UX/CX Content Strategist, Founder and Owner",
-            //     company: "Contentment Communications",
-            //     quote: "The HFI program is phenomenal. I was a big supporter at Verizon Wireless and advocated CUA training for my 15-person online support content team. A foundation in usability is invaluable for content strategists because interfaces and content go hand in hand: content affects interactions as much as design. The CXA certification took things to the next level for me and changed my life, specifically the concept that decisions are made based on emotion and then are justified with reasoning. So it is really emotion, not logic that holds the purse strings and drives user experience. HFI has made me more effective as a content strategist and inspired me to start my own consultancy to help companies leverage the benefits of a UX-focused content strategy."
-            // },
-            // {
-            //     name: "Zakariah Lewis Longo",
-            //     designation: "Manager and UX Lead",
-            //     company: "AAA Auto Club Enterprises",
-            //     quote: "I took the CUA training, and it was awesome! I've taken a lot of classes over the past 20 years, and this class is firmly at the top. I felt like we were watching TED talk trainings, but afterwards we could interact directly with the speakers and learn deep inside info from them. It was way worth it! The test is hard, as it should be, but if you take good notes and capitalize on the time available with the trainers, you will be successful."
-            // },
-            // {
-            //     name: "Cissy Liu",
-            //     designation: "Program Manager",
-            //     company: "Salesforce",
-            //     quote: "The training HFI provided in the CUA program was a great chance for me, a novice UX practitioner, to get into the field. The sessions are all super informative and practical, and the instructors are always ready to help and share their valuable insights. The training coordination team is also the friendliest & most responsive group of folks I've worked with. I recommend this course to everyone who likes to learn about UX."
-            // },
-            // {
-            //     name: "Crilly Butler Jr",
-            //     designation: "Senior Information Systems Analyst and Intranet Webmaster",
-            //     company: "Department of Fish and Game",
-                // quote: "Before I earned my CUA, I was already top ranked here. There was no higher level for me to be promoted to, and no way for me to earn any more money. The main impact, for me, has to do with the performance of my job. Two specific things come to mind. First, I have an improved ability to structure and articulate the concepts I learned in my training to my team. Knowing something - intuitively or through experience - doesn't necessarily enable one to communicate that knowledge effectively. Now, I can say in 10 words what I used to say in 100. Second, the certification has improved my credibility with the organization and on my own team. Having the CUA after my name shows that I am dedicated to my practice and have put effort into becoming skilled. In addition, the training itself has plugged me into a community of usability experts. I speak with experts on the forums, and receive emails from HFI with relevant news. There are even people from my HFI courses who I am now friends with, whom I would not have met otherwise. I receive updates, editorials, and other publications which keep me up-to-date on the latest developments in the field. Overall, the training made the knowledge clear, simple, and immediately practical."
-            // },
-            // {
-            //     name: "Caitlin Ing",
-            //     designation: "",
-            //     company: "",
-            //     quote: "I loved how the UX Foundations course focused on the psychology and science behind user behaviour, rather than just outlining best practices or current UX trends. By covering these fundamentals, I feel like I'm now in a better place to make decisions around our company's UX processes - such as when and why we should be testing certain elements - as well as how best to interpret UX trends and articles/new findings."
-            // },
+            {
+                name: "Linda Moir",
+                designation: "Manager, Web Communications",
+                company: "Alberta Blue Cross",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "HFI sets a high standard in usability, helping professionals deliver stronger and more consistent results."
+            },
+            {
+                name: "Lisanne Wirth",
+                designation: "UX/CX Content Strategist, Founder and Owner",
+                company: "Contentment Communications",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "The learning improved my effectiveness and deepened my understanding of experience driven by human behavior."
+            },
+            {
+                name: "Zakariah Lewis Longo",
+                designation: "Manager and UX Lead",
+                company: "AAA Auto Club Enterprises",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "An insightful and valuable experience guided by expert instructors and well-structured sessions."
+            },
+            {
+                name: "Cissy Liu",
+                designation: "Program Manager",
+                company: "Salesforce",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "A strong foundation that made learning practical, engaging, and immediately applicable."
+            },
+            {
+                name: "Crilly Butler Jr",
+                designation: "Senior Information Systems Analyst and Intranet Webmaster",
+                company: "Department of Fish and Game",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "It improved how I structure and communicate ideas, strengthening both clarity and credibility."
+            },
+            {
+                name: "Caitlin Ing",
+                designation: "",
+                company: "",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "The experience deepened my understanding of user psychology and improved how I make design decisions."
+            },
             {
                 name: "Brenda Halvorson",
                 designation: "Fractional UX Design & Research Consultant",
                 company: "Steep Perspectives",
-                quote: "This course helped me to put language to the techniques I've been internalizing for years."
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "It helped me articulate and refine practices I had been using intuitively for years."
             },
             {
                 name: "Eugenia Ovenko",
                 designation: "Designer",
                 company: "UBS",
-                quote: "The course was, overall, a really good experience. The instructors take their time to explain everything clearly and carefully"
+                image: "Eugenia-Ovenko.jpg",
+                regionPage: "us.html",
+                quote: "A clear and well-delivered learning experience that made complex concepts easy to understand."
             },
             {
                 name: "Maheen Riaz Qureshi",
                 designation: "Senior UX Designer | Product Designer Independent UX Consultant",
                 company: "Freelance",
-                quote: "Very informative and the instructor was very knowledgeable and helpful! This program deepened my understanding of user experience principles and usability laws, sharpening both my theoretical knowledge and practical insights"
+                image: "testimonial-avator.jpg",
+                regionPage: "ca.html",
+                quote: "A highly informative program that strengthened my understanding of usability principles and frameworks."
             },
-            // {
-            //     name: "Jennifer Cunningham",
-            //     designation: "Experience Lead",
-            //     company: "State Farm Insurance",
-            //     quote: "The Science and Art of Effective Web and App Design course has been one of the most challenging classes I've taken to date. The topics covered, such as navigation types, interaction design, content, and accessibility, together with contextual examples, have truly reinforced my understanding of the material. Ilona is a top-notch educator who keeps students engaged through interactive discussions and thought-provoking assignments. She challenges them to think critically and apply principles learned to real-world scenarios. I highly recommend this course to anyone looking to gain a deeper understanding of web and app design. Ilona's passion for the subject and her ability to connect with students make this a truly valuable learning experience."
-            // },
+            {
+                name: "Jennifer Cunningham",
+                designation: "Experience Lead",
+                company: "State Farm Insurance",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "A challenging and rewarding experience that connected theory with real-world application."
+            },
             {
                 name: "Maheen Riaz Qureshi",
                 designation: "Senior UX Designer | Product Designer Independent UX Consultant",
                 company: "Freelance",
-                quote: "This course was incredibly informative and provided valuable insights into analytics and data measurement in UX. It deepened my understanding of how to leverage data to enhance user experiences and design effectively."
+                image: "testimonial-avator.jpg",
+                regionPage: "ca.html",
+                quote: "The learning provided strong insights into analytics and how to use data to improve experiences."
             },
             {
                 name: "Sydney Chen",
                 designation: "",
                 company: "",
-                quote: "This course provided a lot of insight into what goes into usability testing, and I feel like I have more to discuss with our research partners now that I've learned this material. My favorite activities were when we acted as facilitators and participants with classmates."
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "Hands-on learning significantly improved my confidence in conducting and applying research."
             }
         ];
 
-        // Update the existing template slide to the first testimonial, then clone for the rest.
-        setSlideText(templateSlide, testimonials[0]);
+        const blankTestimonial = { name: "", designation: "", company: "", quote: "", image: "" };
+
+        const pageFile = ((window.location && window.location.pathname) ? window.location.pathname : "")
+            .split(/[\\/]/)
+            .pop()
+            .toLowerCase()
+            .split("?")[0]
+            .split("#")[0];
+
+        const resolvedPageFile = pageFile && pageFile.endsWith(".html") ? pageFile : "index.html";
+
+        // Render only testimonials that match the current HTML page.
+        const regionTestimonials = testimonials.filter(function (t) {
+            return t.regionPage === resolvedPageFile;
+        });
+
+        const slidesToRender = regionTestimonials.length ? regionTestimonials : [blankTestimonial];
 
         // Clear any existing slides to avoid duplication, then re-append the template as slide #1.
         swiperWrapper.innerHTML = "";
         swiperWrapper.appendChild(templateSlide);
 
-        for (let i = 1; i < testimonials.length; i++) {
+        slidesToRender.forEach(function (t, idx) {
+            if (idx === 0) {
+                setSlideText(templateSlide, t);
+                return;
+            }
             const newSlide = templateSlide.cloneNode(true);
-            setSlideText(newSlide, testimonials[i]);
+            setSlideText(newSlide, t);
             swiperWrapper.appendChild(newSlide);
-        }
+        });
     }
 
     new Swiper(sliderEl, {
@@ -785,6 +882,306 @@
         }
     });
 })();
+
+
+// logos-marquee-slider
+(function () {
+    "use strict";
+    const logoTracks = document.querySelectorAll(".logo-marquee-track");
+    if (!logoTracks || logoTracks.length === 0) return;
+    let logos = [
+        {
+            image: "assets/images/logos/3M.png",
+            alt: "3M"
+        },
+        {
+            image: "assets/images/logos/Absa Bank.png",
+            alt: "Absa Bank"
+        },
+        {
+            image: "assets/images/logos/Accenture.png",
+            alt: "Accenture Pvt Ltd"
+        },
+        {
+            image: "assets/images/logos/Aditya_Birla_Group.png",
+            alt: "Aditya Birla Group"
+        },
+        {
+            image: "assets/images/logos/Air_France.png",
+            alt: "Air France"
+        },
+        {
+            image: "assets/images/logos/Banglalink Digital Communication Ltd.png",
+            alt: "Banglalink Digital Communication Ltd"
+        },
+        {
+            image: "assets/images/logos/Bayer.png",
+            alt: "Bayer"
+        },
+        {
+            image: "assets/images/logos/BDO_Unibank.png",
+            alt: "BDO Unibank"
+        },
+        {
+            image: "assets/images/logos/Booz Allen Hamiliton.png",
+            alt: "Booz Allen Hamiliton"
+        },
+        {
+            image: "assets/images/logos/Boston Consulting Group.png",
+            alt: "Boston Consulting Group"
+        },
+        {
+            image: "assets/images/logos/BSH.png",
+            alt: "BSH"
+        },
+        {
+            image: "assets/images/logos/California Department of Technology.png",
+            alt: "California Department of Technology"
+        },
+        {
+            image: "assets/images/logos/Capegemini.png",
+            alt: "Capegemini"
+        },
+        {
+            image: "assets/images/logos/Capitec_Bank.png",
+            alt: "Capitec Bank"
+        },
+        {
+            image: "assets/images/logos/Cebu-Pacific.png",
+            alt: "Cebu-Pacific"
+        },
+        {
+            image: "assets/images/logos/Christiana Care.png",
+            alt: "Christiana Care"
+        },
+        {
+            image: "assets/images/logos/Cimb Bank Berhad.png",
+            alt: "Cimb Bank Berhad"
+        },
+        {
+            image: "assets/images/logos/Citiustech.png",
+            alt: "Citiustech"
+        },
+        {
+            image: "assets/images/logos/City of San Antonio.png",
+            alt: "City of San Antonio"
+        },
+        {
+            image: "assets/images/logos/Cognizant.png",
+            alt: "Cognizant"
+        },
+        {
+            image: "assets/images/logos/CVS Health.png",
+            alt: "CVS Health"
+        },
+        {
+            image: "assets/images/logos/Danske-Bank.png",
+            alt: "Danske-Bank"
+        },
+        {
+            image: "assets/images/logos/DBS Bank Limited.png",
+            alt: "DBS Bank Limited"
+        },
+        {
+            image: "assets/images/logos/Deloitte.png",
+            alt: "Deloitte"
+        },
+        {
+            image: "assets/images/logos/DEWA.AE_BIG.png",
+            alt: "DEWA.AE BIG"
+        },
+        {
+            image: "assets/images/logos/Discovery_Holding_Company.png",
+            alt: "Discovery Holding Company"
+        },
+        {
+            image: "assets/images/logos/Ecobank.png",
+            alt: "Ecobank"
+        },
+        {
+            image: "assets/images/logos/Emirates.png",
+            alt: "Emirates"
+        },
+        {
+            image: "assets/images/logos/Ericsson.png",
+            alt: "Ericsson"
+        },
+        {
+            image: "assets/images/logos/FedEx.png",
+            alt: "FedEx"
+        },
+        {
+            image: "assets/images/logos/First National Bank.png",
+            alt: "First National Bank"
+        },
+        {
+            image: "assets/images/logos/Florida Power & Light.png",
+            alt: "Florida Power & Light"
+        },
+        {
+            image: "assets/images/logos/GE Healthcare.png",
+            alt: "GE Healthcare"
+        },
+        {
+            image: "assets/images/logos/GlaxoSmithKline.png",
+            alt: "GlaxoSmithKline"
+        },
+        {
+            image: "assets/images/logos/Globe Telecom.png",
+            alt: "Globe Telecom"
+        },
+        {
+            image: "assets/images/logos/HDFC Bank.png",
+            alt: "HDFC Bank"
+        },
+        {
+            image: "assets/images/logos/ICICI_Bank_Logo.png",
+            alt: "ICICI Bank Logo"
+        },
+        {
+            image: "assets/images/logos/IDFC Bank.png",
+            alt: "IDFC Bank"
+        },
+        {
+            image: "assets/images/logos/Investec.png",
+            alt: "Investec"
+        },
+        {
+            image: "assets/images/logos/Manulife.png",
+            alt: "Manulife"
+        },
+        {
+            image: "assets/images/logos/Masdar.png",
+            alt: "Masdar"
+        },
+        {
+            image: "assets/images/logos/Maybank Singapore Limited.png",
+            alt: "Maybank Singapore Limited"
+        },
+        {
+            image: "assets/images/logos/Metrobank.png",
+            alt: "Metrobank"
+        },
+        {
+            image: "assets/images/logos/Momentum Inc..png",
+            alt: "Momentum Inc."
+        },
+        {
+            image: "assets/images/logos/Multichoice Group.png",
+            alt: "Multichoice Group"
+        },
+        {
+            image: "assets/images/logos/National Park Service (NPS).png",
+            alt: "National Park Service (NPS)"
+        },
+        {
+            image: "assets/images/logos/Navcon.png",
+            alt: "Navcon"
+        },
+        {
+            image: "assets/images/logos/Nedbank_idvPPE6CB0_1.png",
+            alt: "Nedbank idvPPE6CB0 1"
+        },
+        {
+            image: "assets/images/logos/NTUC LearingHub.png",
+            alt: "NTUC LearingHub"
+        },
+        {
+            image: "assets/images/logos/Old Mutual.png",
+            alt: "Old Mutual"
+        },
+        {
+            image: "assets/images/logos/Publicis Sapient.png",
+            alt: "Publicis Sapient"
+        },
+        {
+            image: "assets/images/logos/Qatar Islamic Bank.png",
+            alt: "Qatar Islamic Bank"
+        },
+        {
+            image: "assets/images/logos/Rabobank.png",
+            alt: "Rabobank"
+        },
+        {
+            image: "assets/images/logos/Royal Dutch Airlines.png",
+            alt: "Royal Dutch Airlines"
+        },
+        {
+            image: "assets/images/logos/RTA.png",
+            alt: "RTA"
+        },
+        {
+            image: "assets/images/logos/Siemens.png",
+            alt: "Siemens"
+        },
+        {
+            image: "assets/images/logos/smart-dubai.png",
+            alt: "smart-dubai"
+        },
+        {
+            image: "assets/images/logos/Standard Bank Group.png",
+            alt: "Standard Bank Group"
+        },
+        {
+            image: "assets/images/logos/State Farm.png",
+            alt: "State Farm"
+        },
+        {
+            image: "assets/images/logos/TCS.png",
+            alt: "TCS"
+        },
+        {
+            image: "assets/images/logos/Tech Mahindra.png",
+            alt: "Tech Mahindra"
+        },
+        {
+            image: "assets/images/logos/tsys.png",
+            alt: "tsys"
+        },
+        {
+            image: "assets/images/logos/UBS.png",
+            alt: "UBS"
+        },
+        {
+            image: "assets/images/logos/Union Bank of the Philippines.png",
+            alt: "Union Bank of the Philippines"
+        },
+        {
+            image: "assets/images/logos/Veritas_Technologies.png",
+            alt: "Veritas Technologies"
+        },
+        {
+            image: "assets/images/logos/Verizon_Wireless_logo.png",
+            alt: "Verizon Wireless logo"
+        },
+        {
+            image: "assets/images/logos/Vodacom.png",
+            alt: "Vodacom"
+        },
+        {
+            image: "assets/images/logos/Wells_Fargo.png",
+            alt: "Wells Fargo"
+        },
+        {
+            image: "assets/images/logos/Wipro.png",
+            alt: "Wipro"
+        },        
+    ]
+
+    // Rebuild tracks from the logos list (duplicate once for seamless marquee).
+    logoTracks.forEach(function (track) {
+        track.innerHTML = "";
+        const repeated = logos.concat(logos);
+        repeated.forEach(function (logo) {
+            const item = document.createElement("div");
+            item.classList.add("logo-marquee-item");
+            item.innerHTML = `<img src="${logo.image}" class="hero-logo-img" alt="${logo.alt}">`;
+            track.appendChild(item);
+        });
+    });
+})();
+
+
 
 // Experience pathway: country code flag (country-flag-icons via jsDelivr CDN)
 (function () {
@@ -859,6 +1256,73 @@
         },
         true
     );
+})();
+
+// Country / region navigation: route to region-specific pages
+(function () {
+    "use strict";
+
+    var select = document.getElementById("country-region-select");
+    if (!select) return;
+
+    var bar = select.closest("[data-country-region-bar]") || document;
+    var continueBtn = bar.querySelector(".country-region-bar-continue");
+
+    // Map dropdown values -> html pages.
+    var regionRouteByCode = {
+        IN: "index.html",
+        US: "us.html",
+        GB: "uk.html",
+        AU: "au.html",
+        CA: "ca.html",
+        SG: "sg.html",
+        AE: "uae.html",
+        ZA: "sa.html"
+    };
+
+    function routeByCode(code) {
+        if (!code) return;
+        var dest = regionRouteByCode[code] || "index.html";
+        if (window.location && window.location.pathname && window.location.pathname.endsWith(dest)) return;
+        window.location.href = dest;
+    }
+
+    var lastRoutedCode = null;
+    function routeFromSelect() {
+        var code = select.value;
+        if (code && code === lastRoutedCode) return;
+        lastRoutedCode = code;
+        routeByCode(code);
+    }
+
+    // Route only on Continue click (not on dropdown change).
+    if (continueBtn) continueBtn.addEventListener("click", routeFromSelect);
+
+    // Modal options map based on button text.
+    var routeByLabel = {
+        "India": "index.html",
+        "Europe": "uk.html",
+        "United States of America": "us.html",
+        "United States": "us.html",
+        "Malaysia": "au.html",
+        "South Africa": "sa.html",
+        "Middle East": "uae.html",
+        "Singapore": "sg.html",
+        "Canada": "ca.html"
+    };
+
+    var modalOptions = document.querySelectorAll(".country-region-modal-option");
+    Array.from(modalOptions).forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            var label = (e && e.target && e.target.textContent) ? e.target.textContent.trim() : "";
+            var dest = routeByLabel[label];
+            if (!dest) return;
+
+            // Prevent any unexpected bootstrap focus handling; navigation wins.
+            e.preventDefault();
+            window.location.href = dest;
+        });
+    });
 })();
 
 // Course calendar: interactive schedule
