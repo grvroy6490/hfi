@@ -1,33 +1,33 @@
 @font-face {
-    font-family: "Mundial";
+    font-family: "mundial", sans-serif;;
     src: url("../fonts/mundial-regular-tty.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Mundial";
+    font-family: "mundial", sans-serif;;
     src: url("../fonts/mundial-light-tty.otf") format("opentype");
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Mundial";
+    font-family: "mundial", sans-serif;;
     src: url("../fonts/mundial-demibold-tty.otf") format("opentype");
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Mundial";
+    font-family: "mundial", sans-serif;;
     src: url("../fonts/mundial-bold-tty.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Mundial";
+    font-family: "mundial", sans-serif;;
     src: url("../fonts/mundial-black-tty.otf") format("opentype");
     font-weight: 900;
     font-style: normal;
@@ -37,7 +37,7 @@
 // ---------------------------------------------------------------------------
 // Type scale & line heights (ensure _variables is imported before this file for $color-*)
 // ---------------------------------------------------------------------------
-$font-family-mundial: "Mundial", sans-serif;
+$font-family-mundial: "mundial", sans-serif;
 $font-family-suisse: "Inter", sans-serif;
 $text-xs: 0.75rem; // 12px
 $text-sm: 0.875rem; // 14px
