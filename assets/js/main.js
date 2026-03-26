@@ -889,289 +889,121 @@
     "use strict";
     const logoTracks = document.querySelectorAll(".logo-marquee-track");
     if (!logoTracks || logoTracks.length === 0) return;
-    let logos = [
-        {
-            image: "assets/images/logos/3M.png",
-            alt: "3M"
-        },
-        {
-            image: "assets/images/logos/Absa Bank.png",
-            alt: "Absa Bank"
-        },
-        {
-            image: "assets/images/logos/Accenture.png",
-            alt: "Accenture Pvt Ltd"
-        },
-        {
-            image: "assets/images/logos/Aditya_Birla_Group.png",
-            alt: "Aditya Birla Group"
-        },
-        {
-            image: "assets/images/logos/Air_France.png",
-            alt: "Air France"
-        },
-        {
-            image: "assets/images/logos/Banglalink Digital Communication Ltd.png",
-            alt: "Banglalink Digital Communication Ltd"
-        },
-        {
-            image: "assets/images/logos/Bayer.png",
-            alt: "Bayer"
-        },
-        {
-            image: "assets/images/logos/BDO_Unibank.png",
-            alt: "BDO Unibank"
-        },
-        {
-            image: "assets/images/logos/Booz Allen Hamiliton.png",
-            alt: "Booz Allen Hamiliton"
-        },
-        {
-            image: "assets/images/logos/Boston Consulting Group.png",
-            alt: "Boston Consulting Group"
-        },
-        {
-            image: "assets/images/logos/BSH.png",
-            alt: "BSH"
-        },
-        {
-            image: "assets/images/logos/California Department of Technology.png",
-            alt: "California Department of Technology"
-        },
-        {
-            image: "assets/images/logos/Capegemini.png",
-            alt: "Capegemini"
-        },
-        {
-            image: "assets/images/logos/Capitec_Bank.png",
-            alt: "Capitec Bank"
-        },
-        {
-            image: "assets/images/logos/Cebu-Pacific.png",
-            alt: "Cebu-Pacific"
-        },
-        {
-            image: "assets/images/logos/Christiana Care.png",
-            alt: "Christiana Care"
-        },
-        {
-            image: "assets/images/logos/Cimb Bank Berhad.png",
-            alt: "Cimb Bank Berhad"
-        },
-        {
-            image: "assets/images/logos/Citiustech.png",
-            alt: "Citiustech"
-        },
-        {
-            image: "assets/images/logos/City of San Antonio.png",
-            alt: "City of San Antonio"
-        },
-        {
-            image: "assets/images/logos/Cognizant.png",
-            alt: "Cognizant"
-        },
-        {
-            image: "assets/images/logos/CVS Health.png",
-            alt: "CVS Health"
-        },
-        {
-            image: "assets/images/logos/Danske-Bank.png",
-            alt: "Danske-Bank"
-        },
-        {
-            image: "assets/images/logos/DBS Bank Limited.png",
-            alt: "DBS Bank Limited"
-        },
-        {
-            image: "assets/images/logos/Deloitte.png",
-            alt: "Deloitte"
-        },
-        {
-            image: "assets/images/logos/DEWA.AE_BIG.png",
-            alt: "DEWA.AE BIG"
-        },
-        {
-            image: "assets/images/logos/Discovery_Holding_Company.png",
-            alt: "Discovery Holding Company"
-        },
-        {
-            image: "assets/images/logos/Ecobank.png",
-            alt: "Ecobank"
-        },
-        {
-            image: "assets/images/logos/Emirates.png",
-            alt: "Emirates"
-        },
-        {
-            image: "assets/images/logos/Ericsson.png",
-            alt: "Ericsson"
-        },
-        {
-            image: "assets/images/logos/FedEx.png",
-            alt: "FedEx"
-        },
-        {
-            image: "assets/images/logos/First National Bank.png",
-            alt: "First National Bank"
-        },
-        {
-            image: "assets/images/logos/Florida Power & Light.png",
-            alt: "Florida Power & Light"
-        },
-        {
-            image: "assets/images/logos/GE Healthcare.png",
-            alt: "GE Healthcare"
-        },
-        {
-            image: "assets/images/logos/GlaxoSmithKline.png",
-            alt: "GlaxoSmithKline"
-        },
-        {
-            image: "assets/images/logos/Globe Telecom.png",
-            alt: "Globe Telecom"
-        },
-        {
-            image: "assets/images/logos/HDFC Bank.png",
-            alt: "HDFC Bank"
-        },
-        {
-            image: "assets/images/logos/ICICI_Bank_Logo.png",
-            alt: "ICICI Bank Logo"
-        },
-        {
-            image: "assets/images/logos/IDFC Bank.png",
-            alt: "IDFC Bank"
-        },
-        {
-            image: "assets/images/logos/Investec.png",
-            alt: "Investec"
-        },
-        {
-            image: "assets/images/logos/Manulife.png",
-            alt: "Manulife"
-        },
-        {
-            image: "assets/images/logos/Masdar.png",
-            alt: "Masdar"
-        },
-        {
-            image: "assets/images/logos/Maybank Singapore Limited.png",
-            alt: "Maybank Singapore Limited"
-        },
-        {
-            image: "assets/images/logos/Metrobank.png",
-            alt: "Metrobank"
-        },
-        {
-            image: "assets/images/logos/Momentum Inc..png",
-            alt: "Momentum Inc."
-        },
-        {
-            image: "assets/images/logos/Multichoice Group.png",
-            alt: "Multichoice Group"
-        },
-        {
-            image: "assets/images/logos/National Park Service (NPS).png",
-            alt: "National Park Service (NPS)"
-        },
-        {
-            image: "assets/images/logos/Navcon.png",
-            alt: "Navcon"
-        },
-        {
-            image: "assets/images/logos/Nedbank_idvPPE6CB0_1.png",
-            alt: "Nedbank idvPPE6CB0 1"
-        },
-        {
-            image: "assets/images/logos/NTUC LearingHub.png",
-            alt: "NTUC LearingHub"
-        },
-        {
-            image: "assets/images/logos/Old Mutual.png",
-            alt: "Old Mutual"
-        },
-        {
-            image: "assets/images/logos/Publicis Sapient.png",
-            alt: "Publicis Sapient"
-        },
-        {
-            image: "assets/images/logos/Qatar Islamic Bank.png",
-            alt: "Qatar Islamic Bank"
-        },
-        {
-            image: "assets/images/logos/Rabobank.png",
-            alt: "Rabobank"
-        },
-        {
-            image: "assets/images/logos/Royal Dutch Airlines.png",
-            alt: "Royal Dutch Airlines"
-        },
-        {
-            image: "assets/images/logos/RTA.png",
-            alt: "RTA"
-        },
-        {
-            image: "assets/images/logos/Siemens.png",
-            alt: "Siemens"
-        },
-        {
-            image: "assets/images/logos/smart-dubai.png",
-            alt: "smart-dubai"
-        },
-        {
-            image: "assets/images/logos/Standard Bank Group.png",
-            alt: "Standard Bank Group"
-        },
-        {
-            image: "assets/images/logos/State Farm.png",
-            alt: "State Farm"
-        },
-        {
-            image: "assets/images/logos/TCS.png",
-            alt: "TCS"
-        },
-        {
-            image: "assets/images/logos/Tech Mahindra.png",
-            alt: "Tech Mahindra"
-        },
-        {
-            image: "assets/images/logos/tsys.png",
-            alt: "tsys"
-        },
-        {
-            image: "assets/images/logos/UBS.png",
-            alt: "UBS"
-        },
-        {
-            image: "assets/images/logos/Union Bank of the Philippines.png",
-            alt: "Union Bank of the Philippines"
-        },
-        {
-            image: "assets/images/logos/Veritas_Technologies.png",
-            alt: "Veritas Technologies"
-        },
-        {
-            image: "assets/images/logos/Verizon_Wireless_logo.png",
-            alt: "Verizon Wireless logo"
-        },
-        {
-            image: "assets/images/logos/Vodacom.png",
-            alt: "Vodacom"
-        },
-        {
-            image: "assets/images/logos/Wells_Fargo.png",
-            alt: "Wells Fargo"
-        },
-        {
-            image: "assets/images/logos/Wipro.png",
-            alt: "Wipro"
-        },        
-    ]
+    const logos = [
+        // APAC
+        { image: "assets/images/logos/APAC/Banglalink Digital Communication Ltd.png", region: "apac", alt: "Banglalink Digital Communication Ltd" },
+        { image: "assets/images/logos/APAC/BDO_Unibank.png", region: "apac", alt: "BDO Unibank" },
+        { image: "assets/images/logos/APAC/Cebu-Pacific.png", region: "apac", alt: "Cebu-Pacific" },
+        { image: "assets/images/logos/APAC/Cimb Bank Berhad.png", region: "apac", alt: "Cimb Bank Berhad" },
+        { image: "assets/images/logos/APAC/DBS Bank Limited.png", region: "apac", alt: "DBS Bank Limited" },
+        { image: "assets/images/logos/APAC/Globe Telecom.png", region: "apac", alt: "Globe Telecom" },
+        { image: "assets/images/logos/APAC/Manulife.png", region: "apac", alt: "Manulife" },
+        { image: "assets/images/logos/APAC/Maybank Singapore Limited.png", region: "apac", alt: "Maybank Singapore Limited" },
+        { image: "assets/images/logos/APAC/Metrobank.png", region: "apac", alt: "Metrobank" },
+        { image: "assets/images/logos/APAC/NTUC LearingHub.png", region: "apac", alt: "NTUC LearingHub" },
+        { image: "assets/images/logos/APAC/Union Bank of the Philippines.png", region: "apac", alt: "Union Bank of the Philippines" },
+
+        // EU
+        { image: "assets/images/logos/EU/Air_France.png", region: "eu", alt: "Air France" },
+        { image: "assets/images/logos/EU/Bayer.png", region: "eu", alt: "Bayer" },
+        { image: "assets/images/logos/EU/Capegemini.png", region: "eu", alt: "Capegemini" },
+        { image: "assets/images/logos/EU/Danske-Bank.png", region: "eu", alt: "Danske-Bank" },
+        { image: "assets/images/logos/EU/Deloitte.png", region: "eu", alt: "Deloitte" },
+        { image: "assets/images/logos/EU/Ericsson.png", region: "eu", alt: "Ericsson" },
+        { image: "assets/images/logos/EU/GE Healthcare.png", region: "eu", alt: "GE Healthcare" },
+        { image: "assets/images/logos/EU/GlaxoSmithKline.png", region: "eu", alt: "GlaxoSmithKline" },
+        { image: "assets/images/logos/EU/Old Mutual.png", region: "eu", alt: "Old Mutual" },
+        { image: "assets/images/logos/EU/Rabobank.png", region: "eu", alt: "Rabobank" },
+        { image: "assets/images/logos/EU/Royal Dutch Airlines.png", region: "eu", alt: "Royal Dutch Airlines" },
+
+        // IN
+        { image: "assets/images/logos/IN/Accenture.png", region: "in", alt: "Accenture Pvt Ltd" },
+        { image: "assets/images/logos/IN/Aditya_Birla_Group.png", region: "in", alt: "Aditya Birla Group" },
+        { image: "assets/images/logos/IN/Boston Consulting Group.png", region: "in", alt: "Boston Consulting Group" },
+        { image: "assets/images/logos/IN/BSH.png", region: "in", alt: "BSH" },
+        { image: "assets/images/logos/IN/Citiustech.png", region: "in", alt: "Citiustech" },
+        { image: "assets/images/logos/IN/Cognizant.png", region: "in", alt: "Cognizant" },
+        { image: "assets/images/logos/IN/HDFC Bank.png", region: "in", alt: "HDFC Bank" },
+        { image: "assets/images/logos/IN/ICICI_Bank_Logo.png", region: "in", alt: "ICICI Bank Logo" },
+        { image: "assets/images/logos/IN/IDFC Bank.png", region: "in", alt: "IDFC Bank" },
+        { image: "assets/images/logos/IN/Publicis Sapient.png", region: "in", alt: "Publicis Sapient" },
+        { image: "assets/images/logos/IN/Siemens.png", region: "in", alt: "Siemens" },
+        { image: "assets/images/logos/IN/TCS.png", region: "in", alt: "TCS" },
+        { image: "assets/images/logos/IN/Tech Mahindra.png", region: "in", alt: "Tech Mahindra" },
+        { image: "assets/images/logos/IN/Wells_Fargo.png", region: "in", alt: "Wells Fargo" },
+        { image: "assets/images/logos/IN/Wipro.png", region: "in", alt: "Wipro" },
+
+        // ME
+        { image: "assets/images/logos/ME/DEWA.AE_BIG.png", region: "me", alt: "DEWA.AE BIG" },
+        { image: "assets/images/logos/ME/Ecobank.png", region: "me", alt: "Ecobank" },
+        { image: "assets/images/logos/ME/Emirates.png", region: "me", alt: "Emirates" },
+        { image: "assets/images/logos/ME/Masdar.png", region: "me", alt: "Masdar" },
+        { image: "assets/images/logos/ME/Navcon.png", region: "me", alt: "Navcon" },
+        { image: "assets/images/logos/ME/Qatar Islamic Bank.png", region: "me", alt: "Qatar Islamic Bank" },
+        { image: "assets/images/logos/ME/RTA.png", region: "me", alt: "RTA" },
+        { image: "assets/images/logos/ME/smart-dubai.png", region: "me", alt: "smart-dubai" },
+        { image: "assets/images/logos/ME/tsys.png", region: "me", alt: "tsys" },
+
+        // NA
+        { image: "assets/images/logos/NA/3M.png", region: "na", alt: "3M" },
+        { image: "assets/images/logos/NA/Booz Allen Hamiliton.png", region: "na", alt: "Booz Allen Hamiliton" },
+        { image: "assets/images/logos/NA/California Department of Technology.png", region: "na", alt: "California Department of Technology" },
+        { image: "assets/images/logos/NA/Christiana Care.png", region: "na", alt: "Christiana Care" },
+        { image: "assets/images/logos/NA/City of San Antonio.png", region: "na", alt: "City of San Antonio" },
+        { image: "assets/images/logos/NA/CVS Health.png", region: "na", alt: "CVS Health" },
+        { image: "assets/images/logos/NA/FedEx.png", region: "na", alt: "FedEx" },
+        { image: "assets/images/logos/NA/Florida Power & Light.png", region: "na", alt: "Florida Power & Light" },
+        { image: "assets/images/logos/NA/National Park Service (NPS).png", region: "na", alt: "National Park Service (NPS)" },
+        { image: "assets/images/logos/NA/State Farm.png", region: "na", alt: "State Farm" },
+        { image: "assets/images/logos/NA/UBS.png", region: "na", alt: "UBS" },
+        { image: "assets/images/logos/NA/Veritas_Technologies.png", region: "na", alt: "Veritas Technologies" },
+        { image: "assets/images/logos/NA/Verizon_Wireless_logo.png", region: "na", alt: "Verizon Wireless logo" },
+
+        // SA
+        { image: "assets/images/logos/SA/Absa Bank.png", region: "sa", alt: "Absa Bank" },
+        { image: "assets/images/logos/SA/Capitec_Bank.png", region: "sa", alt: "Capitec Bank" },
+        { image: "assets/images/logos/SA/Discovery_Holding_Company.png", region: "sa", alt: "Discovery Holding Company" },
+        { image: "assets/images/logos/SA/Ecobank.png", region: "sa", alt: "Ecobank" },
+        { image: "assets/images/logos/SA/First National Bank.png", region: "sa", alt: "First National Bank" },
+        { image: "assets/images/logos/SA/Investec.png", region: "sa", alt: "Investec" },
+        { image: "assets/images/logos/SA/Multichoice Group.png", region: "sa", alt: "Multichoice Group" },
+        { image: "assets/images/logos/SA/Nedbank_idvPPE6CB0_1.png", region: "sa", alt: "Nedbank idvPPE6CB0 1" },
+        { image: "assets/images/logos/SA/Old Mutual.png", region: "sa", alt: "Old Mutual" },
+        { image: "assets/images/logos/SA/Standard Bank Group.png", region: "sa", alt: "Standard Bank Group" },
+        { image: "assets/images/logos/SA/Vodacom.png", region: "sa", alt: "Vodacom" },
+        { image: "assets/images/logos/SA/Momentum Inc..png", region: "sa", alt: "Momentum Inc." }
+
+    ];
+
+    const pageFile = ((window.location && window.location.pathname) ? window.location.pathname : "")
+        .split(/[\\/]/)
+        .pop()
+        .toLowerCase()
+        .split("?")[0]
+        .split("#")[0];
+    const resolvedPageFile = pageFile && pageFile.endsWith(".html") ? pageFile : "index.html";
+
+    const logoRegionByPage = {
+        "index.html": "in",
+        "sg.html": "apac",
+        "au.html": "apac",
+        "uae.html": "me",
+        "sa.html": "sa",
+        "uk.html": "eu",
+        "us.html": "na",
+        "ca.html": "na"
+    };
+
+    const activeRegion = logoRegionByPage[resolvedPageFile] || "in";
+    const regionalLogos = logos.filter(function (logo) {
+        return logo.region === activeRegion;
+    });
+    const logosToRender = regionalLogos.length ? regionalLogos : logos;
 
     // Rebuild tracks from the logos list (duplicate once for seamless marquee).
     logoTracks.forEach(function (track) {
         track.innerHTML = "";
-        const repeated = logos.concat(logos);
+        const repeated = logosToRender.concat(logosToRender);
         repeated.forEach(function (logo) {
             const item = document.createElement("div");
             item.classList.add("logo-marquee-item");

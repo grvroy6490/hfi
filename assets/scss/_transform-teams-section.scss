@@ -3,12 +3,11 @@
 .transform-teams-section {
     background: #fff;
     width: 100%;
-    padding: 5rem 0 4.5rem;
+    padding-top: 0rem;
 
-    @media (max-width: 992px) {
-        padding: 3rem 0 2.5rem;
-    }
-
+    // @media (max-width: 992px) {
+    //     padding: 3rem 0 2.5rem;
+    // }
     .transform-teams-content {
         margin-bottom: 1.5rem;
 
@@ -124,52 +123,26 @@
         }
     }
 
-    .transform-teams-logos {
-        margin-top: 1rem;
-        overflow: hidden;
-        -webkit-mask-image: linear-gradient(to right,
-                transparent 0,
-                black 8%,
-                black 92%,
-                transparent 100%);
-        mask-image: linear-gradient(to right,
-                transparent 0,
-                black 8%,
-                black 92%,
-                transparent 100%);
-        mask-size: 100% 100%;
-        mask-repeat: no-repeat;
-
-        @media (max-width: 992px) {
-            margin-top: 2rem;
-        }
-    }
+    
 }
 
-.partners-section{
-    padding: 5rem 0;
+.partners-section {
+    margin-top: 1rem;
     overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
 
-    .partners-section-content {
-        text-align: center;
-
-        .partners-section-lead {
-            color: v.$color-gold;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 0rem;
-        }
-
-        .partners-section-heading {
-            color: v.$color-black;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-
-            @media (max-width: 992px) {
-                line-height: 1.2;
-            }
-        }
+    @media (max-width: 992px) {
+        margin-top: 2rem;
     }
 }
