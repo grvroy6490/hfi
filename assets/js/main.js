@@ -1714,6 +1714,7 @@
 
     const verificationCard = flow.querySelector("[data-checkout-summary-mode='verification']");
     const normalSummaryCard = flow.querySelector(".checkout-summary-card:not([data-checkout-summary-mode])");
+    const step3Panels = panels.filter(panel => panel.dataset.stepPanel === "3");
 
     let currentStep = 0;
     let paymentStage = "selection";
@@ -1727,7 +1728,7 @@
     ];
 
     function limitStep(step) {
-        return Math.max(0, Math.min(step, panels.length - 1));
+        return Math.max(0, Math.min(step, stepConfig.length - 1));
     }
 
     function showOnly(elements, activeIndex) {
@@ -1809,6 +1810,19 @@
         }
     }
 
+    function applyStep3PanelByPaymentPlan() {
+        if (currentStep !== 3 || step3Panels.length < 2) return;
+        const showEmiPanel = paymentPlan === "emi-3" || paymentPlan === "emi-6";
+        const oneTimePanel = step3Panels[0];
+        const emiPanel = step3Panels[1];
+
+        oneTimePanel.classList.toggle("is-active", !showEmiPanel);
+        oneTimePanel.hidden = showEmiPanel;
+
+        emiPanel.classList.toggle("is-active", showEmiPanel);
+        emiPanel.hidden = !showEmiPanel;
+    }
+
     function goToStep(step) {
         currentStep = limitStep(step);
         flow.classList.toggle("is-step-2", currentStep === 2);
@@ -1822,6 +1836,7 @@
         }
 
         updateSummaryCTA();
+        applyStep3PanelByPaymentPlan();
 
         if (backLink) {
             backLink.href = currentStep === 0 ? "all-courses.html" : "#";
@@ -1887,6 +1902,7 @@
         input.addEventListener("change", () => {
             paymentPlan = input.value;
             updateSummaryCTA();
+            applyStep3PanelByPaymentPlan();
         });
     });
 
