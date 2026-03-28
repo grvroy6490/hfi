@@ -100,8 +100,10 @@ button, input, select, textarea {
   }
 }
 
+.content-wrapper,
 main {
   position: relative;
+  width: 100%;
 }
 
 @font-face {
@@ -1418,6 +1420,8 @@ body.mobile-menu-open {
   margin-bottom: 0.25rem;
   color: #404040;
   transition: color 0.25s ease;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (max-width: 992px) {
   .menu-content .menu-col-intro .courses-link {
@@ -6705,12 +6709,12 @@ body.mobile-menu-open {
   }
 }
 .checkout-page-section {
-  padding: 9rem 0 5rem;
+  padding: 4rem 0 5rem;
   background: #F2F2F2;
 }
 @media (max-width: 991.98px) {
   .checkout-page-section {
-    padding: 10rem 0 3rem;
+    padding: 4rem 0 3rem;
   }
 }
 

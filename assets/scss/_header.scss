@@ -1157,6 +1157,8 @@ body.mobile-menu-open {
             margin-bottom: 0.25rem;
             color: #404040;
             transition: color 0.25s ease;
+            width: fit-content;
+
             
 
             @media screen and (max-width: 992px) {
