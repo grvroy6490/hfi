@@ -1,0 +1,371 @@
+@use "variables" as v;
+@use "typography" as t;
+
+.experience-pathway-section {
+    padding: 5rem 0;
+    background: #fff;
+}
+
+.experience-pathway-card {
+    // background: #f0f0f0;
+    // overflow: hidden;
+
+    .row {
+        @media (min-width: 992px) {
+            .experience-pathway-col-image {
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            .experience-pathway-col-form {
+                flex: 0 0 70%;
+                max-width: 70%;
+            }
+        }
+    }
+}
+
+.experience-pathway-image {
+    width: 100%;
+    min-height: 18rem;
+    overflow: hidden;
+    border-radius: 1.25rem;
+
+    img {
+        width: 100%;
+        height: 18rem;
+        min-height: 18rem;
+        object-fit: cover;
+        display: block;
+    }
+
+    @media (min-width: 992px) {
+        min-height: 32rem;
+        height: 100%;
+
+        img {
+            min-height: 32rem;
+            height: 100%;
+        }
+    }
+}
+
+.experience-pathway-form-wrap {
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 2rem;
+
+    @media (min-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @media (min-width: 992px) {
+        padding-left: 2.5rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+    } 
+}
+
+.experience-pathway-kicker {
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: v.$color-gold;
+    margin-bottom: 0.35rem;
+}
+
+.experience-pathway-heading {
+    font-family: "Mundial", sans-serif;
+    font-weight: 900;
+    color: v.$color-black;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 1.15;
+}
+
+.experience-pathway-lead {
+    color: v.$color-gray-dark;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.experience-pathway-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experience-pathway-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    .choices{
+        max-width: 100% !important;
+        
+        .choices__inner{
+            padding: 0.55rem 2.5rem;
+        }
+    }
+
+    &+.experience-pathway-fieldset {
+        margin-top: 1.5rem;
+    }
+}
+
+.experience-pathway-form .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.experience-pathway-legend {
+    font-weight: 700;
+    font-size: 1rem;
+    color: v.$color-primary-black;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.experience-pathway-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.experience-pathway-field {
+    flex: 1 1 100%;
+    min-width: 0;
+
+    @media (min-width: 576px) {
+        flex: 1 1 calc(50% - 0.375rem);
+    }
+}
+
+.experience-pathway-field-full {
+    flex: 1 1 100%;
+}
+
+.experience-pathway-phone-wrap {
+    @media (min-width: 576px) {
+        flex: 1 1 calc(50% - 0.375rem);
+    }
+}
+
+.experience-pathway-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: v.$color-gray-dark;
+    margin-bottom: 0.35rem;
+}
+
+.experience-pathway-input,
+.experience-pathway-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5rem;
+    background: #f4f4f4;
+    color: v.$color-gray-dark;
+
+    option {
+        font-family: t.$font-family-suisse;
+        background: #fff;
+        color: v.$color-primary-black;
+    }
+
+    &::placeholder {
+        color: #a0a0a0;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: v.$color-gold;
+    }
+}
+
+.experience-pathway-input::placeholder {
+    font-family: t.$font-family-suisse;
+    color: rgba(15, 15, 15, 1);
+}
+
+.experience-pathway-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%23444' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round' d='M2 4 L6 8 L10 4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-color: #f4f4f4;
+    padding-right: 2.25rem;
+
+    &:invalid {
+        color: rgba(15, 15, 15, 1);
+    }
+}
+
+.experience-pathway-phone {
+    display: flex;
+    gap: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 9999px;
+    background: #f4f4f4;
+    overflow: hidden;
+
+    .experience-pathway-country-code-wrap {
+        flex: 0 0 30%;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-left: 0.75rem;
+        border-right: 1px solid #e0e0e0;
+    }
+
+    .experience-pathway-flag {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        display: block;
+        border-radius: 1px;
+    }
+
+    .experience-pathway-country-code {
+        flex: 1;
+        min-width: 0;
+        border: none;
+        border-radius: 0;
+        background: #f4f4f4;
+        padding: 0.75rem 1rem 0.75rem 0.25rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%23444' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round' d='M2 4 L6 8 L10 4'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+    }
+
+    .experience-pathway-input {
+        flex: 1;
+        min-width: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        border-left: 1px solid #e0e0e0;
+    }
+}
+
+.experience-pathway-checkbox-wrap {
+    margin-top: 0.25rem;
+}
+
+.experience-pathway-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: v.$color-gray-dark;
+    cursor: pointer;
+    line-height: 1.4;
+
+    span {
+        flex: 1;
+    }
+}
+
+.experience-pathway-checkbox {
+    margin-top: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    accent-color: v.$color-gold;
+    flex-shrink: 0;
+}
+
+.experience-pathway-disclaimer {
+    color: v.$color-gray-lighter;
+    line-height: 1.5;
+    margin: 0;
+
+    a {
+        // color: v.$color-gray-dark;
+
+        &:hover {
+            color: v.$color-black;
+        }
+    }
+}
+
+.experience-pathway-submit {
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: #fff !important;
+    background: v.$color-gold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.6875rem;
+        min-width: 1.25em;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        transform: translate(-2px, 10%);
+        transition: transform 0.25s ease;
+    }
+
+    &:hover {
+        color: #fff !important;
+        background: v.$color-gold;
+
+        &::after {
+            background-image: url("../images/arrow.svg");
+            width: 0.8125rem;
+            height: 0.75rem;
+            transform: translate(2px, 10%);
+        }
+    }
+}
+
+// @media (max-width: 575.98px) {
+//     .experience-pathway-section .container {
+//         padding-left: 1rem;
+//         padding-right: 1rem;
+//     }
+
+//     .experience-pathway-form-wrap {
+//         padding-left: 1.25rem;
+//         padding-right: 1.25rem;
+//     }
+// } 

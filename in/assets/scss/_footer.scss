@@ -1,0 +1,310 @@
+// Footer theme
+$footer-bg: rgba(64, 64, 64, 1);
+$footer-text: #e8e8e8;
+$footer-text-muted: rgba(204, 204, 204, 1);
+$footer-heading-color: #fff;
+$footer-link-color: $footer-text;
+$footer-link-hover: #fff;
+$footer-bottom-border: rgba(255, 255, 255, 0.08);
+
+.site-footer {
+    background-color: $footer-bg;
+    color: $footer-text;
+}
+
+.footer-main {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+
+    .footer-col{
+        width: 25%;
+
+
+        &:nth-child(1){
+            width: 20%;
+
+            @media (max-width: 991.98px) {
+                width: 50%;
+            }
+
+            @media (max-width: 575px) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2){
+            width: calc(80% / 3);
+
+            @media (max-width: 991.98px) {
+                width: 50%;
+            }
+
+            @media (max-width: 575px) {
+                width: 100%;
+            }
+        }
+        
+        &:nth-child(3){
+            width: calc(80% / 3);
+
+            @media (max-width: 991.98px) {
+                width: 50%;
+            }
+
+            @media (max-width: 575px) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(4){
+            width: calc(80% / 3);
+
+            @media (max-width: 991.98px) {
+                width: 50%;
+            }
+
+            @media (max-width: 575px) {
+                width: 100%;
+            }
+        }
+
+        
+        @media (max-width: 991.98px) {
+            width: 100%;
+            text-align: left;
+        }
+
+        @media (max-width: 575px) {
+            text-align: center;
+        }
+    }
+}
+
+.footer-brand {
+
+    .footer-logo {
+        width: 3.75rem;
+
+        @media (max-width: 767.98px) {
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .footer-tagline {
+        font-weight: 700;
+        color: $footer-heading-color;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .footer-desc {
+        color: $footer-text-muted;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .context-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media (max-width: 991.98px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            width: 50%;
+            margin-right: 24%;
+
+            @media (max-width: 991.98px) {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        .footer-brand-country {
+            width: 26%;
+
+            @media (max-width: 991.98px) {
+                width: 100%;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+// Second brand column: region / country utility (globe + label)
+.footer-brand-country {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 0;
+
+    @media (max-width: 991.98px) {
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+}
+
+.footer-country-choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $footer-text;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    &:hover {
+        color: $footer-link-hover;
+        opacity: 0.95;
+    }
+
+    &:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.35);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+}
+
+.footer-country-choice-icon {
+    flex-shrink: 0;
+    width: 1.375rem;
+    height: 1.375rem;
+    color: inherit;
+}
+
+.footer-col {
+    .footer-heading {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $footer-heading-color;
+    }
+
+    .footer-subheading {
+        color: $footer-text-muted;
+        margin-bottom: 0.75rem;
+        font-weight: 100;
+    }
+
+    .footer-links {
+        margin: 0;
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+            padding-right: 1.25em;
+            color: $footer-link-color;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 400;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate(-4px, -30%);
+                opacity: 0;
+                transition: opacity 0.25s ease, transform 0.25s ease;
+                display: inline-block;
+                width: 0.375rem;
+                height: 0.6875rem;
+                background-image: url("../images/chevron.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &:hover {
+                color: $footer-link-hover;
+
+                &::after {
+                    opacity: 1;
+                    transform: translate(0, -30%);
+                }
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    margin-top: 0.5rem;
+    
+    .footer-bottom-content {
+        border-top: 1px solid $footer-bottom-border;
+    }
+}
+
+.footer-copyright {
+    color: $footer-text-muted;
+}
+
+.footer-legal {
+
+    a {
+        color: $footer-text-muted;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-weight: 400;
+
+        &:hover {
+            color: $footer-link-hover;
+        }
+    }
+
+    .footer-sep {
+        color: $footer-text-muted;
+        opacity: 0.7;
+        margin: 0 0.35rem;
+        user-select: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+// Responsive: stack and center on small screens
+@media (max-width: 767.98px) {
+    .footer-main .row {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-brand {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer-col {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer-legal .footer-sep {
+        margin: 0 0.25rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .footer-col {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,271 @@
+@use 'variables' as v;
+
+// —— Become a Certified Usability Analyst™ banner ——
+.certification-certified-usability-analyst-section {
+    padding: 4rem 0;
+    background-color: #F2F2F2;
+    position: relative;
+    overflow: hidden;
+ 
+    // Dotted pattern in bottom-right, fading towards center/top-left
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        height: 80%;
+        max-width: 480px;
+        max-height: 320px;
+        background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1.5px, transparent 0);
+        background-size: 12px 12px;
+        background-position: 100% 100%;
+        mask-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent 60%);
+        -webkit-mask-image: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent 60%);
+        pointer-events: none;
+    }
+}
+
+
+.certification-certified-usability-analyst-image {
+    height: fit-content;
+    width: 550px;
+    position: absolute;
+    bottom: -120%;
+    right: 0;
+    z-index: 0;
+    transform: rotate(-90deg);
+}
+
+.certification-certified-usability-analyst-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 991.98px) {
+        max-width: 100%;
+    }
+}
+
+.certification-certified-usability-analyst-title {
+    margin: 0 0 0.75rem;
+    color: v.$color-primary-black;
+    font-weight: 600;
+}
+
+.certification-certified-usability-analyst-lead {
+    margin: 0 0 1.5rem;
+    color: v.$color-gray-light;
+    line-height: 1.5;
+}
+
+.certification-certified-usability-analyst-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+}
+
+.certification-certified-usability-analyst-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.certification-certified-usability-analyst-btn-primary {
+    background: linear-gradient(90deg, v.$color-gold-light 0%, v.$color-gold 50%, v.$color-gold-dark 100%);
+    border: none;
+    color: #fff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        min-width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10%);
+        transition: transform 0.25s ease;
+        filter: brightness(0) invert(1);
+    }
+
+    &:hover {
+        background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
+    }
+
+    &:hover::after {
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(10%);
+        filter: brightness(0) invert(1);
+    }
+}
+
+.certification-certified-usability-analyst-btn-secondary {
+    background: transparent;
+    border: 1px solid v.$color-primary-grey;
+    color: v.$color-primary-grey !important;
+
+    &:hover {
+        border-color: #404040;
+        background-color: #404040 !important;
+        color: #fff !important;
+    }
+}
+
+.certification-certified-usability-analyst-btn-icon {
+    flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+    .certification-certified-usability-analyst-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .certification-certified-usability-analyst-btn {
+        justify-content: center;
+    }
+}
+
+// Advisor form (toggle content)
+.certification-analyst-advisor-form-wrap {
+    margin-top: 1.75rem;
+    display: none;
+
+    .experience-pathway-country-code-wrap{
+        flex: 0 0 34% !important;
+    }
+
+    .experience-pathway-phone{
+        border-color: #CCCCCC;
+        background: #F5F5F5;
+        padding: 0.05rem 1rem 0.05rem 0.5rem;
+    }
+}
+
+.certification-analyst-advisor-form-wrap.show {
+    display: block !important;
+}
+
+.certification-analyst-advisor-form-card {
+    max-width: 42rem;
+    margin: 0 auto;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0.5rem 0 0;
+    box-shadow: none;
+}
+
+.certification-analyst-advisor-form {
+    .row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 0.75rem;
+    }
+}
+
+
+
+.certification-analyst-advisor-input {
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    background: #F5F5F5;
+    border-radius: 999px;
+    padding: 0.8rem 1rem;
+    color: #0F0F0F;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &::placeholder {
+        color: #0F0F0F;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: v.$color-gold;
+        background: #f7f0e8;
+    }
+}
+
+.certification-analyst-advisor-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certification-analyst-advisor-prefix {
+    width: 6rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #f3f3f3;
+    border-radius: 999px;
+    padding: 0.8rem 0.9rem;
+    color: v.$color-gray-dark;
+    line-height: 1.5;
+}
+
+.certification-analyst-advisor-phone-input {
+    flex: 1;
+}
+
+.certification-analyst-advisor-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 20.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: #777;
+    color: #fff !important;
+    transition: background 0.2s ease, opacity 0.2s ease;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(6%);
+        margin-left: 0.25rem;
+        filter: brightness(0) invert(1);
+        transition: transform 0.25s ease;
+    }
+
+    &:hover {
+        background: #6a6a6a;
+        opacity: 0.98;
+    }
+
+    &:hover::after {
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(6%);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .certification-analyst-advisor-prefix {
+        width: 5.25rem;
+    }
+}
+
+
