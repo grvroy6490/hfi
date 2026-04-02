@@ -58,15 +58,6 @@ class Certification extends MY_Controller {
         $this->render($data, 'pages/certifications/cxa');
     }
 
-    public function science_of_experience_design() {
-        $data = array();
-        $data['title'] = 'Science of Experience Design';	
-        $data['description'] = '';
-
-        $data['og_title'] = 'Science of Experience Design';	
-        $data['og_description'] = '';
-        
-        $this->render($data, 'pages/certifications/science-of-experience-design');
-    }
+    
 
 }

@@ -1,4 +1,4 @@
-<main>
+    <main>
         <!--------------------------- 
             HEADER
         ------------------------------>
@@ -77,8 +77,8 @@
                                             persuasion
                                             capability, and enterprise-scale experience leadership.
                                         </p>
-                                        <a href="all-courses.html" class="explore-link mb-1 mb-sm-3">Explore Certification Pathway</a>
-                                        <a href="all-courses.html" class="courses-link">All Courses</a>
+                                        <a href="#" class="explore-link mb-1 mb-sm-3">Explore Certification Pathway</a>
+                                        <a href="<?php echo base_url(); ?>courses/all-courses" class="courses-link">All Courses</a>
                                     </div>
                                     <div class="menu-col-certs">
                                         <span class="col-label">Certifications</span>
@@ -125,9 +125,9 @@
                                         <div class="course-group">
                                             <span class="group-label">Foundations</span>
                                             <ul>
-                                                <li><a href="courses-science.html" class="menu-link">Certified Usability
+                                                <li><a href="<?php echo base_url(); ?>courses/science-of-experience-design" class="menu-link">Certified Usability
                                                         Architect (CUA&trade;)</a></li>
-                                                <li><a href="courses-science.html" class="menu-link">Principles of
+                                                <li><a href="<?php echo base_url(); ?>courses/principles-of-experience-research-and-strategy" class="menu-link">Principles of
                                                         Experience Research and Strategy</a>
                                                 </li>
                                             </ul>
@@ -135,10 +135,10 @@
                                         <div class="course-group">
                                             <span class="group-label">Systems and Interfaces</span>
                                             <ul>
-                                                <li><a href="#" class="menu-link">Principles of Interface Design and
+                                                <li><a href="<?php echo base_url(); ?>courses/principles-of-interface-design-and-design-systems" class="menu-link">Principles of Interface Design and
                                                         Design
                                                         Systems</a></li>
-                                                <li><a href="#" class="menu-link">Experience Performance Evaluation</a>
+                                                <li><a href="<?php echo base_url(); ?>courses/experience-performance-evaluation" class="menu-link">Experience Performance Evaluation</a>
                                                 </li>
                                             </ul>
                                         </div>

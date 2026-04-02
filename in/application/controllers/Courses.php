@@ -47,4 +47,50 @@ class Courses extends MY_Controller {
         $this->render($data, 'pages/courses/calendar');
     }
 
+    public function science_of_experience_design() {
+        $data = array();
+        $data['title'] = 'Science of Experience Design';	
+        $data['description'] = '';
+
+        $data['og_title'] = 'Science of Experience Design';	
+        $data['og_description'] = '';
+        
+        $this->render($data, 'pages/courses/cua/science-of-experience-design');
+    }
+
+
+    public function principles_of_interface_design_and_design_systems() {
+        $data = array();
+        $data['title'] = 'Principles of Interface Design and Design Systems';	
+        $data['description'] = '';
+
+        $data['og_title'] = 'Principles of Interface Design and Design Systems';	
+        $data['og_description'] = '';
+        
+        $this->render($data, 'pages/courses/cua/principles-of-interface-design-and-design-systems');
+    }
+
+
+    public function principles_of_experience_research_and_strategy() {
+        $data = array();
+        $data['title'] = 'Principles of Experience Research and Strategy';	
+        $data['description'] = '';
+
+        $data['og_title'] = 'Principles of Experience Research and Strategy';	
+        $data['og_description'] = '';
+        
+        $this->render($data, 'pages/courses/cua/principles-of-experience-research-and-strategy');
+    }
+
+    public function experience_performance_evaluation() {
+        $data = array();
+        $data['title'] = 'Experience Performance Evaluation';	
+        $data['description'] = '';
+
+        $data['og_title'] = 'Experience Performance Evaluation';	
+        $data['og_description'] = '';
+        
+        $this->render($data, 'pages/courses/cua/experience-performance-evaluation');
+    }
+
 }

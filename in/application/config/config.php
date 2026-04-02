@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 if($_SERVER['SERVER_NAME'] == "127.0.0.1" || $_SERVER['SERVER_NAME'] == "localhost"){
 	$config['base_url'] = 'http://localhost/HFI/website/v11/in/';
+	// $config['base_url'] = 'http://localhost/HFI/in/';   
 } else {
 	$config['base_url']	= 'https://hfiinstitute.com/2026V1/in/';
 }

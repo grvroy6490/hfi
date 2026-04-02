@@ -58,7 +58,6 @@ $route['certification'] = 'certification/index';
 $route['certification/cua'] = 'certification/cua';
 $route['certification/cdpa'] = 'certification/cdpa';
 $route['certification/cxa'] = 'certification/cxa';
-$route['certification/science-of-experience-design'] = 'certification/science_of_experience_design';
 
 /* Courses Routes */
 $route['courses'] = 'courses/index';
@@ -67,6 +66,11 @@ $route['courses/cua'] = 'courses/cua';
 $route['courses/cdpa'] = 'courses/cdpa';
 $route['courses/cxa'] = 'courses/cxa';
 $route['courses/calendar'] = 'courses/calendar';
+$route['courses/science-of-experience-design'] = 'courses/science_of_experience_design';
+$route['courses/principles-of-interface-design-and-design-systems'] = 'courses/principles_of_interface_design_and_design_systems';
+$route['courses/principles-of-experience-research-and-strategy'] = 'courses/principles_of_experience_research_and_strategy';
+$route['courses/experience-performance-evaluation'] = 'courses/experience_performance_evaluation';
+
 
 /* Checkout Routes */
 $route['checkout'] = 'checkout/index';

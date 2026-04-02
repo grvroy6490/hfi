@@ -144,7 +144,7 @@
                                             80 hours • Live online • Certification exam included
                                         </p>
                                         <div class="cert-card-actions">
-                                            <a href="#" class="hero-btn btn-tertiary body-large">Explore Pathway</a>
+                                            <a href="<?php echo base_url(); ?>certification/cua" class="hero-btn btn-tertiary body-large">Explore Pathway</a>
                                             <a href="#" class="cert-card-link body-small">Download Syllabus</a>
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                                             40 hours • Live online • Certification exam included​
                                         </p>
                                         <div class="cert-card-actions">
-                                            <a href="#" class="hero-btn btn-tertiary body-large">Explore Pathway</a>
+                                            <a href="<?php echo base_url(); ?>certification/cdpa" class="hero-btn btn-tertiary body-large">Explore Pathway</a>
                                             <a href="#" class="cert-card-link body-small">Download Syllabus</a>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@
                                             80 hours • Live online • Certification exam included
                                         </p>
                                         <div class="cert-card-actions">
-                                            <a href="#" class="hero-btn btn-tertiary body-large">Explore Pathway</a>
+                                            <a href="<?php echo base_url(); ?>certification/cxa" class="hero-btn btn-tertiary body-large">Explore Pathway</a>
                                             <a href="#" class="cert-card-link body-small">Download Syllabus</a>
                                         </div>
                                     </div>
@@ -298,7 +298,7 @@
                                                 </div>
 
                                                 <div class="capability-course-card-actions">
-                                                    <a href="courses-science.html" class="hero-btn btn-tertiary body-large">Explore Course</a>
+                                                    <a href="<?php echo base_url(); ?>courses/science-of-experience-design" class="hero-btn btn-tertiary body-large">Explore Course</a>
                                                     <a href="#" class="capability-course-card-link body-small">Download Syllabus</a>
                                                 </div>
                                             </div>
@@ -337,7 +337,7 @@
                                                     </p>
                                                 </div>
                                                 <div class="capability-course-card-actions">
-                                                    <a href="#" class="hero-btn btn-tertiary body-large">Explore Course</a>
+                                                    <a href="<?php echo base_url(); ?>courses/principles-of-interface-design-and-design-systems" class="hero-btn btn-tertiary body-large">Explore Course</a>
                                                     <a href="#" class="capability-course-card-link body-small">Download Syllabus</a>
                                                 </div>
                                             </div>
@@ -375,7 +375,7 @@
                                                 </div>
 
                                                 <div class="capability-course-card-actions">
-                                                    <a href="#" class="hero-btn btn-tertiary body-large">Explore Course</a>
+                                                    <a href="<?php echo base_url(); ?>courses/principles-of-experience-research-and-strategy" class="hero-btn btn-tertiary body-large">Explore Course</a>
                                                     <a href="#" class="capability-course-card-link body-small">Download Syllabus</a>
                                                 </div>
                                             </div>
@@ -412,7 +412,7 @@
                                                 </div>
 
                                                 <div class="capability-course-card-actions">
-                                                    <a href="#" class="hero-btn btn-tertiary body-large">Explore Course</a>
+                                                    <a href="<?php echo base_url(); ?>courses/experience-performance-evaluation" class="hero-btn btn-tertiary body-large">Explore Course</a>
                                                     <a href="#" class="capability-course-card-link body-small">Download Syllabus</a>
                                                 </div>
                                             </div>
