@@ -125,8 +125,7 @@
                                         <div class="course-group">
                                             <span class="group-label">Foundations</span>
                                             <ul>
-                                                <li><a href="<?php echo base_url(); ?>courses/science-of-experience-design" class="menu-link">Certified Usability
-                                                        Architect (CUA&trade;)</a></li>
+                                                <li><a href="<?php echo base_url(); ?>courses/science-of-experience-design" class="menu-link">Science of Experience Design</a></li>
                                                 <li><a href="<?php echo base_url(); ?>courses/principles-of-experience-research-and-strategy" class="menu-link">Principles of
                                                         Experience Research and Strategy</a>
                                                 </li>
