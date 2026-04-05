@@ -15,14 +15,16 @@ class Checkout extends MY_Controller {
 	
 	public function index()
 	{
-		$data = array();
-		$data['title'] = 'Checkout';	
-		$data['description'] = '';
+		// $data = array();
+		// $data['title'] = 'Checkout';	
+		// $data['description'] = '';
 
-		$data['og_title'] = 'Checkout';	
-		$data['og_description'] = '';
+		// $data['og_title'] = 'Checkout';	
+		// $data['og_description'] = '';
 
-		$this->render($data, 'pages/checkout');
+		// $this->render($data, 'pages/checkout');
+
+        redirect('checkout/program-details');
 	}
 
     public function program_details() {
