@@ -23,53 +23,101 @@
 
 <body>
     <!--------------------------- 
-        HEADER
+        COUNTRY/REGION BAR
     ------------------------------>
-    <header class="site-header bg-white">
-        <div class="header-announcement">
-            <div class="container">
-                <p class="header-announcement-text mb-0 text-center body-small">
-                    HFI Institute builds on the global legacy of Human Factors International.
-                    <a href="#" class="header-announcement-link">Discover Our Story</a>
-                </p>
+    <div class="country-region-bar" id="country-region-bar" data-country-region-bar>
+        <div class="container">
+            <div class="row">
+                <div class="col-mg-12">
+                    <div class="country-region-bar-inner">
+                        <p class="country-region-bar-text body-small">
+                            Choose another country or region to see content specific to your location and browse online
+                            courses
+                        </p>
+                        <div class="country-region-bar-controls">
+                            <label for="country-region-select" class="visually-hidden">Country or region</label>
+                            <select id="country-region-select" name="country_region"
+                                class="country-region-bar-select-native" aria-label="Country or region">
+                                <option value="IN" selected>India</option>
+                                <option value="US">United States of America</option>
+                                <option value="GB">Europe</option>
+                                <option value="AU">Malaysia</option>
+                                <option value="CA">Canada</option>
+                                <option value="SG">Singapore</option>
+                                <option value="AE">Middle East</option>
+                                <option value="ZA">South Africa</option>
+                            </select>
+                            <button type="button" class="country-region-bar-continue">
+                                Continue
+                            </button>
+                            <button type="button" class="country-region-bar-close" id="country-region-bar-close"
+                                aria-label="Dismiss region banner">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <nav class="header-nav navbar navbar-expand-lg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-12">
-                        <a href="index.html" class="header-logo navbar-brand">
-                            <img src="assets/images/logo.svg" alt="HFI">
-                        </a>
-                        <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="headerMenu">
-                            <div class="row">
-                                <div class="col-12 col-lg-12">
-                                    <div class="header-menu-inner">
-                                        <div class="header-links-spacer" aria-hidden="true"></div>
-                                        <ul class="header-links list-unstyled mb-0">
-                                            <li>
-                                                <button class="header-link-trigger" data-menu="certified" aria-expanded="false"
-                                                    aria-haspopup="true" aria-controls="content-certified">
-                                                    Get Certified
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button class="header-link-trigger" data-menu="teams" aria-expanded="false"
-                                                    aria-haspopup="true" aria-controls="content-teams">
-                                                    Transform Teams
-                                                </button>
-                                            </li>
-                                            <li><a href="#" class="">Explore Insights</a></li>
-                                        </ul>
-                                        <div class="mobile-mega-content" id="mobileMegaContent" aria-live="polite"></div>
-                                        <div class="header-right">
-                                            <a href="#" class="header-account-link body-small">My Account</a>
-                                            <a href="#" class="header-cta btn body">Start Over</a>
+    </div>
+
+    <main>
+        <!--------------------------- 
+            HEADER
+        ------------------------------>
+        <header class="site-header bg-white position-relative">
+            <div class="header-announcement">
+                <div class="container">
+                    <p class="header-announcement-text mb-0 text-center body-small">
+                        HFI Institute builds on the global legacy of Human Factors International.
+                        <a href="#" class="header-announcement-link">Discover Our Story</a>
+                    </p>
+                </div>
+            </div>
+            <nav class="header-nav navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <a href="index.html" class="header-logo navbar-brand">
+                                <img src="assets/images/logo.svg" alt="HFI">
+                            </a>
+                            <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="headerMenu">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <div class="header-menu-inner">
+                                            <div class="header-links-spacer" aria-hidden="true"></div>
+                                            <ul class="header-links list-unstyled mb-0">
+                                                <li>
+                                                    <button class="header-link-trigger" data-menu="certified"
+                                                        aria-expanded="false" aria-haspopup="true"
+                                                        aria-controls="content-certified">
+                                                        Get Certified
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="header-link-trigger" data-menu="teams"
+                                                        aria-expanded="false" aria-haspopup="true"
+                                                        aria-controls="content-teams">
+                                                        Transform Teams
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="header-link-trigger" >
+                                                        Explore Insights
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                            <div class="mobile-mega-content" id="mobileMegaContent" aria-live="polite">
+                                            </div>
+                                            <div class="header-right">
+                                                <a href="#" class="header-account-link body-small">My Account</a>
+                                                <a href="#" class="header-cta btn body">Start Here</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -77,768 +125,749 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        <div id="shared-bg" role="region" aria-live="polite">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-12">
-                        <div class="menu-content" id="content-certified" role="menu">
-                            <div class="mega-menu-container">
-                                <div class="menu-col-intro">
-                                    <h2>Become the<br>Experience Architect.</h2>
-                                    <p>
-                                        Structured certification pathways that build usability mastery, ethical persuasion
-                                        capability, and enterprise-scale experience leadership.
-                                    </p>
-                                    <a href="all-courses.html" class="explore-link">All Courses</a>
-                                </div>
-                                <div class="menu-col-certs">
-                                    <span class="col-label">Certifications</span>
-                                    <ul>
-                                        <li class="cert-items">
-                                            <a href="cua-certification.html" class="cert-item menu-link">
-                                                <h3>Certified Usability Architect (CUA)</h3>
-                                                <p>
-                                                    Design scalable, human-centered systems grounded in cognitive science,
-                                                    evidence, and usability leadership.
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="cert-items">
-                                            <a href="cdpa-certification.html" class="cert-item menu-link">
-                                                <h3>Certified Digital Persuasion Architect (CDPA)</h3>
-                                                <p>
-                                                    Architect ethical persuasion systems that guide decisions, build trust, and
-                                                    drive sustainable digital performance.
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="cert-items">
-                                            <a href="cxa-certification.html" class="cert-item menu-link">
-                                                <h3>Certified Experience Architect (CXA)</h3>
-                                                <p>
-                                                    Lead experience as an enterprise capability by aligning strategy,
-                                                    governance, and organizational maturity.
-                                                </p>
-                                            </a>
-                                        </li>
-                                        <li class="cert-items">
-                                            <a href="#" class="cert-item menu-link">
-                                                <h3>Certification Exams</h3>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="menu-col-courses">
-                                    <span class="col-label">Courses</span>
-                                    <div class="course-group">
-                                        <span class="group-label">Foundations</span>
+            <div id="shared-bg" role="region" aria-live="polite">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu-content" id="content-certified" role="menu">
+                                <div class="mega-menu-container">
+                                    <div class="menu-col-intro">
+                                        <h2>Become the<br>Experience Architect.</h2>
+                                        <p>
+                                            Structured certification pathways that build usability mastery, ethical
+                                            persuasion
+                                            capability, and enterprise-scale experience leadership.
+                                        </p>
+                                        <a href="all-courses.html" class="explore-link mb-1 mb-sm-3">Explore Certification Pathway</a>
+                                        <a href="all-courses.html" class="courses-link">All Courses</a>
+                                    </div>
+                                    <div class="menu-col-certs">
+                                        <span class="col-label">Certifications</span>
                                         <ul>
-                                            <li><a href="courses-science.html" class="menu-link">Certified Usability Architect (CUA)</a></li>
-                                            <li><a href="courses-science.html" class="menu-link">Principles of Experience Research and Strategy</a>
+                                            <li class="cert-items">
+                                                <a href="cua-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Usability Architect (CUA&trade;)</h3>
+                                                    <p>
+                                                        Design scalable, human-centered systems grounded in cognitive
+                                                        science,
+                                                        evidence, and usability leadership.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="cdpa-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Digital Persuasion Architect (CDPA&trade;)</h3>
+                                                    <p>
+                                                        Architect ethical persuasion systems that guide decisions, build
+                                                        trust, and
+                                                        drive sustainable digital performance.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="cxa-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Experience Architect (CXA&trade;)</h3>
+                                                    <p>
+                                                        Lead experience as an enterprise capability by aligning
+                                                        strategy,
+                                                        governance, and organizational maturity.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="#" class="cert-item menu-link">
+                                                    <h3>Certification Exams</h3>
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="course-group">
-                                        <span class="group-label">Systems and Interfaces</span>
-                                        <ul>
-                                            <li><a href="#" class="menu-link">Principles of Interface Design and Design
-                                                    Systems</a></li>
-                                            <li><a href="#" class="menu-link">Experience Performance Evaluation</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="course-group">
-                                        <span class="group-label">Influence and Trust</span>
-                                        <ul>
-                                            <li><a href="#" class="menu-link">Persuasion, Emotion and Trust in Design</a></li>
-                                            <li><a href="#" class="menu-link">Digital Persuasion Architecture</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="course-group">
-                                        <span class="group-label">Strategy and Enterprise Leadership</span>
-                                        <ul>
-                                            <li><a href="#" class="menu-link">CX and Strategy Architect</a></li>
-                                            <li><a href="#" class="menu-link">Experience Practice Architect</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-content teams-grid" id="content-teams" role="menu">
-                            <div class="mega-menu-container">
-                                <div class="menu-col-intro">
-                                    <h2>Build Experience<br>Capability that Scales.</h2>
-                                    <p>
-                                        Structured programs that align teams, leaders, and organizations around usable,
-                                        ethical, and high-performing digital experiences.
-                                    </p>
-                                    <a href="#" class="explore-link">Explore Enterprise Programs</a>
-                                </div>
-        
-                                <div class="menu-col-certs">
-                                    <span class="col-label">Programs</span>
-                                    <div class="cert-items">
-                                        <a href="#" class="cert-item menu-link">
-                                            <h3>Essentials of Experience Design</h3>
-                                            <p>
-                                                Create a shared human-centered language across cross-functional teams to improve
-                                                usability, clarity, and decision-making.
-                                            </p>
-                                        </a>
-                                    </div>
-        
-                                    <div class="cert-items">
-                                        <a href="#" class="cert-item menu-link">
-                                            <h3>AI-Powered Persuasion Strategist</h3>
-                                            <p>
-                                                Enable responsible influence in AI-driven ecosystems through PET-aligned
-                                                frameworks for teams and leaders.
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-        
-                                <div class="menu-col-courses">
-                                    <span class="col-label">Work with us</span>
-        
-                                    <div class="course-group">
-                                        <ul>
-                                            <li><a href="#" class="menu-link">Case Studies</a></li>
-                                            <li><a href="#" class="menu-link">Industry Focus</a></li>
-                                            <li><a href="#" class="menu-link">Request a Proposal</a></li>
-                                            <li><a href="#" class="menu-link">Download Corporate Brochure</a></li>
-                                            <li><a href="#" class="menu-link">Speak to an Enterprise Advisor</a></li>
-                                        </ul>
+                                    <div class="menu-col-courses">
+                                        <span class="col-label">Courses</span>
+                                        <div class="course-group">
+                                            <span class="group-label">Foundations</span>
+                                            <ul>
+                                                <li><a href="courses-science.html" class="menu-link">Certified Usability
+                                                        Architect (CUA&trade;)</a></li>
+                                                <li><a href="courses-science.html" class="menu-link">Principles of
+                                                        Experience Research and Strategy</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Systems and Interfaces</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Principles of Interface Design and
+                                                        Design
+                                                        Systems</a></li>
+                                                <li><a href="#" class="menu-link">Experience Performance Evaluation</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Influence and Trust</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Persuasion, Emotion and Trust in
+                                                        Design</a></li>
+                                                <li><a href="#" class="menu-link">Digital Persuasion Architecture</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Strategy and Enterprise Leadership</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">CX and Strategy Architect</a></li>
+                                                <li><a href="#" class="menu-link">Experience Practice Architect</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-        
-                        <div class="logo-slider-section">
-                            <div class="row">
-                                <div class="col-12 col-lg-12">
-                                    <p class="body text-center logo-slider-text">Empowering experience teams at the world's most
-                                        respected organizations</p>
+
+                            <div class="menu-content teams-grid" id="content-teams" role="menu">
+                                <div class="mega-menu-container">
+                                    <div class="menu-col-intro">
+                                        <h2>Build Experience<br>Capability that Scales.</h2>
+                                        <p>
+                                            Structured programs that align teams, leaders, and organizations around
+                                            usable,
+                                            ethical, and high-performing digital experiences.
+                                        </p>
+                                        <a href="#" class="explore-link">Explore Enterprise Programs</a>
+                                    </div>
+
+                                    <div class="menu-col-certs">
+                                        <span class="col-label">Programs</span>
+                                        <div class="cert-items">
+                                            <a href="#" class="cert-item menu-link">
+                                                <h3>Essentials of Experience Design</h3>
+                                                <p>
+                                                    Create a shared human-centered language across cross-functional
+                                                    teams to improve
+                                                    usability, clarity, and decision-making.
+                                                </p>
+                                            </a>
+                                        </div>
+
+                                        <div class="cert-items">
+                                            <a href="#" class="cert-item menu-link">
+                                                <h3>AI-Powered Persuasion Strategist</h3>
+                                                <p>
+                                                    Enable responsible influence in AI-driven ecosystems through
+                                                    PET-aligned
+                                                    frameworks for teams and leaders.
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-col-courses">
+                                        <span class="col-label">Work with us</span>
+
+                                        <div class="course-group">
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Case Studies</a></li>
+                                                <li><a href="#" class="menu-link">Industry Focus</a></li>
+                                                <li><a href="#" class="menu-link">Request a Proposal</a></li>
+                                                <li><a href="#" class="menu-link">Download Corporate Brochure</a></li>
+                                                <li><a href="#" class="menu-link">Speak to an Enterprise Advisor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <br>
-                            <div class="logo-marquee">
-                                <div class="logo-marquee-track">
-                                    <div class="logo-marquee-item"><img src="assets/images/Amazon.svg.svg" alt="Amazon"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/american_express.svg"
-                                            alt="American Express" class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/GSK.svg.svg" alt="GSK"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/jp_morgan.svg" alt="JP Morgan"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/Microsoft.svg.svg" alt="Microsoft"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/P_G.svg.svg" alt="P&amp;G"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/stellan.svg" alt="Stellan"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/Unilever.svg.svg" alt="Unilever"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/walmart.svg" alt="Walmart"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/Amazon.svg.svg" alt="Amazon"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/american_express.svg"
-                                            alt="American Express" class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/GSK.svg.svg" alt="GSK"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/jp_morgan.svg" alt="JP Morgan"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/Microsoft.svg.svg" alt="Microsoft"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/P_G.svg.svg" alt="P&amp;G"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/stellan.svg" alt="Stellan"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/Unilever.svg.svg" alt="Unilever"
-                                            class="logo-slider-img"></div>
-                                    <div class="logo-marquee-item"><img src="assets/images/walmart.svg" alt="Walmart"
-                                            class="logo-slider-img"></div>
+
+                            <div class="logo-slider-section">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <p class="body text-center logo-slider-text">Building experience capability from individual practitioners to global enterprises.</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="logo-marquee">
+                                    <div class="logo-marquee-track">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!--------------------------- 
-        BANNER SECTION
-    ------------------------------>
-    <section class="all-courses-banner-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-12">
-                    <div class="all-courses-banner">
-                        <div class="all-courses-banner-pattern" aria-hidden="true"></div>
-                        <div class="all-courses-banner-content text-center">
-                            <h1 class="all-courses-banner-title">ALL ONLINE COURSES</h1>
-                            <p class="all-courses-banner-lead body">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s
+        <!--------------------------- 
+            BANNER SECTION
+        ------------------------------>
+        <section class="all-courses-banner-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="all-courses-banner">
+                            <div class="all-courses-banner-pattern" aria-hidden="true"></div>
+                            <div class="all-courses-banner-content text-center">
+                                <h1 class="all-courses-banner-title">ALL ONLINE COURSES</h1>
+                                <p class="all-courses-banner-lead body">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text
+                                    ever since the 1500s
+                                </p>
+                                <div class="all-courses-search">
+                                    <input id="all-courses-search-input" class="all-courses-search-input body"
+                                        type="search" placeholder="Search" aria-label="Search courses" />
+                                    <button type="button" class="all-courses-search-button" aria-label="Search courses">
+                                        <svg class="all-courses-search-icon" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2" />
+                                            <path d="M16 16L20 20" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------- 
+            EXPERIENCE PATHWAY SECTION
+        ------------------------------>
+        <section class="all-courses-pathway-section">
+            <div class="container">
+                <div class="all-courses-pathway-header text-center">
+                    <h2 class="all-courses-pathway-title">
+                        The Experience Architect Pathway
+                    </h2>
+                    <p class="all-courses-pathway-lead body">
+                        Develop capability progressively from human-centered foundations to
+                        enterprise experience leadership.
+                    </p>
+                </div>
+
+                <div class="all-courses-pathway-grid">
+                    <article class="all-courses-pathway-card">
+                        <div class="all-courses-pathway-card-head">
+                            <span class="all-courses-pathway-step heading-6">1</span>
+                            <h3 class="all-courses-pathway-card-title heading-6">
+                                Foundations
+                            </h3>
+                        </div>
+                        <p class="all-courses-pathway-card-intro body-small">
+                            Human science and evidence-led design decisions.
+                        </p>
+                        <ul class="all-courses-pathway-list label">
+                            <li>Science of Experience Design</li>
+                            <li>Essentials of Experience Design</li>
+                        </ul>
+                        <p class="all-courses-pathway-card-summary label">
+                            Build the scientific foundation for human-centered systems.
+                        </p>
+                    </article>
+
+                    <article class="all-courses-pathway-card">
+                        <div class="all-courses-pathway-card-head">
+                            <span class="all-courses-pathway-step heading-6">2</span>
+                            <h3 class="all-courses-pathway-card-title heading-6">
+                                Practitioner
+                            </h3>
+                        </div>
+                        <p class="all-courses-pathway-card-intro body-small">
+                            Applied design, research, and persuasion practice.
+                        </p>
+                        <ul class="all-courses-pathway-list label">
+                            <li>Certified Usability Architect</li>
+                            <li>Experience Research &amp; Strategy</li>
+                            <li>Interface Design &amp; Design Systems</li>
+                            <li>Experience Performance Evaluation</li>
+                            <li>PET Design</li>
+                            <li>Certified Digital Persuasion Architect</li>
+                        </ul>
+                        <p class="all-courses-pathway-card-summary label">
+                            Apply research, usability, and persuasion frameworks in real
+                            systems.
+                        </p>
+                    </article>
+
+                    <article class="all-courses-pathway-card">
+                        <div class="all-courses-pathway-card-head">
+                            <span class="all-courses-pathway-step heading-6">3</span>
+                            <h3 class="all-courses-pathway-card-title heading-6">Leader</h3>
+                        </div>
+                        <p class="all-courses-pathway-card-intro body-small">
+                            Strategic influence and experience architecture.
+                        </p>
+                        <ul class="all-courses-pathway-list label">
+                            <li>Digital Persuasion Architecture</li>
+                            <li>CX and Strategy Architect</li>
+                            <li>Certified eXperience Architect</li>
+                        </ul>
+                        <p class="all-courses-pathway-card-summary label">
+                            Lead experience strategy and influence across products and
+                            journeys.
+                        </p>
+                    </article>
+
+                    <article class="all-courses-pathway-card">
+                        <div class="all-courses-pathway-card-head">
+                            <span class="all-courses-pathway-step heading-6">4</span>
+                            <h3 class="all-courses-pathway-card-title heading-6">
+                                Enterprise
+                            </h3>
+                        </div>
+                        <p class="all-courses-pathway-card-intro body-small">
+                            Scaling experience capability across organizations.
+                        </p>
+                        <ul class="all-courses-pathway-list label">
+                            <li>Experience Practice Architect</li>
+                            <li>AI-Powered Persuasion Strategist (Leadership)</li>
+                        </ul>
+                        <p class="all-courses-pathway-card-summary label">
+                            Embed experience into governance, culture, and enterprise
+                            operations.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="all-courses-pathway-action text-center">
+                    <a href="#" class="all-courses-pathway-cta body">Explore the Pathway</a>
+                </div>
+        </section>
+
+        <!--------------------------- 
+            COURSE LISTING SECTION
+        ------------------------------>
+        <section class="all-courses-listing-section">
+            <div class="container">
+                <div class="all-courses-filters">
+                    <div class="all-courses-filters-controls">
+                        <select class="all-courses-filter-select body" id="all-courses-filter-program"
+                            aria-label="Filter by program">
+                            <option value="all">All Programs</option>
+                            <option value="enterprise">Enterprise</option>
+                            <option value="certification">Certification</option>
+                            <option value="team">Team Enablement</option>
+                        </select>
+
+                        <select class="all-courses-filter-select body" id="all-courses-filter-level"
+                            aria-label="Filter by level">
+                            <option value="all">All Levels</option>
+                            <option value="foundations">Foundations</option>
+                            <option value="practitioner">Practitioner</option>
+                            <option value="leader">Leader</option>
+                        </select>
+
+                        <select class="all-courses-filter-select body" id="all-courses-filter-topic"
+                            aria-label="Filter by topic">
+                            <option value="all">All Topics</option>
+                            <option value="research">Research</option>
+                            <option value="design-systems">Design Systems</option>
+                            <option value="persuasion">Persuasion</option>
+                            <option value="strategy">Strategy</option>
+                        </select>
+                    </div>
+
+                    <a href="course-calendar.html" class="all-courses-calendar-link body">Course Calendar</a>
+                </div>
+
+                <div class="all-courses-results" id="all-courses-results">
+                    <article class="all-courses-course-card" data-filter-card data-program="enterprise"
+                        data-level="foundations" data-topic="research"
+                        data-search="science of experience design enterprise foundations human science evidence-led cua">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">ENTERPRISE</p>
+                                <span class="all-courses-course-level caption">FOUNDATIONS</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                Science of Experience Design
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>25 Feb 2026</strong>
                             </p>
-                            <div class="all-courses-search">
-                                <input id="all-courses-search-input" class="all-courses-search-input body" type="search"
-                                    placeholder="Search" aria-label="Search courses" />
-                                <button type="button" class="all-courses-search-button" aria-label="Search courses">
-                                    <svg class="all-courses-search-icon" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2" />
-                                        <path d="M16 16L20 20" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                            </div>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>48,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                40 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>Human Science</li>
+                                <li>Foundational</li>
+                                <li>Evidence-Led</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Certified Usability Architect (CUA&trade;)
+                                Track
+                            </p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
 
-    <!--------------------------- 
-        EXPERIENCE PATHWAY SECTION
-    ------------------------------>
-    <section class="all-courses-pathway-section">
-        <div class="container">
-            <div class="all-courses-pathway-header text-center">
-                <h2 class="all-courses-pathway-title">
-                    The Experience Architect Pathway
-                </h2>
-                <p class="all-courses-pathway-lead body">
-                    Develop capability progressively from human-centered foundations to
-                    enterprise experience leadership.
+                    <article class="all-courses-course-card" data-filter-card data-program="certification"
+                        data-level="practitioner" data-topic="research"
+                        data-search="experience research strategy certification practitioner user research service strategy">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">CERTIFICATION</p>
+                                <span class="all-courses-course-level caption">PRACTITIONER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                Experience Research &amp; Strategy
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>11 Mar 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>52,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                32 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>User Research</li>
+                                <li>Strategy</li>
+                                <li>Insights</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Certified Usability Architect (CUA&trade;)
+                                Track
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="certification"
+                        data-level="practitioner" data-topic="design-systems"
+                        data-search="interface design design systems certification practitioner ui ux systems">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">CERTIFICATION</p>
+                                <span class="all-courses-course-level caption">PRACTITIONER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                Interface Design &amp; Design Systems
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>19 Mar 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>54,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                36 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>UI Systems</li>
+                                <li>Patterns</li>
+                                <li>Accessibility</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Certified Usability Architect (CUA&trade;)
+                                Track
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="team"
+                        data-level="foundations" data-topic="research"
+                        data-search="essentials of experience design team enablement foundations human centered design">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">TEAM ENABLEMENT</p>
+                                <span class="all-courses-course-level caption">FOUNDATIONS</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                Essentials of Experience Design
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>02 Apr 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>36,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                24 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>Human-Centered</li>
+                                <li>Team Skills</li>
+                                <li>Foundational</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Experience Architect Pathway
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="enterprise"
+                        data-level="leader" data-topic="strategy"
+                        data-search="cx and strategy architect enterprise leader strategy transformation governance">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">ENTERPRISE</p>
+                                <span class="all-courses-course-level caption">LEADER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                CX and Strategy Architect
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>15 Apr 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>68,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                30 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>Strategy</li>
+                                <li>Leadership</li>
+                                <li>Transformation</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Certified eXperience Architect (CUA&trade;)
+                                Track
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="enterprise"
+                        data-level="leader" data-topic="persuasion"
+                        data-search="digital persuasion architecture enterprise leader persuasion trust influence">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">ENTERPRISE</p>
+                                <span class="all-courses-course-level caption">LEADER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                Digital Persuasion Architecture
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>28 Apr 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>61,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                28 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>Influence</li>
+                                <li>Trust</li>
+                                <li>Behavior</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Certified Digital Persuasion Architect
+                                (CDPA&trade;) Track
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="certification"
+                        data-level="practitioner" data-topic="persuasion"
+                        data-search="pet design certification practitioner persuasion emotion trust behavior">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">CERTIFICATION</p>
+                                <span class="all-courses-course-level caption">PRACTITIONER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">PET Design</h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>06 May 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>44,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                20 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>Persuasion</li>
+                                <li>Emotion</li>
+                                <li>Trust</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Certified Digital Persuasion Architect
+                                (CDPA&trade;) Track
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="team" data-level="leader"
+                        data-topic="persuasion"
+                        data-search="ai powered persuasion strategist team leader persuasion ai leadership">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">TEAM ENABLEMENT</p>
+                                <span class="all-courses-course-level caption">LEADER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                AI-Powered Persuasion Strategist
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>18 May 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>72,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                26 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li>AI Strategy</li>
+                                <li>Leadership</li>
+                                <li>Influence</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Experience Practice Architect Track
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+
+                    <article class="all-courses-course-card" data-filter-card data-program="enterprise"
+                        data-level="leader" data-topic="strategy"
+                        data-search="experience practice architect enterprise leader strategy governance operations">
+                        <div class="card-header">
+                            <div class="all-courses-course-card-top">
+                                <p class="all-courses-course-program label">ENTERPRISE</p>
+                                <span class="all-courses-course-level caption">LEADER</span>
+                            </div>
+                            <h3 class="all-courses-course-title heading-5">
+                                Experience Practice Architect
+                            </h3>
+                        </div>
+                        <div class="card-context">
+                            <p class="all-courses-course-date body-large">
+                                Next cohort Starts <strong>02 Jun 2026</strong>
+                            </p>
+                            <p class="all-courses-course-investment body-large">
+                                Investment
+                                <strong>78,000 (All Inclusive)</strong>
+                            </p>
+                            <p class="all-courses-course-meta body-small">
+                                34 hours • live online • certificate of completion
+                            </p>
+                            <ul class="all-courses-course-tags list-unstyled caption">
+                                <li class="caption">Governance</li>
+                                <li class="caption">Operations</li>
+                                <li class="caption">Enterprise</li>
+                            </ul>
+                            <p class="all-courses-course-track body-small">
+                                This course is part of the Experience Architect Pathway
+                            </p>
+                        </div>
+                        <div class="all-courses-course-actions">
+                            <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
+                            <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="all-courses-empty-state body" id="all-courses-empty-state" hidden>
+                    No courses match the selected filters.
                 </p>
             </div>
+        </section>
 
-            <div class="all-courses-pathway-grid">
-                <article class="all-courses-pathway-card">
-                    <div class="all-courses-pathway-card-head">
-                        <span class="all-courses-pathway-step heading-6">1</span>
-                        <h3 class="all-courses-pathway-card-title heading-6">
-                            Foundations
-                        </h3>
-                    </div>
-                    <p class="all-courses-pathway-card-intro body-small">
-                        Human science and evidence-led design decisions.
-                    </p>
-                    <ul class="all-courses-pathway-list label">
-                        <li>Science of Experience Design</li>
-                        <li>Essentials of Experience Design</li>
-                    </ul>
-                    <p class="all-courses-pathway-card-summary label">
-                        Build the scientific foundation for human-centered systems.
-                    </p>
-                </article>
+        <!--------------------------- 
+        CERTIFIED USABILITY ANALYST SECTION
+        ------------------------------>
+        <section class="certification-certified-usability-analyst-section bg-white">
 
-                <article class="all-courses-pathway-card">
-                    <div class="all-courses-pathway-card-head">
-                        <span class="all-courses-pathway-step heading-6">2</span>
-                        <h3 class="all-courses-pathway-card-title heading-6">
-                            Practitioner
-                        </h3>
-                    </div>
-                    <p class="all-courses-pathway-card-intro body-small">
-                        Applied design, research, and persuasion practice.
-                    </p>
-                    <ul class="all-courses-pathway-list label">
-                        <li>Certified Usability Architect</li>
-                        <li>Experience Research &amp; Strategy</li>
-                        <li>Interface Design &amp; Design Systems</li>
-                        <li>Experience Performance Evaluation</li>
-                        <li>PET Design</li>
-                        <li>Certified Digital Persuasion Architect</li>
-                    </ul>
-                    <p class="all-courses-pathway-card-summary label">
-                        Apply research, usability, and persuasion frameworks in real
-                        systems.
-                    </p>
-                </article>
-
-                <article class="all-courses-pathway-card">
-                    <div class="all-courses-pathway-card-head">
-                        <span class="all-courses-pathway-step heading-6">3</span>
-                        <h3 class="all-courses-pathway-card-title heading-6">Leader</h3>
-                    </div>
-                    <p class="all-courses-pathway-card-intro body-small">
-                        Strategic influence and experience architecture.
-                    </p>
-                    <ul class="all-courses-pathway-list label">
-                        <li>Digital Persuasion Architecture</li>
-                        <li>CX and Strategy Architect</li>
-                        <li>Certified eXperience Architect</li>
-                    </ul>
-                    <p class="all-courses-pathway-card-summary label">
-                        Lead experience strategy and influence across products and
-                        journeys.
-                    </p>
-                </article>
-
-                <article class="all-courses-pathway-card">
-                    <div class="all-courses-pathway-card-head">
-                        <span class="all-courses-pathway-step heading-6">4</span>
-                        <h3 class="all-courses-pathway-card-title heading-6">
-                            Enterprise
-                        </h3>
-                    </div>
-                    <p class="all-courses-pathway-card-intro body-small">
-                        Scaling experience capability across organizations.
-                    </p>
-                    <ul class="all-courses-pathway-list label">
-                        <li>Experience Practice Architect</li>
-                        <li>AI-Powered Persuasion Strategist (Leadership)</li>
-                    </ul>
-                    <p class="all-courses-pathway-card-summary label">
-                        Embed experience into governance, culture, and enterprise
-                        operations.
-                    </p>
-                </article>
+            <div class="certification-certified-usability-analyst-image-wrap">
+                <img src="assets/images/dotted_arrow.svg" alt="Usability Analyst"
+                    class="certification-certified-usability-analyst-image" aria-hidden="true" width="100%"
+                    height="100%">
             </div>
 
-            <div class="all-courses-pathway-action text-center">
-                <a href="#" class="all-courses-pathway-cta body">Explore the Pathway</a>
-            </div>
-    </section>
-
-    <!--------------------------- 
-        COURSE LISTING SECTION
-    ------------------------------>
-    <section class="all-courses-listing-section">
-        <div class="container">
-            <div class="all-courses-filters">
-                <div class="all-courses-filters-controls">
-                    <select class="all-courses-filter-select body" id="all-courses-filter-program"
-                        aria-label="Filter by program">
-                        <option value="all">All Programs</option>
-                        <option value="enterprise">Enterprise</option>
-                        <option value="certification">Certification</option>
-                        <option value="team">Team Enablement</option>
-                    </select>
-
-                    <select class="all-courses-filter-select body" id="all-courses-filter-level"
-                        aria-label="Filter by level">
-                        <option value="all">All Levels</option>
-                        <option value="foundations">Foundations</option>
-                        <option value="practitioner">Practitioner</option>
-                        <option value="leader">Leader</option>
-                    </select>
-
-                    <select class="all-courses-filter-select body" id="all-courses-filter-topic"
-                        aria-label="Filter by topic">
-                        <option value="all">All Topics</option>
-                        <option value="research">Research</option>
-                        <option value="design-systems">Design Systems</option>
-                        <option value="persuasion">Persuasion</option>
-                        <option value="strategy">Strategy</option>
-                    </select>
-                </div>
-
-                <a href="course-calendar.html" class="all-courses-calendar-link body">Course Calendar</a>
-            </div>
-
-            <div class="all-courses-results" id="all-courses-results">
-                <article class="all-courses-course-card" data-filter-card data-program="enterprise"
-                    data-level="foundations" data-topic="research"
-                    data-search="science of experience design enterprise foundations human science evidence-led cua">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">ENTERPRISE</p>
-                            <span class="all-courses-course-level caption">FOUNDATIONS</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            Science of Experience Design
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>25 Feb 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>48,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            40 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>Human Science</li>
-                            <li>Foundational</li>
-                            <li>Evidence-Led</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Certified Usability Architect (CUA)
-                            Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="certification"
-                    data-level="practitioner" data-topic="research"
-                    data-search="experience research strategy certification practitioner user research service strategy">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">CERTIFICATION</p>
-                            <span class="all-courses-course-level caption">PRACTITIONER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            Experience Research &amp; Strategy
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>11 Mar 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>52,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            32 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>User Research</li>
-                            <li>Strategy</li>
-                            <li>Insights</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Certified Usability Architect (CUA)
-                            Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="certification"
-                    data-level="practitioner" data-topic="design-systems"
-                    data-search="interface design design systems certification practitioner ui ux systems">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">CERTIFICATION</p>
-                            <span class="all-courses-course-level caption">PRACTITIONER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            Interface Design &amp; Design Systems
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>19 Mar 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>54,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            36 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>UI Systems</li>
-                            <li>Patterns</li>
-                            <li>Accessibility</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Certified Usability Architect (CUA)
-                            Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="team" data-level="foundations"
-                    data-topic="research"
-                    data-search="essentials of experience design team enablement foundations human centered design">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">TEAM ENABLEMENT</p>
-                            <span class="all-courses-course-level caption">FOUNDATIONS</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            Essentials of Experience Design
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>02 Apr 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>36,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            24 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>Human-Centered</li>
-                            <li>Team Skills</li>
-                            <li>Foundational</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Experience Architect Pathway
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="enterprise" data-level="leader"
-                    data-topic="strategy"
-                    data-search="cx and strategy architect enterprise leader strategy transformation governance">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">ENTERPRISE</p>
-                            <span class="all-courses-course-level caption">LEADER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            CX and Strategy Architect
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>15 Apr 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>68,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            30 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>Strategy</li>
-                            <li>Leadership</li>
-                            <li>Transformation</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Certified eXperience Architect (CXA)
-                            Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="enterprise" data-level="leader"
-                    data-topic="persuasion"
-                    data-search="digital persuasion architecture enterprise leader persuasion trust influence">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">ENTERPRISE</p>
-                            <span class="all-courses-course-level caption">LEADER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            Digital Persuasion Architecture
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>28 Apr 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>61,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            28 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>Influence</li>
-                            <li>Trust</li>
-                            <li>Behavior</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Certified Digital Persuasion Architect
-                            (CDPA) Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="certification"
-                    data-level="practitioner" data-topic="persuasion"
-                    data-search="pet design certification practitioner persuasion emotion trust behavior">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">CERTIFICATION</p>
-                            <span class="all-courses-course-level caption">PRACTITIONER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">PET Design</h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>06 May 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>44,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            20 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>Persuasion</li>
-                            <li>Emotion</li>
-                            <li>Trust</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Certified Digital Persuasion Architect
-                            (CDPA) Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="team" data-level="leader"
-                    data-topic="persuasion"
-                    data-search="ai powered persuasion strategist team leader persuasion ai leadership">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">TEAM ENABLEMENT</p>
-                            <span class="all-courses-course-level caption">LEADER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            AI-Powered Persuasion Strategist
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>18 May 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>72,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            26 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li>AI Strategy</li>
-                            <li>Leadership</li>
-                            <li>Influence</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Experience Practice Architect Track
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-
-                <article class="all-courses-course-card" data-filter-card data-program="enterprise" data-level="leader"
-                    data-topic="strategy"
-                    data-search="experience practice architect enterprise leader strategy governance operations">
-                    <div class="card-header">
-                        <div class="all-courses-course-card-top">
-                            <p class="all-courses-course-program label">ENTERPRISE</p>
-                            <span class="all-courses-course-level caption">LEADER</span>
-                        </div>
-                        <h3 class="all-courses-course-title heading-5">
-                            Experience Practice Architect
-                        </h3>
-                    </div>
-                    <div class="card-context">
-                        <p class="all-courses-course-date body-large">
-                            Next cohort Starts <strong>02 Jun 2026</strong>
-                        </p>
-                        <p class="all-courses-course-investment body-large">
-                            Investment
-                            <strong>78,000 (All Inclusive)</strong>
-                        </p>
-                        <p class="all-courses-course-meta body-small">
-                            34 hours • live online • certificate of completion
-                        </p>
-                        <ul class="all-courses-course-tags list-unstyled caption">
-                            <li class="caption">Governance</li>
-                            <li class="caption">Operations</li>
-                            <li class="caption">Enterprise</li>
-                        </ul>
-                        <p class="all-courses-course-track body-small">
-                            This course is part of the Experience Architect Pathway
-                        </p>
-                    </div>
-                    <div class="all-courses-course-actions">
-                        <a href="#" class="all-courses-course-primary body-small">Explore Pathway</a>
-                        <a href="#" class="all-courses-course-secondary body-small">Download Syllabus</a>
-                    </div>
-                </article>
-            </div>
-
-            <p class="all-courses-empty-state body" id="all-courses-empty-state" hidden>
-                No courses match the selected filters.
-            </p>
-        </div>
-    </section>
-
-    <!--------------------------- 
-       CERTIFIED USABILITY ANALYST SECTION
-    ------------------------------>
-    <section class="certification-certified-usability-analyst-section bg-white">
-
-        <div class="certification-certified-usability-analyst-image-wrap">
-            <img src="assets/images/dotted_arrow.svg" alt="Usability Analyst"
-                class="certification-certified-usability-analyst-image" aria-hidden="true" width="100%" height="100%">
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="certification-certified-usability-analyst-inner">
-                        <h2 class="certification-certified-usability-analyst-title heading-3">Become a Certified
-                            Usability Analyst™</h2>
-                        <p class="certification-certified-usability-analyst-lead body">Advance your expertise with a
-                            globally respected UX certification.</p>
-                        <div class="certification-certified-usability-analyst-actions">
-                            <a href="#"
-                                class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-primary body font-demibold">Register
-                                for Next CUA Batch</a>
-                            <a href="#"
-                                class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-secondary body font-demibold">
-                                <svg class="certification-certified-usability-analyst-btn-icon" width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                                Talk to a Program Advisor
-                            </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="certification-certified-usability-analyst-inner">
+                            <h2 class="certification-certified-usability-analyst-title heading-3">Become a Certified
+                                Usability Analyst™</h2>
+                            <p class="certification-certified-usability-analyst-lead body">Advance your expertise with a
+                                globally respected UX certification.</p>
+                            <div class="certification-certified-usability-analyst-actions">
+                                <a href="#"
+                                    class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-primary body font-demibold">Register
+                                    for Next CUA&trade; Batch</a>
+                                <a href="#"
+                                    class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-secondary body font-demibold">
+                                    <svg class="certification-certified-usability-analyst-btn-icon" width="18"
+                                        height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    Talk to a Program Advisor
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!--------------------------- 
         FOOTER
@@ -847,25 +876,51 @@
         <div class="footer-main">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-6 footer-brand">
+                    <div class="col-12 col-lg-12 footer-brand">
                         <div class="footer-logo mb-4">
-                            <img src="assets/images/logo.svg" alt="HFI" />
+                            <img src="assets/images/logo.svg" alt="HFI">
                         </div>
-                        <p class="footer-tagline body-small mb-0">
-                            Building the World's Experience Talent Capital
-                        </p>
-                        <p class="footer-desc body-small">
-                            Rooted in the legacy of Human Factors International, HFI
-                            Institute develops Experience Architects and partners with
-                            organizations to build adaptive, enterprise-scale experience
-                            capability.
-                        </p>
-                        <p class="footer-desc body-small">
-                            We architect leadership for the Experience Economy.
-                        </p>
+
+                        <div class="context-wrap">
+                            <div class="content">
+                                <p class="footer-tagline body-small mb-0">Building the World's Experience Talent Capital
+                                </p>
+                                <p class="footer-desc body-small">Rooted in the legacy of Human Factors International,
+                                    HFI
+                                    Institute
+                                    develops Experience Architects and partners with organizations to build adaptive,
+                                    enterprise-scale experience capability.</p>
+                                <p class="footer-desc body-small">We architect leadership for the Experience Economy.
+                                </p>
+                            </div>
+
+                            <div class="footer-brand-country">
+                                <button type="button" class="footer-country-choice body-small"
+                                    id="footer-country-choice-trigger" data-bs-toggle="modal"
+                                    data-bs-target="#country-region-modal" aria-haspopup="dialog"
+                                    aria-controls="country-region-modal">
+                                    <svg class="footer-country-choice-icon" xmlns="http://www.w3.org/2000/svg"
+                                        width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg>
+                                    <span>Choose Your Country</span>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
+
+
+
+
                 </div>
                 <div class="row g-4 py-0 py-md-5">
+
                     <div class="col-12 col-md-6 col-lg-3 footer-col">
                         <ul class="footer-links list-unstyled">
                             <li><a href="#" class="body-small">About us</a></li>
@@ -879,61 +934,40 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 footer-col">
                         <h3 class="footer-heading body">Get Certified</h3>
-                        <p class="footer-subheading body-small">
-                            Professional Certification Pathways
-                        </p>
+                        <p class="footer-subheading body-small">Professional Certification Pathways</p>
                         <ul class="footer-links list-unstyled">
-                            <li>
-                                <a href="#" class="body-small">Experience Architect Pathway</a>
-                            </li>
-                            <li><a href="cua-certification.html" class="body-small">Certified Usability Architect (CUA)</a></li>
-                            <li><a href="cdpa-certification.html" class="body-small">Certified Digital Persuasion Architect (CDPA)</a></li>
-                            <li><a href="cxa-certification.html" class="body-small">Certified Experience Architect (CXA)</a></li>
+                            <li><a href="#" class="body-small">Experience Architect Pathway</a></li>
+                            <li><a href="cua-certification.html" class="body-small">Certified Usability Architect
+                                    (CUA&trade;)</a></li>
+                            <li><a href="cdpa-certification.html" class="body-small">Certified Digital Persuasion
+                                    Architect (CDPA&trade;)</a></li>
+                            <li><a href="cxa-certification.html" class="body-small">Certified Experience Architect
+                                    (CXA&trade;)</a></li>
                             <li><a href="#" class="body-small">Certification Exams</a></li>
                             <li><a href="#" class="body-small">Upcoming Cohorts</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 footer-col">
                         <h3 class="footer-heading body">Transform Teams</h3>
-                        <p class="footer-subheading body-small">
-                            Enterprise Capability Development
-                        </p>
+                        <p class="footer-subheading body-small">Enterprise Capability Development</p>
                         <ul class="footer-links list-unstyled">
-                            <li>
-                                <a href="#" class="body-small">Essentials of Experience Design</a>
-                            </li>
-                            <li>
-                                <a href="#" class="body-small">AI-Powered Persuasion Strategist</a>
-                            </li>
-                            <li>
-                                <a href="#" class="body-small">Experience Maturity Programs</a>
-                            </li>
-                            <li>
-                                <a href="#" class="body-small">Governance & Operating Models</a>
-                            </li>
+                            <li><a href="#" class="body-small">Essentials of Experience Design</a></li>
+                            <li><a href="#" class="body-small">AI-Powered Persuasion Strategist</a></li>
+                            <li><a href="#" class="body-small">Experience Maturity Programs</a></li>
+                            <li><a href="#" class="body-small">Governance & Operating Models</a></li>
                             <li><a href="#" class="body-small">Enterprise Advisory</a></li>
                             <li><a href="#" class="body-small">Request a Proposal</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 footer-col">
                         <h3 class="footer-heading body">Explore Insights</h3>
-                        <p class="footer-subheading body-small">
-                            Enterprise Capability Development
-                        </p>
+                        <p class="footer-subheading body-small">Stories, Insights & Events</p>
                         <ul class="footer-links list-unstyled">
-                            <li>
-                                <a href="#" class="body-small">Insights & Thought Leadership</a>
-                            </li>
-                            <li>
-                                <a href="#" class="body-small">Research & Whitepapers</a>
-                            </li>
-                            <li>
-                                <a href="#" class="body-small">Events & Masterclasses</a>
-                            </li>
+                            <li><a href="#" class="body-small">Insights & Thought Leadership</a></li>
+                            <li><a href="#" class="body-small">Research & Whitepapers</a></li>
+                            <li><a href="#" class="body-small">Events & Masterclasses</a></li>
                             <li><a href="#" class="body-small">Alumni Network</a></li>
-                            <li>
-                                <a href="#" class="body-small">Academic & Industry Partnerships</a>
-                            </li>
+                            <li><a href="#" class="body-small">Academic & Industry Partnerships</a></li>
                             <li><a href="#" class="body-small">Newsletter</a></li>
                         </ul>
                     </div>
@@ -943,16 +977,15 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row align-items-center py-3 py-md-4 footer-bottom-content">
-                    <div class="col-12 col-md-6 footer-copyright text-center text-md-start caption">
-                        © 2026 HFI Training and Solutions Inc., Architecting Leaders for
-                        the Experience Economy.
+                    <div class="col-12 col-md-3 footer-copyright text-center text-md-start body-small">
+                        © 2026 HFI Training and Solutions Inc.
                     </div>
-                    <div class="col-12 col-md-6 footer-legal text-center text-md-end mt-2 mt-md-0 caption">
+                    <div class="col-12 col-md-9 footer-legal text-center text-md-end mt-2 mt-md-0 body-small">
                         <a href="#">Privacy Policy</a>
                         <span class="footer-sep">|</span>
-                        <a href="#">Terms of Use</a>
+                        <a href="#">Terms of Use and Cookie Policy</a>
                         <span class="footer-sep">|</span>
-                        <a href="#">Accessibility Statement</a>
+                        <a href="#">Training & Cancellation Policy</a>
                         <span class="footer-sep">|</span>
                         <a href="#" aria-label="LinkedIn">LinkedIn</a>
                         <span class="footer-sep">|</span>
@@ -964,6 +997,50 @@
             </div>
         </div>
     </footer>
+
+    <!--------------------------- 
+        CHOOSE YOUR COUNTRY MODAL
+    ------------------------------>
+    <div class="modal fade" id="country-region-modal" tabindex="-1" aria-labelledby="country-region-modal-title"
+        aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered country-region-modal-dialog">
+            <div class="modal-content country-region-modal">
+                <button type="button" class="btn-close country-region-modal-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <h2 class="country-region-modal-title heading-5" id="country-region-modal-title">Choose your country
+                </h2>
+                <p class="country-region-modal-lead body-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor</p>
+                <div class="row g-4 country-region-modal-grid">
+                    <div class="col-12 col-sm-6">
+                        <ul class="country-region-modal-list">
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">India</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Europe</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">United States of America</button>
+                            </li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Malaysia</button></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <ul class="country-region-modal-list">
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">South Africa</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Middle East</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Singapore</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Canada</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="assets/vendor/jquery.js"></script>
 <script src="assets/vendor/bootstrap.js"></script>

@@ -453,6 +453,401 @@
         return;
     }
 
+    // Populate testimonial slides (keeps the existing SVGs and avatar image).
+    const swiperWrapper = sliderEl.querySelector(".swiper-wrapper");
+    const templateSlide = swiperWrapper ? swiperWrapper.querySelector(".swiper-slide") : null;
+
+    function setSlideText(slideEl, testimonial) {
+        const quoteEl = slideEl.querySelector(".experience-practice-quote");
+        const authorEl = slideEl.querySelector(".experience-practice-author");
+        const designationEl = slideEl.querySelector(".experience-practice-designation");
+        const companyEl = slideEl.querySelector(".experience-practice-company");
+        const avatarEl = slideEl.querySelector(".experience-practice-avatar img");
+
+        if (quoteEl) {
+            const startSvg = quoteEl.querySelector("svg.start_quote");
+            const endSvg = quoteEl.querySelector("svg.end_quote");
+            if (startSvg && endSvg) {
+                // Replace only the text between the existing SVGs.
+                quoteEl.innerHTML = "";
+                quoteEl.appendChild(startSvg);
+                quoteEl.appendChild(document.createTextNode(testimonial.quote || ""));
+                quoteEl.appendChild(endSvg);
+            }
+        }
+
+        if (authorEl) {
+            authorEl.innerHTML = "";
+            if (testimonial.name) {
+                const dashSpan = document.createElement("span");
+                dashSpan.setAttribute("aria-hidden", "true");
+                dashSpan.textContent = "—";
+                authorEl.appendChild(dashSpan);
+                authorEl.appendChild(document.createTextNode(" " + testimonial.name));
+            }
+        }
+
+        if (avatarEl) {
+            avatarEl.src = "./assets/images/" + testimonial.image || "";
+        }
+
+        if (designationEl) {
+            designationEl.textContent = testimonial.designation || "";
+        }
+        if (companyEl) {
+            companyEl.textContent = testimonial.company || "";
+        }
+    }
+
+    if (swiperWrapper && templateSlide) {
+        const testimonials = [
+            {
+                name: "Shalaka Sathaye",
+                designation: "Senior Specialist - UX",
+                company: "SunGard",
+                image: "testimonial-avator.jpg",
+                regionPage: "index.html",
+                quote: "HFI transformed my approach to design, making it more structured and focused on usability. I only wish I had started earlier."
+            },
+            {
+                name: "Amol Jambhekar",
+                designation: "UX Engineer",
+                company: "Index Engines",
+                image: "amoljambhekar.jpg",
+                regionPage: "index.html",
+                quote: "The support and learning experience strengthened my skills significantly, and I look forward to continuing the journey."
+            },
+            {
+                name: "Sujeesh Sukumaran",
+                designation: "Founder",
+                company: "Pepper Wellness, PVT LTD",
+                image: "Sujeesh-Sukumaran.jpg",
+                regionPage: "index.html",
+                quote: "My approach is now systematic and user-driven. I rely less on instinct and more on research and validation."
+            },
+            {
+                name: "Sandesh Subedi",
+                designation: "Co-founder",
+                company: "ProCreator - Global Design Agency & ProApp",
+                image: "Sandesh-Subedi.jpg",
+                regionPage: "index.html",
+                quote: "HFI helped me turn curiosity into real capability. I now design with deeper user understanding and communicate ideas with confidence."
+            },
+            {
+                name: "Bony John",
+                designation: "Asst. UI/UX Design Manager",
+                company: "HT Digital Systems",
+                image: "BonyJohn.jpg",
+                regionPage: "index.html",
+                quote: "A valuable experience with strong expertise, inspiring peers, and meaningful learning that brought me closer to my goals."
+            },
+            {
+                name: "Joydeep MItra",
+                designation: "Associate Director UX",
+                company: "Kyndryl Vital Studios",
+                image: "JoydeepMitra.jpg",
+                regionPage: "index.html",
+                quote: "HFI stands out as a credible leader in experience design. The learning strengthened both my foundation and the quality of my work."
+            },
+            {
+                name: "Pragya Jawar",
+                designation: "UX Professional",
+                company: "",
+                image: "PragyaJhawar.jpg",
+                regionPage: "index.html",
+                quote: "The experience exceeded my expectations. I gained clarity, confidence, and the ability to justify decisions with solid reasoning."
+            },
+            {
+                name: "Leena Khatri",
+                designation: "Senior User Experience Designer",
+                company: "SAPS Labs",
+                image: "LeenaKhatri.jpg",
+                regionPage: "index.html",
+                quote: "I now have a structured foundation that helps me refine processes, mentor others, and contribute more effectively to experience strategy."
+            },
+            {
+                name: "Anishka Gurjar",
+                designation: "Principal User Experience Designer",
+                company: "UBS",
+                image: "Anishka-Gurjar.jpg",
+                regionPage: "index.html",
+                quote: "The learning helped me think beyond individual interactions and identify high-impact opportunities within complex systems."
+            },
+            {
+                name: "Sathish Sankaraiah",
+                designation: "Advisor - Experience Design Strategy",
+                company: "Innova Solutions",
+                image: "Sathish-Sankaraiah.jpg",
+                regionPage: "index.html",
+                quote: "An insightful experience that encouraged strong collaboration and brought new perspectives to how teams work together."
+            },
+            {
+                name: "Chow Sok Mui Murie",
+                designation: "Senior Creative Consultant",
+                company: "NCS",
+                image: "Chow-Sok-Mui-Murie.jpg",
+                regionPage: "sg.html",
+                quote: "HFI training gave me the confidence to approach usability challenges with clarity and structure."
+            },
+            {
+                name: "Carl Jhon Steven M. Ignacio",
+                designation: "UI/UX Designer",
+                company: "Shopping Center Management Corporation",
+                image: "Carl-Jhon.jpg",
+                regionPage: "au.html",
+                quote: "My thinking has evolved to design with empathy, structure, and a deeper understanding of user behavior."
+            },
+            {
+                name: "Rachel Shong",
+                designation: "Senior Manager",
+                company: "GovTech Singapore",
+                image: "Rachel-Shong.jpg",
+                regionPage: "sg.html",
+                quote: "The learning helped me bridge complex technology with real user needs, creating more meaningful outcomes."
+            },
+            {
+                name: "Kausar Jahan",
+                designation: "Senior UX Specialist",
+                company: "Road Transport Authority",
+                image: "Kausar-Jahan.jpg",
+                regionPage: "uae.html",
+                quote: "HFI transformed how I see design. It is about the entire experience, not just individual interfaces."
+            },
+            {
+                name: "Richa Gupta",
+                designation: "Lead UX Design & Researcher",
+                company: "SC Ventures - myZoi",
+                image: "Richa-Gupta.jpg",
+                regionPage: "uae.html",
+                quote: "A highly engaging experience that broadened my perspective and brought valuable insights into service design."
+            },
+            {
+                name: "Nombulelo Mahoda",
+                designation: "Service Designer",
+                company: "NedBank",
+                image: "Nombulelo-Mahoda.jpg",
+                regionPage: "sa.html",
+                quote: "The learning introduced fresh perspectives and practical tools, especially in understanding systems and ecosystems."
+            },
+            {
+                name: "Kamohelo Kuaho",
+                designation: "Senior Design Research Lead",
+                company: "Nedbank",
+                image: "Kamohelo-Kuaho.jpg",
+                regionPage: "sa.html",
+                quote: "A strong, science-backed approach that brought structure and influence to how I approach design research."
+            },
+            {
+                name: "Stefan Grobler",
+                designation: "Principal Service Design",
+                company: "NedBank",
+                image: "Stefan-Grobler.jpg",
+                regionPage: "sa.html",
+                quote: "The program helped me standardize processes and adopt new tools that improved how I work."
+            },
+            {
+                name: "Bheki Ntanzi",
+                designation: "UX Specialist",
+                company: "First National Bank",
+                image: "Bheki-Ntanzi.jpg",
+                regionPage: "sa.html",
+                quote: "I now approach design with data and insight, uncovering user needs and creating more impactful solutions."
+            },
+            {
+                name: "Supreetha Pavan",
+                designation: "Lead UX Designer",
+                company: "Siemens",
+                image: "SupreethaPavan.jpg",
+                regionPage: "uk.html",
+                quote: "The experience helped me shift to a truly user-centered approach, with the confidence to design for the future."
+            },
+            {
+                name: "Art Zippel",
+                designation: "Information Architect",
+                company: "Word and Brown Companies",
+                image: "Art-Zippel.jpg",
+                regionPage: "us.html",
+                quote: "A career-defining decision that delivered real impact within a short span of time."
+            },
+            {
+                name: "Amy Bogatch",
+                designation: "Information Architect",
+                company: "AXA Equitable",
+                image: "Amy-Bogatch.jpg",
+                regionPage: "us.html",
+                quote: "Our team now follows a more structured and scientific approach, clearly reflected in the quality of our work."
+            },
+            {
+                name: "VJ Francisco",
+                designation: "Head of Experience Design",
+                company: "Global Telecom",
+                image: "VJ-Francisco.jpg",
+                regionPage: "us.html",
+                quote: "The learning strengthened my credibility and helped me communicate the value of design more effectively."
+            },
+            {
+                name: "Christine J. Tahvonen",
+                designation: "Web & App Design",
+                company: "TransUnion",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "I now design with greater confidence, using a research-driven approach to guide decisions."
+            },
+            {
+                name: "Vince Conti",
+                designation: "Manager, Interactive Development",
+                company: "American Express",
+                image: "Vince-Conti.jpg",
+                regionPage: "us.html",
+                quote: "A well-balanced learning experience with the right mix of theory, discussion, and practical application."
+            },
+            {
+                name: "Leah Gillespie",
+                designation: "Senior Web Producer",
+                company: "Baltimore Gas & Electric",
+                image: "Leah-Gillespie.jpg",
+                regionPage: "us.html",
+                quote: "The program expanded my understanding of usability and introduced new techniques I now actively apply."
+            },
+            {
+                name: "Jim O'Brien",
+                designation: "Senior Interaction Designer",
+                company: "AutoTrader.com",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "It reinforced my skills and gave me the confidence to present ideas with clarity and conviction."
+            },
+            {
+                name: "Linda Moir",
+                designation: "Manager, Web Communications",
+                company: "Alberta Blue Cross",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "HFI sets a high standard in usability, helping professionals deliver stronger and more consistent results."
+            },
+            {
+                name: "Lisanne Wirth",
+                designation: "UX/CX Content Strategist, Founder and Owner",
+                company: "Contentment Communications",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "The learning improved my effectiveness and deepened my understanding of experience driven by human behavior."
+            },
+            {
+                name: "Zakariah Lewis Longo",
+                designation: "Manager and UX Lead",
+                company: "AAA Auto Club Enterprises",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "An insightful and valuable experience guided by expert instructors and well-structured sessions."
+            },
+            {
+                name: "Cissy Liu",
+                designation: "Program Manager",
+                company: "Salesforce",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "A strong foundation that made learning practical, engaging, and immediately applicable."
+            },
+            {
+                name: "Crilly Butler Jr",
+                designation: "Senior Information Systems Analyst and Intranet Webmaster",
+                company: "Department of Fish and Game",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "It improved how I structure and communicate ideas, strengthening both clarity and credibility."
+            },
+            {
+                name: "Caitlin Ing",
+                designation: "",
+                company: "",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "The experience deepened my understanding of user psychology and improved how I make design decisions."
+            },
+            {
+                name: "Brenda Halvorson",
+                designation: "Fractional UX Design & Research Consultant",
+                company: "Steep Perspectives",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "It helped me articulate and refine practices I had been using intuitively for years."
+            },
+            {
+                name: "Eugenia Ovenko",
+                designation: "Designer",
+                company: "UBS",
+                image: "Eugenia-Ovenko.jpg",
+                regionPage: "us.html",
+                quote: "A clear and well-delivered learning experience that made complex concepts easy to understand."
+            },
+            {
+                name: "Maheen Riaz Qureshi",
+                designation: "Senior UX Designer | Product Designer Independent UX Consultant",
+                company: "Freelance",
+                image: "testimonial-avator.jpg",
+                regionPage: "ca.html",
+                quote: "A highly informative program that strengthened my understanding of usability principles and frameworks."
+            },
+            {
+                name: "Jennifer Cunningham",
+                designation: "Experience Lead",
+                company: "State Farm Insurance",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "A challenging and rewarding experience that connected theory with real-world application."
+            },
+            {
+                name: "Maheen Riaz Qureshi",
+                designation: "Senior UX Designer | Product Designer Independent UX Consultant",
+                company: "Freelance",
+                image: "testimonial-avator.jpg",
+                regionPage: "ca.html",
+                quote: "The learning provided strong insights into analytics and how to use data to improve experiences."
+            },
+            {
+                name: "Sydney Chen",
+                designation: "",
+                company: "",
+                image: "testimonial-avator.jpg",
+                regionPage: "us.html",
+                quote: "Hands-on learning significantly improved my confidence in conducting and applying research."
+            }
+        ];
+
+        const blankTestimonial = { name: "", designation: "", company: "", quote: "", image: "" };
+
+        const pageFile = ((window.location && window.location.pathname) ? window.location.pathname : "")
+            .split(/[\\/]/)
+            .pop()
+            .toLowerCase()
+            .split("?")[0]
+            .split("#")[0];
+
+        const resolvedPageFile = pageFile && pageFile.endsWith(".html") ? pageFile : "index.html";
+
+        // Render only testimonials that match the current HTML page.
+        const regionTestimonials = testimonials.filter(function (t) {
+            return t.regionPage === resolvedPageFile;
+        });
+
+        const slidesToRender = regionTestimonials.length ? regionTestimonials : [blankTestimonial];
+
+        // Clear any existing slides to avoid duplication, then re-append the template as slide #1.
+        swiperWrapper.innerHTML = "";
+        swiperWrapper.appendChild(templateSlide);
+
+        slidesToRender.forEach(function (t, idx) {
+            if (idx === 0) {
+                setSlideText(templateSlide, t);
+                return;
+            }
+            const newSlide = templateSlide.cloneNode(true);
+            setSlideText(newSlide, t);
+            swiperWrapper.appendChild(newSlide);
+        });
+    }
+
     new Swiper(sliderEl, {
         slidesPerView: 1.08,
         spaceBetween: 16,
@@ -488,6 +883,138 @@
     });
 })();
 
+
+// logos-marquee-slider
+(function () {
+    "use strict";
+    const logoTracks = document.querySelectorAll(".logo-marquee-track");
+    if (!logoTracks || logoTracks.length === 0) return;
+    const logos = [
+        // APAC
+        { image: "assets/images/logos/APAC/Banglalink Digital Communication Ltd.png", region: "apac", alt: "Banglalink Digital Communication Ltd" },
+        { image: "assets/images/logos/APAC/BDO_Unibank.png", region: "apac", alt: "BDO Unibank" },
+        { image: "assets/images/logos/APAC/Cebu-Pacific.png", region: "apac", alt: "Cebu-Pacific" },
+        { image: "assets/images/logos/APAC/Cimb Bank Berhad.png", region: "apac", alt: "Cimb Bank Berhad" },
+        { image: "assets/images/logos/APAC/DBS Bank Limited.png", region: "apac", alt: "DBS Bank Limited" },
+        { image: "assets/images/logos/APAC/Globe Telecom.png", region: "apac", alt: "Globe Telecom" },
+        { image: "assets/images/logos/APAC/Manulife.png", region: "apac", alt: "Manulife" },
+        { image: "assets/images/logos/APAC/Maybank Singapore Limited.png", region: "apac", alt: "Maybank Singapore Limited" },
+        { image: "assets/images/logos/APAC/Metrobank.png", region: "apac", alt: "Metrobank" },
+        { image: "assets/images/logos/APAC/NTUC LearingHub.png", region: "apac", alt: "NTUC LearingHub" },
+        { image: "assets/images/logos/APAC/Union Bank of the Philippines.png", region: "apac", alt: "Union Bank of the Philippines" },
+
+        // EU
+        { image: "assets/images/logos/EU/Air_France.png", region: "eu", alt: "Air France" },
+        { image: "assets/images/logos/EU/Bayer.png", region: "eu", alt: "Bayer" },
+        { image: "assets/images/logos/EU/Capegemini.png", region: "eu", alt: "Capegemini" },
+        { image: "assets/images/logos/EU/Danske-Bank.png", region: "eu", alt: "Danske-Bank" },
+        { image: "assets/images/logos/EU/Deloitte.png", region: "eu", alt: "Deloitte" },
+        { image: "assets/images/logos/EU/Ericsson.png", region: "eu", alt: "Ericsson" },
+        { image: "assets/images/logos/EU/GE Healthcare.png", region: "eu", alt: "GE Healthcare" },
+        { image: "assets/images/logos/EU/GlaxoSmithKline.png", region: "eu", alt: "GlaxoSmithKline" },
+        { image: "assets/images/logos/EU/Old Mutual.png", region: "eu", alt: "Old Mutual" },
+        { image: "assets/images/logos/EU/Rabobank.png", region: "eu", alt: "Rabobank" },
+        { image: "assets/images/logos/EU/Royal Dutch Airlines.png", region: "eu", alt: "Royal Dutch Airlines" },
+
+        // IN
+        { image: "assets/images/logos/IN/Accenture.png", region: "in", alt: "Accenture Pvt Ltd" },
+        { image: "assets/images/logos/IN/Aditya_Birla_Group.png", region: "in", alt: "Aditya Birla Group" },
+        { image: "assets/images/logos/IN/Boston Consulting Group.png", region: "in", alt: "Boston Consulting Group" },
+        { image: "assets/images/logos/IN/BSH.png", region: "in", alt: "BSH" },
+        { image: "assets/images/logos/IN/Citiustech.png", region: "in", alt: "Citiustech" },
+        { image: "assets/images/logos/IN/Cognizant.png", region: "in", alt: "Cognizant" },
+        { image: "assets/images/logos/IN/HDFC Bank.png", region: "in", alt: "HDFC Bank" },
+        { image: "assets/images/logos/IN/ICICI_Bank_Logo.png", region: "in", alt: "ICICI Bank Logo" },
+        { image: "assets/images/logos/IN/IDFC Bank.png", region: "in", alt: "IDFC Bank" },
+        { image: "assets/images/logos/IN/Publicis Sapient.png", region: "in", alt: "Publicis Sapient" },
+        { image: "assets/images/logos/IN/Siemens.png", region: "in", alt: "Siemens" },
+        { image: "assets/images/logos/IN/TCS.png", region: "in", alt: "TCS" },
+        { image: "assets/images/logos/IN/Tech Mahindra.png", region: "in", alt: "Tech Mahindra" },
+        { image: "assets/images/logos/IN/Wells_Fargo.png", region: "in", alt: "Wells Fargo" },
+        { image: "assets/images/logos/IN/Wipro.png", region: "in", alt: "Wipro" },
+
+        // ME
+        { image: "assets/images/logos/ME/DEWA.AE_BIG.png", region: "me", alt: "DEWA.AE BIG" },
+        { image: "assets/images/logos/ME/Ecobank.png", region: "me", alt: "Ecobank" },
+        { image: "assets/images/logos/ME/Emirates.png", region: "me", alt: "Emirates" },
+        { image: "assets/images/logos/ME/Masdar.png", region: "me", alt: "Masdar" },
+        { image: "assets/images/logos/ME/Navcon.png", region: "me", alt: "Navcon" },
+        { image: "assets/images/logos/ME/Qatar Islamic Bank.png", region: "me", alt: "Qatar Islamic Bank" },
+        { image: "assets/images/logos/ME/RTA.png", region: "me", alt: "RTA" },
+        { image: "assets/images/logos/ME/smart-dubai.png", region: "me", alt: "smart-dubai" },
+        { image: "assets/images/logos/ME/tsys.png", region: "me", alt: "tsys" },
+
+        // NA
+        { image: "assets/images/logos/NA/3M.png", region: "na", alt: "3M" },
+        { image: "assets/images/logos/NA/Booz Allen Hamiliton.png", region: "na", alt: "Booz Allen Hamiliton" },
+        { image: "assets/images/logos/NA/California Department of Technology.png", region: "na", alt: "California Department of Technology" },
+        { image: "assets/images/logos/NA/Christiana Care.png", region: "na", alt: "Christiana Care" },
+        { image: "assets/images/logos/NA/City of San Antonio.png", region: "na", alt: "City of San Antonio" },
+        { image: "assets/images/logos/NA/CVS Health.png", region: "na", alt: "CVS Health" },
+        { image: "assets/images/logos/NA/FedEx.png", region: "na", alt: "FedEx" },
+        { image: "assets/images/logos/NA/Florida Power & Light.png", region: "na", alt: "Florida Power & Light" },
+        { image: "assets/images/logos/NA/National Park Service (NPS).png", region: "na", alt: "National Park Service (NPS)" },
+        { image: "assets/images/logos/NA/State Farm.png", region: "na", alt: "State Farm" },
+        { image: "assets/images/logos/NA/UBS.png", region: "na", alt: "UBS" },
+        { image: "assets/images/logos/NA/Veritas_Technologies.png", region: "na", alt: "Veritas Technologies" },
+        { image: "assets/images/logos/NA/Verizon_Wireless_logo.png", region: "na", alt: "Verizon Wireless logo" },
+
+        // SA
+        { image: "assets/images/logos/SA/Absa Bank.png", region: "sa", alt: "Absa Bank" },
+        { image: "assets/images/logos/SA/Capitec_Bank.png", region: "sa", alt: "Capitec Bank" },
+        { image: "assets/images/logos/SA/Discovery_Holding_Company.png", region: "sa", alt: "Discovery Holding Company" },
+        { image: "assets/images/logos/SA/Ecobank.png", region: "sa", alt: "Ecobank" },
+        { image: "assets/images/logos/SA/First National Bank.png", region: "sa", alt: "First National Bank" },
+        { image: "assets/images/logos/SA/Investec.png", region: "sa", alt: "Investec" },
+        { image: "assets/images/logos/SA/Multichoice Group.png", region: "sa", alt: "Multichoice Group" },
+        { image: "assets/images/logos/SA/Nedbank_idvPPE6CB0_1.png", region: "sa", alt: "Nedbank idvPPE6CB0 1" },
+        { image: "assets/images/logos/SA/Old Mutual.png", region: "sa", alt: "Old Mutual" },
+        { image: "assets/images/logos/SA/Standard Bank Group.png", region: "sa", alt: "Standard Bank Group" },
+        { image: "assets/images/logos/SA/Vodacom.png", region: "sa", alt: "Vodacom" },
+        { image: "assets/images/logos/SA/Momentum Inc..png", region: "sa", alt: "Momentum Inc." }
+
+    ];
+
+    const pageFile = ((window.location && window.location.pathname) ? window.location.pathname : "")
+        .split(/[\\/]/)
+        .pop()
+        .toLowerCase()
+        .split("?")[0]
+        .split("#")[0];
+    const resolvedPageFile = pageFile && pageFile.endsWith(".html") ? pageFile : "index.html";
+
+    const logoRegionByPage = {
+        "index.html": "in",
+        "sg.html": "apac",
+        "au.html": "apac",
+        "uae.html": "me",
+        "sa.html": "sa",
+        "uk.html": "eu",
+        "us.html": "na",
+        "ca.html": "na"
+    };
+
+    const activeRegion = logoRegionByPage[resolvedPageFile] || "in";
+    const regionalLogos = logos.filter(function (logo) {
+        return logo.region === activeRegion;
+    });
+    const logosToRender = regionalLogos.length ? regionalLogos : logos;
+
+    // Rebuild tracks from the logos list (duplicate once for seamless marquee).
+    logoTracks.forEach(function (track) {
+        track.innerHTML = "";
+        const repeated = logosToRender.concat(logosToRender);
+        repeated.forEach(function (logo) {
+            const item = document.createElement("div");
+            item.classList.add("logo-marquee-item");
+            item.innerHTML = `<img src="${logo.image}" class="hero-logo-img" alt="${logo.alt}">`;
+            track.appendChild(item);
+        });
+    });
+})();
+
+
+
 // Experience pathway: country code flag (country-flag-icons via jsDelivr CDN)
 (function () {
     "use strict";
@@ -521,7 +1048,7 @@
     var selects = document.querySelectorAll("select:not(.upcoming-tracks-timezone-select-native):not(.experience-pathway-select):not(.experience-pathway-country-code)");
     // Exclude selects that have their own custom UI/behavior.
     var selects = document.querySelectorAll(
-        "select:not(.upcoming-tracks-timezone-select-native):not(#pathway-country-code)"
+        "select:not(.upcoming-tracks-timezone-select-native):not(.country-region-bar-select-native):not(#pathway-country-code)"
     );
     Array.from(selects).forEach(function (select) {
         if (select.dataset.choicesInitialized === "true") return;
@@ -535,6 +1062,98 @@
         });
 
         select.dataset.choicesInitialized = "true";
+    });
+})();
+
+// Country / region top bar: dismiss + re-open when linking from footer
+(function () {
+    "use strict";
+
+    var bar = document.querySelector("[data-country-region-bar]");
+    if (!bar) return;
+
+    var closeBtn = document.getElementById("country-region-bar-close");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            bar.setAttribute("hidden", "");
+        });
+    }
+
+    document.addEventListener(
+        "click",
+        function (e) {
+            var link = e.target.closest('a[href="#country-region-bar"]');
+            if (!link) return;
+            bar.removeAttribute("hidden");
+        },
+        true
+    );
+})();
+
+// Country / region navigation: route to region-specific pages
+(function () {
+    "use strict";
+
+    var select = document.getElementById("country-region-select");
+    if (!select) return;
+
+    var bar = select.closest("[data-country-region-bar]") || document;
+    var continueBtn = bar.querySelector(".country-region-bar-continue");
+
+    // Map dropdown values -> html pages.
+    var regionRouteByCode = {
+        IN: "index.html",
+        US: "us.html",
+        GB: "uk.html",
+        AU: "au.html",
+        CA: "ca.html",
+        SG: "sg.html",
+        AE: "uae.html",
+        ZA: "sa.html"
+    };
+
+    function routeByCode(code) {
+        if (!code) return;
+        var dest = regionRouteByCode[code] || "index.html";
+        if (window.location && window.location.pathname && window.location.pathname.endsWith(dest)) return;
+        window.location.href = dest;
+    }
+
+    var lastRoutedCode = null;
+    function routeFromSelect() {
+        var code = select.value;
+        if (code && code === lastRoutedCode) return;
+        lastRoutedCode = code;
+        routeByCode(code);
+    }
+
+    // Route only on Continue click (not on dropdown change).
+    if (continueBtn) continueBtn.addEventListener("click", routeFromSelect);
+
+    // Modal options map based on button text.
+    var routeByLabel = {
+        "India": "index.html",
+        "Europe": "uk.html",
+        "United States of America": "us.html",
+        "United States": "us.html",
+        "Malaysia": "au.html",
+        "South Africa": "sa.html",
+        "Middle East": "uae.html",
+        "Singapore": "sg.html",
+        "Canada": "ca.html"
+    };
+
+    var modalOptions = document.querySelectorAll(".country-region-modal-option");
+    Array.from(modalOptions).forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            var label = (e && e.target && e.target.textContent) ? e.target.textContent.trim() : "";
+            var dest = routeByLabel[label];
+            if (!dest) return;
+
+            // Prevent any unexpected bootstrap focus handling; navigation wins.
+            e.preventDefault();
+            window.location.href = dest;
+        });
     });
 })();
 
@@ -1095,6 +1714,7 @@
 
     const verificationCard = flow.querySelector("[data-checkout-summary-mode='verification']");
     const normalSummaryCard = flow.querySelector(".checkout-summary-card:not([data-checkout-summary-mode])");
+    const step3Panels = panels.filter(panel => panel.dataset.stepPanel === "3");
 
     let currentStep = 0;
     let paymentStage = "selection";
@@ -1108,7 +1728,7 @@
     ];
 
     function limitStep(step) {
-        return Math.max(0, Math.min(step, panels.length - 1));
+        return Math.max(0, Math.min(step, stepConfig.length - 1));
     }
 
     function showOnly(elements, activeIndex) {
@@ -1190,6 +1810,19 @@
         }
     }
 
+    function applyStep3PanelByPaymentPlan() {
+        if (currentStep !== 3 || step3Panels.length < 2) return;
+        const showEmiPanel = paymentPlan === "emi-3" || paymentPlan === "emi-6";
+        const oneTimePanel = step3Panels[0];
+        const emiPanel = step3Panels[1];
+
+        oneTimePanel.classList.toggle("is-active", !showEmiPanel);
+        oneTimePanel.hidden = showEmiPanel;
+
+        emiPanel.classList.toggle("is-active", showEmiPanel);
+        emiPanel.hidden = !showEmiPanel;
+    }
+
     function goToStep(step) {
         currentStep = limitStep(step);
         flow.classList.toggle("is-step-2", currentStep === 2);
@@ -1203,6 +1836,7 @@
         }
 
         updateSummaryCTA();
+        applyStep3PanelByPaymentPlan();
 
         if (backLink) {
             backLink.href = currentStep === 0 ? "all-courses.html" : "#";
@@ -1268,6 +1902,7 @@
         input.addEventListener("change", () => {
             paymentPlan = input.value;
             updateSummaryCTA();
+            applyStep3PanelByPaymentPlan();
         });
     });
 

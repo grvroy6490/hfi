@@ -5,6 +5,7 @@
     padding: 5rem 0;
     width: 100%;
     padding-bottom: 2rem;
+    padding-top: 0;
 
     .hero-logos{
         margin-top: 3rem;
@@ -16,6 +17,7 @@
 
     .col-lg-7{
         padding-left: 14px;
+        margin-top: 2rem;
     }
 }
 
@@ -186,6 +188,7 @@
 @media (max-width: 991.98px) {
     .certification-banner-section {
         padding: 3.5rem 0 3rem;
+        padding-top: 0;
     }
 
     .certification-banner-content {

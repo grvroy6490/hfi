@@ -104,3 +104,9 @@ button, input, select, textarea {
         font-size: 15px;
     }
 }
+
+.content-wrapper,
+main{
+    position: relative;
+    width: 100%;
+}

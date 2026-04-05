@@ -61,7 +61,7 @@
     font-size: 1rem;
     color: #404040;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .hero-ctas {
@@ -179,10 +179,10 @@
 .hero-logo-img {
     max-height: 2rem;
     width: auto;
-    max-width: 100px;
+    max-width: 150px;
     object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.8;
+    opacity: 0.6;
     transition: filter 0.25s ease, opacity 0.25s ease;
 }
 

@@ -1,9 +1,11 @@
 @use 'base';
 @use 'variables';
 @use 'typography';
+@use 'country-region-bar';
 @use 'header';
 @use 'logo-slider';
 @use 'footer';
+@use 'country-region-modal';
 @use 'hero-section';
 @use 'about-section';
 @use 'certifications-slider-section';
@@ -30,4 +32,5 @@
 @use 'experience-acrhitecture-choose-entry-point-section';
 @use 'experience-acrhitecture-built-for-professionals-section';
 @use 'experience-architect-start-section';
+@use 'sticky-course-header';
 @use 'checkout';
