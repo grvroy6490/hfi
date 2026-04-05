@@ -1,0 +1,67 @@
+@use "variables" as v;
+@use "typography" as t;
+
+.experience-architect-audience-section {
+  padding: 5rem 0;
+  background: v.$color-primary-white;
+
+  @media (max-width: 991.98px) {
+    padding: 1rem 0 4rem;
+  }
+}
+
+.experience-architect-audience-image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.experience-architect-audience-content {
+
+  @media (max-width: 991.98px) {
+    max-width: 100%;
+  }
+}
+
+.experience-architect-audience-title {
+  margin-bottom: 1rem;
+  color: v.$color-primary-black;
+  font-family: t.$font-family-suisse;
+}
+
+.experience-architect-audience-copy {
+  margin-bottom: 3rem;
+  color: v.$color-primary-grey;
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.experience-architect-audience-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.experience-architect-audience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.experience-architect-audience-item-title {
+  margin-bottom: 0.2rem;
+  color: v.$color-off-black;
+  font-weight: 600;
+}
+
+.experience-architect-audience-item-copy {
+  color: v.$color-neutral-NC5;
+}

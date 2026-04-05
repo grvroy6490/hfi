@@ -1,0 +1,43 @@
+@use "variables" as v;
+
+.experience-architect-overview-section {
+  padding: 5rem 0 2.5rem;
+  background: v.$color-primary-white;
+
+  @media (max-width: 991.98px) {
+    padding: 2.5rem 0 3.75rem;
+  }
+}
+
+.experience-architect-overview {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.experience-architect-overview-copy {
+  max-width: 70%;
+  margin: 0 auto;
+  color: v.$color-primary-black;
+
+  & + .experience-architect-overview-copy {
+    margin-top: 0.9rem;
+  }
+}
+
+.experience-architect-overview-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.875rem 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+
+  .hero-btn {
+    @media (min-width: 992px) {
+      width: 23.5%;
+    }
+  }
+
+  .hero-btn-secondary {
+    justify-content: center;
+  }
+}
