@@ -2132,3 +2132,71 @@
 
     });
 })();
+
+// Experience Architect pathway: reveal capability model steps on scroll
+(function () {
+    "use strict";
+
+    var timeline = document.querySelector("[data-experience-architect-timeline]");
+    if (!timeline) return;
+
+    var steps = Array.from(
+        timeline.querySelectorAll("[data-experience-architect-step]")
+    );
+    if (!steps.length) return;
+
+    var checkboxes = Array.from(
+        timeline.querySelectorAll(".experience-architect-model-checkbox")
+    );
+    if (!checkboxes.length) return;
+
+    function activateSequentially(index) {
+        steps.slice(0, index + 1).forEach(function (step, stepIndex) {
+            step.classList.add("is-visible");
+
+            var checkbox = checkboxes[stepIndex];
+            if (!checkbox) return;
+
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                checkbox.dispatchEvent(
+                    new Event("change", { bubbles: true })
+                );
+            }
+        });
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        steps.forEach(function (step) {
+            step.classList.add("is-visible");
+        });
+
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = true;
+        });
+        return;
+    }
+
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+
+                var step = entry.target;
+                var index = steps.indexOf(step);
+                if (index === -1) return;
+
+                activateSequentially(index);
+                observer.unobserve(step);
+            });
+        },
+        {
+            threshold: 0.35,
+            rootMargin: "0px 0px -12% 0px"
+        }
+    );
+
+    steps.forEach(function (step) {
+        observer.observe(step);
+    });
+})();

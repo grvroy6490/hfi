@@ -1,0 +1,114 @@
+@use "variables" as v;
+@use "typography" as t;
+
+.experience-architect-journey-section {
+  padding: 5rem 0;
+
+  @media (max-width: 991.98px) {
+    padding: 1rem 0 4rem;
+  }
+}
+
+.experience-architect-section-head {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.experience-architect-section-title {
+  margin-bottom: 0.75rem;
+  color: v.$color-primary-black;
+  font-family: t.$font-family-suisse;
+}
+
+.experience-architect-section-copy {
+  max-width: 70%;
+  margin: 0 auto;
+  color: v.$color-neutral-NC4;
+}
+
+.experience-architect-capabilities {
+  width: 75%;
+  margin: 0 auto 2rem;
+
+  .row {
+    row-gap: 2.5rem;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.experience-architect-capability {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 0.2rem 0;
+}
+
+.experience-architect-capability-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  border: 0.063px solid #cccccc;
+  border-radius: 1rem;
+  color: v.$color-gold;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+.experience-architect-capability-content {
+  min-width: 0;
+}
+
+.experience-architect-capability-title {
+  color: v.$color-primary-black;
+  font-weight: 600;
+}
+
+.experience-architect-capability-copy {
+  color: v.$color-primary-grey;
+}
+
+.experience-architect-stats {
+  width: 85%;
+  margin: 0 auto !important;
+  padding: 2.5rem 0;
+
+  @media (max-width: 991.98px) {
+    width: 100%;
+  }
+
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+}
+
+.experience-architect-stat {
+  text-align: center;
+  height: 100%;
+}
+
+.experience-architect-stat-value {
+  margin-bottom: 0.25rem;
+  color: v.$color-primary-black;
+  font-weight: 900;
+}
+
+.experience-architect-stat-label {
+  // max-width: 14rem;
+  margin: 0 auto;
+  color: v.$color-primary-black;
+}
+
+.experience-architect-journey-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+}
