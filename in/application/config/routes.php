@@ -77,6 +77,8 @@ $route['checkout'] = 'checkout/index';
 $route['checkout/program-details'] = 'checkout/program_details';
 $route['checkout/account-details'] = 'checkout/account_details';
 $route['checkout/payment-details'] = 'checkout/payment_details';
+$route['checkout/emi-verification'] = 'checkout/emi_verification';
+$route['checkout/application-submitted'] = 'checkout/application_submitted';
 $route['checkout/confirmation'] = 'checkout/confirmation';
 
 /* 404 Route */

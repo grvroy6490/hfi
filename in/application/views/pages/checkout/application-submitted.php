@@ -1,5 +1,5 @@
 <!---------------------------
-            Checkout Multistep - Confirmation Page
+            Checkout Multistep - Application Submitted Page
         ------------------------------>
         <section class="checkout-page-section">
             <div class="container">
@@ -90,7 +90,7 @@
                                 </ol>
                             </nav>
                             <div class="back_navigation">
-                                <a href="<?php echo base_url(); ?>checkout/payment-details" class="checkout-back-link body-small"
+                                <a href="<?php echo base_url(); ?>checkout/emi-verification" class="checkout-back-link body-small"
                                    >Back</a>
                             </div>
                             <div class="checkout-layout">
@@ -99,7 +99,7 @@
                                         <!--------------------------- 
                                         Step one
                                         ----------------------------->
-                                        <section class="checkout-panel is-active">
+                                                                                <section class="checkout-panel is-active">
                                             <div class="checkout-submission-card">
                                                 <span class="checkout-submission-badge" aria-hidden="true">
                                                     <img src="<?php echo base_url(); ?>assets/images/tick-circle.svg" alt="Tick circle" />
@@ -107,14 +107,37 @@
 
                                                 <div class="checkout-submission-header">
                                                     <h2 class="checkout-title heading-5">
-                                                        You're' In!
+                                                        Application Submitted
                                                     </h2>
                                                     <p class="checkout-intro body">
-                                                        Congratulations, John! Your seat in HFI Certification Program is confirmed.
+                                                        Thank you for submitting your documents. Your EMI
+                                                        request is currently under review.
                                                     </p>
                                                 </div>
 
-                                                
+                                                <div class="checkout-submission-progress">
+                                                    <div class="checkout-submission-progress-line" aria-hidden="true">
+                                                    </div>
+                                                    <div class="checkout-submission-progress-step is-complete">
+                                                        <span class="checkout-submission-progress-dot"></span>
+                                                        <span class="checkout-submission-progress-label caption">Documents
+                                                            Uploaded</span>
+                                                    </div>
+                                                    <div class="checkout-submission-progress-step is-complete">
+                                                        <span class="checkout-submission-progress-dot"></span>
+                                                        <span class="checkout-submission-progress-label caption">Details
+                                                            Submitted</span>
+                                                    </div>
+                                                    <div class="checkout-submission-progress-step is-active">
+                                                        <span class="checkout-submission-progress-dot"></span>
+                                                        <span class="checkout-submission-progress-label caption">Under
+                                                            Review</span>
+                                                    </div>
+                                                    <div class="checkout-submission-progress-step">
+                                                        <span class="checkout-submission-progress-dot"></span>
+                                                        <span class="checkout-submission-progress-label caption">Approved</span>
+                                                    </div>
+                                                </div>
 
                                                 <div class="checkout-submission-summary">
                                                     <div class="checkout-submission-summary-grid">
@@ -227,13 +250,15 @@
                                                         </div>
                                                     </div>
 
-                                                    <a href="#" class="checkout-submission-link body">View Receipt</a>
+                                                    <a href="#" class="checkout-submission-link body">View Submission
+                                                        Details</a>
                                                 </div>
 
                                                 <div class="checkout-submission-actions">
                                                     <a href="#"
-                                                        class="checkout-submission-action checkout-submission-action-secondary body">Add to Calendar</a>
-                                                    <a href="/checkout.html"
+                                                        class="checkout-submission-action checkout-submission-action-secondary body">Contact
+                                                        Support</a>
+                                                    <a href="#"
                                                         class="checkout-submission-action checkout-submission-action-primary body">Go
                                                         to Dashboard</a>
                                                 </div>

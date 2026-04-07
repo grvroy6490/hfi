@@ -1,5 +1,5 @@
-<!--------------------------- 
-            Checout Multistep
+<!---------------------------
+            Checkout Multistep - Account Details Page
         ------------------------------>
         <section class="checkout-page-section">
             <div class="container">
@@ -255,29 +255,6 @@
 
                                             <p class="checkout-summary-security body-small">
                                                 100% Secure. 256-bit SSL encryption.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="checkout-summary-card checkout-verification-card"
-                                        data-checkout-summary-mode="verification" hidden>
-                                        <div class="checkout-summary-body checkout-verification-card-body">
-                                            <h3 class="checkout-verification-card-title body">
-                                                Important Instructions
-                                            </h3>
-                                            <ol class="checkout-verification-list body-small">
-                                                <li>
-                                                    Upload only official bank-generated PDF statements
-                                                </li>
-                                                <li>Scanned images or photos will not be accepted</li>
-                                                <li>
-                                                    Do not alter or edit the PDF using external tools
-                                                </li>
-                                            </ol>
-                                            <a href="<?php echo base_url(); ?>checkout/payment-details" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Proceed to Checkout</a>
-                                            <p class="checkout-summary-security body-small">
-                                                Your documents are securely encrypted and used only
-                                                for verification purposes.
                                             </p>
                                         </div>
                                     </div>

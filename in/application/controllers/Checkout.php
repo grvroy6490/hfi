@@ -60,6 +60,28 @@ class Checkout extends MY_Controller {
         $this->render($data, 'pages/checkout/payment-details');
     }
 
+     public function emi_verification() {
+        $data = array();
+        $data['title'] = 'EMI Verification';
+        $data['description'] = '';
+
+        $data['og_title'] = 'EMI Verification';
+        $data['og_description'] = '';
+
+        $this->render($data, 'pages/checkout/emi-verification');
+    }
+
+        public function application_submitted() {
+        $data = array();
+        $data['title'] = 'Application Submitted';
+        $data['description'] = '';
+
+        $data['og_title'] = 'Application Submitted';
+        $data['og_description'] = '';
+
+        $this->render($data, 'pages/checkout/application-submitted');
+    }
+
     public function confirmation() {
         $data = array();
         $data['title'] = 'Confirmation';	

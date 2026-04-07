@@ -1,8 +1,17 @@
+    <?php
+        $is_homepage = (
+            (isset($controller) && ($controller === '' || $controller === 'home')) ||
+            (isset($view_file) && $view_file === 'pages/home')
+        );
+        $header_classes = $is_homepage
+            ? 'site-header'
+            : 'site-header bg-white position-relative';
+    ?>
     <main>
         <!--------------------------- 
             HEADER
         ------------------------------>
-        <header class="site-header bg-white position-relative">
+        <header class="<?php echo $header_classes; ?>">
             <div class="header-announcement">
                 <div class="container">
                     <p class="header-announcement-text mb-0 text-center body-small">
