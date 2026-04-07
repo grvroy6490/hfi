@@ -60,6 +60,22 @@ class Checkout extends MY_Controller {
         $this->render($data, 'pages/checkout/payment-details');
     }
 
+    public function submit_payment_plan() {
+        $payment_plan = $this->input->post('checkout-payment-plan', TRUE);
+
+        if ($payment_plan === 'one-time') {
+            redirect('checkout/confirmation');
+            return;
+        }
+
+        if (in_array($payment_plan, array('emi-3', 'emi-6'), TRUE)) {
+            redirect('checkout/emi-verification');
+            return;
+        }
+
+        redirect('checkout/payment-details');
+    }
+
      public function emi_verification() {
         $data = array();
         $data['title'] = 'EMI Verification';

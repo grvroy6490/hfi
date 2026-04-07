@@ -100,7 +100,7 @@
                                         Step one
                                         ----------------------------->
                                         <section class="checkout-panel is-active">
-                                            <form class="experience-pathway-form checkout-form" novalidate enctype="multipart/form-data">
+                                            <form id="checkout-emi-verification-form" class="experience-pathway-form checkout-form" method="post" action="<?php echo base_url(); ?>checkout/application-submitted" novalidate enctype="multipart/form-data">
                                             <div class="checkout-payment-stage checkout-verification-stage is-active"
                                                 data-payment-stage="verification">
                                                 <div class="checkout-panel-header">
@@ -551,7 +551,8 @@
                                                     Do not alter or edit the PDF using external tools
                                                 </li>
                                             </ol>
-                                            <a href="<?php echo base_url(); ?>checkout/application-submitted" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Complete Payment</a>
+                                            <!-- <a href="<?php echo base_url(); ?>checkout/application-submitted" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Submit for Verification</a> -->
+                                             <button type="submit" form="checkout-emi-verification-form" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Submit for Verification</button>
                                             <p class="checkout-summary-security body-small">
                                                 Your documents are securely encrypted and used only
                                                 for verification purposes.

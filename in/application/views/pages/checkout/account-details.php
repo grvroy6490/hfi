@@ -97,7 +97,7 @@
                                 <div class="checkout-main">
                                     <div class="checkout-step-panels">
                                         <!--------------------------- 
-                                        Step one
+                                        Step two
                                         ----------------------------->
                                         <section class="checkout-panel is-active">
                                             <div class="checkout-account-card">
@@ -111,7 +111,7 @@
                                                     </p>
                                                 </div>
 
-                                                <form class="experience-pathway-form checkout-form" novalidate>
+                                                <form id="checkout-account-details-form" class="experience-pathway-form checkout-form" method="post" action="<?php echo base_url(); ?>checkout/payment-details" novalidate>
                                                     <div class="experience-pathway-row">
                                                         <div
                                                             class="experience-pathway-field experience-pathway-field-full">
@@ -209,9 +209,6 @@
                                                 </p>
                                             </div>
                                         </section>
-                                        <!--------------------------- 
-                                        Step three
-                                        ----------------------------->
                                     </div>
                                 </div>
 
@@ -251,7 +248,7 @@
                                                 <span> Only 12 seats left at this price</span>
                                             </div>
 
-                                            <a href="<?php echo base_url(); ?>checkout/payment-details" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Proceed to Checkout</a>
+                                            <button type="submit" form="checkout-account-details-form" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Proceed to Checkout</button>
 
                                             <p class="checkout-summary-security body-small">
                                                 100% Secure. 256-bit SSL encryption.

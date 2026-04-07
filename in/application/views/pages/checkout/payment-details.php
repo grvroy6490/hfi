@@ -97,10 +97,10 @@
                                 <div class="checkout-main">
                                     <div class="checkout-step-panels">
                                         <!--------------------------- 
-                                        Step one
+                                        Step three
                                         ----------------------------->
                                         <section class="checkout-panel is-active">
-                                            <form class="experience-pathway-form checkout-form" novalidate enctype="multipart/form-data">
+                                            <form id="checkout-payment-form" class="experience-pathway-form checkout-form" method="post" action="<?php echo base_url(); ?>checkout/submit-payment-plan" novalidate enctype="multipart/form-data">
                                             <div class="checkout-payment-stage is-active"
                                                 data-payment-stage="selection">
                                                 <div class="checkout-panel-header">
@@ -456,7 +456,7 @@
                                                 <span> Only 12 seats left at this price</span>
                                             </div>
 
-                                            <a href="<?php echo base_url(); ?>checkout/emi-verification" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Complete Payment</a>
+                                            <button type="submit" form="checkout-payment-form" class="checkout-action checkout-action-primary checkout-summary-cta body-small">Complete Payment</button>
 
                                             <p class="checkout-summary-security body-small">
                                                 100% Secure. 256-bit SSL encryption.
