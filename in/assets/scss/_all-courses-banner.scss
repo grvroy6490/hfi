@@ -3,7 +3,7 @@
 .all-courses-banner-section {
     position: relative;
     overflow: hidden;
-    padding: 12.5rem 0 3.5rem;
+    padding: 4.5rem 0 3.5rem;
     // background:
     //     radial-gradient(circle at 12% 18%, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 14rem, transparent 14.1rem),
     //     radial-gradient(circle at 34% -6%, rgba(0, 0, 0, 0.025) 0, rgba(0, 0, 0, 0.025) 18rem, transparent 18.1rem),
@@ -97,13 +97,13 @@
 
 @media (max-width: 991.98px) {
     .all-courses-banner-section {
-        padding: 9rem 0 4rem;
+        padding: 4rem 0 4rem;
     }
 }
 
 @media (max-width: 767.98px) {
     .all-courses-banner-section {
-        padding: 8.25rem 0 3.5rem;
+        padding: 3.5rem 0 3.5rem;
     }
 
     .all-courses-banner-lead {

@@ -3940,7 +3940,7 @@ body.mobile-menu-open {
 .all-courses-banner-section {
   position: relative;
   overflow: hidden;
-  padding: 12.5rem 0 3.5rem;
+  padding: 4.5rem 0 3.5rem;
   background: url(../images/all-courses-banner-bg.png), #f2f2f2;
 }
 
@@ -4028,12 +4028,12 @@ body.mobile-menu-open {
 
 @media (max-width: 991.98px) {
   .all-courses-banner-section {
-    padding: 9rem 0 4rem;
+    padding: 4rem 0 4rem;
   }
 }
 @media (max-width: 767.98px) {
   .all-courses-banner-section {
-    padding: 8.25rem 0 3.5rem;
+    padding: 3.5rem 0 3.5rem;
   }
   .all-courses-banner-lead {
     max-width: 100%;

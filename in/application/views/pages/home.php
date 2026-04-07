@@ -811,7 +811,7 @@
                                 </h3>
                                 <p class="insight-card-desc body">A live session on embedding usability, governance, and
                                     performance evaluation across teams.</p>
-                                <a href="#" class="insight-card-link body">Register</a>
+                                <a href="<?php echo base_url(); ?>checkout/program-details" class="insight-card-link body">Register</a>
                             </div>
                         </article>
                     </div>

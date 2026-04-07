@@ -161,7 +161,7 @@
                                             </div>
                                             <div class="course-calendar-item-side">
                                                 <p class="course-calendar-item-price body-large">₹48,000</p>
-                                                <a href="#" class="course-calendar-item-cta body">Register</a>
+                                                <a href="<?php echo base_url(); ?>checkout/program-details" class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
 
@@ -196,7 +196,7 @@
                                             </div>
                                             <div class="course-calendar-item-side">
                                                 <p class="course-calendar-item-price body-large">₹48,000</p>
-                                                <a href="#" class="course-calendar-item-cta body">Register</a>
+                                                <a href="<?php echo base_url(); ?>checkout/program-details" class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
 
@@ -230,7 +230,7 @@
                                             </div>
                                             <div class="course-calendar-item-side">
                                                 <p class="course-calendar-item-price body-large">₹48,000</p>
-                                                <a href="#" class="course-calendar-item-cta body">Register</a>
+                                                <a href="<?php echo base_url(); ?>checkout/program-details" class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
                                     </div>
@@ -269,7 +269,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-calendar-item-side">
-                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="<?php echo base_url(); ?>checkout/program-details"
                                                     class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
@@ -303,7 +303,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-calendar-item-side">
-                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="<?php echo base_url(); ?>checkout/program-details"
                                                     class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
@@ -336,7 +336,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-calendar-item-side">
-                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="<?php echo base_url(); ?>checkout/program-details"
                                                     class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
@@ -376,7 +376,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-calendar-item-side">
-                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="<?php echo base_url(); ?>checkout/program-details"
                                                     class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
@@ -410,7 +410,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-calendar-item-side">
-                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="<?php echo base_url(); ?>checkout/program-details"
                                                     class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
@@ -443,7 +443,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-calendar-item-side">
-                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                <p class="course-calendar-item-price body-large">₹48,000</p><a href="<?php echo base_url(); ?>checkout/program-details"
                                                     class="course-calendar-item-cta body">Register</a>
                                             </div>
                                         </article>
@@ -456,3 +456,4 @@
             </div>
         </section>
     </main>
+

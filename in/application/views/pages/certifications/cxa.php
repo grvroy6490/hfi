@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="certification-banner-actions">
-                                <a href="#" class="hero-btn hero-btn-primary body-large">
+                                <a href="<?php echo base_url(); ?>checkout/program-details" class="hero-btn hero-btn-primary body-large">
                                     Register for Next CUA&trade; Batch
                                 </a>
                                 <a href="#"
@@ -129,7 +129,7 @@
                                         </svg>
                                         <span>Download Brochure</span>
                                     </a>
-                                    <a href="#"
+                                    <a href="<?php echo base_url(); ?>checkout/program-details"
                                         class="sticky-course-header-btn sticky-course-header-btn--primary body-small">Register
                                         Now</a>
                                 </div>
@@ -909,7 +909,7 @@
                                     with a
                                     globally respected UX certification.</p>
                                 <div class="certification-certified-usability-analyst-actions">
-                                    <a href="#"
+                                    <a href="<?php echo base_url(); ?>checkout/program-details"
                                         class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-primary body font-demibold">Register
                                         for Next CUA&trade; Batch</a>
                                     <button type="button" id="certification-usability-analyst-advisor-trigger"
