@@ -1,0 +1,119 @@
+@use "variables" as v;
+@use "typography" as t;
+
+.transform-teams-programs-section {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.transform-teams-programs-header {
+  margin-bottom: 2rem;
+}
+
+.transform-teams-programs-title {
+  color: v.$color-primary-grey;
+  font-family: t.$font-family-suisse;
+}
+
+.transform-teams-programs-grid {
+  justify-content: center;
+}
+
+.transform-teams-program-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  min-height: 100%;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: v.$color-primary-white;
+  box-shadow: 0 0.25rem 1.5rem 0 #00000014;
+}
+
+.transform-teams-program-card-title {
+  margin-bottom: 0.75rem;
+  color: v.$color-gold;
+  font-weight: 700;
+  font-family: t.$font-family-suisse;
+}
+
+.transform-teams-program-card-body {
+  margin-bottom: 1rem;
+  color: v.$color-gray-dark;
+  line-height: 1.55;
+}
+
+.transform-teams-program-card-label {
+  margin-bottom: 0.5rem;
+  color: v.$color-gray-dark;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.transform-teams-program-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.transform-teams-program-card-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: #757575;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.transform-teams-program-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 2rem;
+  border-radius: 999px;
+  background: #404040;
+  color: #fff !important;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.8125rem;
+    min-width: 0.8125rem;
+    height: 0.75rem;
+    background-image: url("../images/chevron.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(10%);
+    transition: transform 0.25s ease;
+    filter: brightness(0) invert(1);
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:hover::after {
+    background-image: url("../images/arrow.svg");
+    transform: translateX(4px) translateY(10%);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .transform-teams-programs-section {
+    padding-top: 2.25rem;
+  }
+
+  .transform-teams-program-card {
+    padding: 1.5rem;
+  }
+}
