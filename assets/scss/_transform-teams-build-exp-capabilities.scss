@@ -1,0 +1,154 @@
+@use 'variables' as v;
+
+.build-experience-capability-section {
+    padding: 2.8rem 0 3.2rem;
+    background-color: #F5F5F5;
+    overflow: hidden;
+    padding-bottom: 0;
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.build-experience-capability-row {
+    row-gap: 1.5rem;
+}
+
+.build-experience-capability-heading {
+    margin: 0;
+    color: #212121;
+}
+
+.build-experience-capability-copy {
+    margin: 0.9rem 0 0;
+    color: #4d4d4d;
+    line-height: 1.45;
+}
+
+.build-experience-capability-pattern {
+    margin-top: 1rem;
+    width: 100%;
+    height: 12.5rem;
+    background-image: radial-gradient(circle, #d8d8d8 1px, transparent 1px);
+    background-size: 7px 7px;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    opacity: 0.55;
+
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+}
+
+.build-experience-capability-form-card {
+    width: 100%;
+    margin-left: auto;
+    background-color: #ffffff;
+    border-radius: 0.95rem;
+    padding: 1.35rem;
+}
+
+.build-experience-capability-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.build-experience-capability-input {
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    background: #F5F5F5;
+    border-radius: 999px;
+    padding: 0.8rem 1rem;
+    color: #0F0F0F;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &::placeholder {
+        color: #0F0F0F;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: v.$color-gold;
+        background: #f7f0e8;
+    }
+}
+
+.build-experience-capability-input::placeholder {
+    color: rgba(33, 33, 33, 0.7);
+}
+
+.build-experience-capability-input:focus {
+    border-color: v.$color-gold;
+    outline: 0;
+}
+
+.build-experience-capability-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 20.5rem;
+    padding: 0.65rem 2rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(270deg,
+    rgba(143, 106, 15, 1) 0%,
+    rgba(184, 137, 18, 1) 50%,
+    rgba(201, 151, 26, 1) 100%);
+    color: #fff !important;
+    transition: background 0.2s ease, opacity 0.2s ease;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(6%);
+        margin-left: 0.25rem;
+        filter: brightness(0) invert(1);
+        transition: transform 0.25s ease;
+    }
+
+    &:hover {
+        background: linear-gradient(270deg,
+        rgba(143, 106, 15, 1) 0%,
+        rgba(143, 106, 15, 1) 50%,
+        rgba(143, 106, 15, 1) 100%);;
+        opacity: 0.98;
+    }
+
+    &:hover::after {
+        background-image: url("../images/arrow.svg");
+        transform: translateX(4px) translateY(6%);
+    }
+}
+
+
+@media (max-width: 991px) {
+    .build-experience-capability-section {
+        padding: 3rem 0;
+    }
+
+    .build-experience-capability-form-card {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .build-experience-capability-section {
+        padding: 2.6rem 0 3rem;
+    }
+
+    .build-experience-capability-pattern {
+        max-width: 18rem;
+        height: 8rem;
+    }
+}

@@ -1,0 +1,29 @@
+.trusted-by-leading-organizations-section{
+    padding: 4rem 0;
+    background-color: #212121;
+    position: relative;
+
+    .hero-logos{
+        margin-top: 3rem;
+
+        .hero-logo-img{
+            opacity: 0.6;
+            mix-blend-mode: hard-light;
+            filter: invert(1) grayscale(100%);
+        }
+    }
+}
+
+.trusted-by-leading-organizations-bg{
+    position: absolute;
+    transform: rotate(-90deg);
+    right: 0;
+    height: 130%;
+    opacity: 0.3;
+    top: 10%;
+}
+
+.trusted-by-leading-organizations-heading{
+    color: #ffffff;
+    text-align: center;
+}
