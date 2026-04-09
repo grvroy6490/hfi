@@ -1,0 +1,60 @@
+@use "variables" as v;
+@use "typography" as t;
+
+.transform-teams-industries-section {
+  padding: 5rem 0;
+}
+
+.transform-teams-industries-header {
+  margin-bottom: 3.75rem;
+}
+
+.transform-teams-industries-title {
+  color: v.$color-primary-black;
+  font-family: t.$font-family-suisse;
+}
+
+.transform-teams-industries-grid {
+  row-gap: 1.5rem;
+}
+
+.transform-teams-industries-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 11.25rem;
+  padding: 1.5rem 1.5rem;
+  border: 0.063rem solid #cccccc;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.transform-teams-industries-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  color: v.$color-gold;
+
+  svg {
+    width: 2.625rem;
+    height: 2.625rem;
+  }
+}
+
+.transform-teams-industries-card-title {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: v.$color-primary-black;
+}
+
+@media (max-width: 767.98px) {
+  .transform-teams-industries-section {
+    padding-top: 3.5rem;
+  }
+
+  .transform-teams-industries-card {
+    padding: 1.25rem 1rem;
+  }
+}

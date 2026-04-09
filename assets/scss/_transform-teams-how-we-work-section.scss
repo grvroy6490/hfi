@@ -1,0 +1,101 @@
+@use "variables" as v;
+@use "typography" as t;
+
+.transform-teams-process-section {
+  padding: 5rem 0;
+}
+
+.transform-teams-process-header {
+  margin-bottom: 3.75rem;
+}
+
+.transform-teams-process-title {
+  color: v.$color-primary-black;
+  font-family: t.$font-family-suisse;
+}
+
+.transform-teams-process-grid {
+  position: relative;
+}
+
+.transform-teams-process-step {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    left: calc(50% + 2.25rem);
+    width: calc(100% - 3.75rem);
+    height: 0.063rem;
+    background: #E7E4DF;
+  }
+
+  &:nth-child(2n)::before {
+    display: none;
+  }
+}
+
+.col-lg-3:nth-child(4n) .transform-teams-process-step::before {
+  display: none;
+}
+
+.transform-teams-process-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.625rem;
+  height: 2.625rem;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+  background: v.$color-neutral-NC4;
+  color: v.$color-primary-white;
+  position: relative;
+  z-index: 1;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.transform-teams-process-step-label {
+  margin-bottom: 0.5rem;
+  color: v.$color-neutral-NC4;
+  font-weight: 600;
+}
+
+.transform-teams-process-step-title {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.transform-teams-process-step-copy {
+  margin: 0 auto;
+  color: v.$color-neutral-NC5;
+  line-height: 1.45;
+  max-width: 16rem;
+}
+
+@media (max-width: 991.98px) {
+  .transform-teams-process-step {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .transform-teams-process-section {
+    padding-top: 3.5rem;
+  }
+
+  .transform-teams-process-step {
+    padding: 0;
+  }
+
+  .transform-teams-process-step-copy {
+    max-width: none;
+  }
+}
