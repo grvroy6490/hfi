@@ -1,0 +1,104 @@
+.about-what-sets-us-apart-section {
+    background: #ffffff;
+    padding: 4rem 0;
+}
+
+.about-what-sets-us-apart-title {
+    margin: 0;
+    color: #212121;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.about-what-sets-us-apart-content-row {
+    margin-top: 1.25rem !important;
+}
+
+.about-what-sets-us-apart-copy {
+    margin: 0;
+    color: #646464;
+    max-width: 27rem;
+    line-height: 1.4;
+}
+
+.about-what-sets-us-apart-points {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1.75rem;
+    max-width: 31rem;
+}
+
+.about-what-sets-us-apart-point {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+}
+
+.about-what-sets-us-apart-point-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #e3e3e3;
+    border-radius: 0.55rem;
+    background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-what-sets-us-apart-point-icon img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+.about-what-sets-us-apart-point-text {
+    margin: 0;
+    color: #212121;
+    line-height: 1.3;
+    font-weight: 600;
+    max-width: 12.5rem;
+}
+
+.about-what-sets-us-apart-image-wrap {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 31rem;
+}
+
+.about-what-sets-us-apart-image {
+    width: 100%;
+    height: 100%;
+    min-height: 31rem;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .about-what-sets-us-apart-content-row {
+        row-gap: 1.5rem;
+    }
+
+    .about-what-sets-us-apart-image-wrap,
+    .about-what-sets-us-apart-image {
+        min-height: 22rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-what-sets-us-apart-section {
+        padding: 3.2rem 0;
+    }
+
+    .about-what-sets-us-apart-points {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    .about-what-sets-us-apart-point-text {
+        max-width: 100%;
+    }
+}

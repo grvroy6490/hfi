@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HFI Institute builds on the global legacy of Human Factors International. We develop Experience Architects through globally recognized certifications, structured mentorship, and leadership development, while partnering with organizations to scale human-centered capability. We architect leaders for the Experience Economy.">
+    <meta name="keywords"
+        content="HFI Institute, Human Factors International, Experience Architects, Certifications, Mentorship, Leadership Development, Enterprise Capability, Experience Economy">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <title>HFI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Tamil:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/dsx3sdr.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendor/swiper.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!--------------------------- 
+        COUNTRY/REGION BAR
+    ------------------------------>
+    <div class="country-region-bar" id="country-region-bar" data-country-region-bar>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="country-region-bar-inner">
+                        <p class="country-region-bar-text body-small">
+                            Choose another country or region to see content specific to your location
+                        </p>
+                        <div class="country-region-bar-controls">
+                            <label for="country-region-select" class="visually-hidden">Country or region</label>
+                            <select id="country-region-select" name="country_region"
+                                class="country-region-bar-select-native" aria-label="Country or region">
+                                <option value="IN" selected>India</option>
+                                <option value="US">United States of America</option>
+                                <option value="GB">Europe</option>
+                                <option value="AU">Malaysia</option>
+                                <option value="CA">Canada</option>
+                                <option value="SG">Singapore</option>
+                                <option value="AE">Middle East</option>
+                                <option value="ZA">South Africa</option>
+                            </select>
+                            <button type="button" class="country-region-bar-continue">
+                                Continue
+                            </button>
+                            <button type="button" class="country-region-bar-close" id="country-region-bar-close"
+                                aria-label="Dismiss region banner">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main>
+        <!--------------------------- 
+            HEADER
+        ------------------------------>
+        <header class="site-header bg-white">
+            <div class="header-announcement">
+                <div class="container">
+                    <p class="header-announcement-text mb-0 text-center body-small">
+                        HFI Institute builds on the global legacy of Human Factors International.
+                        <a href="#" class="header-announcement-link">Discover Our Story</a>
+                    </p>
+                </div>
+            </div>
+            <nav class="header-nav navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <a href="index.html" class="header-logo navbar-brand">
+                                <img src="assets/images/logo.svg" alt="HFI">
+                            </a>
+                            <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="headerMenu">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <div class="header-menu-inner">
+                                            <div class="header-links-spacer" aria-hidden="true"></div>
+                                            <ul class="header-links list-unstyled mb-0">
+                                                <li>
+                                                    <button class="header-link-trigger" data-menu="certified"
+                                                        aria-expanded="false" aria-haspopup="true"
+                                                        aria-controls="content-certified">
+                                                        Get Certified
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="header-link-trigger" data-menu="teams"
+                                                        aria-expanded="false" aria-haspopup="true"
+                                                        aria-controls="content-teams">
+                                                        Transform Teams
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="header-link-trigger">
+                                                        Explore Insights
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                            <div class="mobile-mega-content" id="mobileMegaContent" aria-live="polite">
+                                            </div>
+                                            <div class="header-right">
+                                                <a href="#" class="header-account-link body-small">My Account</a>
+                                                <a href="#" class="header-cta btn body">Start Here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="shared-bg" role="region" aria-live="polite">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu-content" id="content-certified" role="menu">
+                                <div class="mega-menu-container">
+                                    <div class="menu-col-intro">
+                                        <h2>Become the<br>Experience Architect.</h2>
+                                        <p>
+                                            Structured certification pathways that build usability mastery, ethical
+                                            persuasion
+                                            capability, and enterprise-scale experience leadership.
+                                        </p>
+                                        <a href="all-courses.html" class="explore-link mb-1 mb-sm-3">Explore
+                                            Certification Pathway</a>
+                                        <a href="all-courses.html" class="courses-link">All Courses</a>
+                                    </div>
+                                    <div class="menu-col-certs">
+                                        <span class="col-label">Certifications</span>
+                                        <ul>
+                                            <li class="cert-items">
+                                                <a href="cua-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Usability Architect (CUA&trade;)</h3>
+                                                    <p>
+                                                        Design scalable, human-centered systems grounded in cognitive
+                                                        science,
+                                                        evidence, and usability leadership.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="cdpa-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Digital Persuasion Architect (CDPA&trade;)</h3>
+                                                    <p>
+                                                        Architect ethical persuasion systems that guide decisions, build
+                                                        trust, and
+                                                        drive sustainable digital performance.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="cxa-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Experience Architect (CXA&trade;)</h3>
+                                                    <p>
+                                                        Lead experience as an enterprise capability by aligning
+                                                        strategy,
+                                                        governance, and organizational maturity.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="#" class="cert-item menu-link">
+                                                    <h3>Certification Exams</h3>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-col-courses">
+                                        <span class="col-label">Courses</span>
+                                        <div class="course-group">
+                                            <span class="group-label">Foundations</span>
+                                            <ul>
+                                                <li><a href="courses-science.html" class="menu-link">Certified Usability
+                                                        Architect (CUA&trade;)</a></li>
+                                                <li><a href="courses-science.html" class="menu-link">Principles of
+                                                        Experience Research and Strategy</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Systems and Interfaces</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Principles of Interface Design and
+                                                        Design
+                                                        Systems</a></li>
+                                                <li><a href="#" class="menu-link">Experience Performance Evaluation</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Influence and Trust</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Persuasion, Emotion and Trust in
+                                                        Design</a></li>
+                                                <li><a href="#" class="menu-link">Digital Persuasion Architecture</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Strategy and Enterprise Leadership</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">CX and Strategy Architect</a></li>
+                                                <li><a href="#" class="menu-link">Experience Practice Architect</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-content teams-grid" id="content-teams" role="menu">
+                                <div class="mega-menu-container">
+                                    <div class="menu-col-intro">
+                                        <h2>Build Experience<br>Capability that Scales.</h2>
+                                        <p>
+                                            Structured programs that align teams, leaders, and organizations around
+                                            usable,
+                                            ethical, and high-performing digital experiences.
+                                        </p>
+                                        <a href="#" class="explore-link">Explore Enterprise Programs</a>
+                                    </div>
+
+                                    <div class="menu-col-certs">
+                                        <span class="col-label">Programs</span>
+                                        <div class="cert-items">
+                                            <a href="#" class="cert-item menu-link">
+                                                <h3>Essentials of Experience Design</h3>
+                                                <p>
+                                                    Create a shared human-centered language across cross-functional
+                                                    teams to improve
+                                                    usability, clarity, and decision-making.
+                                                </p>
+                                            </a>
+                                        </div>
+
+                                        <div class="cert-items">
+                                            <a href="#" class="cert-item menu-link">
+                                                <h3>AI-Powered Persuasion Strategist</h3>
+                                                <p>
+                                                    Enable responsible influence in AI-driven ecosystems through
+                                                    PET-aligned
+                                                    frameworks for teams and leaders.
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-col-courses">
+                                        <span class="col-label">Work with us</span>
+
+                                        <div class="course-group">
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Case Studies</a></li>
+                                                <li><a href="#" class="menu-link">Industry Focus</a></li>
+                                                <li><a href="#" class="menu-link">Request a Proposal</a></li>
+                                                <li><a href="#" class="menu-link">Download Corporate Brochure</a></li>
+                                                <li><a href="#" class="menu-link">Speak to an Enterprise Advisor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="logo-slider-section">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <p class="body text-center logo-slider-text">Building experience capability from
+                                            individual practitioners to global enterprises.</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="logo-marquee">
+                                    <div class="logo-marquee-track">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--------------------------- 
+            HERO SECTION
+        ------------------------------>
+        <section class="about-hero-section">
+            <img src="assets/images/about-banner.jpg" alt="Hero Section Background" class="hero-section-bg img-fluid">
+
+            <div class="container hero-container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 col-xl-10 text-center">
+                        <p class="hero-subheading body-small">HFI INSTITUTE</p>
+                        <h1 class="hero-headline">Building the World's Experience Talent Capital</h1>
+
+                        <p class="hero-lead body">We go beyond training. We build capability, leadership, and global
+                            impact through world-class certifications, mentorship, and structured pathways.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------- 
+            TRADITIONAL LEARNING SECTION
+        ------------------------------>
+        <section class="about-traditional-learning-section">
+            <div class="container">
+                <div class="row justify-content-center about-traditional-learning-title-row">
+                    <div class="col-12 col-lg-10 text-center">
+                        <h2 class="about-traditional-learning-title heading-3">Not a traditional learning provider</h2>
+                        <p class="about-traditional-learning-subtitle body">
+                            HFI Institute is the training and capability-building arm of Human Factors International — a
+                            global leader in UX transformation for over four decades.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-3 g-lg-4 mt-2">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="about-traditional-learning-card">
+                            <img src="assets/images/workspace_premium.svg" alt="Global Standard-Setter"
+                                class="about-traditional-learning-card-icon">
+                            <h3 class="about-traditional-learning-card-title body-large">Global Standard-Setter</h3>
+                            <p class="about-traditional-learning-card-copy body">
+                                Defining what excellence looks like in experience certifications worldwide.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="about-traditional-learning-card">
+                            <img src="assets/images/rocket_launch.svg" alt="Global Standard-Setter"
+                                class="about-traditional-learning-card-icon">
+                            <h3 class="about-traditional-learning-card-title body-large">Talent Transformation Engine
+                            </h3>
+                            <p class="about-traditional-learning-card-copy body">
+                                Scaling experience capabilities for organizations ready to lead.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="about-traditional-learning-card">
+                            <img src="assets/images/crown.svg" alt="Global Standard-Setter"
+                                class="about-traditional-learning-card-icon">
+                            <h3 class="about-traditional-learning-card-title body-large">Leadership Incubator</h3>
+                            <p class="about-traditional-learning-card-copy body">
+                                From skill acquisition to global impact - shaping Experience Architects.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--------------------------- 
+            SKILL BUILDING SECTION
+        ------------------------------>
+        <section class="about-skill-building-section">
+            <div class="container">
+                <div class="row justify-content-center about-skill-building-title-row">
+                    <div class="col-12 col-lg-10 text-center">
+                        <h2 class="about-skill-building-title heading-3">From skill building to enterprise
+                            transformation</h2>
+                    </div>
+                </div>
+
+                <div class="about-skill-building-timeline-wrap">
+                    <ol class="about-skill-building-timeline" role="list">
+                        <li class="about-skill-building-step about-skill-building-step-right">
+                            <label class="about-skill-building-dot-wrap">
+                                <input type="checkbox" class="about-skill-building-checkbox"
+                                    aria-label="Build Experience Talent at Scale">
+                                <span class="about-skill-building-dot" aria-hidden="true"></span>
+                            </label>
+                            <div class="about-skill-building-step-content">
+                                <h3 class="about-skill-building-step-title body">Build Experience Talent at Scale</h3>
+                                <p class="about-skill-building-step-desc body-small">
+                                    We enable professionals to evolve into Experience Architects (CXA) - individuals who
+                                    can design, lead, and scale experience across organizations.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="about-skill-building-step about-skill-building-step-left">
+                            <label class="about-skill-building-dot-wrap">
+                                <input type="checkbox" class="about-skill-building-checkbox"
+                                    aria-label="Enable Organizational Transformation">
+                                <span class="about-skill-building-dot" aria-hidden="true"></span>
+                            </label>
+                            <div class="about-skill-building-step-content">
+                                <h3 class="about-skill-building-step-title body">Enable Organizational Transformation
+                                </h3>
+                                <p class="about-skill-building-step-desc body-small">
+                                    We partner with enterprises to build internal UX maturity, institutionalize
+                                    experience practices, and create scalable talent ecosystems.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="about-skill-building-step about-skill-building-step-right">
+                            <label class="about-skill-building-dot-wrap">
+                                <input type="checkbox" class="about-skill-building-checkbox"
+                                    aria-label="Deliver Globally Recognized Certifications">
+                                <span class="about-skill-building-dot" aria-hidden="true"></span>
+                            </label>
+                            <div class="about-skill-building-step-content">
+                                <h3 class="about-skill-building-step-title body">Deliver Globally Recognized
+                                    Certifications</h3>
+                                <p class="about-skill-building-step-desc body-small">
+                                    Our certification tracks serve practitioners, leaders, and enterprises - each rooted
+                                    in real-world application, not theory.
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+
+        <!--------------------------- 
+            STATS COUNTER SECTION
+        ------------------------------>
+        <section class="about-stats-counter-section">
+            <div class="container">
+                <div class="row justify-content-center about-stats-counter-title-row">
+                    <div class="col-12 col-lg-10 text-center">
+                        <h2 class="about-stats-counter-title heading-3">Not a traditional learning provider</h2>
+                        <p class="about-stats-counter-subtitle body">
+                            HFI Institute is the training and capability-building arm of Human Factors International — a
+                            global leader in UX transformation for over four decades.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-3 g-lg-4 mt-2">
+                    <div class="col-12 col-md-6 col-lg-3 about-stats-counter-card">
+                        <h3 class="about-stats-counter-card-title heading-4">40+</h3>
+                        <p class="about-stats-counter-card-subtitle body">Years of Legacy</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 about-stats-counter-card">
+                        <h3 class="about-stats-counter-card-title heading-4">200+</h3>
+                        <p class="about-stats-counter-card-subtitle body">Fortune 500 Clients</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 about-stats-counter-card">
+                        <h3 class="about-stats-counter-card-title heading-4">50+</h3>
+                        <p class="about-stats-counter-card-subtitle body">Countries Reached</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 about-stats-counter-card">
+                        <h3 class="about-stats-counter-card-title heading-4">10K+</h3>
+                        <p class="about-stats-counter-card-subtitle body">Professionals Trained</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------- 
+            JOUNEY OF IMPACT SECTION
+        ------------------------------>
+        <section class="about-journey-of-impact-section">
+            <div class="container">
+                <div class="row justify-content-center about-journey-of-impact-title-row">
+                    <div class="col-12 col-lg-10 text-center">
+                        <h2 class="about-journey-of-impact-title heading-3">A Journey of Impact</h2>
+                    </div>
+                </div>
+
+                <div class="about-journey-of-impact-wrap">
+                    <div class="about-journey-timeline">
+                        <div class="about-journey-timeline-years-wrap">
+                            <div class="about-journey-years-pagination" aria-label="Journey year pagination"></div>
+                            <div class="swiper about-journey-years-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <span class="about-journey-year heading-1">2024</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <span class="about-journey-year heading-1">2020</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <span class="about-journey-year heading-1">2015</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <span class="about-journey-year heading-1">2008</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <span class="about-journey-year heading-1">2000</span>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <span class="about-journey-year heading-1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CONTENT SLIDER -->
+                        <div class="swiper about-journey-content-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="about-journey-content-slide">
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2024</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                HFI Institute launched as the global certification and training arm of
+                                                Human Factors International
+                                            </p>
+                                        </article>
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2024</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                Introduced the Experience Architect (CXA) certification pathway
+                                            </p>
+                                        </article>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="about-journey-content-slide">
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2020</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                HFI Institute launched as the global certification and training arm of
+                                                Human Factors International
+                                            </p>
+                                        </article>
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2020</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                Introduced the Experience Architect (CXA) certification pathway
+                                            </p>
+                                        </article>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="about-journey-content-slide">
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2015</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                HFI Institute launched as the global certification and training arm of
+                                                Human Factors International
+                                            </p>
+                                        </article>
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2015</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                Introduced the Experience Architect (CXA) certification pathway
+                                            </p>
+                                        </article>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="about-journey-content-slide">
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2008</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                HFI Institute launched as the global certification and training arm of
+                                                Human Factors International
+                                            </p>
+                                        </article>
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2008</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                Introduced the Experience Architect (CXA) certification pathway
+                                            </p>
+                                        </article>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="about-journey-content-slide">
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2000</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                HFI Institute launched as the global certification and training arm of
+                                                Human Factors International
+                                            </p>
+                                        </article>
+                                        <article class="about-journey-slide-item">
+                                            <p class="about-journey-slide-item-year body-small">2000</p>
+                                            <p class="about-journey-slide-item-copy body">
+                                                Introduced the Experience Architect (CXA) certification pathway
+                                            </p>
+                                        </article>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--------------------------- 
+            WHAT SETS US APART SECTION
+        ------------------------------>
+        <section class="about-what-sets-us-apart-section">
+            <div class="container">
+              
+
+                <div class="row align-items-start about-what-sets-us-apart-content-row">
+                    <div class="col-12 col-lg-6">
+                        <h2 class="about-what-sets-us-apart-title heading-3">What Sets Us Apart</h2>
+
+                        <p class="about-what-sets-us-apart-copy body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                        </p>
+
+                        <div class="about-what-sets-us-apart-points">
+                            <article class="about-what-sets-us-apart-point">
+                                <span class="about-what-sets-us-apart-point-icon" aria-hidden="true">
+                                    <img src="assets/images/people_icon.svg" alt="">
+                                </span>
+                                <p class="about-what-sets-us-apart-point-text body-large">Backed by a 40+ year global legacy</p>
+                            </article>
+                            <article class="about-what-sets-us-apart-point">
+                                <span class="about-what-sets-us-apart-point-icon" aria-hidden="true">
+                                    <img src="assets/images/people_icon.svg" alt="">
+                                </span>
+                                <p class="about-what-sets-us-apart-point-text body-large">Built by pioneers of UX institutionalization</p>
+                            </article>
+                            <article class="about-what-sets-us-apart-point">
+                                <span class="about-what-sets-us-apart-point-icon" aria-hidden="true">
+                                    <img src="assets/images/people_icon.svg" alt="">
+                                </span>
+                                <p class="about-what-sets-us-apart-point-text body-large">Focused on career transformation, not just certification</p>
+                            </article>
+                            <article class="about-what-sets-us-apart-point">
+                                <span class="about-what-sets-us-apart-point-icon" aria-hidden="true">
+                                    <img src="assets/images/people_icon.svg" alt="">
+                                </span>
+                                <p class="about-what-sets-us-apart-point-text body-large">Trusted by global enterprises</p>
+                            </article>
+                            <article class="about-what-sets-us-apart-point">
+                                <span class="about-what-sets-us-apart-point-icon" aria-hidden="true">
+                                    <img src="assets/images/people_icon.svg" alt="">
+                                </span>
+                                <p class="about-what-sets-us-apart-point-text body-large">Designed for the Experience Economy</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="about-what-sets-us-apart-image-wrap">
+                            <img src="assets/images/what_sets_apart_img.webp" alt="Professionals collaborating in an office"
+                                class="about-what-sets-us-apart-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--------------------------- 
+            VISIONARIES BEHIND SECTION
+        ------------------------------>
+        <section class="about-visionaries-behind-section">
+            <div class="container">
+                <div class="row justify-content-center about-visionaries-behind-title-row">
+                    <div class="col-12 col-lg-10 text-center">
+                        <h2 class="about-visionaries-behind-title heading-3">Visionaries Behind HFI Institute</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-visionaries-behind-grid" id="about-visionaries-behind-grid">
+                            <article class="about-visionaries-behind-card is-expanded">
+                                <div class="about-visionaries-behind-card-inner">
+                                    <div class="about-visionaries-behind-card-img-wrap">
+                                        <img src="assets/images/Pioneer_01.png" alt="Dr. Eric Schaffer"
+                                            class="about-visionaries-behind-card-img"
+                                            onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                    </div>
+                                    <div class="about-visionaries-behind-card-body">
+                                        <p class="about-visionaries-behind-card-desc body">One of the world's foremost pioneers
+                                            in user experience. Since 1977, Eric has transformed UX from a design function into
+                                            an enterprise capability.</p>
+                                        <ul class="about-visionaries-behind-card-list">
+                                            <li>
+                                                <p class="about-visionaries-behind-card-name body">Author of
+                                                    Institutionalization of UX</p>
+                                            </li>
+                                            <li>
+                                                <p class="about-visionaries-behind-card-name body">Creator of the HFI
+                                                    Framework&trade; (ISO-certifiable)</p>
+                                            </li>
+                                            <li>
+                                                <p class="about-visionaries-behind-card-name body">Led UX strategy for 200+
+                                                    Fortune 500 organizations</p>
+                                            </li>
+                                        </ul>
+                                        <p class="about-visionaries-behind-card-name heading-6">Dr. Eric Schaffer</p>
+                                        <p class="about-visionaries-behind-card-title body-small">Global UX Authority •
+                                            HFI
+                                            Founder & CEO</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="about-visionaries-behind-card">
+                                <div class="about-visionaries-behind-card-inner">
+                                    <div class="about-visionaries-behind-card-img-wrap">
+                                        <img src="assets/images/Pioneer_02.png" alt="Dr. Eric Schaffer"
+                                            class="about-visionaries-behind-card-img"
+                                            onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                    </div>
+                                    <div class="about-visionaries-behind-card-body">
+                                        <p class="about-visionaries-behind-card-desc body">A globally respected expert in cross-cultural design and contextual innovation, making experience design inclusive and scalable across cultures.</p>
+                                        <ul class="about-visionaries-behind-card-list">
+                                            <li>
+                                                <p class="about-visionaries-behind-card-name body">Co-author of Institutionalization of UX</p>
+                                            </li>
+                                            <li>
+                                                <p class="about-visionaries-behind-card-name body">Pioneer in ecosystem-driven UX research</p>
+                                            </li>
+                                            <li>
+                                                <p class="about-visionaries-behind-card-name body">Speaker at TEDx and AI for Good Summit</p>
+                                            </li>
+                                        </ul>
+                                        <p class="about-visionaries-behind-card-name heading-6">Apala Lahiri</p>
+                                        <p class="about-visionaries-behind-card-title body-small">Co-Founder,<br>
+                                            HFI APAC & Chief of Technical Staff</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--------------------------- 
+            CERTIFIED USABILITY ANALYST SECTION
+            ------------------------------>
+        <section class="certification-certified-usability-analyst-section">
+
+            <img src="assets/images/dotted_arrow.svg" alt="Usability Analyst"
+                class="certification-certified-usability-analyst-image" aria-hidden="true" width="100%" height="100%">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="certification-certified-usability-analyst-inner">
+                            <h2 class="certification-certified-usability-analyst-title heading-3">Start Your Journey as
+                                an Experience Architect</h2>
+                            <p class="certification-certified-usability-analyst-lead body">Advance your expertise with a
+                                globally respected UX certification.</p>
+                            <div class="certification-certified-usability-analyst-actions">
+                                <a href="<?php echo base_url(); ?>checkout/program-details"
+                                    class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-primary body font-demibold">Register
+                                    for Next CUA&trade; Batch</a>
+                                <button type="button" id="certification-usability-analyst-advisor-trigger"
+                                    class="certification-certified-usability-analyst-btn certification-certified-usability-analyst-btn-secondary body font-demibold">
+                                    <svg class="certification-certified-usability-analyst-btn-icon" width="18"
+                                        height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    Talk to a Program Advisor
+                                </button>
+                            </div>
+
+                            <div id="certification-usability-analyst-advisor-form-wrap"
+                                class="certification-analyst-advisor-form-wrap">
+                                <div class="certification-analyst-advisor-form-card">
+                                    <form class="certification-analyst-advisor-form" action="#" method="post"
+                                        aria-label="Request a program advisor">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <label for="advisor-full-name" class="visually-hidden">Full
+                                                    Name</label>
+                                                <input type="text" id="advisor-full-name" name="full_name"
+                                                    class="certification-analyst-advisor-input body-small"
+                                                    placeholder="Full Name*" required>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <label for="advisor-work-email" class="visually-hidden">Work
+                                                    Email</label>
+                                                <input type="email" id="advisor-work-email" name="work_email"
+                                                    class="certification-analyst-advisor-input body-small"
+                                                    placeholder="Work Email*" required>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <label for="advisor-phone-number" class="visually-hidden">Phone
+                                                    number</label>
+                                                <div class="experience-pathway-phone">
+                                                    <div class="experience-pathway-country-code-wrap">
+                                                        <img class="experience-pathway-flag"
+                                                            src="https://cdn.jsdelivr.net/npm/country-flag-icons/3x2/IN.svg"
+                                                            alt="" aria-hidden="true" width="24" height="16">
+                                                        <select name="phone_prefix" id="pathway-country-code"
+                                                            class="experience-pathway-select experience-pathway-country-code body-small"
+                                                            aria-label="Phone prefix">
+                                                            <option value="+91" data-iso="IN" selected>+91</option>
+                                                            <option value="+1" data-iso="US">+1</option>
+                                                            <option value="+44" data-iso="GB">+44</option>
+                                                            <option value="+61" data-iso="AU">+61</option>
+                                                            <option value="+81" data-iso="JP">+81</option>
+                                                            <option value="+1" data-iso="CA">+1 CA</option>
+                                                            <option value="+971" data-iso="AE">+971</option>
+                                                            <option value="+65" data-iso="SG">+65</option>
+                                                            <option value="+49" data-iso="DE">+49</option>
+                                                            <option value="+33" data-iso="FR">+33</option>
+                                                            <option value="+86" data-iso="CN">+86</option>
+                                                        </select>
+                                                    </div>
+                                                    <input type="tel" id="advisor-phone-number" name="phone_number"
+                                                        class="experience-pathway-input body-small"
+                                                        placeholder="Phone number*" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <label for="advisor-current-role" class="visually-hidden">Current
+                                                    Role</label>
+                                                <input type="text" id="advisor-current-role" name="current_role"
+                                                    class="certification-analyst-advisor-input body-small"
+                                                    placeholder="Current Role">
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <label for="advisor-organization"
+                                                    class="visually-hidden">Organization</label>
+                                                <input type="text" id="advisor-organization" name="organization"
+                                                    class="certification-analyst-advisor-input body-small"
+                                                    placeholder="Organization (if applicable)">
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="submit"
+                                                class="certification-analyst-advisor-btn body font-demibold">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <!--------------------------- 
+        FOOTER
+    ------------------------------>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-12 footer-brand">
+                        <div class="footer-logo mb-4">
+                            <img src="assets/images/logo.svg" alt="HFI">
+                        </div>
+
+                        <div class="context-wrap">
+                            <div class="content">
+                                <p class="footer-tagline body-small mb-0">Building the World's Experience Talent Capital
+                                </p>
+                                <p class="footer-desc body-small">Rooted in the legacy of Human Factors International,
+                                    HFI
+                                    Institute
+                                    develops Experience Architects and partners with organizations to build adaptive,
+                                    enterprise-scale experience capability.</p>
+                                <p class="footer-desc body-small">We architect leadership for the Experience Economy.
+                                </p>
+                            </div>
+
+                            <div class="footer-brand-country">
+                                <button type="button" class="footer-country-choice body-small"
+                                    id="footer-country-choice-trigger" data-bs-toggle="modal"
+                                    data-bs-target="#country-region-modal" aria-haspopup="dialog"
+                                    aria-controls="country-region-modal">
+                                    <svg class="footer-country-choice-icon" xmlns="http://www.w3.org/2000/svg"
+                                        width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg>
+                                    <span>Choose Your Country</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+                <div class="row g-4 py-0 py-md-5">
+
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">About us</a></li>
+                            <li><a href="#" class="body-small">Our Legacy</a></li>
+                            <li><a href="#" class="body-small">Faculty & Mentors</a></li>
+                            <li><a href="#" class="body-small">Global Presence</a></li>
+                            <li><a href="#" class="body-small">Accreditation</a></li>
+                            <li><a href="#" class="body-small">Careers</a></li>
+                            <li><a href="#" class="body-small">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <h3 class="footer-heading body">Get Certified</h3>
+                        <p class="footer-subheading body-small">Professional Certification Pathways</p>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">Experience Architect Pathway</a></li>
+                            <li><a href="cua-certification.html" class="body-small">Certified Usability Architect
+                                    (CUA&trade;)</a></li>
+                            <li><a href="cdpa-certification.html" class="body-small">Certified Digital Persuasion
+                                    Architect (CDPA&trade;)</a></li>
+                            <li><a href="cxa-certification.html" class="body-small">Certified Experience Architect
+                                    (CXA&trade;)</a></li>
+                            <li><a href="#" class="body-small">Certification Exams</a></li>
+                            <li><a href="#" class="body-small">Upcoming Cohorts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <h3 class="footer-heading body">Transform Teams</h3>
+                        <p class="footer-subheading body-small">Enterprise Capability Development</p>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">Essentials of Experience Design</a></li>
+                            <li><a href="#" class="body-small">AI-Powered Persuasion Strategist</a></li>
+                            <li><a href="#" class="body-small">Experience Maturity Programs</a></li>
+                            <li><a href="#" class="body-small">Governance & Operating Models</a></li>
+                            <li><a href="#" class="body-small">Enterprise Advisory</a></li>
+                            <li><a href="#" class="body-small">Request a Proposal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <h3 class="footer-heading body">Explore Insights</h3>
+                        <p class="footer-subheading body-small">Stories, Insights & Events</p>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">Insights & Thought Leadership</a></li>
+                            <li><a href="#" class="body-small">Research & Whitepapers</a></li>
+                            <li><a href="#" class="body-small">Events & Masterclasses</a></li>
+                            <li><a href="#" class="body-small">Alumni Network</a></li>
+                            <li><a href="#" class="body-small">Academic & Industry Partnerships</a></li>
+                            <li><a href="#" class="body-small">Newsletter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center py-3 py-md-4 footer-bottom-content">
+                    <div class="col-12 col-md-3 footer-copyright text-center text-md-start body-small">
+                        © 2026 HFI Training and Solutions Inc.
+                    </div>
+                    <div class="col-12 col-md-9 footer-legal text-center text-md-end mt-2 mt-md-0 body-small">
+                        <a href="#">Privacy Policy</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#">Terms of Use and Cookie Policy</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#">Training & Cancellation Policy</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#" aria-label="YouTube">YouTube</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--------------------------- 
+        CHOOSE YOUR COUNTRY MODAL
+    ------------------------------>
+    <div class="modal fade" id="country-region-modal" tabindex="-1" aria-labelledby="country-region-modal-title"
+        aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered country-region-modal-dialog">
+            <div class="modal-content country-region-modal">
+                <button type="button" class="btn-close country-region-modal-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <h2 class="country-region-modal-title heading-5" id="country-region-modal-title">Choose your country
+                </h2>
+                <p class="country-region-modal-lead body-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor</p>
+                <div class="row g-4 country-region-modal-grid">
+                    <div class="col-12 col-sm-6">
+                        <ul class="country-region-modal-list">
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">India</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Europe</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">United States of America</button>
+                            </li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Malaysia</button></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <ul class="country-region-modal-list">
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">South Africa</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Middle East</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Singapore</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Canada</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/vendor/jquery.js"></script>
+<script src="assets/vendor/bootstrap.js"></script>
+<script src="assets/vendor/swiper.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>

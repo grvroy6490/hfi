@@ -1,0 +1,253 @@
+.about-skill-building-section {
+    background: #ffffff;
+    padding: 3.5rem 0 4rem;
+}
+
+.about-skill-building-title {
+    margin: 0;
+}
+
+.about-skill-building-timeline-wrap {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.about-skill-building-timeline {
+    position: relative;
+    width: min(100%, 760px);
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0 0.35rem;
+} 
+
+// .about-skill-building-timeline::before {
+//     content: "";
+//     position: absolute;
+//     left: 50%;
+//     top: 0;
+//     bottom: 0;
+//     width: 1px;
+//     background: #ddd;
+//     transform: translateX(-50%);
+// }
+
+.about-skill-building-step {
+    --about-skill-dot-center: 1rem;
+    position: relative;
+    min-height: 8.6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    padding-top: 0.35rem;
+}
+
+.about-skill-building-step::before,
+.about-skill-building-step::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    background: #ddd;
+    transform: translateX(-50%);
+    transition: background-color 260ms ease;
+    z-index: 1;
+}
+
+.about-skill-building-step::before {
+    top: 0;
+    height: var(--about-skill-dot-center);
+}
+
+.about-skill-building-step::after {
+    top: var(--about-skill-dot-center);
+    height: calc(100% - var(--about-skill-dot-center));
+}
+
+.about-skill-building-step:first-child::before {
+    background: transparent;
+}
+
+
+
+.about-skill-building-dot-wrap {
+    position: absolute;
+    left: 50%;
+    top: var(--about-skill-dot-center);
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: translate(-50%, -50%);
+    z-index: 22;
+}
+
+.about-skill-building-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.about-skill-building-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #f4f4f4;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.about-skill-building-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0.2rem;
+    border-radius: 50%;
+    background: #B88912;
+    transform: scale(0);
+    transition: transform 220ms ease;
+}
+
+.about-skill-building-step-content {
+    // max-width: 250px;
+    opacity: 0.55;
+    transform: translateY(0);
+    transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.about-skill-building-step-right .about-skill-building-step-content {
+    grid-column: 2;
+    justify-self: start;
+    margin-left: 1rem;
+    text-align: left;
+}
+
+.about-skill-building-step-left .about-skill-building-step-content {
+    grid-column: 1;
+    justify-self: end;
+    margin-right: 1rem;
+    text-align: right;
+}
+
+.about-skill-building-step-title {
+    margin: 0;
+    color: #2a2a2a;
+    font-weight: 500;
+    line-height: 1.35;
+    transition: color 260ms ease;
+}
+
+.about-skill-building-step-desc {
+    margin: 0;
+    color: #8a8a8a;
+    line-height: 1.35;
+    font-weight: 400;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(0.2rem);
+    transition: max-height 320ms ease, opacity 260ms ease, transform 260ms ease, color 260ms ease, margin 260ms ease;
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked) .about-skill-building-step-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked) .about-skill-building-step-title {
+    color: #2a2a2a;
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked) .about-skill-building-step-desc {
+    margin-top: 0.35rem;
+    max-height: 7rem;
+    opacity: 1;
+    transform: translateY(0);
+    color: #4e4e4e;
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked) .about-skill-building-dot {
+    border-color: #B88912;
+    transform: translate(-50%, -50%) scale(1.03);
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked) .about-skill-building-dot::after {
+    transform: scale(1);
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked)::after {
+    background: #B88912;
+}
+
+.about-skill-building-step:has(.about-skill-building-checkbox:checked)+.about-skill-building-step::before {
+    background: #B88912;
+}
+
+@media (max-width: 767px) {
+    .about-skill-building-timeline::before {
+        left: 0.5rem;
+        transform: none;
+    }
+
+    .about-skill-building-step {
+        --about-skill-dot-center: 0.9rem;
+        grid-template-columns: 1fr;
+        min-height: 6rem;
+        padding-left: 2rem;
+        padding-top: 0.2rem;
+    }
+
+    .about-skill-building-step::before,
+    .about-skill-building-step::after {
+        left: 0.5rem;
+        transform: translateX(-50%);
+    }
+
+    .about-skill-building-dot {
+        left: 0.5rem;
+        transform: translate(-50%, -50%);
+    }
+
+    .about-skill-building-dot-wrap {
+        left: 0.5rem;
+        top: var(--about-skill-dot-center);
+    }
+
+    .about-skill-building-step:has(.about-skill-building-checkbox:checked) .about-skill-building-dot {
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+
+    .about-skill-building-step-right .about-skill-building-step-content,
+    .about-skill-building-step-left .about-skill-building-step-content {
+        grid-column: 1;
+        justify-self: start;
+        margin: 0;
+        text-align: left;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-skill-building-timeline-wrap{
+        padding:0 20px;
+    }
+
+    .about-skill-building-dot-wrap{
+        left: 0.75rem;
+    }
+
+    .about-skill-building-step{
+        padding-bottom: 1rem;
+    }
+}

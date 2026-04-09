@@ -1,0 +1,182 @@
+.about-journey-of-impact-section {
+    background: #FAFAFA;
+    padding: 3.5rem 0 3.8rem;
+    overflow: hidden;
+}
+
+.about-journey-of-impact-title {
+    margin: 0;
+}
+
+.about-journey-of-impact-wrap {
+    margin-top: 3rem;
+}
+
+.about-journey-timeline {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2.2rem;
+    align-items: start;
+}
+
+.about-journey-timeline-years-wrap {
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.about-journey-years-swiper {
+    height: 13.75rem;
+    overflow: visible;
+}
+
+.about-journey-years-pagination {
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    height: 25rem;
+    left: 0;
+    width: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-journey-years-page-line {
+    width: 2px;
+    height: 15%;
+    border-radius: 999px;
+    background: #CCCCCC;
+    opacity: 0.8;
+    transition: all 220ms ease;
+    cursor: pointer;
+}
+
+.about-journey-years-page-line.is-active {
+    height: 30%;
+    background: #B88912;
+    opacity: 1;
+    box-shadow: 0 0 0 1px rgba(184, 137, 18, 0.08);
+}
+
+.about-journey-years-swiper .swiper-slide {
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity 220ms ease;
+}
+
+.about-journey-years-swiper .swiper-slide.swiper-slide-active {
+    opacity: 1;
+}
+
+.about-journey-years-swiper .swiper-slide.swiper-slide-next {
+    opacity: 0.2;
+}
+
+.about-journey-years-swiper .swiper-slide.swiper-slide-prev {
+    opacity: 0;
+}
+
+.about-journey-year {
+    color: #B88912;
+    line-height: 0.6;
+    letter-spacing: -0.02em;
+    font-size: 10rem;
+}
+
+.about-journey-content-swiper {
+    overflow: hidden;
+    height: 30rem;
+}
+
+
+.about-journey-content-swiper .swiper-slide.swiper-slide-active {
+    opacity: 1;
+}
+
+.about-journey-content-swiper .swiper-slide.swiper-slide-next {
+    opacity: 0.2;
+}
+
+.about-journey-content-swiper .swiper-slide.swiper-slide-prev {
+    opacity: 0;
+}
+
+.about-journey-content-slide {
+    padding-top: 0.3rem;
+}
+
+.about-journey-slide-item {
+    padding: 0.2rem 0 0.9rem;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 0.85rem;
+}
+
+.about-journey-slide-item:last-child {
+    margin-bottom: 0;
+}
+
+.about-journey-slide-item-year {
+    color: #B88912;
+    margin: 0 0 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+}
+
+.about-journey-slide-item-copy {
+    margin: 0;
+    max-width: 530px;
+    color: #1f2937;
+    line-height: 1.38;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .about-journey-timeline {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-journey-timeline-years-wrap {
+        padding-left: 1.35rem;
+    }
+
+    .about-journey-years-swiper {
+        height: 11.5rem;
+    }
+
+    .about-journey-year {
+        font-size: 8rem;
+    }
+    
+
+    .about-journey-slide-item-copy {
+        max-width: 100%;
+    }
+
+    .about-journey-content-swiper{
+        padding-left: 2rem;
+        height: 15rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-journey-of-impact-section {
+        padding: 3rem 0 3.2rem;
+    }
+
+    .about-journey-timeline-years-wrap {
+        padding-left: 0.95rem;
+    }
+
+    .about-journey-years-pagination {
+        top: 0;
+        bottom: 0;
+    }
+
+    .about-journey-years-swiper {
+        height: 11rem;
+    }
+}

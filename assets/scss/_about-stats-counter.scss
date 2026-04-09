@@ -1,0 +1,58 @@
+.about-stats-counter-section{
+    background: #212121;
+    padding: 4.75rem 0 5.25rem;
+
+    @media (max-width: 767px) {
+        padding: 3.25rem 0 3.75rem;
+    }
+
+    .about-stats-counter-title-row{
+        margin-bottom: 3rem !important;
+    }
+}
+
+.about-stats-counter-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: calc(2rem + 4px);
+    line-height: 1.06;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.about-stats-counter-subtitle{
+    margin: 1rem auto 0;
+    max-width: 90%;
+    color: #ffffff;
+    line-height: 1.45;
+
+    @media screen and (max-width: 575px) {
+        max-width: 100%;
+    }
+}
+
+.about-stats-counter-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (max-width: 992px) {
+        margin-bottom: 1rem;
+    }
+}
+
+.about-stats-counter-card-title{
+    margin: 0;
+    color: #ffffff;
+    font-size: calc(2rem + 4px);
+    line-height: 1.06;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.about-stats-counter-card-subtitle{
+    margin: 1rem auto 0;
+    color: #ffffff;
+    line-height: 1.45;
+    font-weight: 300;
+}

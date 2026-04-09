@@ -20,6 +20,88 @@
     });
 })();
 
+// About page: stats counter animation
+(function () {
+    "use strict";
+
+    var section = document.querySelector(".about-stats-counter-section");
+    if (!section) return;
+
+    var counters = Array.from(section.querySelectorAll(".about-stats-counter-card-title"));
+    if (!counters.length) return;
+
+    function parseCounterValue(text) {
+        var raw = (text || "").trim().toUpperCase();
+        var plus = raw.includes("+");
+        var isK = raw.includes("K");
+        var numeric = parseFloat(raw.replace(/[^0-9.]/g, "")) || 0;
+        var target = isK ? numeric * 1000 : numeric;
+
+        return {
+            target: target,
+            plus: plus,
+            isK: isK
+        };
+    }
+
+    function formatCounterValue(value, meta) {
+        var rounded = Math.round(value);
+        var display = meta.isK ? (rounded / 1000).toFixed(0) + "K" : String(rounded);
+        return meta.plus ? display + "+" : display;
+    }
+
+    function animateCounter(el) {
+        var meta = parseCounterValue(el.textContent);
+        if (!meta.target) return;
+
+        var duration = 1300;
+        var start = performance.now();
+
+        function tick(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            // easeOutCubic
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = meta.target * eased;
+            el.textContent = formatCounterValue(current, meta);
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            }
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    function runCounters() {
+        counters.forEach(function (el) {
+            animateCounter(el);
+        });
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        runCounters();
+        return;
+    }
+
+    var hasRun = false;
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting || hasRun) return;
+                hasRun = true;
+                runCounters();
+                observer.disconnect();
+            });
+        },
+        {
+            threshold: 0.35,
+            rootMargin: "0px 0px -10% 0px"
+        }
+    );
+
+    observer.observe(section);
+})();
+
 (function () {
     "use strict";
 
@@ -883,6 +965,79 @@
     });
 })();
 
+// About page: journey vertical year + content swipers
+(function () {
+    "use strict";
+
+    const yearsEl = document.querySelector(".about-journey-years-swiper");
+    const contentEl = document.querySelector(".about-journey-content-swiper");
+    const yearPaginationEl = document.querySelector(".about-journey-years-pagination");
+    if (!yearsEl || !contentEl || !yearPaginationEl || typeof Swiper === "undefined") return;
+
+    const yearsSwiper = new Swiper(yearsEl, {
+        direction: "vertical",
+        slidesPerView: 2,
+        centeredSlides: false,
+        spaceBetween: 0,
+        speed: 650,
+        allowTouchMove: false,
+        breakpoints: {
+            0: {
+                slidesPerView: 2
+            },
+            992: {
+                slidesPerView: 2
+            }
+        }
+    });
+
+    const contentSwiper = new Swiper(contentEl, {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 14,
+        speed: 650,
+        autoHeight: true,
+        mousewheel: {
+            forceToAxis: true
+        }
+    });
+
+    const totalSlides = contentEl.querySelectorAll(".swiper-slide").length;
+    const paginationLines = [];
+
+    for (let i = 0; i < totalSlides; i += 1) {
+        const line = document.createElement("button");
+        line.type = "button";
+        line.className = "about-journey-years-page-line";
+        line.setAttribute("aria-label", "Go to year " + (i + 1));
+        line.addEventListener("click", function () {
+            contentSwiper.slideTo(i);
+        });
+        yearPaginationEl.appendChild(line);
+        paginationLines.push(line);
+    }
+
+    const syncYearsToContent = function () {
+        const activeIndex = contentSwiper.activeIndex;
+        yearsSwiper.slideTo(activeIndex);
+        paginationLines.forEach(function (line, idx) {
+            line.classList.toggle("is-active", idx === activeIndex);
+        });
+    };
+
+    contentSwiper.on("init", syncYearsToContent);
+    contentSwiper.on("slideChange", syncYearsToContent);
+    contentSwiper.on("slideChangeTransitionEnd", syncYearsToContent);
+
+    yearsSwiper.on("click", function () {
+        const clicked = yearsSwiper.clickedIndex;
+        if (typeof clicked === "number" && clicked >= 0) {
+            contentSwiper.slideTo(clicked);
+        }
+    });
+
+    syncYearsToContent();
+})();
 
 // logos-marquee-slider
 (function () {
@@ -1588,6 +1743,87 @@
     }
 })();
 
+// About Visionaries: hover expand (70% / 15% / 15%) — only >= 768px
+(function () {
+    "use strict";
+    var VISIONARIES_MEDIA = "(min-width: 768px)";
+
+    function initAboutVisionaries() {
+        var grid = document.getElementById("about-visionaries-behind-grid");
+        if (!grid) return;
+        var cards = grid.querySelectorAll(".about-visionaries-behind-card");
+        var hoverHandlersAttached = false;
+
+        function removeAllExpanded() {
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove("is-expanded");
+            }
+        }
+        function clearExpanded() {
+            grid.classList.remove("has-hover");
+            removeAllExpanded();
+            if (cards[0]) {
+                cards[0].classList.add("is-expanded");
+            }
+        }
+        function setExpanded(card) {
+            removeAllExpanded();
+            grid.classList.add("has-hover");
+            card.classList.add("is-expanded");
+        }
+
+        function onMouseOver(e) {
+            if (!window.matchMedia(VISIONARIES_MEDIA).matches) return;
+            var card = e.target.closest(".about-visionaries-behind-card");
+            if (card && grid.contains(card)) {
+                setExpanded(card);
+            }
+        }
+        function onMouseLeave() {
+            if (!window.matchMedia(VISIONARIES_MEDIA).matches) return;
+            clearExpanded();
+        }
+
+        function attachHoverHandlers() {
+            if (hoverHandlersAttached) return;
+            grid.addEventListener("mouseover", onMouseOver);
+            grid.addEventListener("mouseleave", onMouseLeave);
+            hoverHandlersAttached = true;
+        }
+        function detachHoverHandlers() {
+            if (!hoverHandlersAttached) return;
+            grid.removeEventListener("mouseover", onMouseOver);
+            grid.removeEventListener("mouseleave", onMouseLeave);
+            hoverHandlersAttached = false;
+        }
+
+        function updateHoverState() {
+            if (window.matchMedia(VISIONARIES_MEDIA).matches) {
+                attachHoverHandlers();
+            } else {
+                detachHoverHandlers();
+                clearExpanded();
+            }
+        }
+
+        clearExpanded();
+        updateHoverState();
+        var mql = window.matchMedia(VISIONARIES_MEDIA);
+        if (mql.addEventListener) {
+            mql.addEventListener("change", updateHoverState);
+        } else if (mql.addListener) {
+            mql.addListener(updateHoverState);
+        }
+        window.addEventListener("resize", updateHoverState);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initAboutVisionaries);
+    } else {
+        initAboutVisionaries();
+    }
+})();
+
 // Upcoming CUA Tracks: timezone dropdown
 (function () {
     "use strict";
@@ -2107,6 +2343,43 @@
     }
 
     // Start ONLY on first mouseover of the timeline.
+    function start() {
+        activateSequential();
+    }
+
+    timeline.addEventListener("mouseover", start, { once: true });
+})();
+
+// About page skill-building timeline: auto-run steps (checkboxes) sequentially once.
+(function () {
+    "use strict";
+
+    var timeline = document.querySelector(".about-skill-building-timeline");
+    if (!timeline) return;
+
+    var checkboxes = Array.from(timeline.querySelectorAll(".about-skill-building-checkbox"));
+    if (!checkboxes.length) return;
+
+    var hasRun = false;
+    var stepDelayMs = 600;
+
+    function activateSequential() {
+        if (hasRun) return;
+        hasRun = true;
+
+        checkboxes.forEach(function (checkbox, idx) {
+            window.setTimeout(function () {
+                if (!checkbox) return;
+                if (!checkbox.checked) {
+                    checkbox.checked = true;
+                    checkbox.dispatchEvent(
+                        new Event("change", { bubbles: true })
+                    );
+                }
+            }, idx * stepDelayMs);
+        });
+    }
+
     function start() {
         activateSequential();
     }
