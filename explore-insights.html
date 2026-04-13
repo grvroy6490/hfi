@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HFI Institute builds on the global legacy of Human Factors International. We develop Experience Architects through globally recognized certifications, structured mentorship, and leadership development, while partnering with organizations to scale human-centered capability. We architect leaders for the Experience Economy.">
+    <meta name="keywords"
+        content="HFI Institute, Human Factors International, Experience Architects, Certifications, Mentorship, Leadership Development, Enterprise Capability, Experience Economy">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <title>HFI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Tamil:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/dsx3sdr.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendor/swiper.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!--------------------------- 
+        COUNTRY/REGION BAR
+    ------------------------------>
+    <div class="country-region-bar" id="country-region-bar" data-country-region-bar>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="country-region-bar-inner">
+                        <p class="country-region-bar-text body-small">
+                            Choose another country or region to see content specific to your location
+                        </p>
+                        <div class="country-region-bar-controls">
+                            <label for="country-region-select" class="visually-hidden">Country or region</label>
+                            <select id="country-region-select" name="country_region"
+                                class="country-region-bar-select-native" aria-label="Country or region">
+                                <option value="IN" selected>India</option>
+                                <option value="US">United States of America</option>
+                                <option value="GB">Europe</option>
+                                <option value="AU">Malaysia</option>
+                                <option value="CA">Canada</option>
+                                <option value="SG">Singapore</option>
+                                <option value="AE">Middle East</option>
+                                <option value="ZA">South Africa</option>
+                            </select>
+                            <button type="button" class="country-region-bar-continue">
+                                Continue
+                            </button>
+                            <button type="button" class="country-region-bar-close" id="country-region-bar-close"
+                                aria-label="Dismiss region banner">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main>
+        <!--------------------------- 
+            HEADER
+        ------------------------------>
+        <header class="site-header">
+            <div class="header-announcement">
+                <div class="container">
+                    <p class="header-announcement-text mb-0 text-center body-small">
+                        HFI Institute builds on the global legacy of Human Factors International.
+                        <a href="#" class="header-announcement-link">Discover Our Story</a>
+                    </p>
+                </div>
+            </div>
+            <nav class="header-nav navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <a href="index.html" class="header-logo navbar-brand">
+                                <img src="assets/images/logo.svg" alt="HFI">
+                            </a>
+                            <button class="navbar-toggler header-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="headerMenu">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <div class="header-menu-inner">
+                                            <div class="header-links-spacer" aria-hidden="true"></div>
+                                            <ul class="header-links list-unstyled mb-0">
+                                                <li>
+                                                    <button class="header-link-trigger" data-menu="certified"
+                                                        aria-expanded="false" aria-haspopup="true"
+                                                        aria-controls="content-certified">
+                                                        Get Certified
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="header-link-trigger" data-menu="teams"
+                                                        aria-expanded="false" aria-haspopup="true"
+                                                        aria-controls="content-teams">
+                                                        Transform Teams
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="header-link-trigger" onclick="window.location.href='explore-insights.html'">
+                                                        Explore Insights
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                            <div class="mobile-mega-content" id="mobileMegaContent" aria-live="polite">
+                                            </div>
+                                            <div class="header-right">
+                                                <a href="#" class="header-account-link body-small">My Account</a>
+                                                <a href="#" class="header-cta btn body">Start Here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="shared-bg" role="region" aria-live="polite">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu-content" id="content-certified" role="menu">
+                                <div class="mega-menu-container">
+                                    <div class="menu-col-intro">
+                                        <h2>Become the<br>Experience Architect.</h2>
+                                        <p>
+                                            Structured certification pathways that build usability mastery, ethical
+                                            persuasion
+                                            capability, and enterprise-scale experience leadership.
+                                        </p>
+                                        <a href="all-courses.html" class="explore-link mb-1 mb-sm-3">Explore
+                                            Certification Pathway</a>
+                                        <a href="all-courses.html" class="courses-link">All Courses</a>
+                                    </div>
+                                    <div class="menu-col-certs">
+                                        <span class="col-label">Certifications</span>
+                                        <ul>
+                                            <li class="cert-items">
+                                                <a href="cua-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Usability Architect (CUA&trade;)</h3>
+                                                    <p>
+                                                        Design scalable, human-centered systems grounded in cognitive
+                                                        science,
+                                                        evidence, and usability leadership.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="cdpa-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Digital Persuasion Architect (CDPA&trade;)</h3>
+                                                    <p>
+                                                        Architect ethical persuasion systems that guide decisions, build
+                                                        trust, and
+                                                        drive sustainable digital performance.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="cxa-certification.html" class="cert-item menu-link">
+                                                    <h3>Certified Experience Architect (CXA&trade;)</h3>
+                                                    <p>
+                                                        Lead experience as an enterprise capability by aligning
+                                                        strategy,
+                                                        governance, and organizational maturity.
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li class="cert-items">
+                                                <a href="#" class="cert-item menu-link">
+                                                    <h3>Certification Exams</h3>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-col-courses">
+                                        <span class="col-label">Courses</span>
+                                        <div class="course-group">
+                                            <span class="group-label">Foundations</span>
+                                            <ul>
+                                                <li><a href="courses-science.html" class="menu-link">Certified Usability
+                                                        Architect (CUA&trade;)</a></li>
+                                                <li><a href="courses-science.html" class="menu-link">Principles of
+                                                        Experience Research and Strategy</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Systems and Interfaces</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Principles of Interface Design and
+                                                        Design
+                                                        Systems</a></li>
+                                                <li><a href="#" class="menu-link">Experience Performance Evaluation</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Influence and Trust</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Persuasion, Emotion and Trust in
+                                                        Design</a></li>
+                                                <li><a href="#" class="menu-link">Digital Persuasion Architecture</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="course-group">
+                                            <span class="group-label">Strategy and Enterprise Leadership</span>
+                                            <ul>
+                                                <li><a href="#" class="menu-link">CX and Strategy Architect</a></li>
+                                                <li><a href="#" class="menu-link">Experience Practice Architect</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-content teams-grid" id="content-teams" role="menu">
+                                <div class="mega-menu-container">
+                                    <div class="menu-col-intro">
+                                        <h2>Build Experience<br>Capability that Scales.</h2>
+                                        <p>
+                                            Structured programs that align teams, leaders, and organizations around
+                                            usable,
+                                            ethical, and high-performing digital experiences.
+                                        </p>
+                                        <a href="#" class="explore-link">Explore Enterprise Programs</a>
+                                    </div>
+
+                                    <div class="menu-col-certs">
+                                        <span class="col-label">Programs</span>
+                                        <div class="cert-items">
+                                            <a href="#" class="cert-item menu-link">
+                                                <h3>Essentials of Experience Design</h3>
+                                                <p>
+                                                    Create a shared human-centered language across cross-functional
+                                                    teams to improve
+                                                    usability, clarity, and decision-making.
+                                                </p>
+                                            </a>
+                                        </div>
+
+                                        <div class="cert-items">
+                                            <a href="#" class="cert-item menu-link">
+                                                <h3>AI-Powered Persuasion Strategist</h3>
+                                                <p>
+                                                    Enable responsible influence in AI-driven ecosystems through
+                                                    PET-aligned
+                                                    frameworks for teams and leaders.
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="menu-col-courses">
+                                        <span class="col-label">Work with us</span>
+
+                                        <div class="course-group">
+                                            <ul>
+                                                <li><a href="#" class="menu-link">Case Studies</a></li>
+                                                <li><a href="#" class="menu-link">Industry Focus</a></li>
+                                                <li><a href="#" class="menu-link">Request a Proposal</a></li>
+                                                <li><a href="#" class="menu-link">Download Corporate Brochure</a></li>
+                                                <li><a href="#" class="menu-link">Speak to an Enterprise Advisor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="logo-slider-section">
+                                <div class="row">
+                                    <div class="col-12 col-lg-12">
+                                        <p class="body text-center logo-slider-text">Building experience capability from
+                                            individual practitioners to global enterprises.</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="logo-marquee">
+                                    <div class="logo-marquee-track">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!--------------------------- 
+           EXPLORE INSIGHTS HERO SECTION
+        ------------------------------>
+        <section class="explore-insights-hero-section">
+            <img src="assets/images/home_banner_bg.webp" alt="Hero Section Background"
+                class="explore-insights-hero-section-bg img-fluid">
+
+            <div class="container explore-insights-hero-container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 col-xl-10 text-center">
+                        <p class="explore-insights-hero-subheading body-small">EXPLORE INSIGHTS</p>
+                        <h1 class="explore-insights-hero-headline hero-headline">UCX CONFERENCE 2026</h1>
+
+                        <p class="explore-insights-hero-lead body">Designing the future of experience through global
+                            collaboration, innovation, and leadership.</p>
+                        <br>
+                        <div class="explore-insights-hero-ctas">
+                            <a href="#"
+                                class="explore-insights-hero-btn explore-insights-hero-btn-primary body-large">Register
+                                Now</a>
+                            <a href="#"
+                                class="explore-insights-hero-btn explore-insights-hero-btn-secondary body-large">View
+                                Agenda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="explore-insights-hero-logos">
+                <p class="explore-insights-hero-logos-text body">Empowering experience teams at the world’s most
+                    respected organizations</p>
+                <div class="logo-marquee explore-insights-hero-logo-marquee">
+                    <div class="logo-marquee-track">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-------------------------------
+            FEATURE INSIGHTS SECTION
+        --------------------------------->
+        <section class="feature-insights-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="feature-insights-heading heading-3">Featured Insights</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4 feature-insights-cards">
+                    <div class="col-12 col-lg-4">
+                        <article class="feature-insights-card">
+                            <div class="context">
+                                <p class="feature-insights-card-type body-small">RESEARCH REPORT</p>
+                                <h3 class="feature-insights-card-title heading-5">Featured Insights</h3>
+                                <p class="feature-insights-card-copy body">
+                                    A comprehensive look at how organizations are scaling experience design across
+                                    ecosystems.
+                                </p>
+                            </div>
+                            <a href="#" class="feature-insights-card-link body-small">Read more</a>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="feature-insights-card">
+                            <div class="context">
+                                <p class="feature-insights-card-type body-small">ARTICLE</p>
+                                <h3 class="feature-insights-card-title heading-5">Designing for Trust in AI-Driven
+                                    Experiences</h3>
+                                <p class="feature-insights-card-copy body">
+                                    How persuasion, transparency, and ethics shape modern digital interactions.
+                                </p>
+                            </div>
+                            <a href="#" class="feature-insights-card-link body-small">Read more</a>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="feature-insights-card">
+                            <div class="context">
+                                <p class="feature-insights-card-type body-small">CASE STUDY</p>
+                                <h3 class="feature-insights-card-title heading-5">Transforming Enterprise CX at Scale</h3>
+                                <p class="feature-insights-card-copy body">
+                                    Create a shared human-centered language across cross-functional teams to improve
+                                    usability, clarity, and decision-making.
+                                </p>
+                            </div>
+                            <a href="#" class="feature-insights-card-link body-small">Read more</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-------------------------------
+            EVENTS & WEBINARS SECTION
+        --------------------------------->
+        <section class="events-webinars-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h2 class="events-webinars-heading heading-3">Events &amp; Webinars</h2>
+
+                        <ul class="nav events-webinars-tabs" id="events-webinars-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link body active" id="webinars-tab" data-bs-toggle="tab"
+                                    data-bs-target="#webinars-tab-pane" type="button" role="tab"
+                                    aria-controls="webinars-tab-pane" aria-selected="true">Webinars</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link body" id="conferences-tab" data-bs-toggle="tab"
+                                    data-bs-target="#conferences-tab-pane" type="button" role="tab"
+                                    aria-controls="conferences-tab-pane" aria-selected="false">Conferences</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link body" id="workshops-tab" data-bs-toggle="tab"
+                                    data-bs-target="#workshops-tab-pane" type="button" role="tab"
+                                    aria-controls="workshops-tab-pane" aria-selected="false">Workshops</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content events-webinars-tab-content" id="events-webinars-tab-content">
+                            <div class="tab-pane fade show active" id="webinars-tab-pane" role="tabpanel"
+                                aria-labelledby="webinars-tab" tabindex="0">
+                                <div class="course-calendar-list events-webinars-list">
+                                    <article class="course-calendar-item">
+                                        <div class="course-calendar-item-main">
+                                            <div class="course-calendar-item-course">
+                                                <p class="course-calendar-item-type caption">CERTIFICATION</p>
+                                                <h3 class="course-calendar-item-title body-large">Certified Usability Architect (CUA)</h3>
+                                            </div>
+                                            <div class="course-calendar-item-schedule">
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <path
+                                                                d="M7 3V6M17 3V6M4 9H20M5 5H19C19.5523 5 20 5.44772 20 6V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V6C4 5.44772 4.44772 5 5 5Z"
+                                                                stroke="currentColor" stroke-width="1.8"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg></span>25 Feb 2026</p>
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <circle cx="12" cy="12" r="8" stroke="currentColor"
+                                                                stroke-width="1.8" />
+                                                            <path d="M12 8V12L14.5 14.5" stroke="currentColor"
+                                                                stroke-width="1.8" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg></span>08.30 pm - 12.00 am</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-calendar-item-side">
+                                            <p class="course-calendar-item-price body-large">₹48,000</p>
+                                            <a href="#" class="course-calendar-item-cta body">Register</a>
+                                        </div>
+                                    </article>
+
+                                    <article class="course-calendar-item">
+                                        <div class="course-calendar-item-main">
+                                            <div class="course-calendar-item-course">
+                                                <p class="course-calendar-item-type caption">CERTIFICATION</p>
+                                                <h3 class="course-calendar-item-title body-large">Certified Usability Architect (CUA)</h3>
+                                            </div>
+                                            <div class="course-calendar-item-schedule">
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <path
+                                                                d="M7 3V6M17 3V6M4 9H20M5 5H19C19.5523 5 20 5.44772 20 6V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V6C4 5.44772 4.44772 5 5 5Z"
+                                                                stroke="currentColor" stroke-width="1.8"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg></span>25 Feb 2026</p>
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <circle cx="12" cy="12" r="8" stroke="currentColor"
+                                                                stroke-width="1.8" />
+                                                            <path d="M12 8V12L14.5 14.5" stroke="currentColor"
+                                                                stroke-width="1.8" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg></span>08.30 pm - 12.00 am</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-calendar-item-side">
+                                            <p class="course-calendar-item-price body-large">₹48,000</p><a href="#"
+                                                class="course-calendar-item-cta body">Register</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="conferences-tab-pane" role="tabpanel"
+                                aria-labelledby="conferences-tab" tabindex="0">
+                                <div class="course-calendar-list events-webinars-list">
+                                    <article class="course-calendar-item">
+                                        <div class="course-calendar-item-main">
+                                            <div class="course-calendar-item-course">
+                                                <p class="course-calendar-item-type caption">CONFERENCE</p>
+                                                <h3 class="course-calendar-item-title body-large">Enterprise Experience Leadership Summit</h3>
+                                            </div>
+                                            <div class="course-calendar-item-schedule">
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <path
+                                                                d="M7 3V6M17 3V6M4 9H20M5 5H19C19.5523 5 20 5.44772 20 6V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V6C4 5.44772 4.44772 5 5 5Z"
+                                                                stroke="currentColor" stroke-width="1.8"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg></span>12 Mar 2026</p>
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <circle cx="12" cy="12" r="8" stroke="currentColor"
+                                                                stroke-width="1.8" />
+                                                            <path d="M12 8V12L14.5 14.5" stroke="currentColor"
+                                                                stroke-width="1.8" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg></span>09.00 am - 05.00 pm</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-calendar-item-side">
+                                            <p class="course-calendar-item-price body-large">₹65,000</p><a href="#"
+                                                class="course-calendar-item-cta body">Register</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="workshops-tab-pane" role="tabpanel"
+                                aria-labelledby="workshops-tab" tabindex="0">
+                                <div class="course-calendar-list events-webinars-list">
+                                    <article class="course-calendar-item">
+                                        <div class="course-calendar-item-main">
+                                            <div class="course-calendar-item-course">
+                                                <p class="course-calendar-item-type caption">WORKSHOP</p>
+                                                <h3 class="course-calendar-item-title body-large">Science of Experience Design</h3>
+                                            </div>
+                                            <div class="course-calendar-item-schedule">
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <path
+                                                                d="M7 3V6M17 3V6M4 9H20M5 5H19C19.5523 5 20 5.44772 20 6V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V6C4 5.44772 4.44772 5 5 5Z"
+                                                                stroke="currentColor" stroke-width="1.8"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg></span>07 Apr 2026</p>
+                                                <p class="course-calendar-item-meta body"><span class="course-calendar-item-icon"
+                                                        aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+                                                            <circle cx="12" cy="12" r="8" stroke="currentColor"
+                                                                stroke-width="1.8" />
+                                                            <path d="M12 8V12L14.5 14.5" stroke="currentColor"
+                                                                stroke-width="1.8" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg></span>10.00 am - 01.00 pm</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-calendar-item-side">
+                                            <p class="course-calendar-item-price body-large">₹18,000</p><a href="#"
+                                                class="course-calendar-item-cta body">Register</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-------------------------------
+            LATEST ARTICLES SECTION
+        --------------------------------->
+        <section class="latest-articles-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="latest-articles-heading heading-3">Latest Articles</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4 latest-articles-grid">
+                    <div class="col-12 col-lg-4">
+                        <article class="latest-articles-card">
+                            <div class="latest-articles-card-image-wrap">
+                                <img src="assets/images/article_img-3.webp" alt="Article cover for UX ecosystem thinking"
+                                    class="latest-articles-card-image" />
+                            </div>
+                            <div class="latest-articles-card-body">
+                                <h3 class="latest-articles-card-title heading-6">The Shift from UX to Ecosystem Thinking</h3>
+                                <p class="latest-articles-card-copy body-small">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                    been the industry's standard dummy text ever.
+                                </p>
+                                <p class="latest-articles-card-author body-small">HFI Editorial Team</p>
+                                <div class="latest-articles-card-meta">
+                                    <p class="latest-articles-card-date body-small">March 2026</p>
+                                    <p class="latest-articles-card-time body-small">90 min</p>
+                                </div>
+                                <a href="#" class="latest-articles-card-link body-small">Read more</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="latest-articles-card">
+                            <div class="latest-articles-card-image-wrap">
+                                <img src="assets/images/article_img-2.webp" alt="Article cover for UX ecosystem thinking"
+                                    class="latest-articles-card-image" />
+                            </div>
+                            <div class="latest-articles-card-body">
+                                <h3 class="latest-articles-card-title heading-6">The Shift from UX to Ecosystem Thinking</h3>
+                                <p class="latest-articles-card-copy body-small">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                    been the industry's standard dummy text ever.
+                                </p>
+                                <p class="latest-articles-card-author body-small">HFI Editorial Team</p>
+                                <div class="latest-articles-card-meta">
+                                    <p class="latest-articles-card-date body-small">March 2026</p>
+                                    <p class="latest-articles-card-time body-small">90 min</p>
+                                </div>
+                                <a href="#" class="latest-articles-card-link body-small">Read more</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="latest-articles-card">
+                            <div class="latest-articles-card-image-wrap">
+                                <span class="latest-articles-card-tag body-small font-demibold">WEBINAR</span>
+                                <img src="assets/images/article_img-3.webp" alt="Webinar cover for UX ecosystem thinking"
+                                    class="latest-articles-card-image" />
+                            </div>
+                            <div class="latest-articles-card-body">
+                                <h3 class="latest-articles-card-title heading-6">The Shift from UX to Ecosystem Thinking</h3>
+                                <p class="latest-articles-card-copy body-small">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                    been the industry's standard dummy text ever.
+                                </p>
+                                <p class="latest-articles-card-author body-small">HFI Editorial Team</p>
+                                <div class="latest-articles-card-meta">
+                                    <p class="latest-articles-card-date body-small">March 2026</p>
+                                    <p class="latest-articles-card-time body-small">90 min</p>
+                                </div>
+                                <a href="#" class="latest-articles-card-link body-small">Read more</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-------------------------------
+            REASEARCH & REPORTS SECTION
+        --------------------------------->
+        <section class="research-reports-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="research-reports-heading heading-3">Research & Reports</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4 research-reports-grid">
+                    <div class="col-12 col-lg-6">
+                        <article class="research-reports-card">
+                            <div class="context">
+                                <h3 class="research-reports-card-title heading-6">Global UX Maturity Benchmark Report</h3>
+                                <p class="research-reports-card-copy body">
+                                    A comprehensive look at how organizations are scaling experience design across ecosystems.
+                                </p>
+                            </div>
+                            <a href="#" class="research-reports-card-link body-small">Download Syllabus</a>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <article class="research-reports-card">
+                            <div class="context">
+                                <h3 class="research-reports-card-title heading-6">Digital Persuasion & Trust Framework</h3>
+                                <p class="research-reports-card-copy body">
+                                    Create a shared human-centered language across cross-functional teams to improve usability, clarity, and decision-making.
+                                </p>
+                            </div>
+                            <a href="#" class="research-reports-card-link body-small">Download Syllabus</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-------------------------------
+            VIDEO TALKS SECTION
+        --------------------------------->
+        <section class="video-talks-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="video-talks-heading heading-3">Videos &amp; Talks</h2>
+                    </div>
+                </div>
+
+                <div class="row g-3 video-talks-grid">
+                    <div class="col-12 col-lg-4">
+                        <article class="video-talks-card">
+                            <a href="#" class="video-talks-card-thumb" data-bs-toggle="modal"
+                                data-bs-target="#video-talks-modal"
+                                data-video-src="https://www.youtube.com/embed/6mrbVV6A8mo?autoplay=1"
+                                aria-label="Play The Future of Experience Leadership">
+                                <img src="assets/images/article_img-1.webp" alt="Video thumbnail for The Future of Experience Leadership"
+                                    class="video-talks-card-image" />
+                                <span class="video-talks-card-play" aria-hidden="true"></span>
+                            </a>
+                            <div class="video-talks-card-body">
+                                <h3 class="video-talks-card-title heading-6">The Future of Experience Leadership</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="video-talks-card">
+                            <a href="#" class="video-talks-card-thumb" data-bs-toggle="modal"
+                                data-bs-target="#video-talks-modal"
+                                data-video-src="https://www.youtube.com/embed/4W4LvJnNegQ?autoplay=1"
+                                aria-label="Play Designing at Enterprise Scale">
+                                <img src="assets/images/article_img-1.webp" alt="Video thumbnail for Designing at Enterprise Scale"
+                                    class="video-talks-card-image" />
+                                <span class="video-talks-card-play" aria-hidden="true"></span>
+                            </a>
+                            <div class="video-talks-card-body">
+                                <h3 class="video-talks-card-title heading-6">Designing at Enterprise Scale</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="video-talks-card">
+                            <a href="#" class="video-talks-card-thumb" data-bs-toggle="modal"
+                                data-bs-target="#video-talks-modal"
+                                data-video-src="https://www.youtube.com/embed/2Lz0VOltZKA?autoplay=1"
+                                aria-label="Play UX, CX, and Business Strategy">
+                                <img src="assets/images/article_img-1.webp" alt="Video thumbnail for UX, CX, and Business Strategy"
+                                    class="video-talks-card-image" />
+                                <span class="video-talks-card-play" aria-hidden="true"></span>
+                            </a>
+                            <div class="video-talks-card-body">
+                                <h3 class="video-talks-card-title heading-6">UX, CX, and Business Strategy</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-------------------------------
+            LEAR FROM INDUSTRY EXPERTS SECTION
+        --------------------------------->
+        <section class="learn-from-industry-experts-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="learn-from-industry-experts-heading heading-3">Learn from Industry Experts</h2>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="industry-pioneers-grid" id="industry-pioneers-grid">
+                        <article class="industry-pioneers-card is-expanded">
+                            <div class="industry-pioneers-card-inner">
+                                <div class="industry-pioneers-card-img-wrap">
+                                    <img src="assets/images/Person 1.png" alt="Dr. Eric Schaffer"
+                                        class="industry-pioneers-card-img"
+                                        onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                </div>
+                                <div class="industry-pioneers-card-body">
+                                    <p class="industry-pioneers-card-desc body">Pioneer in human-centered AI design
+                                        and ethical technology implementation
+                                        across global enterprises.</p>
+                                    <p class="industry-pioneers-card-name heading-6">Marcus Rivera</p>
+                                    <p class="industry-pioneers-card-title body-small">AI Lead, Innovation Lab</p>
+
+                                    <div class="industry-pioneers-card-tags">
+                                        <span class="industry-pioneers-card-tag body-small">AI Ethics</span>
+                                        <span class="industry-pioneers-card-tag body-small">Human-Centred Design</span>
+                                    </div>
+
+                                    <div class="industry-pioneers-card-meta">
+                                        <span class="industry-pioneers-card-meta-item body-small">10 Events</span>
+
+                                        <div class="industry-pioneers-card-social-links">
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="LinkedIn">
+                                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                            </a>
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="Share">
+                                                <img src="assets/images/share.svg" alt="Share">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <article class="industry-pioneers-card">
+                            <div class="industry-pioneers-card-inner">
+                                <div class="industry-pioneers-card-img-wrap">
+                                    <img src="assets/images/Person 1.png" alt="Dr. Eric Schaffer"
+                                        class="industry-pioneers-card-img"
+                                        onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                </div>
+                                <div class="industry-pioneers-card-body">
+                                    <p class="industry-pioneers-card-desc body">Pioneer in human-centered AI design
+                                        and ethical technology implementation
+                                        across global enterprises.</p>
+                                    <p class="industry-pioneers-card-name heading-6">Marcus Rivera</p>
+                                    <p class="industry-pioneers-card-title body-small">AI Lead, Innovation Lab</p>
+
+                                    <div class="industry-pioneers-card-tags">
+                                        <span class="industry-pioneers-card-tag body-small">AI Ethics</span>
+                                        <span class="industry-pioneers-card-tag body-small">Human-Centred Design</span>
+                                    </div>
+
+                                    <div class="industry-pioneers-card-meta">
+                                        <span class="industry-pioneers-card-meta-item body-small">10 Events</span>
+
+                                        <div class="industry-pioneers-card-social-links">
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="LinkedIn">
+                                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                            </a>
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="Share">
+                                                <img src="assets/images/share.svg" alt="Share">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <article class="industry-pioneers-card">
+                            <div class="industry-pioneers-card-inner">
+                                <div class="industry-pioneers-card-img-wrap">
+                                    <img src="assets/images/Person 1.png" alt="Dr. Eric Schaffer"
+                                        class="industry-pioneers-card-img"
+                                        onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                </div>
+                                <div class="industry-pioneers-card-body">
+                                    <p class="industry-pioneers-card-desc body">Pioneer in human-centered AI design
+                                        and ethical technology implementation
+                                        across global enterprises.</p>
+                                    <p class="industry-pioneers-card-name heading-6">Marcus Rivera</p>
+                                    <p class="industry-pioneers-card-title body-small">AI Lead, Innovation Lab</p>
+
+                                    <div class="industry-pioneers-card-tags">
+                                        <span class="industry-pioneers-card-tag body-small">AI Ethics</span>
+                                        <span class="industry-pioneers-card-tag body-small">Human-Centred Design</span>
+                                    </div>
+
+                                    <div class="industry-pioneers-card-meta">
+                                        <span class="industry-pioneers-card-meta-item body-small">10 Events</span>
+
+                                        <div class="industry-pioneers-card-social-links">
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="LinkedIn">
+                                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                            </a>
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="Share">
+                                                <img src="assets/images/share.svg" alt="Share">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <article class="industry-pioneers-card">
+                            <div class="industry-pioneers-card-inner">
+                                <div class="industry-pioneers-card-img-wrap">
+                                    <img src="assets/images/Person 1.png" alt="Dr. Eric Schaffer"
+                                        class="industry-pioneers-card-img"
+                                        onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                </div>
+                                <div class="industry-pioneers-card-body">
+                                    <p class="industry-pioneers-card-desc body">Pioneer in human-centered AI design
+                                        and ethical technology implementation
+                                        across global enterprises.</p>
+                                    <p class="industry-pioneers-card-name heading-6">Marcus Rivera</p>
+                                    <p class="industry-pioneers-card-title body-small">AI Lead, Innovation Lab</p>
+
+                                    <div class="industry-pioneers-card-tags">
+                                        <span class="industry-pioneers-card-tag body-small">AI Ethics</span>
+                                        <span class="industry-pioneers-card-tag body-small">Human-Centred Design</span>
+                                    </div>
+
+                                    <div class="industry-pioneers-card-meta">
+                                        <span class="industry-pioneers-card-meta-item body-small">10 Events</span>
+
+                                        <div class="industry-pioneers-card-social-links">
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="LinkedIn">
+                                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                            </a>
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="Share">
+                                                <img src="assets/images/share.svg" alt="Share">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <article class="industry-pioneers-card">
+                            <div class="industry-pioneers-card-inner">
+                                <div class="industry-pioneers-card-img-wrap">
+                                    <img src="assets/images/Person 1.png" alt="Dr. Eric Schaffer"
+                                        class="industry-pioneers-card-img"
+                                        onerror="this.src='assets/images/testimonial-avator.jpg'">
+                                </div>
+                                <div class="industry-pioneers-card-body">
+                                    <p class="industry-pioneers-card-desc body">Pioneer in human-centered AI design
+                                        and ethical technology implementation
+                                        across global enterprises.</p>
+                                    <p class="industry-pioneers-card-name heading-6">Marcus Rivera</p>
+                                    <p class="industry-pioneers-card-title body-small">AI Lead, Innovation Lab</p>
+
+                                    <div class="industry-pioneers-card-tags">
+                                        <span class="industry-pioneers-card-tag body-small">AI Ethics</span>
+                                        <span class="industry-pioneers-card-tag body-small">Human-Centred Design</span>
+                                    </div>
+
+                                    <div class="industry-pioneers-card-meta">
+                                        <span class="industry-pioneers-card-meta-item body-small">10 Events</span>
+
+                                        <div class="industry-pioneers-card-social-links">
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="LinkedIn">
+                                                <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                                            </a>
+                                            <a href="#" class="industry-pioneers-card-social-link" aria-label="Share">
+                                                <img src="assets/images/share.svg" alt="Share">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-------------------------------
+            HFI PODCAST SECTION
+        --------------------------------->
+        <section class="hfi-podcast-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="hfi-podcast-heading heading-3">HFI Podcast</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="hfi-podcast-list">
+                            <article class="hfi-podcast-item">
+                                <a href="#" class="hfi-podcast-item-main" aria-label="Play The Evolution of Experience Design podcast">
+                                    <div class="hfi-podcast-item-icon" aria-hidden="true">
+                                        <img src="assets//images/headphones.svg" alt="">
+                                    </div>
+                                    <div class="hfi-podcast-item-content">
+                                        <span class="hfi-podcast-item-title body-large">The Evolution of Experience Design</span>
+                                        <span class="hfi-podcast-item-duration body-small">32 MIN</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="hfi-podcast-item-cta" aria-label="Play podcast episode">
+                                    <span aria-hidden="true"></span>
+                                </a>
+                            </article>
+
+                            <article class="hfi-podcast-item">
+                                <a href="#" class="hfi-podcast-item-main" aria-label="Play The Evolution of Experience Design podcast">
+                                    <div class="hfi-podcast-item-icon" aria-hidden="true">
+                                        <img src="assets//images/headphones.svg" alt="">
+                                    </div>
+                                    <div class="hfi-podcast-item-content">
+                                        <span class="hfi-podcast-item-title body-large">The Evolution of Experience Design</span>
+                                        <span class="hfi-podcast-item-duration body-small">32 MIN</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="hfi-podcast-item-cta" aria-label="Play podcast episode">
+                                    <span aria-hidden="true"></span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <!-------------------------------
+            STAY UPDATED SECTION
+        --------------------------------->
+        <section class="stay-updated-section">
+            <img src="assets//images/all-courses-copy-banner-pattern.svg" class="stay-updated-pattern" alt="">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="stay-updated-heading heading-3">Stay Updated</h2>
+                        <p class="stay-updated-subtitle body">Get the latest insights on UX, CX, and Experience Architecture delivered directly to your inbox.</p>
+                        <a href="#" class="stay-updated-cta btn body">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!--------------------------- 
+        FOOTER
+    ------------------------------>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-12 footer-brand">
+                        <div class="footer-logo mb-4">
+                            <img src="assets/images/logo.svg" alt="HFI">
+                        </div>
+
+                        <div class="context-wrap">
+                            <div class="content">
+                                <p class="footer-tagline body-small mb-0">Building the World's Experience Talent Capital
+                                </p>
+                                <p class="footer-desc body-small">Rooted in the legacy of Human Factors International,
+                                    HFI
+                                    Institute
+                                    develops Experience Architects and partners with organizations to build adaptive,
+                                    enterprise-scale experience capability.</p>
+                                <p class="footer-desc body-small">We architect leadership for the Experience Economy.
+                                </p>
+                            </div>
+
+                            <div class="footer-brand-country">
+                                <button type="button" class="footer-country-choice body-small"
+                                    id="footer-country-choice-trigger" data-bs-toggle="modal"
+                                    data-bs-target="#country-region-modal" aria-haspopup="dialog"
+                                    aria-controls="country-region-modal">
+                                    <svg class="footer-country-choice-icon" xmlns="http://www.w3.org/2000/svg"
+                                        width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg>
+                                    <span>Choose Your Country</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+                <div class="row g-4 py-0 py-md-5">
+
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">About us</a></li>
+                            <li><a href="#" class="body-small">Our Legacy</a></li>
+                            <li><a href="#" class="body-small">Faculty & Mentors</a></li>
+                            <li><a href="#" class="body-small">Global Presence</a></li>
+                            <li><a href="#" class="body-small">Accreditation</a></li>
+                            <li><a href="#" class="body-small">Careers</a></li>
+                            <li><a href="#" class="body-small">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <h3 class="footer-heading body">Get Certified</h3>
+                        <p class="footer-subheading body-small">Professional Certification Pathways</p>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">Experience Architect Pathway</a></li>
+                            <li><a href="cua-certification.html" class="body-small">Certified Usability Architect
+                                    (CUA&trade;)</a></li>
+                            <li><a href="cdpa-certification.html" class="body-small">Certified Digital Persuasion
+                                    Architect (CDPA&trade;)</a></li>
+                            <li><a href="cxa-certification.html" class="body-small">Certified Experience Architect
+                                    (CXA&trade;)</a></li>
+                            <li><a href="#" class="body-small">Certification Exams</a></li>
+                            <li><a href="#" class="body-small">Upcoming Cohorts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <h3 class="footer-heading body">Transform Teams</h3>
+                        <p class="footer-subheading body-small">Enterprise Capability Development</p>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">Essentials of Experience Design</a></li>
+                            <li><a href="#" class="body-small">AI-Powered Persuasion Strategist</a></li>
+                            <li><a href="#" class="body-small">Experience Maturity Programs</a></li>
+                            <li><a href="#" class="body-small">Governance & Operating Models</a></li>
+                            <li><a href="#" class="body-small">Enterprise Advisory</a></li>
+                            <li><a href="#" class="body-small">Request a Proposal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-col">
+                        <h3 class="footer-heading body">Explore Insights</h3>
+                        <p class="footer-subheading body-small">Stories, Insights & Events</p>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#" class="body-small">Insights & Thought Leadership</a></li>
+                            <li><a href="#" class="body-small">Research & Whitepapers</a></li>
+                            <li><a href="#" class="body-small">Events & Masterclasses</a></li>
+                            <li><a href="#" class="body-small">Alumni Network</a></li>
+                            <li><a href="#" class="body-small">Academic & Industry Partnerships</a></li>
+                            <li><a href="#" class="body-small">Newsletter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center py-3 py-md-4 footer-bottom-content">
+                    <div class="col-12 col-md-3 footer-copyright text-center text-md-start body-small">
+                        © 2026 HFI Training and Solutions Inc.
+                    </div>
+                    <div class="col-12 col-md-9 footer-legal text-center text-md-end mt-2 mt-md-0 body-small">
+                        <a href="#">Privacy Policy</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#">Terms of Use and Cookie Policy</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#">Training & Cancellation Policy</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#" aria-label="YouTube">YouTube</a>
+                        <span class="footer-sep">|</span>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!---------------------------
+        VIDEO TALKS MODAL
+    ------------------------------>
+    <div class="modal fade video-talks-modal" id="video-talks-modal" tabindex="-1"
+        aria-labelledby="video-talks-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl video-talks-modal-dialog">
+            <div class="modal-content video-talks-modal-content">
+                <button type="button" class="btn-close video-talks-modal-close" data-bs-dismiss="modal"
+                    aria-label="Close video"></button>
+                <h2 class="visually-hidden" id="video-talks-modal-title">Video Player</h2>
+                <div class="video-talks-modal-frame-wrap">
+                    <iframe id="video-talks-modal-iframe" src="" title="Video player" loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------- 
+        CHOOSE YOUR COUNTRY MODAL
+    ------------------------------>
+    <div class="modal fade" id="country-region-modal" tabindex="-1" aria-labelledby="country-region-modal-title"
+        aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered country-region-modal-dialog">
+            <div class="modal-content country-region-modal">
+                <button type="button" class="btn-close country-region-modal-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <h2 class="country-region-modal-title heading-5" id="country-region-modal-title">Choose your country
+                </h2>
+                <p class="country-region-modal-lead body-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor</p>
+                <div class="row g-4 country-region-modal-grid">
+                    <div class="col-12 col-sm-6">
+                        <ul class="country-region-modal-list">
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">India</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Europe</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">United States of America</button>
+                            </li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Malaysia</button></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <ul class="country-region-modal-list">
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">South Africa</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Middle East</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Singapore</button></li>
+                            <li><button type="button" class="country-region-modal-option body"
+                                    data-bs-dismiss="modal">Canada</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/vendor/jquery.js"></script>
+<script src="assets/vendor/bootstrap.js"></script>
+<script src="assets/vendor/swiper.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    (function () {
+        var videoModal = document.getElementById('video-talks-modal');
+        var videoFrame = document.getElementById('video-talks-modal-iframe');
+
+        if (!videoModal || !videoFrame) {
+            return;
+        }
+
+        videoModal.addEventListener('show.bs.modal', function (event) {
+            var trigger = event.relatedTarget;
+            var videoSrc = trigger ? trigger.getAttribute('data-video-src') : '';
+            videoFrame.setAttribute('src', videoSrc || '');
+        });
+
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            videoFrame.setAttribute('src', '');
+        });
+    })();
+</script>
+
+</html>

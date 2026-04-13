@@ -1,0 +1,95 @@
+.learn-from-industry-experts-section {
+    background: #ffffff;
+    padding: 1.8rem 0 4rem;
+
+    .learn-from-industry-experts-heading {
+        margin: 0;
+        color: #404040;
+        margin-bottom: 1.5rem;
+    }
+
+    .industry-pioneers-grid {
+        .industry-pioneers-card-inner {
+            align-items: flex-end;
+
+            .industry-pioneers-card-img-wrap{
+                width: 30%;
+
+                @media screen and (max-width: 768px){
+                    width: 25%;
+                }
+            }
+
+            .industry-pioneers-card-img{
+                width: auto;
+
+                @media screen and (max-width: 768px){
+                    filter: grayscale(0);
+                }
+            }
+        }
+
+        .industry-pioneers-card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transition: all .4s ease-in-out;
+
+            @media screen and (max-width: 768px) {
+                opacity: 1;
+            }
+
+            .industry-pioneers-card-tags {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1.5rem;
+
+                @media screen and (max-width: 575px){
+                    flex-direction: column;
+                }
+
+                .industry-pioneers-card-tag {
+                    color: #fff;
+                    padding: 0.3rem 0.5rem;
+                    background-color: #4F4F4F;
+                    border: 1px solid #616161;
+                    border-radius: 30px;
+                    font-size: 12px;
+                    width: fit-content;
+                }
+            }
+
+            .industry-pioneers-card-meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1.5rem;
+
+                .industry-pioneers-card-meta-item {
+                    color: #FFFFFF;
+                    font-size: 12px;
+                }
+
+                .industry-pioneers-card-social-links {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    .industry-pioneers-card-social-link{
+                        img{
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .industry-pioneers-card.is-expanded{
+            .industry-pioneers-card-body{
+                opacity: 1;
+            }
+        }
+    }
+}
