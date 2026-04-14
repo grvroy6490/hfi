@@ -83,6 +83,8 @@
     border-radius: 9999px;
     white-space: nowrap;
     transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    width: min(100%, 18.75rem);
+    justify-content: center;
 
     &::after {
         content: "";

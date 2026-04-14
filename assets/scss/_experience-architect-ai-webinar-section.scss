@@ -1,0 +1,104 @@
+@use "variables" as v;
+
+.experience-architect-ai-webinar-section {
+    padding: 5rem 0;
+}
+
+.experience-architect-ai-webinar-media {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 1.25rem;
+}
+
+.experience-architect-ai-webinar-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.experience-architect-ai-webinar-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5rem;
+    height: 5rem;
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.experience-architect-ai-webinar-kicker {
+    margin-bottom: 0.5rem;
+    color: v.$color-gold;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.experience-architect-ai-webinar-title {
+    margin-bottom: 0.75rem;
+    color: v.$color-primary-black;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.experience-architect-ai-webinar-copy {
+    color: v.$color-off-black;
+    margin-bottom: 1.5rem;
+}
+
+.experience-architect-ai-webinar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 2.5rem;
+    border-radius: 9999px;
+    color: #fff !important;
+    background: linear-gradient(270deg, v.$color-gold-dark 0%, v.$color-gold 50%, v.$color-gold-light 100%);
+    transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0.8125rem;
+        min-width: 0.8125rem;
+        height: 0.75rem;
+        background-image: url("../images/chevron.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(0) invert(1);
+        transform: translateY(10%);
+        transition: transform 0.25s ease;
+    }
+
+    &:hover {
+        opacity: 0.95;
+        background: linear-gradient(270deg, v.$color-gold-dark 0%, v.$color-gold-dark 50%, v.$color-gold-dark 100%);
+    }
+
+    &:hover::after{
+        background-image: url(../images/arrow.svg);
+    transform: translateX(4px) translateY(10%);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .experience-architect-ai-webinar-section {
+        padding: 2.5rem 0 3rem;
+    }
+
+    .experience-architect-ai-webinar-content {
+        text-align: center;
+    }
+
+    .experience-architect-ai-webinar-copy {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

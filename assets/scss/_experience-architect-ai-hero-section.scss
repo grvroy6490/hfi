@@ -1,0 +1,71 @@
+@use "variables" as v;
+
+.experience-architect-ai-hero-section {
+    position: relative;
+    z-index: 1;
+    padding: 10.5rem 0 3.5rem;
+    overflow: hidden;
+}
+
+.experience-architect-ai-hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.experience-architect-ai-hero-subheading {
+    margin-bottom: 0.5rem;
+    color: v.$color-gold;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.experience-architect-ai-hero-title {
+    margin-bottom: 1rem;
+    color: v.$color-black;
+    text-transform: uppercase;
+}
+
+.experience-architect-ai-hero-lead {
+    max-width: 42rem;
+    margin: 0 auto;
+    color: v.$color-black;
+}
+
+.experience-architect-ai-hero-ctas {
+    margin: 2rem 0 2.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.experience-architect-ai-hero-logos {
+    width: 100%;
+}
+
+.experience-architect-ai-hero-logos-text {
+    margin-bottom: 1.2rem;
+    color: v.$color-primary-grey;
+}
+
+@media (max-width: 991.98px) {
+    .experience-architect-ai-hero-section {
+        padding: 10.5rem 0 2.75rem;
+    }
+
+    .experience-architect-ai-hero-title {
+        font-size: 2.45rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .experience-architect-ai-hero-title {
+        font-size: 2rem;
+    }
+
+    .experience-architect-ai-hero-ctas {
+        flex-direction: column;
+        align-items: center;
+    }
+}

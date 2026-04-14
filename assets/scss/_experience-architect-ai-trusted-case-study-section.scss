@@ -1,0 +1,202 @@
+@use "variables" as v;
+
+.experience-architect-ai-trusted-section {
+  padding: 5rem 0;
+}
+
+.experience-architect-ai-trusted-title {
+  margin-bottom: 2rem;
+  color: #0d0d0d;
+  text-transform: uppercase;
+}
+
+.experience-architect-ai-trusted-stats {
+  margin-bottom: 2rem !important;
+  padding: 2.5rem !important;
+}
+
+.experience-architect-ai-trusted-stat-value {
+  margin-bottom: 0.25rem;
+  color: #a17d2d;
+}
+
+.experience-architect-ai-trusted-stat-label {
+  color: v.$color-primary-black;
+}
+
+.experience-architect-ai-trusted-quote-card {
+  height: 100%;
+  border: 0.063rem solid var(--Neutral-NC-9, #cccccc);
+  border-radius: 1.5rem;
+  padding: 2.5rem 3.75rem 3rem;
+}
+
+.experience-architect-ai-trusted-quote {
+  margin-bottom: 1rem;
+  color: v.$color-black;
+  position: relative;
+  padding-left: 1.15rem;
+
+  .start_quote {
+    transform: translate(-0.5rem, -1rem) rotate(180deg);
+  }
+
+  .end_quote {
+    transform: translate(0.5rem, 0.425rem);
+  }
+}
+
+.experience-architect-ai-trusted-quote-name {
+  margin-bottom: 0.25rem;
+  color: v.$color-black;
+  font-weight: 600;
+
+  &::before {
+    content: "\2014\00A0";
+  color: v.$color-black;
+  }
+}
+
+.experience-architect-ai-trusted-quote-role {
+  color: v.$color-primary-grey;
+}
+
+.experience-architect-ai-case-study-section {
+  background: #fafafa;
+  padding: 5rem 0;
+}
+
+.experience-architect-ai-case-study-kicker {
+  color: v.$color-gold;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.experience-architect-ai-case-study-title {
+  margin-bottom: 1rem;
+  color: #0d0d0d;
+  text-transform: uppercase;
+}
+
+.experience-architect-ai-case-study-image-wrap {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.experience-architect-ai-case-study-image {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.experience-architect-ai-case-study-content {
+  margin-top: 1rem;
+}
+
+.experience-architect-ai-case-study-col {
+  height: 100%;
+  background: transparent;
+}
+
+.experience-architect-ai-case-study-col-left {
+  padding-right: 3rem;
+}
+
+.experience-architect-ai-case-study-col-right {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: v.$color-card-bg;
+}
+
+.experience-architect-ai-case-study-subtitle {
+  margin-bottom: 1rem;
+  color: v.$color-primary-black;
+  font-weight: 600;
+}
+
+.experience-architect-ai-case-study-copy {
+  margin-bottom: 1.5rem;
+  color: v.$color-primary-grey;
+}
+
+.experience-architect-ai-case-study-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+  padding: 0.65rem 1.45rem;
+  border-radius: 9999px;
+  color: #fff !important;
+  background: linear-gradient(
+    270deg,
+    v.$color-gold-dark 0%,
+    v.$color-gold 50%,
+    v.$color-gold-light 100%
+  );
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.8125rem;
+    min-width: 0.8125rem;
+    height: 0.75rem;
+    background-image: url("../images/chevron.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+    transform: translateY(10%);
+  }
+}
+
+.experience-architect-ai-case-study-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.experience-architect-ai-case-study-list li {
+  position: relative;
+  color: v.$color-primary-grey;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .experience-architect-ai-trusted-section {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .experience-architect-ai-case-study-section {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .experience-architect-ai-case-study-image {
+    height: 14rem;
+  }
+
+  .experience-architect-ai-case-study-col-left {
+    padding-right: 0;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .experience-architect-ai-trusted-title {
+    margin-bottom: 1rem;
+  }
+
+  .experience-architect-ai-trusted-stats {
+    margin-bottom: 1rem;
+  }
+
+  .experience-architect-ai-case-study-title {
+    margin-bottom: 0.8rem;
+  }
+
+  .experience-architect-ai-case-study-image {
+    height: 11.5rem;
+  }
+}
