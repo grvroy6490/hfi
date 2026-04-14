@@ -53,7 +53,7 @@
 
   &::before {
     content: "\2014\00A0";
-  color: v.$color-black;
+    color: v.$color-black;
   }
 }
 
@@ -82,12 +82,14 @@
 .experience-architect-ai-case-study-image-wrap {
   overflow: hidden;
   border-radius: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .experience-architect-ai-case-study-image {
   width: 100%;
   object-fit: cover;
-  margin-bottom: 1.5rem;
+  aspect-ratio: 16/4.5;
+  vertical-align: bottom;
 }
 
 .experience-architect-ai-case-study-content {
