@@ -1935,6 +1935,10 @@ body.mobile-menu-open {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.hero-section .hero-btn {
+  width: min(100%, 18.75rem);
+  justify-content: center;
+}
 
 .hero-container {
   position: relative;
@@ -1995,8 +1999,6 @@ body.mobile-menu-open {
   border-radius: 9999px;
   white-space: nowrap;
   transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  width: min(100%, 18.75rem);
-  justify-content: center;
 }
 .hero-btn::after {
   content: "";
