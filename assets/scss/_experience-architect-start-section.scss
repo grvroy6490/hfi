@@ -60,7 +60,7 @@
 .experience-architect-start-title {
   margin-bottom: 0.9rem;
   color: #ffffff;
-  font-family: t.$font-family-suisse;
+  font-family: t.$font-family-inter;
   line-height: 1.15;
   max-width: 28rem;
 }
@@ -160,7 +160,7 @@
 
   &::placeholder {
     color: rgba(15, 15, 15, 1);
-    font-family: t.$font-family-suisse;
+    font-family: t.$font-family-inter;
   }
 
   &:focus {

@@ -30,7 +30,7 @@
 .experience-architect-model-title {
   margin-bottom: 0.75rem;
   color: v.$color-primary-black;
-  font-family: t.$font-family-suisse;
+  font-family: t.$font-family-inter;
 }
 
 .experience-architect-model-copy {
@@ -97,7 +97,7 @@ $experience-architect-line-top: calc(0.1rem + #{$experience-architect-dot-size})
 .experience-architect-model-step-number {
   flex-shrink: 0;
   width: 2.5rem;
-  font-family: t.$font-family-suisse;
+  font-family: t.$font-family-inter;
   font-size: calc(2.5rem + 2px);
   font-weight: 600;
   line-height: 1.2;
@@ -154,7 +154,7 @@ $experience-architect-line-top: calc(0.1rem + #{$experience-architect-dot-size})
 
 .experience-architect-model-step-code {
   color: v.$color-primary-black;
-  font-family: t.$font-family-suisse;
+  font-family: t.$font-family-inter;
   font-weight: 700;
 }
 

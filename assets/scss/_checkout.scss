@@ -711,7 +711,7 @@
     padding: 0.625rem 1rem;
     background: v.$color-primary-white;
     color: v.$color-primary-black;
-    font-family: t.$font-family-suisse;
+    font-family: t.$font-family-inter;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -761,7 +761,7 @@
 
 .checkout-verification-field-label {
     color: v.$color-neutral-NC4;
-    font-family: t.$font-family-suisse;
+    font-family: t.$font-family-inter;
     font-weight: 400;
 }
 
@@ -801,7 +801,7 @@
     border: 0;
     background: transparent;
     color: v.$color-gold;
-    font-family: t.$font-family-suisse;
+    font-family: t.$font-family-inter;
     font-weight: 600;
     justify-content: flex-start;
     text-align: left;
@@ -947,7 +947,7 @@ select.checkout-field-control {
 
     .checkout-title {
         margin-bottom: 1rem;
-        font-family: t.$font-family-suisse;
+        font-family: t.$font-family-inter;
     }
 
     .checkout-intro {
@@ -1004,7 +1004,7 @@ select.checkout-field-control {
 
 .checkout-submission-progress-label {
     color: v.$color-primary-grey;
-    font-family: t.$font-family-suisse;
+    font-family: t.$font-family-inter;
     font-size: 0.875rem;
     line-height: 1.4;
 }

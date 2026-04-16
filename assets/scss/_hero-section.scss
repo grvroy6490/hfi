@@ -44,7 +44,7 @@
 }
 
 .hero-headline {
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.15;
   text-transform: uppercase;
   color: #0f0f0f;
@@ -64,7 +64,7 @@
 
 .hero-tagline {
   font-size: 1rem;
-  color: #404040;
+  color: #000000;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -192,22 +192,21 @@
 
 .hero-logo-marquee .logo-marquee-item {
   height: 2.75rem;
-  padding: 0 1.25rem;
+  padding: 0 3rem;
 }
 
 .hero-logo-img {
-  max-height: 2rem;
+  max-height: 3rem;
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
+//   filter: grayscale(100%);
   transition:
     filter 0.25s ease,
     opacity 0.25s ease;
 }
 
 .hero-logo-marquee .logo-marquee-item:hover .hero-logo-img {
-  filter: grayscale(0%);
+//   filter: grayscale(0%);
   opacity: 1;
 }

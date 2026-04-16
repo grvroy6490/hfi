@@ -78,7 +78,7 @@
 }
 
 .experience-pathway-heading {
-    font-family: "Mundial", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 900;
     color: v.$color-black;
     text-transform: uppercase;
@@ -112,7 +112,7 @@
     }
 
     &+.experience-pathway-fieldset {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 }
 
@@ -185,7 +185,7 @@
     color: v.$color-gray-dark;
 
     option {
-        font-family: t.$font-family-suisse;
+        font-family: t.$font-family-inter;
         background: #fff;
         color: v.$color-primary-black;
     }
@@ -201,7 +201,7 @@
 }
 
 .experience-pathway-input::placeholder {
-    font-family: t.$font-family-suisse;
+    font-family: t.$font-family-inter;
     color: rgba(15, 15, 15, 1);
 }
 
@@ -307,16 +307,19 @@
 }
 
 .experience-pathway-submit {
-    width: 50%;
+    width: 30%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
     padding: 0.5rem 1.25rem;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 400;
     color: #fff !important;
-    background: v.$color-gold;
+    background: linear-gradient(270deg,
+    rgba(143, 106, 15, 1) 0%,
+    rgba(184, 137, 18, 1) 50%,
+    rgba(201, 151, 26, 1) 100%);;
     border: none;
     border-radius: 30px;
     text-decoration: none;
@@ -325,10 +328,6 @@
         opacity 0.2s ease,
         background 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-
-    @media (max-width: 575.98px) {
-        width: 100%;
-    }
 
     &::after {
         content: "";
@@ -347,7 +346,10 @@
 
     &:hover {
         color: #fff !important;
-        background: v.$color-gold;
+        background: linear-gradient(270deg,
+        rgba(143, 106, 15, 1) 0%,
+        rgba(143, 106, 15, 1) 50%,
+        rgba(143, 106, 15, 1) 100%);;
 
         &::after {
             background-image: url("../images/arrow.svg");

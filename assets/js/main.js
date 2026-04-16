@@ -1073,11 +1073,11 @@
 
         // IN
         { image: "assets/images/logos/IN/Accenture.png", region: "in", alt: "Accenture Pvt Ltd" },
-        { image: "assets/images/logos/IN/Aditya_Birla_Group.png", region: "in", alt: "Aditya Birla Group" },
+        // { image: "assets/images/logos/IN/Aditya_Birla_Group.png", region: "in", alt: "Aditya Birla Group" },
         { image: "assets/images/logos/IN/Boston Consulting Group.png", region: "in", alt: "Boston Consulting Group" },
-        { image: "assets/images/logos/IN/BSH.png", region: "in", alt: "BSH" },
-        { image: "assets/images/logos/IN/Citiustech.png", region: "in", alt: "Citiustech" },
-        { image: "assets/images/logos/IN/Cognizant.png", region: "in", alt: "Cognizant" },
+        // { image: "assets/images/logos/IN/BSH.png", region: "in", alt: "BSH" },
+        // { image: "assets/images/logos/IN/Citiustech.png", region: "in", alt: "Citiustech" },
+        // { image: "assets/images/logos/IN/Cognizant.png", region: "in", alt: "Cognizant" },
         { image: "assets/images/logos/IN/HDFC Bank.png", region: "in", alt: "HDFC Bank" },
         { image: "assets/images/logos/IN/ICICI_Bank_Logo.png", region: "in", alt: "ICICI Bank Logo" },
         { image: "assets/images/logos/IN/IDFC Bank.png", region: "in", alt: "IDFC Bank" },
@@ -1085,8 +1085,8 @@
         { image: "assets/images/logos/IN/Siemens.png", region: "in", alt: "Siemens" },
         { image: "assets/images/logos/IN/TCS.png", region: "in", alt: "TCS" },
         { image: "assets/images/logos/IN/Tech Mahindra.png", region: "in", alt: "Tech Mahindra" },
-        { image: "assets/images/logos/IN/Wells_Fargo.png", region: "in", alt: "Wells Fargo" },
-        { image: "assets/images/logos/IN/Wipro.png", region: "in", alt: "Wipro" },
+        // { image: "assets/images/logos/IN/Wells_Fargo.png", region: "in", alt: "Wells Fargo" },
+        // { image: "assets/images/logos/IN/Wipro.png", region: "in", alt: "Wipro" },
 
         // ME
         { image: "assets/images/logos/ME/DEWA.AE_BIG.png", region: "me", alt: "DEWA.AE BIG" },

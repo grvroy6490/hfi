@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /* CSS Reset */
 /* Based on modern best practices */
 html, body, div, span, applet, object, iframe,
@@ -112,38 +113,8 @@ main {
   width: 100%;
 }
 
-@font-face {
-  font-family: "mundial", sans-serif;
-  src: url("../fonts/mundial-regular-tty.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "mundial", sans-serif;
-  src: url("../fonts/mundial-light-tty.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "mundial", sans-serif;
-  src: url("../fonts/mundial-demibold-tty.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "mundial", sans-serif;
-  src: url("../fonts/mundial-bold-tty.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "mundial", sans-serif;
-  src: url("../fonts/mundial-black-tty.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-}
 .font-mundial {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .font-suisse {
@@ -242,28 +213,28 @@ header {
 }
 
 .heading-1 {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .hero-headline {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.375rem;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.2;
 }
 
 .heading-2 {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .heading-3 {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.375;
@@ -275,21 +246,21 @@ header {
 }
 
 .heading-4 {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.375;
 }
 
 .heading-5 {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .heading-6 {
-  font-family: "mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
@@ -599,6 +570,7 @@ header {
   flex-direction: column;
   align-items: stretch;
   gap: 0.75rem;
+  padding-bottom: 4px;
 }
 @media (min-width: 992px) {
   .header-nav .header-right {
@@ -1490,7 +1462,7 @@ body.mobile-menu-open {
   align-items: center;
   justify-content: center;
   height: 3rem;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
 }
 
 @keyframes logoMarquee {
@@ -1502,18 +1474,15 @@ body.mobile-menu-open {
   }
 }
 .logo-slider-section .logo-slider-img {
-  max-height: 2.5rem;
+  max-height: 3rem;
   width: auto;
   max-width: 120px;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
 .logo-slider-section .logo-marquee-item:hover .logo-slider-img {
-  filter: grayscale(0%);
   opacity: 1;
 }
 
@@ -1955,7 +1924,7 @@ body.mobile-menu-open {
 }
 
 .hero-headline {
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.15;
   text-transform: uppercase;
   color: #0f0f0f;
@@ -1975,7 +1944,7 @@ body.mobile-menu-open {
 
 .hero-tagline {
   font-size: 1rem;
-  color: #404040;
+  color: #000000;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -2072,22 +2041,19 @@ body.mobile-menu-open {
 
 .hero-logo-marquee .logo-marquee-item {
   height: 2.75rem;
-  padding: 0 1.25rem;
+  padding: 0 3rem;
 }
 
 .hero-logo-img {
-  max-height: 2rem;
+  max-height: 3rem;
   width: auto;
   max-width: 150px;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
 .hero-logo-marquee .logo-marquee-item:hover .hero-logo-img {
-  filter: grayscale(0%);
   opacity: 1;
 }
 
@@ -2101,14 +2067,22 @@ body.mobile-menu-open {
   color: #0f0f0f;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif !important;
 }
 
 .about-lead {
-  color: #2a2a2a;
+  color: #000000;
   margin-left: auto;
   font-weight: 400;
   margin-right: auto;
   margin-bottom: 2.5rem;
+  max-width: 80%;
+}
+@media screen and (max-width: 992px) {
+  .about-lead {
+    width: 100%;
+  }
 }
 
 .about-stats {
@@ -2128,7 +2102,7 @@ body.mobile-menu-open {
   font-size: 2rem;
   font-weight: 900;
   color: #0f0f0f;
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.2;
   margin-bottom: 0.35rem;
 }
@@ -2136,7 +2110,7 @@ body.mobile-menu-open {
 .about-stat-label {
   display: block;
   font-weight: 400;
-  color: #404040;
+  color: #0F0F0F;
   line-height: 1.4;
 }
 
@@ -2159,7 +2133,7 @@ body.mobile-menu-open {
 
 .certifications-title {
   margin-bottom: 0.5rem;
-  font-family: "Mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.625rem;
   line-height: 100%;
   font-weight: 900;
@@ -2185,6 +2159,7 @@ body.mobile-menu-open {
   margin: 0 -2rem;
   width: calc(100% + 4rem);
   max-width: none;
+  padding-right: 2rem;
 }
 
 .certifications-swiper {
@@ -2245,8 +2220,8 @@ body.mobile-menu-open {
 }
 
 .cert-card-top {
-  min-height: 10.375rem;
-  height: 10.375rem;
+  min-height: 9rem;
+  height: 9rem;
   background: #4F4F4F;
   color: #fff;
   padding: 2rem;
@@ -2346,6 +2321,8 @@ body.mobile-menu-open {
   color: #ffffff;
   background: #404040;
   padding: 0.5rem 2rem;
+  width: 100%;
+  justify-content: center;
 }
 .btn-tertiary:hover {
   opacity: 0.85;
@@ -2361,6 +2338,8 @@ body.mobile-menu-open {
   font-weight: 600;
   position: relative;
   padding-right: 1em;
+  margin: 0 auto;
+  left: 0.3em;
 }
 .cert-card-link:hover {
   color: #404040;
@@ -2542,7 +2521,7 @@ body.mobile-menu-open {
 
 .capability-courses-title {
   margin-bottom: 0.5rem;
-  font-family: "Mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.625rem;
   line-height: 1.25;
   font-weight: 900;
@@ -2568,6 +2547,7 @@ body.mobile-menu-open {
   margin: 0 -2rem;
   width: calc(100% + 4rem);
   max-width: none;
+  padding-right: 2rem;
 }
 
 .capability-courses-swiper {
@@ -2586,14 +2566,12 @@ body.mobile-menu-open {
 }
 
 .capability-course-slide {
-  display: grid;
-  grid-template-rows: 1fr 3.2fr;
   gap: 0.75rem;
   height: 100%;
 }
 
 .capability-course-brief {
-  color: #404040;
+  color: #FFFFFF;
   margin: 0;
   line-height: 1.35;
   padding: 1.5rem;
@@ -2606,6 +2584,15 @@ body.mobile-menu-open {
   background: #ffffff;
   box-shadow: 0px 0px 19px -6px rgba(0, 0, 0, 0.18);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.capability-course-card-top {
+  min-height: 8rem;
+  height: 8rem;
+  background: #4F4F4F;
+  color: #fff;
   display: flex;
   flex-direction: column;
 }
@@ -2670,6 +2657,8 @@ body.mobile-menu-open {
   font-weight: 600;
   position: relative;
   padding-right: 1em;
+  margin: 0 auto;
+  left: 0.3em;
 }
 .capability-course-card-link:hover {
   color: #404040;
@@ -2842,9 +2831,10 @@ body.mobile-menu-open {
 }
 .transform-teams-section .transform-teams-content .transform-teams-heading {
   color: rgb(0, 0, 0);
-  font-weight: 900;
+  font-weight: 900 !important;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (max-width: 992px) {
   .transform-teams-section .transform-teams-content .transform-teams-heading {
@@ -2975,7 +2965,7 @@ body.mobile-menu-open {
 }
 .transform-teams-page-logos.hero-logos .logo-marquee-item {
   height: 3rem;
-  padding: 0 1.75rem;
+  padding: 0 3rem;
 }
 .transform-teams-page-logos.hero-logos .hero-logo-img {
   max-width: 9rem;
@@ -3266,7 +3256,7 @@ body.mobile-menu-open {
 
 .experience-practice-title {
   margin-bottom: 0;
-  font-family: "Mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.625rem;
   line-height: 1.05;
   font-weight: 900;
@@ -3288,6 +3278,7 @@ body.mobile-menu-open {
   margin: 0 -2rem;
   width: calc(100% + 4rem);
   max-width: none;
+  padding-right: 4rem;
 }
 
 .experience-practice-swiper {
@@ -3554,10 +3545,11 @@ body.mobile-menu-open {
 }
 
 .insight-card-title {
-  font-weight: 600;
+  font-weight: 700 !important;
   line-height: 1.2;
   color: rgb(43, 43, 43);
   margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif !important;
 }
 
 .insight-card-desc {
@@ -3634,10 +3626,11 @@ body.mobile-menu-open {
 
 .stay-connected-heading {
   position: relative;
-  font-weight: 600;
+  font-weight: 700 !important;
   line-height: 1.25;
   color: rgb(43, 43, 43);
   margin-bottom: 0.35rem;
+  font-family: "Inter", sans-serif !important;
 }
 
 .stay-connected-subtitle {
@@ -3838,7 +3831,7 @@ body.mobile-menu-open {
 }
 
 .experience-pathway-heading {
-  font-family: "Mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   color: rgb(0, 0, 0);
   text-transform: uppercase;
@@ -3870,7 +3863,7 @@ body.mobile-menu-open {
   padding: 0.55rem 2.5rem;
 }
 .experience-pathway-fieldset + .experience-pathway-fieldset {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .experience-pathway-form .visually-hidden {
@@ -4063,27 +4056,22 @@ body.mobile-menu-open {
 }
 
 .experience-pathway-submit {
-  width: 50%;
+  width: 30%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   padding: 0.5rem 1.25rem;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #fff !important;
-  background: #b88912;
+  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(184, 137, 18) 50%, rgb(201, 151, 26) 100%);
   border: none;
   border-radius: 30px;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s ease, background 0.2s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-@media (max-width: 575.98px) {
-  .experience-pathway-submit {
-    width: 100%;
-  }
 }
 .experience-pathway-submit::after {
   content: "";
@@ -4101,7 +4089,7 @@ body.mobile-menu-open {
 }
 .experience-pathway-submit:hover {
   color: #fff !important;
-  background: #b88912;
+  background: linear-gradient(270deg, rgb(143, 106, 15) 0%, rgb(143, 106, 15) 50%, rgb(143, 106, 15) 100%);
 }
 .experience-pathway-submit:hover::after {
   background-image: url("../images/arrow.svg");
@@ -4262,7 +4250,7 @@ body.mobile-menu-open {
 
 .all-courses-banner-title {
   margin-bottom: 1rem;
-  font-family: "Mundial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(2.5rem, 4vw, 3.375rem);
   font-weight: 900;
   line-height: 1.2;
@@ -5309,9 +5297,6 @@ body.mobile-menu-open {
 }
 .certification-banner-section .hero-logos {
   margin-top: 3rem;
-}
-.certification-banner-section .hero-logos .logo-marquee {
-  opacity: 0.5;
 }
 .certification-banner-section .col-lg-7 {
   padding-left: 14px;
@@ -10591,22 +10576,19 @@ select.checkout-field-control {
 
 .explore-insights-hero-logo-marquee .logo-marquee-item {
   height: 2.75rem;
-  padding: 0 1.25rem;
+  padding: 0 3rem;
 }
 
 .hero-logo-img {
-  max-height: 2rem;
+  max-height: 3rem;
   width: auto;
   max-width: 150px;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
 .explore-insights-hero-logo-marquee .logo-marquee-item:hover .hero-logo-img {
-  filter: grayscale(0%);
   opacity: 1;
 }
 

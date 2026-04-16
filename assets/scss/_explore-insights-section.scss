@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'typography' as t;
 
 .explore-insights-section {
     background: #fff;
@@ -78,10 +79,11 @@
 }
 
 .insight-card-title {
-    font-weight: 600;
+    font-weight: 700 !important;
     line-height: 1.2;
     color: v.$color-gray-dark;
     margin-bottom: 0.5rem;
+    font-family: t.$font-family-inter !important;
 }
 
 .insight-card-desc {
@@ -164,10 +166,11 @@
 
 .stay-connected-heading {
     position: relative;
-    font-weight: 600;
+    font-weight: 700 !important;
     line-height: 1.25;
     color: v.$color-gray-dark;
     margin-bottom: 0.35rem;
+    font-family: t.$font-family-inter !important;
 }
 
 .stay-connected-subtitle {

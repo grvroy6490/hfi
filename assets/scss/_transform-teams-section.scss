@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use 'typography' as t;
 
 .transform-teams-section {
     background: #fff;
@@ -20,9 +21,10 @@
 
         .transform-teams-heading {
             color: v.$color-black;
-            font-weight: 900;
+            font-weight: 900 !important;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
+            font-family: t.$font-family-motserrat !important;
 
             @media (max-width: 992px) {
                 line-height: 1.2;
@@ -176,7 +178,7 @@
 
     .logo-marquee-item {
         height: 3rem;
-        padding: 0 1.75rem;
+        padding: 0 3rem;
     }
 
     .hero-logo-img {
