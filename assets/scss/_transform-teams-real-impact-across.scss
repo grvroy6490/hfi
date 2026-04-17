@@ -1,3 +1,6 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .real-impact-across-section {
     background: #ffffff;
     padding: 2.8rem 0 2.2rem;
@@ -11,7 +14,8 @@
 
 .real-impact-across-heading {
     margin: 0;
-    color: #404040;
+    color: v.$color-primary-grey;
+    font-family: t.$font-family-inter;
 }
 
 .real-impact-across-grid {

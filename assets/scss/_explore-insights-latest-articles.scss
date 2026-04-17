@@ -1,3 +1,6 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .latest-articles-section {
     background: #ffffff;
     padding: 2.8rem 0 3.8rem;
@@ -5,7 +8,8 @@
 
 .latest-articles-heading {
     margin: 0;
-    color: #404040;
+  color: v.$color-primary-grey;
+  font-family: t.$font-family-inter;
 }
 
 .latest-articles-grid {
@@ -46,7 +50,7 @@
 }
 
 .latest-articles-card-body {
-    padding: 0.9rem 0.85rem 0.75rem;
+    padding: 1.5rem;
 }
 
 .latest-articles-card-title {
@@ -58,7 +62,7 @@
 }
 
 .latest-articles-card-copy {
-    margin: 0.45rem 0 0;
+    margin: 0.75rem 0 0;
     color: #212121;
     line-height: 1.35;
 }

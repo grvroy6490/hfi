@@ -1,11 +1,15 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .learn-from-industry-experts-section {
     background: #ffffff;
-    padding: 1.8rem 0 4rem;
+    padding: 5rem 0;
 
     .learn-from-industry-experts-heading {
         margin: 0;
-        color: #404040;
-        margin-bottom: 1.5rem;
+  color: v.$color-primary-grey;
+  font-family: t.$font-family-inter;
+        margin-bottom: 2rem;
     }
 
     .industry-pioneers-grid {

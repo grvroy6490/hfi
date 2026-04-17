@@ -1,3 +1,6 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .what-leaders-say-section {
     background: #ffffff;
     padding: 3rem 0 3.4rem;
@@ -12,7 +15,8 @@
 .what-leaders-say-heading {
     display: inline-block;
     margin: 0;
-    color: #404040;
+  color: v.$color-primary-grey;
+  font-family: t.$font-family-inter;
     line-height: 1.15;
 }
 

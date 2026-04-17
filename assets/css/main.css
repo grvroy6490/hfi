@@ -2240,7 +2240,7 @@ body.mobile-menu-open {
 .cert-card-top {
   min-height: 9rem;
   height: 9rem;
-  background: #4F4F4F;
+  background: #4f4f4f;
   color: #fff;
   padding: 2rem;
   display: flex;
@@ -2315,16 +2315,19 @@ body.mobile-menu-open {
 
 .cert-card-info strong {
   font-weight: 700;
-  font-size: 1.5rem;
-}
-.cert-card-info strong span {
-  font-size: 1.125rem;
 }
 
 .cert-card-info-stack {
   display: flex;
   flex-direction: column;
   line-height: 1.25;
+}
+.cert-card-info-stack strong {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.cert-card-info-stack strong span {
+  font-size: 1.125rem;
 }
 
 .cert-card-note {
@@ -2602,7 +2605,6 @@ body.mobile-menu-open {
 
 .capability-course-slide {
   gap: 0.75rem;
-  height: 100%;
 }
 
 .capability-course-brief {
@@ -2641,7 +2643,7 @@ body.mobile-menu-open {
 }
 .capability-course-card-body .card-content {
   display: grid;
-  grid-template-rows: repeat(3, 0.7fr);
+  grid-template-rows: repeat(3, 0.6fr);
 }
 
 .capability-course-card-title {
@@ -2658,10 +2660,6 @@ body.mobile-menu-open {
 }
 .capability-course-card-info strong {
   font-weight: 700;
-  font-size: 1.5rem;
-}
-.capability-course-card-info strong span {
-  font-size: 1.125rem;
 }
 
 .capability-course-card-info-stack {
@@ -2669,6 +2667,13 @@ body.mobile-menu-open {
   flex-direction: column;
   line-height: 1.25;
   min-height: 5.563rem;
+}
+.capability-course-card-info-stack strong {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.capability-course-card-info-stack strong span {
+  font-size: 1.125rem;
 }
 
 .capability-course-card-meta {
@@ -2725,7 +2730,7 @@ body.mobile-menu-open {
 }
 
 .capability-courses-controls {
-  margin-top: 2.125rem;
+  margin-top: 1.75rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -3030,6 +3035,7 @@ body.mobile-menu-open {
 
 .transform-teams-programs-title {
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .transform-teams-programs-grid {
@@ -3140,7 +3146,8 @@ body.mobile-menu-open {
 }
 
 .transform-teams-process-title {
-  color: #404040;
+  color: #0F0F0F;
+  font-family: "Inter", sans-serif;
 }
 
 .transform-teams-process-grid {
@@ -3229,7 +3236,8 @@ body.mobile-menu-open {
 }
 
 .transform-teams-industries-title {
-  color: #404040;
+  color: #0F0F0F;
+  font-family: "Inter", sans-serif;
 }
 
 .transform-teams-industries-grid {
@@ -10139,10 +10147,9 @@ select.checkout-field-control {
   }
 }
 .build-experience-capability-section {
-  padding: 2.8rem 0 3.2rem;
+  padding: 2.5rem 0;
   background-color: #F5F5F5;
   overflow: hidden;
-  padding-bottom: 0;
 }
 .build-experience-capability-section .container {
   position: relative;
@@ -10155,7 +10162,8 @@ select.checkout-field-control {
 
 .build-experience-capability-heading {
   margin: 0;
-  color: #212121;
+  color: #0F0F0F;
+  font-family: "Inter", sans-serif;
 }
 
 .build-experience-capability-copy {
@@ -10184,7 +10192,7 @@ select.checkout-field-control {
   margin-left: auto;
   background-color: #ffffff;
   border-radius: 0.95rem;
-  padding: 1.35rem;
+  padding: 3rem;
 }
 
 .build-experience-capability-form {
@@ -10296,6 +10304,7 @@ select.checkout-field-control {
   display: inline-block;
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
   line-height: 1.15;
 }
 
@@ -10384,6 +10393,7 @@ select.checkout-field-control {
 .real-impact-across-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .real-impact-across-grid {
@@ -10562,15 +10572,6 @@ select.checkout-field-control {
   margin-bottom: 0.15rem;
 }
 
-.explore-insights-hero-headline {
-  font-weight: 700;
-  line-height: 1.15;
-  text-transform: uppercase;
-  color: #0f0f0f;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.02em;
-}
-
 .explore-insights-hero-lead {
   font-size: 1.125rem;
   line-height: 1.5;
@@ -10703,6 +10704,7 @@ select.checkout-field-control {
 .feature-insights-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .feature-insights-cards {
@@ -10714,7 +10716,7 @@ select.checkout-field-control {
   min-height: 11.4rem;
   display: flex;
   flex-direction: column;
-  padding: 0.95rem 0.9rem 0.85rem;
+  padding: 1.5rem;
   border-radius: 0.85rem;
   background: #ffffff;
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
@@ -10731,11 +10733,12 @@ select.checkout-field-control {
 .feature-insights-card-title {
   margin: 0.3rem 0 0;
   color: #0F0F0F;
+  font-family: "Inter", sans-serif;
 }
 
 .feature-insights-card-copy {
   margin: 0.55rem 0 0;
-  color: #2B2B2B;
+  color: #2b2b2b;
   line-height: 1.4;
 }
 
@@ -10791,6 +10794,7 @@ select.checkout-field-control {
 .events-webinars-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .events-webinars-tabs {
@@ -10814,17 +10818,17 @@ select.checkout-field-control {
 }
 
 .events-webinars-tab-content {
-  margin-top: 0.9rem;
+  margin-top: 2rem;
 }
 
 .events-webinars-list .course-calendar-item {
-  padding: 0.95rem 1rem;
+  padding: 1.5rem;
 }
 
 .events-webinars-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .events-webinars-list .course-calendar-item-title {
@@ -10851,6 +10855,7 @@ select.checkout-field-control {
 .latest-articles-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .latest-articles-grid {
@@ -10892,7 +10897,7 @@ select.checkout-field-control {
 }
 
 .latest-articles-card-body {
-  padding: 0.9rem 0.85rem 0.75rem;
+  padding: 1.5rem;
 }
 
 .latest-articles-card-title {
@@ -10904,7 +10909,7 @@ select.checkout-field-control {
 }
 
 .latest-articles-card-copy {
-  margin: 0.45rem 0 0;
+  margin: 0.75rem 0 0;
   color: #212121;
   line-height: 1.35;
 }
@@ -10976,10 +10981,11 @@ select.checkout-field-control {
 .research-reports-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .research-reports-grid {
-  margin-top: 1.55rem !important;
+  margin-top: 2rem !important;
 }
 
 .research-reports-card {
@@ -10987,7 +10993,7 @@ select.checkout-field-control {
   min-height: 11.4rem;
   display: flex;
   flex-direction: column;
-  padding: 0.95rem 0.9rem 0.85rem;
+  padding: 1.5rem;
   border-radius: 0.85rem;
   background: #ffffff;
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
@@ -10997,6 +11003,7 @@ select.checkout-field-control {
 .research-reports-card-title {
   margin: 0.3rem 0 0;
   color: #b88912;
+  font-family: "Inter", sans-serif;
 }
 
 .research-reports-card-copy {
@@ -11051,12 +11058,13 @@ select.checkout-field-control {
 }
 .video-talks-section {
   background: #ffffff;
-  padding: 2.8rem 0 3.8rem;
+  padding: 5rem 0;
 }
 
 .video-talks-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .video-talks-grid {
@@ -11100,12 +11108,13 @@ select.checkout-field-control {
 }
 
 .video-talks-card-body {
-  padding: 1.5rem 0.85rem 1.5rem;
+  padding: 1.5rem;
 }
 
 .video-talks-card-title {
   margin: 0;
   color: #0F0F0F;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   line-height: 1.35;
 }
@@ -11166,6 +11175,7 @@ select.checkout-field-control {
 .hfi-podcast-heading {
   margin: 0;
   color: #404040;
+  font-family: "Inter", sans-serif;
 }
 
 .hfi-podcast-list {
@@ -11180,7 +11190,7 @@ select.checkout-field-control {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 1rem 0.95rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   background: #F5F5F5;
 }
@@ -11271,6 +11281,7 @@ select.checkout-field-control {
 .stay-updated-heading {
   margin: 0;
   color: #0F0F0F;
+  font-family: "Inter", sans-serif;
   margin-bottom: 0.5rem;
 }
 
@@ -11319,12 +11330,13 @@ select.checkout-field-control {
 
 .learn-from-industry-experts-section {
   background: #ffffff;
-  padding: 1.8rem 0 4rem;
+  padding: 5rem 0;
 }
 .learn-from-industry-experts-section .learn-from-industry-experts-heading {
   margin: 0;
   color: #404040;
-  margin-bottom: 1.5rem;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2rem;
 }
 .learn-from-industry-experts-section .industry-pioneers-grid .industry-pioneers-card-inner {
   align-items: flex-end;

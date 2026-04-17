@@ -1,11 +1,15 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .video-talks-section {
     background: #ffffff;
-    padding: 2.8rem 0 3.8rem;
+    padding: 5rem 0;
 }
 
 .video-talks-heading {
     margin: 0;
-    color: #404040;
+  color: v.$color-primary-grey;
+  font-family: t.$font-family-inter;
 }
 
 .video-talks-grid {
@@ -50,12 +54,13 @@
 
 
 .video-talks-card-body {
-    padding: 1.5rem 0.85rem 1.5rem;
+    padding: 1.5rem;
 }
 
 .video-talks-card-title {
     margin: 0;
-    color: #0F0F0F;
+  color: v.$color-primary-black;
+  font-family: t.$font-family-inter;
     font-weight: 600;
     line-height: 1.35;
 }

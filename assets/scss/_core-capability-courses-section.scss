@@ -65,7 +65,7 @@
 
 .capability-course-slide {
     gap: 0.75rem;
-    height: 100%;
+    // height: 100%;
 }
 
 .capability-course-brief {
@@ -105,7 +105,7 @@
 
     .card-content {
         display: grid;
-        grid-template-rows: repeat(3, 0.7fr);
+        grid-template-rows: repeat(3, 0.6fr);
     }
     
 }
@@ -124,11 +124,6 @@
 
     strong {
         font-weight: 700;
-        font-size: 1.5rem;
-
-        span{
-            font-size: 1.125rem;
-        }
     }
 }
 
@@ -137,6 +132,16 @@
     flex-direction: column;
     line-height: 1.25;
     min-height: 5.563rem;
+
+    
+    strong {
+        font-weight: 700;
+        font-size: 1.5rem;
+
+        span{
+            font-size: 1.125rem;
+        }
+    }
 }
 
 .capability-course-card-meta {
@@ -199,7 +204,7 @@
 }
 
 .capability-courses-controls {
-    margin-top: 2.125rem;
+    margin-top: 1.75rem;
     display: flex;
     align-items: center;
     gap: 1rem;

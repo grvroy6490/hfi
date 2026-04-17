@@ -1,3 +1,6 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .stay-updated-section{
     padding: 3.4rem 0 4.2rem;
     background: #F2F2F2;
@@ -14,7 +17,8 @@
 
 .stay-updated-heading{
     margin: 0;
-    color: #0F0F0F;
+  color: v.$color-primary-black;
+  font-family: t.$font-family-inter;
     margin-bottom: 0.5rem;
 }
 

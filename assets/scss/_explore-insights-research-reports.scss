@@ -1,3 +1,6 @@
+@use "variables" as v;
+@use "typography" as t;
+
 .research-reports-section {
     padding: 3.4rem 0 4.2rem;
     background: #ffffff;
@@ -5,11 +8,12 @@
 
 .research-reports-heading {
     margin: 0;
-    color: #404040;
+  color: v.$color-primary-grey;
+  font-family: t.$font-family-inter;
 }
 
 .research-reports-grid {
-    margin-top: 1.55rem !important;
+    margin-top: 2rem !important;
 }
 
 .research-reports-card {
@@ -17,7 +21,7 @@
     min-height: 11.4rem;
     display: flex;
     flex-direction: column;
-    padding: 0.95rem 0.9rem 0.85rem;
+    padding: 1.5rem;
     border-radius: 0.85rem;
     background: #ffffff;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
@@ -29,6 +33,7 @@
 .research-reports-card-title {
     margin: 0.3rem 0 0;
     color: #b88912;
+      font-family: t.$font-family-inter;
 }
 
 .research-reports-card-copy {
