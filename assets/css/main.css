@@ -2313,6 +2313,10 @@ body.mobile-menu-open {
 
 .cert-card-info strong {
   font-weight: 700;
+  font-size: 1.5rem;
+}
+.cert-card-info strong span {
+  font-size: 1.125rem;
 }
 
 .cert-card-info-stack {
@@ -2652,6 +2656,10 @@ body.mobile-menu-open {
 }
 .capability-course-card-info strong {
   font-weight: 700;
+  font-size: 1.5rem;
+}
+.capability-course-card-info strong span {
+  font-size: 1.125rem;
 }
 
 .capability-course-card-info-stack {
