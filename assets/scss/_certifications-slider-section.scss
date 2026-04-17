@@ -171,6 +171,21 @@
     font-family: "Inter", sans-serif;
 }
 
+.cert-card-title_block{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    
+    .cert-card-title{
+        margin-bottom: 0;
+    }
+
+    .cert-card-title-arrow{
+        width: 1rem;
+        margin: 0 10px;
+    }
+}
+
 .cert-card-desc {
     margin: 0 0 1rem;
     color: #4f4f4f;

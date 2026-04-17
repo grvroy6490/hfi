@@ -59,7 +59,7 @@
 .choices__list--single .choices__item {
     color: v.$color-primary-black;
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -130,4 +130,8 @@
 
 .upcoming-tracks-timezone-dropdown .choices {
     min-width: 14rem;
+}
+
+.choices__placeholder {
+    opacity: 1;
 }

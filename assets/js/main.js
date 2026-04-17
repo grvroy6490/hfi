@@ -1170,27 +1170,218 @@
 
 
 
-// Experience pathway: country code flag (country-flag-icons via jsDelivr CDN)
+// Experience pathway: full country list + dial code, flag sync, searchable Choices
 (function () {
     "use strict";
 
-    const FLAG_CDN = "https://cdn.jsdelivr.net/npm/country-flag-icons/3x2";
-    const select = document.getElementById("pathway-country-code");
+    var FLAG_CDN = "https://cdn.jsdelivr.net/npm/country-flag-icons/3x2";
+    var METADATA_URL =
+        "https://cdn.jsdelivr.net/npm/libphonenumber-js@1.11.14/metadata.min.json";
+
+    var select = document.getElementById("pathway-country-code");
     if (!select) return;
 
-    const wrap = select.closest(".experience-pathway-country-code-wrap");
-    const flagImg = wrap ? wrap.querySelector(".experience-pathway-flag") : null;
+    var wrap = select.closest(".experience-pathway-country-code-wrap");
+    var flagImg = wrap ? wrap.querySelector(".experience-pathway-flag") : null;
     if (!flagImg) return;
 
-    function setFlag() {
-        const opt = select.options[select.selectedIndex];
-        const iso = opt ? opt.getAttribute("data-iso") : null;
-        flagImg.src = iso ? FLAG_CDN + "/" + iso + ".svg" : "";
-        flagImg.alt = iso ? "Flag of " + iso : "";
+    var pathwayChoices = null;
+    var dialHidden = document.getElementById("pathway-country-dial");
+
+    function dialDisplay(dialDigits) {
+        if (dialDigits == null || dialDigits === "") return "";
+        var s = String(dialDigits);
+        return s.charAt(0) === "+" ? s : "+" + s;
     }
 
-    setFlag();
+    function setFlag() {
+        var opt = select.options[select.selectedIndex];
+        var iso = opt ? opt.getAttribute("data-iso") || opt.value : null;
+        if (!iso) {
+            flagImg.src = "";
+            flagImg.alt = "";
+            if (dialHidden) dialHidden.value = "";
+            return;
+        }
+        iso = iso.toUpperCase();
+        flagImg.src = FLAG_CDN + "/" + iso + ".svg";
+        flagImg.alt = "Flag of " + iso;
+        if (dialHidden && opt) {
+            var dial = opt.getAttribute("data-dial") || "";
+            dialHidden.value = dial;
+        }
+    }
+
+    function destroyPathwayChoices() {
+        if (pathwayChoices && typeof pathwayChoices.destroy === "function") {
+            pathwayChoices.destroy();
+            pathwayChoices = null;
+        }
+    }
+
+    function extractDialFromChoice(choice) {
+        if (!choice || !choice.customProperties) return null;
+        var cp = choice.customProperties;
+        if (typeof cp === "string") {
+            try {
+                cp = JSON.parse(cp);
+            } catch (e) {
+                return null;
+            }
+        }
+        if (cp && typeof cp === "object" && cp.dial) return String(cp.dial);
+        return null;
+    }
+
+    function initPathwayChoices() {
+        if (typeof Choices === "undefined") return;
+        destroyPathwayChoices();
+
+        var defaultItemTemplate = Choices.defaults.templates.item;
+        var phoneRow = wrap ? wrap.closest(".experience-pathway-phone") : null;
+
+        pathwayChoices = new Choices(select, {
+            allowHTML: false,
+            searchEnabled: true,
+            shouldSort: false,
+            itemSelectText: "",
+            searchPlaceholderValue: "Search country",
+            position: "bottom",
+            callbackOnCreateTemplates: function () {
+                return {
+                    item: function (templateOpts, choice) {
+                        var dial = extractDialFromChoice(choice);
+                        if (dial && !choice.placeholder) {
+                            return defaultItemTemplate.call(
+                                this,
+                                templateOpts,
+                                Object.assign({}, choice, { label: dial }),
+                                false
+                            );
+                        }
+                        return defaultItemTemplate.call(this, templateOpts, choice, false);
+                    }
+                };
+            }
+        });
+
+        if (phoneRow && pathwayChoices && pathwayChoices.passedElement) {
+            var rootEl = pathwayChoices.passedElement.element;
+            rootEl.addEventListener("showDropdown", function () {
+                phoneRow.classList.add("is-country-dropdown-open");
+            });
+            rootEl.addEventListener("hideDropdown", function () {
+                phoneRow.classList.remove("is-country-dropdown-open");
+            });
+        }
+    }
+
+    function applyFallbackOptions() {
+        var rows = [
+            { iso: "IN", dial: "+91", name: "India" },
+            { iso: "US", dial: "+1", name: "United States" },
+            { iso: "CA", dial: "+1", name: "Canada" },
+            { iso: "GB", dial: "+44", name: "United Kingdom" },
+            { iso: "AU", dial: "+61", name: "Australia" },
+            { iso: "JP", dial: "+81", name: "Japan" },
+            { iso: "AE", dial: "+971", name: "United Arab Emirates" },
+            { iso: "SG", dial: "+65", name: "Singapore" },
+            { iso: "DE", dial: "+49", name: "Germany" },
+            { iso: "FR", dial: "+33", name: "France" },
+            { iso: "CN", dial: "+86", name: "China" }
+        ];
+        var defaultIso = (select.dataset.defaultIso || "IN").toUpperCase();
+        select.innerHTML = "";
+        rows.forEach(function (row) {
+            var opt = document.createElement("option");
+            opt.value = row.iso;
+            opt.setAttribute("data-iso", row.iso);
+            opt.setAttribute("data-dial", row.dial);
+            opt.setAttribute("data-custom-properties", JSON.stringify({ dial: row.dial }));
+            opt.textContent = row.name + " (" + row.dial + ")";
+            if (row.iso === defaultIso) opt.selected = true;
+            select.appendChild(opt);
+        });
+        setFlag();
+        initPathwayChoices();
+    }
+
+    function populateFromMetadata(meta) {
+        var countries = meta && meta.countries;
+        if (!countries) {
+            applyFallbackOptions();
+            return;
+        }
+
+        var displayNames =
+            typeof Intl !== "undefined" && Intl.DisplayNames
+                ? new Intl.DisplayNames(["en"], { type: "region" })
+                : null;
+
+        var defaultIso = (select.dataset.defaultIso || "IN").toUpperCase();
+        var rows = [];
+
+        Object.keys(countries).forEach(function (iso2) {
+            var entry = countries[iso2];
+            if (!entry || !entry.length) return;
+            var dialDigits = entry[0];
+            if (dialDigits == null || dialDigits === "") return;
+            var dial = dialDisplay(dialDigits);
+            var label;
+            try {
+                label = displayNames ? displayNames.of(iso2) : iso2;
+            } catch (e) {
+                label = iso2;
+            }
+            if (!label) label = iso2;
+            rows.push({ iso: iso2, dial: dial, name: label });
+        });
+
+        rows.sort(function (a, b) {
+            return a.name.localeCompare(b.name, "en");
+        });
+
+        destroyPathwayChoices();
+        select.innerHTML = "";
+
+        rows.forEach(function (row) {
+            var opt = document.createElement("option");
+            opt.value = row.iso;
+            opt.setAttribute("data-iso", row.iso);
+            opt.setAttribute("data-dial", row.dial);
+            opt.setAttribute("data-custom-properties", JSON.stringify({ dial: row.dial }));
+            opt.textContent = row.name + " (" + row.dial + ")";
+            if (row.iso === defaultIso) opt.selected = true;
+            select.appendChild(opt);
+        });
+
+        if (!select.querySelector("option[selected]") && select.options.length) {
+            select.options[0].selected = true;
+        }
+
+        setFlag();
+        initPathwayChoices();
+    }
+
     select.addEventListener("change", setFlag);
+
+    if (select.dataset.pathwayCountriesLoaded === "true") {
+        setFlag();
+        return;
+    }
+
+    fetch(METADATA_URL)
+        .then(function (res) {
+            if (!res.ok) throw new Error("metadata fetch failed");
+            return res.json();
+        })
+        .then(populateFromMetadata)
+        .catch(function () {
+            applyFallbackOptions();
+        })
+        .finally(function () {
+            select.dataset.pathwayCountriesLoaded = "true";
+        });
 })();
 
 // Global selects: Choices.js

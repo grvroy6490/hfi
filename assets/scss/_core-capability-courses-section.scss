@@ -101,11 +101,11 @@
     display: grid;
     grid-template-rows: 1fr 4fr;
     justify-content: space-between;
-    padding-bottom: 0;
+    padding-bottom: 1rem;
 
     .card-content {
         display: grid;
-        grid-template-rows: repeat(3, 0.6fr);
+        grid-template-rows: repeat(3, 0.7fr);
     }
     
 }
@@ -151,7 +151,6 @@
 .capability-course-card-actions {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
     flex-wrap: wrap;
 }
 

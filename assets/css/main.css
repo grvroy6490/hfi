@@ -1646,15 +1646,30 @@ body.mobile-menu-open {
   background: transparent;
   border: none;
   padding: 0;
+  position: relative;
+}
+.footer-country-choice::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0.5rem, -30%);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.6875rem;
+  background-image: url("../images/chevron.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .footer-country-choice:hover {
   color: #fff;
-  opacity: 0.95;
 }
-.footer-country-choice:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.35);
-  outline-offset: 3px;
-  border-radius: 4px;
+.footer-country-choice:hover::after {
+  opacity: 1;
+  transform: translate(1rem, -30%);
 }
 
 .footer-country-choice-icon {
@@ -1805,6 +1820,7 @@ body.mobile-menu-open {
   font-weight: 700;
   line-height: 1.2;
   color: #0d0d0d;
+  font-family: "Inter", sans-serif;
 }
 
 .country-region-modal-lead {
@@ -2271,6 +2287,19 @@ body.mobile-menu-open {
   font-family: "Inter", sans-serif;
 }
 
+.cert-card-title_block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.cert-card-title_block .cert-card-title {
+  margin-bottom: 0;
+}
+.cert-card-title_block .cert-card-title-arrow {
+  width: 1rem;
+  margin: 0 10px;
+}
+
 .cert-card-desc {
   margin: 0 0 1rem;
   color: #4f4f4f;
@@ -2602,11 +2631,11 @@ body.mobile-menu-open {
   display: grid;
   grid-template-rows: 1fr 4fr;
   justify-content: space-between;
-  padding-bottom: 0;
+  padding-bottom: 1rem;
 }
 .capability-course-card-body .card-content {
   display: grid;
-  grid-template-rows: repeat(3, 0.6fr);
+  grid-template-rows: repeat(3, 0.7fr);
 }
 
 .capability-course-card-title {
@@ -2648,7 +2677,6 @@ body.mobile-menu-open {
 .capability-course-card-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
@@ -2831,10 +2859,10 @@ body.mobile-menu-open {
 }
 .transform-teams-section .transform-teams-content .transform-teams-heading {
   color: rgb(0, 0, 0);
-  font-weight: 900 !important;
+  font-weight: 600 !important;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Inter", sans-serif !important;
 }
 @media (max-width: 992px) {
   .transform-teams-section .transform-teams-content .transform-teams-heading {
@@ -3302,7 +3330,7 @@ body.mobile-menu-open {
   min-height: 13.75rem;
   border-radius: 1.25rem;
   background: #ffffff;
-  box-shadow: 0.75rem 0.5rem 18px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 19px -6px rgba(0, 0, 0, 0.18);
   padding: 5.5rem 2rem 3rem;
   display: flex;
   flex-direction: column;
@@ -3545,7 +3573,7 @@ body.mobile-menu-open {
 }
 
 .insight-card-title {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 1.2;
   color: rgb(43, 43, 43);
   margin-bottom: 0.5rem;
@@ -3626,7 +3654,7 @@ body.mobile-menu-open {
 
 .stay-connected-heading {
   position: relative;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 1.25;
   color: rgb(43, 43, 43);
   margin-bottom: 0.35rem;
@@ -3860,7 +3888,8 @@ body.mobile-menu-open {
   max-width: 100% !important;
 }
 .experience-pathway-fieldset .choices .choices__inner {
-  padding: 0.55rem 2.5rem;
+  padding: 0.55rem 1.75rem 0.55rem 0.5rem;
+  display: flex;
 }
 .experience-pathway-fieldset + .experience-pathway-fieldset {
   margin-top: 1rem;
@@ -3899,6 +3928,9 @@ body.mobile-menu-open {
 .experience-pathway-field {
   flex: 1 1 100%;
   min-width: 0;
+}
+.experience-pathway-field .choices__inner {
+  padding: 0.55rem 1rem !important;
 }
 @media (min-width: 576px) {
   .experience-pathway-field {
@@ -3985,14 +4017,23 @@ body.mobile-menu-open {
   background: #f4f4f4;
   overflow: hidden;
 }
+.experience-pathway-phone.is-country-dropdown-open {
+  overflow: visible;
+  z-index: 20;
+}
 .experience-pathway-phone .experience-pathway-country-code-wrap {
-  flex: 0 0 30%;
+  flex: 0 0 auto;
   min-width: 0;
+  max-width: 42%;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding-left: 0.75rem;
   border-right: 1px solid #e0e0e0;
+}
+.experience-pathway-phone .experience-pathway-country-code-wrap .choices__inner {
+  padding: 0.5rem 1.75rem 0.5rem 0.5rem !important;
+  display: flex;
 }
 .experience-pathway-phone .experience-pathway-flag {
   flex-shrink: 0;
@@ -4012,6 +4053,48 @@ body.mobile-menu-open {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath stroke='%23444' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round' d='M2 4 L6 8 L10 4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
+}
+.experience-pathway-phone .choices {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+.experience-pathway-phone .choices__inner {
+  min-height: auto;
+  padding: 0.55rem 2.25rem 0.55rem 0.35rem;
+  border: none;
+  border-radius: 0;
+  background: #f4f4f4;
+  box-shadow: none;
+}
+.experience-pathway-phone .choices__list--single {
+  padding: 0;
+}
+.experience-pathway-phone .choices__list--single .choices__item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.experience-pathway-phone .choices.is-open .choices__inner {
+  border-radius: 0;
+}
+.experience-pathway-phone .choices[data-type*=select-one]::after {
+  right: 0.65rem;
+}
+.experience-pathway-phone .choices__list--dropdown,
+.experience-pathway-phone .choices__list[aria-expanded] {
+  max-height: 16rem;
+  z-index: 30;
+  width: 250px;
+  text-align: left;
+}
+.experience-pathway-phone .choices__input {
+  margin: 0.35rem 0.5rem 0.25rem;
+  padding: 0.35rem 0.5rem;
+  min-height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d8d8d8;
+  background: #fff;
 }
 .experience-pathway-phone .experience-pathway-input {
   flex: 1;
@@ -4157,7 +4240,7 @@ body.mobile-menu-open {
 .choices__list--single .choices__item {
   color: #0F0F0F;
   font-family: "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -4228,6 +4311,10 @@ body.mobile-menu-open {
 
 .upcoming-tracks-timezone-dropdown .choices {
   min-width: 14rem;
+}
+
+.choices__placeholder {
+  opacity: 1;
 }
 
 .all-courses-banner-section {
@@ -6725,7 +6812,7 @@ body.mobile-menu-open {
   display: none;
 }
 .certification-analyst-advisor-form-wrap .experience-pathway-country-code-wrap {
-  flex: 0 0 34% !important;
+  flex: 0 0 40% !important;
 }
 .certification-analyst-advisor-form-wrap .experience-pathway-phone {
   border-color: #CCCCCC;
