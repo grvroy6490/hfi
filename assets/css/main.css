@@ -2869,10 +2869,9 @@ body.mobile-menu-open {
 }
 .transform-teams-section .transform-teams-content .transform-teams-heading {
   color: rgb(0, 0, 0);
-  font-weight: 600 !important;
+  font-weight: 900;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  font-family: "Inter", sans-serif !important;
 }
 @media (max-width: 992px) {
   .transform-teams-section .transform-teams-content .transform-teams-heading {
@@ -2923,6 +2922,7 @@ body.mobile-menu-open {
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-transform: none;
+  font-family: "Inter", sans-serif;
 }
 .transform-teams-section .content-row .transform-teams-sub-body {
   color: rgb(117, 117, 117);
@@ -3380,6 +3380,8 @@ body.mobile-menu-open {
   position: relative;
 }
 .experience-practice-quote .end_quote {
+  display: inline-block;
+  vertical-align: baseline;
   transform: translate(0.5rem, 0.425rem);
 }
 .experience-practice-quote .start_quote {

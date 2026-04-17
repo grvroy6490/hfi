@@ -104,6 +104,8 @@
     position: relative;
 
     .end_quote {
+        display: inline-block;
+        vertical-align: baseline;
         transform: translate(0.5rem, 0.425rem);
     }
 

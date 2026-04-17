@@ -445,6 +445,7 @@
 
     new Swiper(sliderEl, {
         slidesPerView: 1.08,
+        slidesPerGroup: 1,
         spaceBetween: 16,
         speed: 650,
         // grabCursor: true,
@@ -461,18 +462,22 @@
         breakpoints: {
             576: {
                 slidesPerView: 1,
+                slidesPerGroup: 1,
                 spaceBetween: 18
             },
             768: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 20
             },
             992: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 20
             },
             1200: {
                 slidesPerView: 3,
+                slidesPerGroup: 3,
                 spaceBetween: 20
             }
         }
@@ -492,6 +497,7 @@
 
     new Swiper(sliderEl, {
         slidesPerView: 1.08,
+        slidesPerGroup: 1,
         spaceBetween: 16,
         speed: 650,
         // grabCursor: true,
@@ -508,18 +514,22 @@
         breakpoints: {
             576: {
                 slidesPerView: 1,
+                slidesPerGroup: 1,
                 spaceBetween: 18
             },
             768: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 20
             },
             992: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 20
             },
             1200: {
                 slidesPerView: 3,
+                slidesPerGroup: 3,
                 spaceBetween: 20
             }
         }
@@ -551,9 +561,14 @@
             const endSvg = quoteEl.querySelector("svg.end_quote");
             if (startSvg && endSvg) {
                 // Replace only the text between the existing SVGs.
+                const quoteText = (testimonial.quote || "").trim();
                 quoteEl.innerHTML = "";
                 quoteEl.appendChild(startSvg);
-                quoteEl.appendChild(document.createTextNode(testimonial.quote || ""));
+                quoteEl.appendChild(document.createTextNode(quoteText));
+                if (quoteText) {
+                    // Keep the closing quote with the quote text (avoid orphan wrap).
+                    quoteEl.appendChild(document.createTextNode("\u00A0"));
+                }
                 quoteEl.appendChild(endSvg);
             }
         }
@@ -932,6 +947,7 @@
 
     new Swiper(sliderEl, {
         slidesPerView: 1.08,
+        slidesPerGroup: 1,
         spaceBetween: 16,
         speed: 650,
         watchOverflow: true,
@@ -947,18 +963,22 @@
         breakpoints: {
             576: {
                 slidesPerView: 1,
+                slidesPerGroup: 1,
                 spaceBetween: 18
             },
             768: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 20
             },
             992: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 20
             },
             1200: {
                 slidesPerView: 3,
+                slidesPerGroup: 3,
                 spaceBetween: 20
             }
         }
