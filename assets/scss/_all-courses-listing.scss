@@ -73,7 +73,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transform: translateY(10%);
+        transform: translateY(0%);
         transition: transform 0.25s ease;
         filter: brightness(0);
     }
@@ -86,7 +86,7 @@
 
     &:hover::after {
         background-image: url("../images/arrow.svg");
-        transform: translateX(4px) translateY(10%);
+        transform: translateX(4px) translateY(0%);
         filter: none;
     }
 }

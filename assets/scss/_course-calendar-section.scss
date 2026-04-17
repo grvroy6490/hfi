@@ -420,7 +420,7 @@
         background-repeat: no-repeat;
         background-position: center;
         filter: brightness(0);
-        transform: translateY(10%);
+        transform: translateY(0%);
     }
 
     &:hover {
@@ -432,7 +432,7 @@
     &:hover::after {
         background-image: url("../images/arrow.svg");
         filter: none;
-        transform: translateX(4px) translateY(10%);
+        transform: translateX(4px) translateY(0%);
     }
 }
 

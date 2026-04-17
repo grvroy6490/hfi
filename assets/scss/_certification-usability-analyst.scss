@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'typography' as t;
 
 // —— Become a Certified Usability Analyst™ banner ——
 .certification-certified-usability-analyst-section {
@@ -53,6 +54,7 @@
     margin: 0 0 0.75rem;
     color: v.$color-primary-black;
     font-weight: 600;
+    font-family: t.$font-family-inter;
 }
 
 .certification-certified-usability-analyst-lead {
@@ -99,7 +101,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transform: translateY(10%);
+        transform: translateY(0%);
         transition: transform 0.25s ease;
         filter: brightness(0) invert(1);
     }
@@ -110,7 +112,7 @@
 
     &:hover::after {
         background-image: url("../images/arrow.svg");
-        transform: translateX(4px) translateY(10%);
+        transform: translateX(4px) translateY(0%);
         filter: brightness(0) invert(1);
     }
 }

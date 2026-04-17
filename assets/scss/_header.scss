@@ -465,7 +465,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
-                transform: translateY(10%);
+                transform: translateY(0%);
                 transition: transform 0.25s ease;
                 filter: brightness(0);
             }
@@ -478,7 +478,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
             &:hover::after {
                 background-image: url("../images/arrow.svg");
-                transform: translateX(4px) translateY(10%);
+                transform: translateX(4px) translateY(0%);
                 filter: none;
             }
         }
@@ -504,12 +504,13 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
         h3 {
             position: relative;
             display: inline-block;
-            padding-right: 1.25em;
+            padding-right: 1em;
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
             color: #404040;
             transition: color 0.25s ease;
+            line-height: normal;
 
             &::after {
                 content: "";
@@ -517,7 +518,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
                 right: 0;
                 top: 50%;
                 opacity: 0;
-                transform: translate(-8px, -30%);
+                transform: translate(-0.5rem, -50%);
                 transition:
                     opacity 0.28s ease,
                     transform 0.28s ease;
@@ -583,7 +584,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
     .menu-link {
         display: inline-block;
         position: relative;
-        padding-right: 1.25em;
+        padding-right: 1em;
         font-size: 1rem;
         font-weight: 600;
         color: #404040;
@@ -595,7 +596,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
             position: absolute;
             right: 0;
             top: 50%;
-            transform: translate(-4px, -30%);
+            transform: translate(-0.5rem, -50%);
             opacity: 0;
             transition:
                 opacity 0.25s ease,
@@ -1152,13 +1153,14 @@ body.mobile-menu-open {
         .courses-link {
             position: relative;
             display: block;
-            padding-right: 1.25em;
+            padding-right: 1em;
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
             color: #404040;
             transition: color 0.25s ease;
             width: fit-content;
+            line-height: normal;
 
             
 
@@ -1172,7 +1174,7 @@ body.mobile-menu-open {
                 position: absolute;
                 right: 0;
                 top: 50%;
-                transform: translate(-8px, -30%);
+                transform: translate(-8px, -50%);
                 transition: all 0.25s ease;                    
                 will-change: transform;
                 display: inline-block;
@@ -1192,7 +1194,7 @@ body.mobile-menu-open {
 
                 &::after {
                     opacity: 1 !important;
-                    transform: translate(0, -30%);
+                    transform: translate(0, -50%);
                 }
             }
         }
