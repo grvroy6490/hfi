@@ -1,0 +1,75 @@
+@use "variables" as v;
+
+.thankyou-subscription-card {
+    max-width: 36.25rem;
+    padding-bottom: 3.125rem;
+}
+
+.thankyou-subscription-card .thankyou-contact-badge {
+    margin-bottom: 0.875rem;
+}
+
+.thankyou-subscription-card .thankyou-contact-header {
+    max-width: 30.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.thankyou-subscription-card .thankyou-contact-title {
+    margin-bottom: 1rem;
+}
+
+.thankyou-subscription-card .thankyou-contact-copy {
+    margin-bottom: 0;
+}
+
+.thankyou-subscription-topics {
+    max-width: 30.75rem;
+    margin: 0 auto 1.5rem;
+    padding: 1.625rem 1.75rem;
+    border-radius: 0.5rem;
+    background: #f8f2ed;
+}
+
+.thankyou-subscription-topic-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    text-align: left;
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+.thankyou-subscription-topic {
+    padding: 0 1.25rem;
+    border-right: 1px solid #ded6cf;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+        border-right: 0;
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 0;
+        border-right: 0;
+    }
+}
+
+.thankyou-subscription-topic-title {
+    margin-bottom: 0;
+    color: v.$color-neutral-NC4;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.thankyou-subscription-link {
+    a {
+        color: v.$color-primary-grey;
+    }
+}

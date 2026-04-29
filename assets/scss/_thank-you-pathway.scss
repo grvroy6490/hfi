@@ -1,0 +1,121 @@
+@use "variables" as v;
+
+.thankyou-pathway-card {
+    padding-bottom: 2.875rem;
+}
+
+.thankyou-pathway-card .thankyou-contact-header {
+    margin-bottom: 1.375rem;
+}
+
+.thankyou-pathway-card .thankyou-contact-copy {
+    margin-bottom: 0;
+}
+
+.thankyou-pathway-next {
+    max-width: 33.5rem;
+    margin: 0 auto 2rem;
+}
+
+.thankyou-pathway-next-title {
+    margin-bottom: 1rem;
+    color: v.$color-primary-grey;
+    font-weight: 700;
+}
+
+.thankyou-pathway-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    text-align: left;
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+.thankyou-pathway-step {
+    padding: 0 1rem;
+    border-right: 1px solid #d6d6d6;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+        border-right: 0;
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 0;
+        border-right: 0;
+    }
+}
+
+.thankyou-pathway-step-title {
+    margin-bottom: 0.125rem;
+    color: v.$color-primary-grey;
+    font-weight: 700;
+}
+
+.thankyou-pathway-step-copy {
+    margin-bottom: 0;
+    color: v.$color-neutral-NC4;
+    line-height: 1.25;
+}
+
+.thankyou-pathway-overview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 33.75rem;
+    margin-bottom: 1.125rem;
+    padding: 2rem 1.5rem;
+    text-align: left;
+
+    @media (max-width: 575.98px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.thankyou-pathway-document {
+    position: relative;
+}
+
+.thankyou-pathway-doc-download {
+    position: absolute;
+    right: -0.375rem;
+    bottom: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    background: v.$color-gold;
+    color: v.$color-primary-white;
+
+    svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}
+
+.thankyou-pathway-overview-title {
+    margin-bottom: 0.5rem;
+    color: v.$color-primary-grey;
+    font-weight: 700;
+}
+
+.thankyou-pathway-overview-copy {
+    margin-bottom: 1rem;
+}
+
+.thankyou-pathway-fast {
+    a {
+        color: v.$color-primary-grey;
+    }
+}
